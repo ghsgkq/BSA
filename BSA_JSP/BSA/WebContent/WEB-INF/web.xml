@@ -20,7 +20,7 @@
   
   <servlet>
   		<servlet-name>Controller</servlet-name>
-  		<servlet-class>boardtwo.controller.controllerAction</servlet-class>
+  		<servlet-class>BSA.controller.controllerAction</servlet-class>
   		<init-param>
   				<param-name>propertyConfig</param-name>
   				<param-value>commandPro.properties</param-value>
