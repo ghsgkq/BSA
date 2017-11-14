@@ -19,6 +19,10 @@ public class registerProAction implements CommandAction {
 			req.setAttribute("anser", 3);
 			return "/JSP/register.jsp";
 		}
+		if(req.getParameter("email").equals("")) {
+			req.setAttribute("anser", 4);
+			return "/JSP/register.jsp";
+		}
 		return null;
 	}
 	
