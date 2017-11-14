@@ -14,8 +14,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   <script type="text/javascript">
   $(document).ready( function() {
-  	$("#contents").load("top.jsp");
-  	$("#bt").load("bottom.jsp");
+  	$("#contents").load("JSP/top.jsp");
+  	$("#bt").load("JSP/bottom.jsp");
   });
   
   </script>

@@ -7,21 +7,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="style/style_index.css" type="text/css"> 
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/JSP/style/style_index.css" type="text/css"> 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   <script type="text/javascript">
     $(document).ready( function() {
-    	$("#contents").load("top.jsp");
-    	$("#bt").load("bottom.jsp");
+    	$("#contents").load("JSP/top.jsp");
+    	$("#bt").load("JSP/bottom.jsp");
     });
   </script>
   </head>
 
 <body class="bg-light" style="margin-top:83px;">
   <div id="contents"></div>
-  <div class="py-5 opaque-overlay" style="background-image: url(&quot;img/sol3.jpg&quot;); height:800px">
+  <div class="py-5 opaque-overlay" style="background-image: url(&quot;JSP/img/sol3.jpg&quot;); height:800px">
     <div class="container-fluid text-capitalize text-left h-100">
       <div class="row h-100 text-center text-capitalize py-5">
         <div class="text-white text-left col-xl-11 align-self-start col-md-6">
@@ -114,21 +114,21 @@
       </div>
       <div class="row">
         <div class="col-md-4 p-4">
-          <img class="img-fluid d-block rounded-circle mx-auto" src="img/sol4.jpg">
+          <img class="img-fluid d-block rounded-circle mx-auto" src="JSP/img/sol4.jpg">
           <p class="my-4"><i>계절 온도 변화에 따라서 쾌적한 환경 그리고 디저트와 함께 여행을 즐기실수 있습니다.</i></p>
           <p><b>Travel In Style</b>
             <br>
             <br> </p>
         </div>
         <div class="col-md-4 p-4">
-          <img class="img-fluid d-block rounded-circle mx-auto" src="img/sol5.jpg">
+          <img class="img-fluid d-block rounded-circle mx-auto" src="JSP/img/sol5.jpg">
           <p class="my-4"><i>고객님이 출발 목적지 시간 변화에 따라서 직접 찾아가는 서비스를 시행하고 있습니다.</i></p>
           <p><b>Door to Door Service</b>
             <br>
             <br> </p>
         </div>
         <div class="col-md-4 p-4">
-          <img class="img-fluid d-block rounded-circle mx-auto" src="img/sol6.jpg">
+          <img class="img-fluid d-block rounded-circle mx-auto" src="JSP/img/sol6.jpg">
           <p class="my-4"><i>저희 운전사들은 부산지역 &nbsp;사람들입니다. 가시는 목적지까지 안전하게 모셔다드립니다.</i></p>
           <p><b>Professional Drivers</b>
             <br>
