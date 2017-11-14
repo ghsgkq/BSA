@@ -1,13 +1,22 @@
 package BSA.action;
 
+import java.util.Random;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class registerProAction implements CommandAction {
+import BSA.model.memberDao;
+import BSA.model.memberDto;
 
+public class registerProAction implements CommandAction {
 	@Override
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
-		
+		String id = req.getParameter("id");
+		String password = req.getParameter("password");
+		String email = req.getParameter("email");
+		String re_password = req.getParameter("re-password");
+		String code = null;
+		Random ran = new Random();
 		// 1: 아이디 입력 x  
 		// 2: 비밀번호 입력 x
 		// 3: 비밀번호확인 입력 x
@@ -38,9 +47,7 @@ public class registerProAction implements CommandAction {
 				req.setAttribute("anser", 6);
 			}
 			
-			String id = req.getParameter("id");
-			String password = req.getParameter("password");
-			String email = req.getParameter("email");
+			
 			if(id==null) {
 				id="";
 			}
@@ -54,10 +61,28 @@ public class registerProAction implements CommandAction {
 			req.setAttribute("password", password);
 			req.setAttribute("email", email);
 			return "/JSP/register.jsp";
-		}else {
-			req.setAttribute("anser", 7);
-			return null;
 		}
+		if(req.getParameter("code").equals(req.getParameter("anser_code"))) {
+			memberDao mdao = memberDao.getInstance();
+			memberDto mdto = new memberDto();
+			
+			mdto.setId(req.getParameter("id"));
+			mdto.setPassword(req.getParameter("password"));
+			mdto.setEmail(req.getParameter("email"));
+			
+			mdao.memberRegister(mdto);
+			return "/JSP/index.jsp";
+		}
+			for(int i=0; i<7; i++) {
+				code+=ran.nextInt(9);
+			}
+			req.setAttribute("id", id);
+			req.setAttribute("password", password);
+			req.setAttribute("re-password", re_password);
+			req.setAttribute("email", email);
+			req.setAttribute("code", code);
+			return "/BSA/emailsend.do";
+		
 		
 		
 	}
