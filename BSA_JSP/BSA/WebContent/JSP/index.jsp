@@ -4,23 +4,24 @@
 <html>
 
 <head>
+	<title>메인화면</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="style/style_index.css" type="text/css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/JSP/style/style_index.css" type="text/css">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   <script type="text/javascript">
     $(document).ready( function() {
-    	$("#contents").load("top.jsp");
-    	$("#bt").load("bottom.jsp");
+    	$("#contents").load("JSP/top.jsp");
+    	$("#bt").load("JSP/bottom.jsp");
     });
   </script>
 </head>
 <body class="bg-light" style="margin-top:87px;">
   <div id="contents"></div>
-  <div class="gradient-overlay px-5" style="background-image: url(&quot;img/sol2.jpg&quot;); height:800px;">
+  <div class="gradient-overlay px-5" style="background-image: url(&quot;JSP/img/sol2.jpg&quot;); height:800px;">
     <div class="py-5 m-5 text-left container-fluid text-capitalize h-100">
       <div class="row h-100 text-center text-capitalize py-5">
         <div class="col-md-12 text-white align-self-center text-left h-25">
@@ -50,14 +51,14 @@
           <div class="carousel slide" data-ride="carousel">
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item">
-                <img class="d-block img-fluid w-100" src="img/car.jpg" data-holder-rendered="true">
+                <img class="d-block img-fluid w-100" src="JSP/img/car.jpg" data-holder-rendered="true">
                 <div class="carousel-caption">
                   <h3>First slide picture</h3>
                   <p>Reclinig seat Comfort Zone </p>
                 </div>
               </div>
               <div class="carousel-item active">
-                <img class="d-block img-fluid rounded-circle w-100" src="img/car1.jpg" data-holder-rendered="true">
+                <img class="d-block img-fluid rounded-circle w-100" src="JSP/img/car1.jpg" data-holder-rendered="true">
                 <div class="carousel-caption">
                   <h3>Second slide picture</h3>
                   <p>Luxry Design for Business men</p>
@@ -145,11 +146,11 @@
             </ol>
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item">
-                <img class="d-block img-fluid w-100" src="img/ben.jpg" data-holder-rendered="true"> </div>
+                <img class="d-block img-fluid w-100" src="JSP/img/ben.jpg" data-holder-rendered="true"> </div>
               <div class="carousel-item">
-                <img class="d-block img-fluid w-100" src="img/car2.jpg" data-holder-rendered="true"> </div>
+                <img class="d-block img-fluid w-100" src="JSP/img/car2.jpg" data-holder-rendered="true"> </div>
               <div class="carousel-item active">
-                <img class="d-block img-fluid h-100" src="img/airporter.jpg" data-holder-rendered="true"> </div>
+                <img class="d-block img-fluid h-100" src="JSP/img/airporter.jpg" data-holder-rendered="true"> </div>
             </div>
           </div>
         </div>
