@@ -31,7 +31,7 @@
 <body>
   <nav class="navbar navbar-expand-md main-content navbar-light bg-warning">
     <div class="container-fluid">
-      <a class="navbar-brand bg-warning" href="#"><i class="d-block fa fa-life-ring fa-3x pull-right fa-fw bg-warning text-dark"></i> </a>
+      <a class="navbar-brand bg-warning" href="${pageContext.request.contextPath}/index.do"><i class="d-block fa fa-life-ring fa-3x pull-right fa-fw bg-warning text-dark"></i> </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
         aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -59,8 +59,8 @@
         </ul>
       </div>
     </div>
-    <a class="btn navbar-btn ml-2 text-white btn-secondary"><i class="fa d-inline fa-lg fa-user-circle-o"></i> Sign in</a>
-    <a class="btn navbar-btn ml-2 text-white btn-secondary"><i class="fa d-inline fa-lg fa-plus-square"></i>&nbsp;Register</a>
+    <a class="btn navbar-btn ml-2 text-white btn-secondary" href="${pageContext.request.contextPath}/login.do"><i class="fa d-inline fa-lg fa-user-circle-o"></i> Sign in</a>
+    <a class="btn navbar-btn ml-2 text-white btn-secondary" href="${pageContext.request.contextPath}/register.do"><i class="fa d-inline fa-lg fa-plus-square"></i>&nbsp;Register</a>
     <div id="google_translate_element" class="p-3"></div>
     <script type="text/javascript">
       function googleTranslateElementInit() {
