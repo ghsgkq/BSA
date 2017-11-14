@@ -62,17 +62,20 @@ public class registerProAction implements CommandAction {
 			req.setAttribute("email", email);
 			return "/JSP/register.jsp";
 		}
-		if(req.getParameter("code").equals(req.getParameter("anser_code"))) {
-			memberDao mdao = memberDao.getInstance();
-			memberDto mdto = new memberDto();
-			
-			mdto.setId(req.getParameter("id"));
-			mdto.setPassword(req.getParameter("password"));
-			mdto.setEmail(req.getParameter("email"));
-			
-			mdao.memberRegister(mdto);
-			return "/JSP/index.jsp";
+		if(req.getParameter("anser_code") != null) {
+			if(req.getParameter("code").equals(req.getParameter("anser_code"))) {
+				memberDao mdao = memberDao.getInstance();
+				memberDto mdto = new memberDto();
+				
+				mdto.setId(req.getParameter("id"));
+				mdto.setPassword(req.getParameter("password"));
+				mdto.setEmail(req.getParameter("email"));
+				
+				mdao.memberRegister(mdto);
+				return "/JSP/index.jsp";
+			}
 		}
+		
 			for(int i=0; i<7; i++) {
 				code+=ran.nextInt(9);
 			}
@@ -81,7 +84,7 @@ public class registerProAction implements CommandAction {
 			req.setAttribute("re-password", re_password);
 			req.setAttribute("email", email);
 			req.setAttribute("code", code);
-			return "/BSA/emailsend.do";
+			return "emailsend.do";
 		
 		
 		
