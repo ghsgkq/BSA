@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
@@ -32,18 +33,22 @@
               <h1 class="mb-4">회원가입</h1>
               <form action="https://formspree.io/YOUREMAILHERE">
                 <div class="form-group"> <label>아이디</label>
-                  <input type="text" class="form-control" placeholder="아이디">
+                  <input type="text" name="id" class="form-control" placeholder="아이디">
                   <input type="button" class="btn btn-secondary" value="중복확인"> </div>
                 <div class="form-group"> <label>비밀번호</label>
-                  <input type="password" class="form-control" placeholder="비밀번호"> </div>
+                  <input type="password" name="password" class="form-control" placeholder="비밀번호"> </div>
                 <div class="form-group"> <label>비밀번호 확인</label>
-                  <input type="password" class="form-control" placeholder="비밀번호 확인"> </div>
+                  <input type="password" name="re-password" class="form-control" placeholder="비밀번호 확인"> </div>
                 <div class="form-group"> <label>이메일</label>
-                  <input type="email" class="form-control" placeholder="이메일"> </div>
+                  <input type="email" name="email" class="form-control" placeholder="이메일"> </div>
                 <div class="form-group">
-                  <input type="radio" value="true"> 이메일로 본인확인 문자가 가는것을 허락합니까? </div>
+                  <input type="radio" value="what"> 이메일로 본인확인 문자가 가는것을 허락합니까? </div>
                 <button type="submit" class="btn btn-secondary">로그인</button>
               </form>
+              <br><br>
+              <c:if test="${anser == 1 }">
+              
+              </c:if>
             </div>
           </div>
         </div>
