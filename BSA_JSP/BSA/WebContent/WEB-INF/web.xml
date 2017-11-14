@@ -23,7 +23,7 @@
   		<servlet-class>BSA.controller.controllerAction</servlet-class>
   		<init-param>
   				<param-name>propertyConfig</param-name>
-  				<param-value>commandPro.properties</param-value>
+  				<param-value>CommandPro.properties</param-value>
   		</init-param>
   </servlet>
   
