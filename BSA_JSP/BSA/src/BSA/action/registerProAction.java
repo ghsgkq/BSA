@@ -70,7 +70,6 @@ public class registerProAction implements CommandAction {
 				mdto.setId(req.getParameter("id"));
 				mdto.setPassword(req.getParameter("password"));
 				mdto.setEmail(req.getParameter("email"));
-				
 				mdao.memberRegister(mdto);
 				return "/JSP/index.jsp";
 			}
@@ -84,7 +83,7 @@ public class registerProAction implements CommandAction {
 			req.setAttribute("re-password", re_password);
 			req.setAttribute("email", email);
 			req.setAttribute("code", code);
-			return "emailsend.do";
+			return "/emailsend.do";
 		
 		
 		

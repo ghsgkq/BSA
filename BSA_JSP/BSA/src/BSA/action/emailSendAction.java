@@ -153,7 +153,7 @@ public class emailSendAction implements CommandAction {
 		req.setAttribute("re-password", re_password);
 		req.setAttribute("email", email);
 		req.setAttribute("code", code);
-		return "/BSA/register.do";
+		return "/register.do";
 	}
 	
 }
