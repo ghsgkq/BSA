@@ -153,6 +153,70 @@
                 </script>
               </div>
               <h4 class="my-5">Date &nbsp;(날짜를 선택해주세요.)</h4>
+              <h6 class="text-muted">Departing (출발 날짜를 선택해주세요.)</h6>
+              <div class="input-group w-25"> <i class="fa d-inline fa-lg fa-calendar"></i>
+                <input type="text" id="datepicker">
+                <script type="text/javascript">
+                  $("#datepicker").datepicker();
+                </script>
+              </div>
+              <p class=" p-y-1">&nbsp;</p>
+              <h6 class="text-muted">Returning (Same day return) &nbsp;(도착날짜를 선택해주세요.)</h6>
+              <div class="input-group w-25"> <i class="fa d-inline fa-lg fa-calendar"></i>
+                <input type="text" id="datepicker1">
+                <script type="text/javascript">
+                  $("#datepicker1").datepicker();
+                </script>
+              </div>
+              <p class=" p-y-1">&nbsp;</p>
+              <p class=" p-y-1">&nbsp;</p>
+              <h4 class="my-5">How many passengers? &nbsp;(승객수를선택해주세요.)</h4>
+              <div class="input-group w-50 border border-dark"> <i class="fa d-inline fa-lg p-2 fa-user-circle"></i>
+                <h6 class="text-muted p-2">(어른)Adults 20+</h6>
+                <input type="number" class="form-control" placeholder="0"> </div>
+              <p class="p-y-1">&nbsp;</p>
+              <div class="input-group w-50 border border-dark"> <i class="fa d-inline fa-lg p-2 fa-user-circle"></i>
+                <h6 class="text-muted p-2">(청소년)Young 13-20</h6>
+                <input type="number" class="form-control" placeholder="0"> </div>
+              <p class="p-y-1">&nbsp;</p>
+              <div class="input-group w-50 border border-dark"> <i class="fa d-inline fa-lg p-2 fa-user-circle"></i>
+                <h6 class="text-muted p-2">(어린이)Child 2-12</h6>
+                <input type="number" class="form-control" placeholder="0"> </div>
+              <p class="p-y-1">&nbsp;</p>
+              <div class="input-group w-50 border border-dark"> <i class="fa d-inline fa-lg p-2 fa-user-circle"></i>
+                <h6 class="text-muted p-2">(유아)Infatns 0-2</h6>
+                <input type="number" class="form-control" placeholder="0"> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5 text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 bg-light">
+          <p class="lead bg-light">Sign up to our newsletter for the latest news</p>
+          <form class="form-inline">
+            <button type="submit" class="btn ml-3 btn-secondary">Next</button>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 mt-3 text-center">
+          <p>© Copyright 2017 Pingendo - All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark my-2">
+    <div class="container">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
+        <h4 class="m-0 text-light">Busan Shuttle Airporter</h4><i class="fa fa-fw fa-3x d-inline pull-right bg-dark text-white fa-life-ring"></i> </div>
+    </div>
+  </nav>
             </div>
           </div>
         </div>
