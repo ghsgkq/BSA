@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class memberDao {
 	private static memberDao instance = null;
@@ -23,8 +24,8 @@ public class memberDao {
 		ResultSet rs = null;
 		try {
 			conn = ConnUtil.getConnection();
-			pstmt = conn.prepareStatement("insert into BSA_MEMBER (NUM, ID, PASSWORD, EMAIL) "
-					+ "value(BOARD_SEQ.nextval, ? , ? , ?)");
+			pstmt = conn.prepareStatement("insert into BSA_MEMBER(NUM, ID, PASSWORD, EMAIL) "
+					+ "values(MEMBER_SEQ.nextval, ? , ? , ?)");
 			pstmt.setString(1, mdto.getId());
 			pstmt.setString(2, mdto.getPassword());
 			pstmt.setString(3, mdto.getEmail());
@@ -40,5 +41,8 @@ public class memberDao {
 				e.printStackTrace();
 			}
 		}
+	}
+	public List<String> memberGetId(){
+		return null;
 	}
 }

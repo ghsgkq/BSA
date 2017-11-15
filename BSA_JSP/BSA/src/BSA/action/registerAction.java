@@ -17,6 +17,11 @@ public class registerAction implements CommandAction {
 			req.setAttribute("anser", 7);
 		}
 		
+		req.setAttribute("id", id);
+		req.setAttribute("password", password);
+		req.setAttribute("re_password", re_password);
+		req.setAttribute("email", email);
+		req.setAttribute("code", code);
 		
 		return "/JSP/register.jsp";
 	}

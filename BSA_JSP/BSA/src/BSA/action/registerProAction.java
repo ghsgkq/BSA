@@ -16,6 +16,8 @@ public class registerProAction implements CommandAction {
 		String email = req.getParameter("email");
 		String re_password = req.getParameter("re_password");
 		Random ran = new Random();
+		System.out.println(req.getParameter("anser_code"));
+		System.out.println(req.getParameter("code"));
 		// 1: 아이디 입력 x  
 		// 2: 비밀번호 입력 x
 		// 3: 비밀번호확인 입력 x
@@ -62,7 +64,7 @@ public class registerProAction implements CommandAction {
 			return "/JSP/register.jsp";
 		}
 		if(req.getParameter("anser_code") != null) {
-			if(req.getAttribute("code").equals(req.getParameter("anser_code"))) {
+			if(req.getParameter("anser_code").equals(req.getParameter("code"))) {
 				memberDao mdao = memberDao.getInstance();
 				memberDto mdto = new memberDto();
 				
@@ -70,7 +72,7 @@ public class registerProAction implements CommandAction {
 				mdto.setPassword(req.getParameter("password"));
 				mdto.setEmail(req.getParameter("email"));
 				mdao.memberRegister(mdto);
-				return "/JSP/index.jsp";
+				return "/JSP/login.jsp";
 			}
 		}
 			String code = "";
@@ -78,7 +80,7 @@ public class registerProAction implements CommandAction {
 				code+=ran.nextInt(9);
 			}
 			
-			req.setAttribute("email", email);
+			req.setAttribute("code", code);
 			
 			return "/emailsend.do";
 		

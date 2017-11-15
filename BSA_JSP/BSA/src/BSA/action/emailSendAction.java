@@ -149,7 +149,11 @@ public class emailSendAction implements CommandAction {
 			e.printStackTrace();
 			
 		}
-	
+		req.setAttribute("id", id);
+		req.setAttribute("password", password);
+		req.setAttribute("re_password", re_password);
+		req.setAttribute("email", email);
+		req.setAttribute("code", code);
 		return "/register.do";
 	}
 	
