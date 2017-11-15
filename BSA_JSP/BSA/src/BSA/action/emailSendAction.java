@@ -12,17 +12,23 @@ import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import oracle.net.aso.f;
+
 public class emailSendAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
+		req.setCharacterEncoding("UTF-8");
+		String first_name=req.getParameter("first_name");
+		String last_name = req.getParameter("last_name");
+		String phone = req.getParameter("phone");
 		String id = req.getParameter("id");
 		String email = "ckdgus5820@naver.com";
 		String to = req.getParameter("email");
 		String password=req.getParameter("password");
 		String re_password=req.getParameter("re_password");
-		String code = req.getParameter("code");
-		  
+		String code = (String)req.getAttribute("code");
+		
 		Properties p = new Properties(); // 정보를 담을 객체
 		  
 		p.put("mail.smtp.host","smtp.naver.com");
@@ -81,7 +87,7 @@ public class emailSendAction implements CommandAction {
 			    buffer.append("<table width='100%' cellpadding='0' cellspacing='0' border='0'>");
 			    buffer.append("<tr>");
 			    buffer.append("<td style='padding-right: 0px; padding-left: 0px;' align='center'>");
-			    buffer.append("<img align='center' border='0' src='image-1.jpeg' alt='Image' title='Image' style='outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;width: 100%;max-width: 560px;' width='560'>");
+			    buffer.append("<img align='center' border='0' src='https://i.imgur.com/UPrkT9F.jpg' alt='Image' title='Image' style='outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;width: 100%;max-width: 560px;' width='560'>");
 			    buffer.append("</td></tr></table></td></tr></tbody></table>");
 			    buffer.append("<table role='presentation' cellpadding='0' cellspacing='0' width='100%' border='0'>");
 			    buffer.append("<tbody><tr>");
@@ -148,6 +154,9 @@ public class emailSendAction implements CommandAction {
 			e.printStackTrace();
 			
 		}
+		req.setAttribute("first_name", first_name);
+		req.setAttribute("last_name", last_name);
+		req.setAttribute("phone", phone);
 		req.setAttribute("id", id);
 		req.setAttribute("password", password);
 		req.setAttribute("re_password", re_password);
