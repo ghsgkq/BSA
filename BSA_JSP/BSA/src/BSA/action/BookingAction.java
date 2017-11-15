@@ -37,6 +37,7 @@ public class BookingAction implements CommandAction{
 		req.setAttribute("arrival_airline_name", arrival_airline_name);
 		req.setAttribute("arrival_airline_no", arrival_airline_no);
 		req.setAttribute("arrival_airline_time", arrival_airline_time);
+		req.setAttribute("start_date", start_date);
 		req.setAttribute("arrival_date", arrival_date);
 		req.setAttribute("adults", adults);
 		req.setAttribute("young", young);

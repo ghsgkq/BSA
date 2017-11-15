@@ -39,7 +39,7 @@ public class BookingProAction implements CommandAction{
 		
 		
 		
-		return "/JSP/Booking.jsp";
+		return "/JSP/Booking_pro.jsp";
 		
 		
 		
