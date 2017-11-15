@@ -144,7 +144,7 @@ public class registerProAction implements CommandAction {
 			}
 			
 			req.setAttribute("code", code);
-			
+			req.setAttribute("idcheck", idcheck);
 			return "/emailsend.do";
 		
 		

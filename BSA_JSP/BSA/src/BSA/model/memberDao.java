@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
+import java.util.ArrayList;
 
 public class memberDao {
 	private static memberDao instance = null;
@@ -45,17 +45,17 @@ public class memberDao {
 			}
 		}
 	}
-	public List<String> memberGetId(){
+	public ArrayList<String> memberGetId(){
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		List<String> id = null;
+		ArrayList<String> id = new ArrayList<String>();
 		try {
 			conn = ConnUtil.getConnection();
 			pstmt = conn.prepareStatement("select id from BSA_MEMBER");
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
-				
+				id.add(rs.getString(1));
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -68,6 +68,6 @@ public class memberDao {
 				e.printStackTrace();
 			}
 		}
-		return null;
+		return id;
 	}
 }

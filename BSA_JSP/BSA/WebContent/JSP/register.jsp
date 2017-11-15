@@ -20,11 +20,7 @@
     	$("#bt").load("JSP/bottom.jsp");
     });
   </script>
-  <c:if test="${anser == 10}">
-  <script type="text/javascript">
-  alert("이메일로 코드 전송했습니다. \n 확인후 입력해주세요!");
-  </script>
-  </c:if>
+
   <c:if test="${idcheck == 0 }">
   <script type="text/javascript">
   alert("아이디가 존재합니다!!");
@@ -60,8 +56,8 @@
               <c:if test="${idcheck == 1 }">
                 <div class="form-group"> <label>아이디</label>
                 <input type="text" name="id" class="form-control" placeholder="아이디" value="${id}"></div>
-                <input type="hidden" name="idcheck" value="${idcheck}">
                 </c:if>
+                <input type="hidden" name="idcheck" value="${idcheck}">
                 <div class="form-group"> <label>비밀번호</label>
                   <input type="password" name="password" class="form-control" placeholder="비밀번호" value="${password }"> </div>
                 <div class="form-group"> <label>비밀번호 확인</label>
@@ -114,6 +110,9 @@
               </c:if>
               <c:if test="${anser == 9 }">
               비밀번호와 비밀번호확인란이 같지않습니다!.
+              </c:if>
+              <c:if test="${anser == 10}">
+              이메일로 코드 전송했습니다. 확인후 입력해주세요!
               </c:if>
               <c:if test="${anser == 11 }">
               코드입력이 잘못되었습니다!
