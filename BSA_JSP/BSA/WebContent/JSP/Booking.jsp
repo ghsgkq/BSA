@@ -62,7 +62,7 @@
                   type="radio" id="oneway" name="type" value="1" class="triptype" onclick="div_OnOff(this.value,'con');">&nbsp;One Way (편도) </h5>
             </div>
             
-             <form method="post" name="Booking" action="${pageContext.request.contextPath}/BookingPro.do" onsubmit="return Booking_Save()">
+             <form method="post" name="writeForm" action="${pageContext.request.contextPath}/Booking.do" onsubmit="return BookingSave()">
             <div class="card-body">
               <h4 class="my-5">Select your destination &nbsp;(목적지를 선택해주세요.)</h4>
               <h6 class="text-muted">From (출발)</h6>
@@ -235,7 +235,7 @@ function div_OnOff(v,id){
                 <h6 class="text-muted p-2">(유아)Infatns 0-2</h6>
                 <input type="number" class="form-control" placeholder="0" name="infatns"> </div>
                 
-                </form>
+                
             </div>
           </div>
         </div>
@@ -249,7 +249,7 @@ function div_OnOff(v,id){
           <p class="lead bg-light">Sign up to our newsletter for the latest news</p>
           <form class="form-inline">
             <button type="submit" class="btn ml-3 btn-secondary">Next</button>
-            
+            </form>
           </form>
         </div>
       </div>
