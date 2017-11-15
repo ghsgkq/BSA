@@ -24,11 +24,14 @@ public class memberDao {
 		ResultSet rs = null;
 		try {
 			conn = ConnUtil.getConnection();
-			pstmt = conn.prepareStatement("insert into BSA_MEMBER(NUM, ID, PASSWORD, EMAIL) "
-					+ "values(MEMBER_SEQ.nextval, ? , ? , ?)");
-			pstmt.setString(1, mdto.getId());
-			pstmt.setString(2, mdto.getPassword());
-			pstmt.setString(3, mdto.getEmail());
+			pstmt = conn.prepareStatement("insert into BSA_MEMBER(NUM, FIRST_NAME, LAST_NAME, PHONE, ID, PASSWORD, EMAIL) "
+					+ "values(MEMBER_SEQ.nextval,?, ?, ?,  ? , ? , ?)");
+			pstmt.setString(1, mdto.getFirst_name());
+			pstmt.setString(2, mdto.getLast_name());
+			pstmt.setString(3, mdto.getPhone());
+			pstmt.setString(4, mdto.getId());
+			pstmt.setString(5, mdto.getPassword());
+			pstmt.setString(6, mdto.getEmail());
 			pstmt.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -43,6 +46,28 @@ public class memberDao {
 		}
 	}
 	public List<String> memberGetId(){
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List<String> id = null;
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement("select id from BSA_MEMBER");
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null) pstmt.close();
+				if(rs != null) rs.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
 		return null;
 	}
 }

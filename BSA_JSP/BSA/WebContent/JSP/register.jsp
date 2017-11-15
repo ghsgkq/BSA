@@ -33,6 +33,12 @@
             <div class="card-body">
               <h1 class="mb-4">회원가입</h1>
               <form action="${pageContext.request.contextPath}/registerPro.do" method="post">
+               <div class="form-group"> <label>이름</label>
+                 <input type="text" name="first_name" class="form-control" placeholder="이름" value="${first_name }"> </div>
+                 <div class="form-group"> <label>성</label>
+                 <input type="text" name="last_name" class="form-control" placeholder="성" value="${last_name }"> </div>
+                 <div class="form-group"> <label>전화번호</label>
+                 <input type="text" name="phone" class="form-control" placeholder="- 포함 작성" value="${phone }"> </div>
                 <div class="form-group"> <label>아이디</label>
                   <input type="text" name="id" class="form-control" placeholder="아이디" value="${id}">
                   <input type="button" class="btn btn-secondary" value="중복확인"> </div>
@@ -42,11 +48,11 @@
                   <input type="password" name="re_password" class="form-control" placeholder="비밀번호 확인" value="${re_password }"> </div>
                 <div class="form-group"> <label>이메일</label>
                   <input type="email" name="email" class="form-control" placeholder="이메일" value="${email}"> </div>
-              <c:if test="${anser != 7 }">
+              <c:if test="${anser != 10 }">
                 <div class="form-group">
                   <input type="radio" name="what" value="true"> 이메일로 본인확인 문자가 가는것을 허락합니까? </div>
               </c:if>
-              <c:if test="${anser == 7 }">
+              <c:if test="${anser == 10 }">
               <div class="form-group"> <label>코드입력</label>
               <input type="text" name="anser_code" class="form-control" placeholder="코드입력"> 
               <input type="hidden" name="code" value="${code}">
@@ -57,21 +63,30 @@
               </form>
               <br><br>
               <c:if test="${anser == 1 }">
-              아이디를 입력하세요!
+              이름을 입력하세요!
               </c:if>
               <c:if test="${anser == 2 }">
-              비밀번호를 입력하세요!
+              성을 입력하세요!
               </c:if>
               <c:if test="${anser == 3 }">
-              비밀번호확인란을 입력하세요!
+              전화번호를 입력하세요!
               </c:if>
               <c:if test="${anser == 4 }">
-              이메일을 입력하세요!
+              아이디를 입력하세요!
               </c:if>
               <c:if test="${anser == 5 }">
-              이메일 본인확인란을 체크해주세요!!
+              비밀번호를 입력하세요!
               </c:if>
               <c:if test="${anser == 6 }">
+              비밀번호확인란을 입력하세요!
+              </c:if>
+              <c:if test="${anser == 7 }">
+              이메일을 입력하세요!
+              </c:if>
+              <c:if test="${anser == 8 }">
+              이메일 본인확인란을 체크해주세요!!
+              </c:if>
+              <c:if test="${anser == 9 }">
               비밀번호와 비밀번호확인란이 같지않습니다!.
               </c:if>
             </div>
