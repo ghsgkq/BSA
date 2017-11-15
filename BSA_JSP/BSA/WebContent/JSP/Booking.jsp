@@ -54,9 +54,10 @@
           <div class="card">
             <div class="card-header py-4">
               <h5 class=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-                <input type="radio" name="round" value="#" class=""> Round( 왕복) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+              
+                <input type="radio" id="round" name="type" value="0" class="triptype" onclick="div_OnOff(this.value,'con');"> Round Trip( 왕복) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
                 <input
-                  type="radio" name="oneway" value="#" class="">&nbsp;One Way (편도) </h5>
+                  type="radio" id="oneway" name="type" value="1" class="triptype" onclick="div_OnOff(this.value,'con');">&nbsp;One Way (편도) </h5>
             </div>
             <div class="card-body">
               <h4 class="my-5">Select your destination &nbsp;(목적지를 선택해주세요.)</h4>
@@ -69,18 +70,20 @@
               
               </select> </div>
               <p class=" p-y-1">&nbsp;</p>
+              <div id="con" style="display:none">
               <h6 class="text-muted">to (도착)</h6>
               <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-left fa-lg"></i> <select name="date" class="form-control-sm px-3 mx-2">
                 <option value="1">Busan (부산)</option>
            			<option value="1">Gimhea Airporter (김해공항)</option>
             
               
-              </select> </div>
+              </select> </div></div>
               <p class=" p-y-1">&nbsp;</p>
               <h6 class="text-muted">Pickup Loaction &nbsp;(태울장소)</h6>
               <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-up fa-lg"></i>
                 <input type="text" class="form-control mr-3 my-1" placeholder="input text (태울 장소를 입력해주세요.)" id="firstname"> </div>
               <p class=" p-y-1">&nbsp;</p>
+              
               <h6 class="text-muted">Dropft Location (내려줄 장소)</h6>
               <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-down fa-lg"></i>
                 <input type="text" class="form-control mr-3 my-1" placeholder="input text (내릴 장소를 입력해주세요.)" id="firstname"> </div>
@@ -154,6 +157,7 @@
                   $( "#timepicker1" ).timepicker();
                 </script>
               </div>
+
               <h4 class="my-5">Date &nbsp;(날짜를 선택해주세요.)</h4>
               <h6 class="text-muted">Departing (출발 날짜를 선택해주세요.)</h6>
               <div class="input-group w-25"> <i class="fa d-inline fa-lg fa-calendar"></i>
@@ -174,7 +178,10 @@
     </script>
                
               </div>
+              
+            
               <p class=" p-y-1">&nbsp;</p>
+            
               <h6 class="text-muted">Returning (Same day return) &nbsp;(도착날짜를 선택해주세요.)</h6>
               <div class="input-group w-25"> <i class="fa d-inline fa-lg fa-calendar"></i>
                 <input type="text" id="datepicker1">
@@ -192,8 +199,19 @@
     });
 
     </script>
-                
-              </div>
+    
+    <script>
+function div_OnOff(v,id){
+ // 라디오 버튼 value 값 조건 비교
+ if(v == "0"){
+  document.getElementById(id).style.display = ""; // 보여줌
+ }else{
+  document.getElementById(id).style.display = "none"; // 숨김
+ }
+}
+</script>
+               </div>
+              
               <p class=" p-y-1">&nbsp;</p>
               <p class=" p-y-1">&nbsp;</p>
               <h4 class="my-5">How many passengers? &nbsp;(승객수를선택해주세요.)</h4>
