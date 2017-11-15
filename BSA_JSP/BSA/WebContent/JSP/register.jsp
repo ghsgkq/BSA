@@ -52,9 +52,11 @@
                 <input type="text" name="id" class="form-control" placeholder="아이디" value="${id}"></div>
                 </c:when>
                 <c:otherwise>
+                <form action="${pageContext.request.contextPath}/idcheck.do" post>
                 <input type="text" name="id" class="form-control" placeholder="아이디" value="${id}">
                   <br>
                   <input type="submit" class="btn btn-secondary" value="중복확인" > </div>
+                </form>
                 </c:otherwise>
                 </c:choose>
 
