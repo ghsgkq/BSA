@@ -23,7 +23,7 @@ public class registerProAction implements CommandAction {
 		// 4: 이메일 입력 x
 		// 5: 이메일확인란 체크 x
 		// 6: 비밀번호 비밀번호확인 맞지 않음
-		if(req.getParameter("id").equals("") || req.getParameter("password").equals("") || req.getParameter("re-password").equals("") || req.getParameter("email").equals("") || req.getParameter("what").equals("") || !(req.getParameter("password").equals(req.getParameter("re-password")))) {
+		if(req.getParameter("id").equals("") || req.getParameter("password").equals("") || req.getParameter("re_password").equals("") || req.getParameter("email").equals("") || req.getParameter("what").equals("") || !(req.getParameter("password").equals(req.getParameter("re_password")))) {
 			if(req.getParameter("id").equals("")) {
 				req.setAttribute("anser", 1);
 			}
@@ -32,7 +32,7 @@ public class registerProAction implements CommandAction {
 				req.setAttribute("anser", 2);
 			}
 			
-			else if(req.getParameter("re-password").equals("")) {
+			else if(req.getParameter("re_password").equals("")) {
 				req.setAttribute("anser", 3);
 			}
 			
@@ -43,7 +43,7 @@ public class registerProAction implements CommandAction {
 			else if(req.getParameter("what").equals("")) {
 				req.setAttribute("anser", 5);
 			}
-			else if(!(req.getParameter("password").equals(req.getParameter("re-password")))) {
+			else if(!(req.getParameter("password").equals(req.getParameter("re_password")))) {
 				req.setAttribute("anser", 6);
 			}
 			
@@ -78,9 +78,12 @@ public class registerProAction implements CommandAction {
 			for(int i=0; i<7; i++) {
 				code+=ran.nextInt(9);
 			}
+			
+			System.out.println(code);
+			
 			req.setAttribute("id", id);
 			req.setAttribute("password", password);
-			req.setAttribute("re-password", re_password);
+			req.setAttribute("re_password", re_password);
 			req.setAttribute("email", email);
 			req.setAttribute("code", code);
 			return "/emailsend.do";

@@ -17,10 +17,10 @@ public class emailSendAction implements CommandAction {
 	@Override
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
 		String id = req.getParameter("id");
-		String to = "ckdgus5820@naver.com";
-		String email = req.getParameter("email");
+		String email = "ckdgus5820@naver.com";
+		String to = req.getParameter("email");
 		String password=req.getParameter("password");
-		String re_password=req.getParameter("re-password");
+		String re_password=req.getParameter("re_password");
 		String code = req.getParameter("code");
 		  
 		Properties p = new Properties(); // 정보를 담을 객체
@@ -81,7 +81,7 @@ public class emailSendAction implements CommandAction {
 			    buffer.append("<table width='100%' cellpadding='0' cellspacing='0' border='0'>");
 			    buffer.append("<tr>");
 			    buffer.append("<td style='padding-right: 0px; padding-left: 0px;' align='center'>");
-			    buffer.append("<img align='center' border='0' src='https://imgur.com/UPrkT9F' alt='Image' title='Image' style='outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;width: 100%;max-width: 560px;' width='560'>");
+			    buffer.append("<img align='center' border='0' src='image-1.jpeg' alt='Image' title='Image' style='outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;width: 100%;max-width: 560px;' width='560'>");
 			    buffer.append("</td></tr></table></td></tr></tbody></table>");
 			    buffer.append("<table role='presentation' cellpadding='0' cellspacing='0' width='100%' border='0'>");
 			    buffer.append("<tbody><tr>");
@@ -150,7 +150,7 @@ public class emailSendAction implements CommandAction {
 		}
 		req.setAttribute("id", id);
 		req.setAttribute("password", password);
-		req.setAttribute("re-password", re_password);
+		req.setAttribute("re_password", re_password);
 		req.setAttribute("email", email);
 		req.setAttribute("code", code);
 		return "/register.do";

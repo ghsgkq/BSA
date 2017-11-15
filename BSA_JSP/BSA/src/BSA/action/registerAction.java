@@ -9,7 +9,7 @@ public class registerAction implements CommandAction {
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
 		String id = req.getParameter("id");
 		String password=req.getParameter("password");
-		String re_password=req.getParameter("re-password");
+		String re_password=req.getParameter("re_password");
 		String email = req.getParameter("email");
 		String code = req.getParameter("code");
 		
@@ -19,7 +19,7 @@ public class registerAction implements CommandAction {
 		
 		req.setAttribute("id", id);
 		req.setAttribute("password", password);
-		req.setAttribute("re-password", re_password);
+		req.setAttribute("re_password", re_password);
 		req.setAttribute("email", email);
 		req.setAttribute("code", code);
 		

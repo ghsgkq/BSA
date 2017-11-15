@@ -39,18 +39,18 @@
                 <div class="form-group"> <label>비밀번호</label>
                   <input type="password" name="password" class="form-control" placeholder="비밀번호" value="${password }"> </div>
                 <div class="form-group"> <label>비밀번호 확인</label>
-                  <input type="password" name="re-password" class="form-control" placeholder="비밀번호 확인"> </div>
+                  <input type="password" name="re_password" class="form-control" placeholder="비밀번호 확인" value="${re_password }"> </div>
                 <div class="form-group"> <label>이메일</label>
                   <input type="email" name="email" class="form-control" placeholder="이메일" value="${email}"> </div>
                 <div class="form-group">
                   <input type="radio" name="what" value="true"> 이메일로 본인확인 문자가 가는것을 허락합니까? </div>
               <c:if test="${anser == 7 }">
               <div class="form-group"> <label>코드입력</label>
-              <input type="text" name="code_anser" class="form-control" placeholder="코드입력" value="${password }"> 
+              <input type="text" name="code_anser" class="form-control" placeholder="코드입력"> 
               <input type="hidden" name="code" value="${code}">
               </div>
               </c:if>
-                <button type="submit" class="btn btn-secondary">로그인</button>
+                <button type="submit" class="btn btn-secondary">회원가입</button>
               </form>
               <br><br>
               <c:if test="${anser == 1 }">
