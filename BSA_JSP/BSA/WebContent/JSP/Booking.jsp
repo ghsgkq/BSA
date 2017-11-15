@@ -7,11 +7,13 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.3/jquery.timepicker.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.3/jquery.timepicker.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  
  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="David Bushell">
+    <link rel="stylesheet" href="JSP/style/pikaday.css">
+    <link rel="stylesheet" href="JSP/style/site.css">
+    
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/JSP/style/style_index.css" type="text/css">
   <script src="click_cal.js"></script>
@@ -147,26 +149,50 @@
                 <input type="text" class="form-control mr-3 my-1" placeholder="Flight No (비행 번호를 입력해주세요.)" id="firstname"> </div>
               <h6 class="text-muted">Flight Time (비행 도착시간)</h6>
               <div class="input-group w-25"> <i class="fa d-inline fa-tachometer fa-lg"></i>
-                <input type="text" id="timepicker" class="from-control text-left w-50 m-2 border border-dark">
+                <input type="text" id="timepicker1" class="from-control text-left w-50 m-2 border border-dark">
                 <script type="text/javascript">
-                  $( "#timepicker" ).timepicker();
+                  $( "#timepicker1" ).timepicker();
                 </script>
               </div>
               <h4 class="my-5">Date &nbsp;(날짜를 선택해주세요.)</h4>
               <h6 class="text-muted">Departing (출발 날짜를 선택해주세요.)</h6>
               <div class="input-group w-25"> <i class="fa d-inline fa-lg fa-calendar"></i>
                 <input type="text" id="datepicker">
-                <script type="text/javascript">
-                  $("#datepicker").datepicker();
-                </script>
+               
+                 <script src="JSP/pikaday.js"></script>
+             <script>
+
+   		 var picker = new Pikaday(
+    {
+        field: document.getElementById('datepicker'),
+        firstDay: 1,
+        minDate: new Date(),
+        maxDate: new Date(2020, 12, 31),
+        yearRange: [2000,2020]
+    });
+
+    </script>
+               
               </div>
               <p class=" p-y-1">&nbsp;</p>
               <h6 class="text-muted">Returning (Same day return) &nbsp;(도착날짜를 선택해주세요.)</h6>
               <div class="input-group w-25"> <i class="fa d-inline fa-lg fa-calendar"></i>
                 <input type="text" id="datepicker1">
-                <script type="text/javascript">
-                  $("#datepicker1").datepicker();
-                </script>
+                
+             <script src="JSP/pikaday.js"></script>
+             <script>
+
+   		 var picker = new Pikaday(
+    {
+        field: document.getElementById('datepicker1'),
+        firstDay: 1,
+        minDate: new Date(),
+        maxDate: new Date(2020, 12, 31),
+        yearRange: [2000,2020]
+    });
+
+    </script>
+                
               </div>
               <p class=" p-y-1">&nbsp;</p>
               <p class=" p-y-1">&nbsp;</p>
