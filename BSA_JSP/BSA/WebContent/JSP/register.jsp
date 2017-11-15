@@ -20,12 +20,17 @@
     	$("#bt").load("JSP/bottom.jsp");
     });
   </script>
-  <c:if test="${anser == 10}">
+
+  <c:if test="${idcheck == 0 }">
   <script type="text/javascript">
-  alert("이메일로 코드 전송했습니다. \n 확인후 입력해주세요!");
+  alert("아이디가 존재합니다!!");
   </script>
   </c:if>
- 
+  <c:if test="${idcheck == 1 }">
+  <script type="text/javascript">
+  alert("사용가능한 아이디입니다!");
+  </script>
+  </c:if>
   
 </head>
 
@@ -39,32 +44,30 @@
           <div class="card text-white p-5 bg-dark">
             <div class="card-body">
               <h1 class="mb-4">회원가입</h1>
-              
+       			<c:if test="${idcheck != 1 }">		
+                <form action="${pageContext.request.contextPath}/idcheck.do" method="post">
+                <div class="form-group"> <label>아이디</label>
+                <input type="text" name="id" class="form-control" placeholder="아이디" value="${id}">
+                  <br>
+                  <input type="submit" class="btn btn-secondary" value="중복확인" > </div>
+                </form>
+                </c:if>
               <form action="${pageContext.request.contextPath}/registerPro.do" method="post">
+              <c:if test="${idcheck == 1 }">
+                <div class="form-group"> <label>아이디</label>
+                <input type="text" name="id" class="form-control" placeholder="아이디" value="${id}"></div>
+                </c:if>
+                <input type="hidden" name="idcheck" value="${idcheck}">
+                <div class="form-group"> <label>비밀번호</label>
+                  <input type="password" name="password" class="form-control" placeholder="비밀번호" value="${password }"> </div>
+                <div class="form-group"> <label>비밀번호 확인</label>
+                  <input type="password" name="re_password" class="form-control" placeholder="비밀번호 확인" value="${re_password }"> </div>
                <div class="form-group"> <label>이름</label>
                  <input type="text" name="first_name" class="form-control" placeholder="이름" value="${first_name }"> </div>
                  <div class="form-group"> <label>성</label>
                  <input type="text" name="last_name" class="form-control" placeholder="성" value="${last_name }"> </div>
                  <div class="form-group"> <label>전화번호</label>
                  <input type="text" name="phone" class="form-control" placeholder="- 포함 작성" value="${phone }"> </div>
-                <div class="form-group"> <label>아이디</label>
-                <c:choose>
-                <c:when test="${idcheck == 1 }">
-                <input type="text" name="id" class="form-control" placeholder="아이디" value="${id}"></div>
-                </c:when>
-                <c:otherwise>
-                <form action="${pageContext.request.contextPath}/idcheck.do" post>
-                <input type="text" name="id" class="form-control" placeholder="아이디" value="${id}">
-                  <br>
-                  <input type="submit" class="btn btn-secondary" value="중복확인" > </div>
-                </form>
-                </c:otherwise>
-                </c:choose>
-
-                <div class="form-group"> <label>비밀번호</label>
-                  <input type="password" name="password" class="form-control" placeholder="비밀번호" value="${password }"> </div>
-                <div class="form-group"> <label>비밀번호 확인</label>
-                  <input type="password" name="re_password" class="form-control" placeholder="비밀번호 확인" value="${re_password }"> </div>
                 <div class="form-group"> <label>이메일</label>
                   <input type="email" name="email" class="form-control" placeholder="이메일" value="${email}"> </div>
               <c:if test="${anser != 10 and anser != 11}">
@@ -91,7 +94,7 @@
               전화번호를 입력하세요!
               </c:if>
               <c:if test="${anser == 4 }">
-              아이디를 입력하세요!
+              아이디 입력하지 않았거나 중복확인을 하지않았습니다!!
               </c:if>
               <c:if test="${anser == 5 }">
               비밀번호를 입력하세요!
@@ -107,6 +110,9 @@
               </c:if>
               <c:if test="${anser == 9 }">
               비밀번호와 비밀번호확인란이 같지않습니다!.
+              </c:if>
+              <c:if test="${anser == 10}">
+              이메일로 코드 전송했습니다. 확인후 입력해주세요!
               </c:if>
               <c:if test="${anser == 11 }">
               코드입력이 잘못되었습니다!

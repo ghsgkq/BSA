@@ -21,13 +21,20 @@ public class registerProAction implements CommandAction {
 		String password = req.getParameter("password");
 		String email = req.getParameter("email");
 		String re_password = req.getParameter("re_password");
+		int idcheck = Integer.parseInt(req.getParameter("idcheck"));
 		Random ran = new Random();
-		// 1: 아이디 입력 x  
-		// 2: 비밀번호 입력 x
-		// 3: 비밀번호확인 입력 x
-		// 4: 이메일 입력 x
-		// 5: 이메일확인란 체크 x
-		// 6: 비밀번호 비밀번호확인 맞지 않음
+		// 1: 이름 입력 x  
+		// 2: 성 이름 x
+		// 3: 전화번호 입력 x
+		// 4: 아이디 입력 x
+		// 5: 비밀번호 입력 x
+		// 6: 비밀번호 확인 입력 x
+		// 7: 이메일 입력 x
+		// 8: 이메일확인 체크란 입력 x
+		// 9: 비밀번호와 비밀번호 확인란이 같지않음 x
+		// 10: 이메일코드 보냄
+		// 11: 이메일 코드가 같지가 않음
+		// 12: 이메일 코드까지 완성
 		if(req.getParameter("first_name").equals("") || req.getParameter("last_name").equals("") || req.getParameter("phone").equals("") || req.getParameter("id").equals("") || req.getParameter("password").equals("") || req.getParameter("re_password").equals("") || req.getParameter("email").equals("") || req.getParameter("what").equals("") || !(req.getParameter("password").equals(req.getParameter("re_password")))) {
 			if(req.getParameter("first_name").equals("")) {
 				req.setAttribute("anser", 1);
@@ -57,9 +64,7 @@ public class registerProAction implements CommandAction {
 			else if(req.getParameter("what").equals("")) {
 				req.setAttribute("anser", 8);
 			}
-			else if(!(req.getParameter("password").equals(req.getParameter("re_password")))) {
-				req.setAttribute("anser", 9);
-			}
+			
 			
 			if(first_name==null) {
 				first_name="";
@@ -87,8 +92,22 @@ public class registerProAction implements CommandAction {
 			req.setAttribute("id", id);
 			req.setAttribute("password", password);
 			req.setAttribute("email", email);
+			req.setAttribute("idcheck", idcheck);
 			return "/JSP/register.jsp";
 		}
+		
+		if(!(req.getParameter("password").equals(req.getParameter("re_password")))) {
+			req.setAttribute("anser", 9);
+			req.setAttribute("first_name", first_name);
+			req.setAttribute("last_name", last_name);
+			req.setAttribute("phone", phone);
+			req.setAttribute("id", id);
+			req.setAttribute("password", password);
+			req.setAttribute("email", email);
+			req.setAttribute("idcheck", idcheck);
+			return "/JSP/register.jsp";
+		}
+		
 		if(req.getParameter("anser_code") != null) {
 			if(req.getParameter("anser_code").equals(req.getParameter("code"))) {
 				memberDao mdao = memberDao.getInstance();
@@ -112,18 +131,20 @@ public class registerProAction implements CommandAction {
 				req.setAttribute("re_password", re_password);
 				req.setAttribute("email", email);
 				req.setAttribute("code", req.getParameter("code"));
+				req.setAttribute("idcheck", idcheck);
 				req.setAttribute("anser", 11);
 				return "/JSP/register.jsp";
 				
 			}
 		}
+		
 			String code = "";
 			for(int i=0; i<7; i++) {
 				code+=ran.nextInt(9);
 			}
 			
 			req.setAttribute("code", code);
-			
+			req.setAttribute("idcheck", idcheck);
 			return "/emailsend.do";
 		
 		
