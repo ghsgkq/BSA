@@ -48,27 +48,9 @@
           <div class="card text-white p-5 bg-dark">
             <div class="card-body">
               <h1 class="mb-4">회원가입</h1>
-<<<<<<< HEAD
-              <c:if test="${idcheck != 1 }">
-               <form action="${pageContext.request.contextPath}/idcheck.do" method="post">
-               <div class="form-group"> <label>아이디</label>
-=======
-              
-              <form action="${pageContext.request.contextPath}/registerPro.do" method="post">
-               <div class="form-group"> <label>이름</label>
-                 <input type="text" name="first_name" class="form-control" placeholder="이름" value="${first_name }"> </div>
-                 <div class="form-group"> <label>성</label>
-                 <input type="text" name="last_name" class="form-control" placeholder="성" value="${last_name }"> </div>
-                 <div class="form-group"> <label>전화번호</label>
-                 <input type="text" name="phone" class="form-control" placeholder="- 포함 작성" value="${phone }"> </div>
+       			<c:if test="${idcheck != 1 }">		
+                <form action="${pageContext.request.contextPath}/idcheck.do" method="post">
                 <div class="form-group"> <label>아이디</label>
-                <c:choose>
-                <c:when test="${idcheck == 1 }">
-                <input type="text" name="id" class="form-control" placeholder="아이디" value="${id}"></div>
-                </c:when>
-                <c:otherwise>
-                <form action="${pageContext.request.contextPath}/idcheck.do" post>
->>>>>>> 8f2817e406f28e29d8b6dfe13ac485dd9c98ff15
                 <input type="text" name="id" class="form-control" placeholder="아이디" value="${id}">
                   <br>
                   <input type="submit" class="btn btn-secondary" value="중복확인" > </div>
