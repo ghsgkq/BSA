@@ -101,7 +101,20 @@ public class registerProAction implements CommandAction {
 				mdto.setPassword(req.getParameter("password"));
 				mdto.setEmail(req.getParameter("email"));
 				mdao.memberRegister(mdto);
+				req.setAttribute("anser", 12);
 				return "/JSP/login.jsp";
+			}else {
+				req.setAttribute("first_name", first_name);
+				req.setAttribute("last_name", last_name);
+				req.setAttribute("phone", phone);
+				req.setAttribute("id", id);
+				req.setAttribute("password", password);
+				req.setAttribute("re_password", re_password);
+				req.setAttribute("email", email);
+				req.setAttribute("code", req.getParameter("code"));
+				req.setAttribute("anser", 11);
+				return "/JSP/register.jsp";
+				
 			}
 		}
 			String code = "";

@@ -19,6 +19,11 @@
   	$("#bt").load("JSP/bottom.jsp");
   });
   </script>
+  <c:if test="${anser == 12 }">
+  <script type="text/javascript">
+  alert("회원가입이 완료됬습니다!")
+  </script>
+  </c:if>
 </head>
 <body style="background-color: #EAEAEA;">
   <div id="contents" style="margin-top: 200px; "></div>

@@ -119,7 +119,7 @@ public class emailSendAction implements CommandAction {
 			    buffer.append("<td style='overflow-wrap: break-word;padding:5px 30px;' align='left'>");
 			    buffer.append("<div style='color: #000; line-height: 140%; text-align: left; font-family: inherit;'>");
 			    buffer.append("<ul style='list-style-type: circle;'>");
-			    buffer.append("<li style='font-size: 14px; line-height: 140%;'><span style='color: #292929;'><span style='font-size: 16px; line-height: 22.4px;'>code :"+code+"</span></span></li>");
+			    buffer.append("<li style='font-size: 14px; line-height: 140%;'><span style='color: #292929;'><span style='font-size: 16px; line-height: 22.4px;'>code : "+code+"</span></span></li>");
 			    buffer.append("</ul></div></td></tr></tbody></table>");
 			    buffer.append("<table role='presentation' cellpadding='0' cellspacing='0' width='100%' border='0'>");
 			    buffer.append("<tbody><tr>");
