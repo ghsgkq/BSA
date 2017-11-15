@@ -39,6 +39,7 @@
           <div class="card text-white p-5 bg-dark">
             <div class="card-body">
               <h1 class="mb-4">회원가입</h1>
+              
               <form action="${pageContext.request.contextPath}/registerPro.do" method="post">
                <div class="form-group"> <label>이름</label>
                  <input type="text" name="first_name" class="form-control" placeholder="이름" value="${first_name }"> </div>
