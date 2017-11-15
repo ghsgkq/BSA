@@ -17,7 +17,7 @@ public class BookingDao {
 		return instance;
 	}
 	
-	public void BookingRegsiter(BookingDto dto) {
+	public void Bookinginsert(BookingDto article) {
 			Connection conn = null;
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
@@ -27,22 +27,22 @@ public class BookingDao {
 						+ "START_AIRLINE_NO, START_FLIGHT_TIME, ARRIVAL_AIRLINE_NAME, ARRIVAL_AIRLINE_NO, ARRIVAL_AIRLINE_TIME, "
 						+ "START_DATE, ARRIVAL_DATE, ADULTS, YOUNG, CHILD, INFATNS) "
 						+ "value(BOOKING_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-				pstmt.setString(1, dto.getFrom());
-				pstmt.setString(2, dto.getTo());
-				pstmt.setString(3, dto.getPickup());
-				pstmt.setString(4, dto.getDropft());
-				pstmt.setString(5, dto.getStart_airline_name());
-				pstmt.setString(6, dto.getStart_airline_no());
-				pstmt.setString(7, dto.getStart_flight_time());
-				pstmt.setString(8, dto.getArrival_airline_name());
-				pstmt.setString(9,dto.getArrival_airline_no());
-				pstmt.setString(10,dto.getArrival_airline_time());
-				pstmt.setString(11,dto.getStart_date());
-				pstmt.setString(12, dto.getArrival_date());
-				pstmt.setInt(13, dto.getAdults());
-				pstmt.setInt(14, dto.getYoung());
-				pstmt.setInt(15, dto.getChild());
-				pstmt.setInt(16, dto.getInfatns());
+				pstmt.setString(1, article.getFrom());
+				pstmt.setString(2, article.getTo());
+				pstmt.setString(3, article.getPickup());
+				pstmt.setString(4, article.getDropft());
+				pstmt.setString(5, article.getStart_airline_name());
+				pstmt.setString(6, article.getStart_airline_no());
+				pstmt.setString(7, article.getStart_flight_time());
+				pstmt.setString(8, article.getArrival_airline_name());
+				pstmt.setString(9,article.getArrival_airline_no());
+				pstmt.setString(10,article.getArrival_airline_time());
+				pstmt.setString(11,article.getStart_date());
+				pstmt.setString(12, article.getArrival_date());
+				pstmt.setInt(13, article.getAdults());
+				pstmt.setInt(14, article.getYoung());
+				pstmt.setInt(15, article.getChild());
+				pstmt.setInt(16, article.getInfatns());
 				pstmt.executeUpdate();
 			}catch(SQLException e) {
 				e.printStackTrace();
@@ -56,5 +56,6 @@ public class BookingDao {
 				}
 			}
 		}
+	
 	}
 
