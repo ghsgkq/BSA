@@ -27,7 +27,7 @@
  <div class="py-5">
     <div class="container">
       <div class="row">
-      <div class="col-md-2">
+      
          <div id="left"></div>
        <div class="col-md-9">
           <h1 class="display-2 m-4">개인정보수정</h1>
@@ -51,7 +51,7 @@
         </div>
       </div>
     </div>
-  </div>
+  
   </div>
   <div id="bt" style="margin-top: 150px;"></div>
 </body>

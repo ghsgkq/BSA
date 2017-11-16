@@ -9,7 +9,7 @@
 </head>
 <body>
 
-        
+        <div class="col-md-2">
           <ul class="nav nav-pills flex-column">
             <li class="nav-item">
               <a href="#" class="active nav-link"><i class="fa fa-home fa-home"></i>&nbsp;회원정보관리</a>
