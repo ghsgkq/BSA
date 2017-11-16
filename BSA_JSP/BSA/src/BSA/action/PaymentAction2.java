@@ -9,7 +9,7 @@ import BSA.model.CreditCardDto;
 public class PaymentAction2 implements CommandAction{
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 		request.setCharacterEncoding("UTF-8");
-	
+
 		String name_on_card = request.getParameter("name_on_card");
 		String card_number = request.getParameter("card_number");
 		String expiry_year = request.getParameter("expiry_year");
