@@ -20,7 +20,7 @@ public class PaymentAction implements CommandAction{
 			NonMemberDao dbPro = NonMemberDao.getInstance();
 			dbPro.NonMemberinsert(article);
 			
-			return "/JSP/payment_pro.jsp";
+			return "/JSP/payment.jsp";
 			
 		}
 }
