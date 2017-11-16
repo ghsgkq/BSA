@@ -9,21 +9,20 @@ import BSA.model.CreditCardDto;
 public class PaymentAction2 implements CommandAction{
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 		request.setCharacterEncoding("UTF-8");
+
+		String name_on_card = request.getParameter("name_on_card");
+		String card_number = request.getParameter("card_number");
+		String expiry_year = request.getParameter("expiry_year");
+		String expiry_month = request.getParameter("expiry_month");
+		String csv_number = request.getParameter("csv_number");
 		
-		CreditCardDto article2 = new CreditCardDto();
+		request.setAttribute("name_on_card", name_on_card);
+		request.setAttribute("card_number", card_number);
+		request.setAttribute("expiry_year", expiry_year);
+		request.setAttribute("expiry_month", expiry_month);
+		request.setAttribute("csv_number", csv_number);
 		
-		article2.setName_on_card(request.getParameter("name_on_card"));
-		article2.setCard_number(request.getParameter("card_number"));
-		article2.setExpiry_year(request.getParameter("expiry_year"));
-		article2.setExpiry_month(request.getParameter("expiry_month"));
-		article2.setCsv_number(request.getParameter("csv_number"));
-		
-		
-		CreditCardDao dbpro2 = CreditCardDao.getInstacne();
-		dbpro2.Creditinsert(article2);
-		
-		
-		return "/JSP/payment.jsp";
-		
+		return "JSP/payment.jsp";
 	}
+	
 }
