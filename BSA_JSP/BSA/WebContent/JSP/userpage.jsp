@@ -25,7 +25,7 @@
 <body class="px-2">
 <div id="contents"></div>
  <div class="py-5">
-    <div class="container">
+    <div class="container" style="margin: auto;">
       <div class="row">
        <div id="left" class="col-md-2"></div>
        <div class="col-md-9">
