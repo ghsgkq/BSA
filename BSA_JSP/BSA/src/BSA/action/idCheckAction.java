@@ -29,10 +29,10 @@ public class idCheckAction implements CommandAction {
 				for(int i=0; i<id.length(); i++) {
 					chin = id.charAt(i);
 					if(chin >= 0x61 && chin<= 0x7A) {
-						//¿µ¹®(¼Ò¹®ÀÚ) 
+						//ì˜ë¬¸(ì†Œë¬¸ìž) 
 					}
 					else if(chin >= 0x30 && chin <= 0x39) {
-						//¼ýÀÚ 
+						//ìˆ«ìž 
 					}
 					else {
 						req.setAttribute("first_name", req.getParameter("first_name"));
