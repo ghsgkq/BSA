@@ -28,10 +28,10 @@ public class BookingProAction implements CommandAction{
 		article.setArrival_airline_time(req.getParameter("arrival_airline_time"));
 		article.setStart_date(req.getParameter("start_date"));
 		article.setArrival_date(req.getParameter("arrival_date"));
-		article.setAdults(Integer.parseInt(req.getParameter("adults")));
-		article.setYoung(Integer.parseInt(req.getParameter("young")));
-		article.setChild(Integer.parseInt(req.getParameter("child")));
-		article.setInfatns(Integer.parseInt(req.getParameter("infatns")));
+		article.setAdults(req.getParameter("adults"));
+		article.setYoung(req.getParameter("young"));
+		article.setChild(req.getParameter("child"));
+		article.setInfatns(req.getParameter("infatns"));
 
 		BookingDao dbPro = BookingDao.getInstance(); 
 		dbPro.Bookinginsert(article);

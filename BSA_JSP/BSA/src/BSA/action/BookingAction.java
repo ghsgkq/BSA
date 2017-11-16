@@ -20,10 +20,10 @@ public class BookingAction implements CommandAction{
 		String arrival_airline_time=req.getParameter("arrival_airline_time");
 		String start_date=req.getParameter("start_date");
 		String arrival_date=req.getParameter("arrival_date");
-		int adults=Integer.parseInt(req.getParameter("adults"));
-		int young=Integer.parseInt(req.getParameter("young"));
-		int child=Integer.parseInt(req.getParameter("child"));
-		int infatns=Integer.parseInt(req.getParameter("infatns"));
+		String adults=req.getParameter("adults");
+		String young=req.getParameter("young");
+		String child=req.getParameter("child");
+		String infatns=req.getParameter("infatns");
 		
 		
 		

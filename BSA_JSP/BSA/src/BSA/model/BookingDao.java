@@ -39,10 +39,10 @@ public class BookingDao {
 				pstmt.setString(10,article.getArrival_airline_time());
 				pstmt.setString(11,article.getStart_date());
 				pstmt.setString(12, article.getArrival_date());
-				pstmt.setInt(13, article.getAdults());
-				pstmt.setInt(14, article.getYoung());
-				pstmt.setInt(15, article.getChild());
-				pstmt.setInt(16, article.getInfatns());
+				pstmt.setString(13, article.getAdults());
+				pstmt.setString(14, article.getYoung());
+				pstmt.setString(15, article.getChild());
+				pstmt.setString(16, article.getInfatns());
 				pstmt.executeUpdate();
 			}catch(SQLException e) {
 				e.printStackTrace();

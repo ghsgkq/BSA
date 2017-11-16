@@ -23,18 +23,18 @@ public class registerProAction implements CommandAction {
 		String re_password = req.getParameter("re_password");
 		int idcheck = Integer.parseInt(req.getParameter("idcheck"));
 		Random ran = new Random();
-		// 1: ÀÌ¸§ ÀÔ·Â x  
-		// 2: ¼º ÀÌ¸§ x
-		// 3: ÀüÈ­¹øÈ£ ÀÔ·Â x
-		// 4: ¾ÆÀÌµð ÀÔ·Â x
-		// 5: ºñ¹Ð¹øÈ£ ÀÔ·Â x
-		// 6: ºñ¹Ð¹øÈ£ È®ÀÎ ÀÔ·Â x
-		// 7: ÀÌ¸ÞÀÏ ÀÔ·Â x
-		// 8: ÀÌ¸ÞÀÏÈ®ÀÎ Ã¼Å©¶õ ÀÔ·Â x
-		// 9: ºñ¹Ð¹øÈ£¿Í ºñ¹Ð¹øÈ£ È®ÀÎ¶õÀÌ °°Áö¾ÊÀ½ x
-		// 10: ÀÌ¸ÞÀÏÄÚµå º¸³¿
-		// 11: ÀÌ¸ÞÀÏ ÄÚµå°¡ °°Áö°¡ ¾ÊÀ½
-		// 12: ÀÌ¸ÞÀÏ ÄÚµå±îÁö ¿Ï¼º
+		// 1: ï¿½Ì¸ï¿½ ï¿½Ô·ï¿½ x  
+		// 2: ï¿½ï¿½ ï¿½Ì¸ï¿½ x
+		// 3: ï¿½ï¿½È­ï¿½ï¿½È£ ï¿½Ô·ï¿½ x
+		// 4: ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ô·ï¿½ x
+		// 5: ï¿½ï¿½Ð¹ï¿½È£ ï¿½Ô·ï¿½ x
+		// 6: ï¿½ï¿½Ð¹ï¿½È£ È®ï¿½ï¿½ ï¿½Ô·ï¿½ x
+		// 7: ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ x
+		// 8: ï¿½Ì¸ï¿½ï¿½ï¿½È®ï¿½ï¿½ Ã¼Å©ï¿½ï¿½ ï¿½Ô·ï¿½ x
+		// 9: ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ ï¿½ï¿½Ð¹ï¿½È£ È®ï¿½Î¶ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ x
+		// 10: ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½
+		// 11: ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Úµå°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		// 12: ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½ ï¿½Ï¼ï¿½
 		if(req.getParameter("first_name").equals("") || req.getParameter("last_name").equals("") || req.getParameter("phone").equals("") || req.getParameter("id").equals("") || req.getParameter("password").equals("") || req.getParameter("re_password").equals("") || req.getParameter("email").equals("") || req.getParameter("what").equals("") || !(req.getParameter("password").equals(req.getParameter("re_password")))) {
 			if(req.getParameter("first_name").equals("")) {
 				req.setAttribute("anser", 1);

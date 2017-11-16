@@ -47,4 +47,9 @@ function BookingSave(){
 		document.writeForm.adults.focus();
 		return false;
 	}
+	if(document.writeForm.round_trip.value == ""){
+		alert("왕복 또는 편도를 선택해주세요.");
+		document.writeForm.round_trip.focus();
+		return false;
+	}
 }

@@ -13,10 +13,10 @@ public class BookingDto {
 	private String arrival_airline_time;
 	private String start_date;
 	private String arrival_date;
-	private int adults;
-	private int young;
-	private int child;
-	private int infatns;
+	private String adults;
+	private String young;
+	private String child;
+	private String infatns;
 	public String getFrom() {
 		return from;
 	}
@@ -89,28 +89,28 @@ public class BookingDto {
 	public void setArrival_date(String arrival_date) {
 		this.arrival_date = arrival_date;
 	}
-	public int getAdults() {
+	public String getAdults() {
 		return adults;
 	}
-	public void setAdults(int adults) {
+	public void setAdults(String adults) {
 		this.adults = adults;
 	}
-	public int getYoung() {
+	public String getYoung() {
 		return young;
 	}
-	public void setYoung(int young) {
+	public void setYoung(String young) {
 		this.young = young;
 	}
-	public int getChild() {
+	public String getChild() {
 		return child;
 	}
-	public void setChild(int child) {
+	public void setChild(String child) {
 		this.child = child;
 	}
-	public int getInfatns() {
+	public String getInfatns() {
 		return infatns;
 	}
-	public void setInfatns(int infatns) {
+	public void setInfatns(String infatns) {
 		this.infatns = infatns;
 	}
 	

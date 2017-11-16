@@ -56,13 +56,13 @@
           <div class="card">
             <div class="card-header py-4">
               <h5 class=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-              
-                <input type="radio" id="round" name="type" value="0" class="triptype" onclick="div_OnOff(this.value,'con');"> Round Trip( 왕복) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+              <form method="post" name="writeForm" action="${pageContext.request.contextPath}/Booking.do" onsubmit="return BookingSave()">
+                <input type="radio" id="round" name="round_trip" value="0" class="triptype" onclick="div_OnOff(this.value,'con');"> Round Trip( 왕복) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
                 <input
-                  type="radio" id="oneway" name="type" value="1" class="triptype" onclick="div_OnOff(this.value,'con');">&nbsp;One Way (편도) </h5>
+                  type="radio" id="oneway" name="one_way" value="1" class="triptype" onclick="div_OnOff(this.value,'con');">&nbsp;One Way (편도) </h5>
             </div>
             
-             <form method="post" name="writeForm" action="${pageContext.request.contextPath}/Booking.do" onsubmit="return BookingSave()">
+             
             <div class="card-body">
               <h4 class="my-5">Select your destination &nbsp;(목적지를 선택해주세요.)</h4>
               <h6 class="text-muted">From (출발)</h6>
