@@ -105,4 +105,36 @@ public class memberDao {
 		}
 		return anser;
 	}
+	public memberDto getmember(String id) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		memberDto mdto = new memberDto();
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement("select * from BSA_member where id=?");
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				mdto.setFirst_name(rs.getString("first_name"));
+				mdto.setLast_name(rs.getString("last_name"));
+				mdto.setPhone(rs.getString("phone"));
+				mdto.setId(rs.getString("id"));
+				mdto.setPassword(rs.getString("password"));
+				mdto.setEmail(rs.getString("email"));
+			}
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null) pstmt.close();
+				if(rs != null) rs.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return mdto;
+	}
 }
