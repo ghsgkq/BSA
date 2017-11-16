@@ -25,12 +25,12 @@
     <div class="container-fluid text-capitalize text-left h-100">
       <div class="row h-100 text-center text-capitalize py-5">
         <div class="text-white text-left col-xl-11 align-self-start col-md-6">
-          <h1 class="display-3 mb-4"><i class="d-block fa fa-angle-double-right"><span style="color: inherit; font-family: -apple-system, system-ui, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 4.5rem;">&nbsp; Your Exprerience</span></i></h1>
+          <h1 class="display-3 mb-4"><i class="d-block fa fa-angle-double-right"><span style="color: inherit; font-family: -apple-system, system-ui, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 4.5rem;">&nbsp; Your Experience</span></i></h1>
         </div>
         <div class="col-md-6 col-xl-8">
           <h4>
             <p class="text-light h-75 text-left">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-              <a href="#" class="btn btn-lg active btn-outline-secondary text-light">Book Now</a>&nbsp; You can exprerience our company.</p>
+              <a href="#" class="btn btn-lg active btn-outline-secondary text-light">Book Now</a>&nbsp; You can experience our company.</p>
           </h4>
         </div>
       </div>
@@ -40,7 +40,7 @@
     <div class="container">
       <div class="row text-center">
         <div class="col-md-12">
-          <h1 class="mb-4 text-primary">Your Experience</h1>
+          <h1 class="mb-4 text-primary">YourExperience</h1>
           <p class="lead">부산 Airporter 를 통한 여정을 즐기실수 있습니다. 저희는 고객들의 여행 일정과 안전한 이동을 기억하도록 할것입니다
             <br> </p>
           <div>전체적인 여행 시간을 관리 할 수 있습니다. 저희는 편한한 좌석을 권유드립니다. 고객님의 일정동안 많은 관광명소를 보실수 있습니다. 고객님의 여행은 저희 부산 Airporter 와 함께 하십니다.</div>

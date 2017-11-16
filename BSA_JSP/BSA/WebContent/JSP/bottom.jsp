@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
- <link rel="stylesheet" href="style/style_index.css" type="text/css">
-<title>buttom</title>
+ <link rel="stylesheet" href="/style/style_index.css" type="text/css">
+<title>bottom</title>
 </head>
 <body>
 <div class="bg-dark text-white">
@@ -22,7 +22,7 @@
             <ul class="list-unstyled">
               <a href="#" class="text-white">Home</a>
               <br>
-              <a href="#" class="text-white">Your Exprerience</a>
+              <a href="#" class="text-white">Your Exprerince</a>
               <br>
               <a href="#" class="text-white">Schedule & Rates</a>
               <br>
