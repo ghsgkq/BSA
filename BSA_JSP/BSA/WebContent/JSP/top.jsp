@@ -54,7 +54,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="href="${pageContext.request.contextPath}/FAQs.do"></a>
               <h2><b class="p-5 text-white">FAQS</b></h2>
             </a>
           </li>
