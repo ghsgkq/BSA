@@ -17,6 +17,7 @@ public class BookingDto {
 	private String young;
 	private String child;
 	private String infatns;
+	private String trip;
 	public String getFrom() {
 		return from;
 	}
@@ -112,6 +113,12 @@ public class BookingDto {
 	}
 	public void setInfatns(String infatns) {
 		this.infatns = infatns;
+	}
+	public String getTrip() {
+		return trip;
+	}
+	public void setTrip(String trip) {
+		this.trip = trip;
 	}
 	
 	

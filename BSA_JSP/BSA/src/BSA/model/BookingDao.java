@@ -21,12 +21,14 @@ public class BookingDao {
 			Connection conn = null;
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
+			String sql="";
 			try {
 				conn = ConnUtil.getConnection();
-				pstmt = conn.prepareStatement("insert into BOOKING (FROM, TO, PICKUP, DROPFT, START_AIRLINE_NAME, "
+				sql = "insert into BOOKING (FROM, TO, PICKUP, DROPFT, START_AIRLINE_NAME, "
 						+ "START_AIRLINE_NO, START_FLIGHT_TIME, ARRIVAL_AIRLINE_NAME, ARRIVAL_AIRLINE_NO, ARRIVAL_AIRLINE_TIME, "
-						+ "START_DATE, ARRIVAL_DATE, ADULTS, YOUNG, CHILD, INFATNS) "
-						+ "value(BOOKING_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+						+ "START_DATE, ARRIVAL_DATE, ADULTS, YOUNG, CHILD, INFATNS, TRIP) "
+						+ "value(BOOKING_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+				pstmt=conn.prepareStatement(sql);
 				pstmt.setString(1, article.getFrom());
 				pstmt.setString(2, article.getTo());
 				pstmt.setString(3, article.getPickup());
@@ -43,7 +45,8 @@ public class BookingDao {
 				pstmt.setString(14, article.getYoung());
 				pstmt.setString(15, article.getChild());
 				pstmt.setString(16, article.getInfatns());
-				pstmt.executeUpdate();
+				pstmt.setString(17, article.getTrip());
+				pstmt.executeQuery();
 			}catch(SQLException e) {
 				e.printStackTrace();
 			}finally {

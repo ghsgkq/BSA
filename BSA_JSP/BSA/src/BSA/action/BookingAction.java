@@ -24,7 +24,7 @@ public class BookingAction implements CommandAction{
 		String young=req.getParameter("young");
 		String child=req.getParameter("child");
 		String infatns=req.getParameter("infatns");
-		
+		String trip=req.getParameter("trip");
 		
 		
 		req.setAttribute("from", from);
@@ -43,6 +43,7 @@ public class BookingAction implements CommandAction{
 		req.setAttribute("young", young);
 		req.setAttribute("child", child);
 		req.setAttribute("infatns", infatns);
+		req.setAttribute("trip", trip);
 		
 		
 		
