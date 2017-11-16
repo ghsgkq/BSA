@@ -7,8 +7,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import BSA.model.memberDao;
 import BSA.model.memberDto;
-import oracle.net.aso.f;
-import oracle.net.aso.p;
 
 public class registerProAction implements CommandAction {
 	@Override
@@ -21,80 +19,97 @@ public class registerProAction implements CommandAction {
 		String password = req.getParameter("password");
 		String email = req.getParameter("email");
 		String re_password = req.getParameter("re_password");
-		int idcheck = Integer.parseInt(req.getParameter("idcheck"));
 		Random ran = new Random();
-		// 1: ï¿½Ì¸ï¿½ ï¿½Ô·ï¿½ x  
-		// 2: ï¿½ï¿½ ï¿½Ì¸ï¿½ x
-		// 3: ï¿½ï¿½È­ï¿½ï¿½È£ ï¿½Ô·ï¿½ x
-		// 4: ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ô·ï¿½ x
-		// 5: ï¿½ï¿½Ð¹ï¿½È£ ï¿½Ô·ï¿½ x
-		// 6: ï¿½ï¿½Ð¹ï¿½È£ È®ï¿½ï¿½ ï¿½Ô·ï¿½ x
-		// 7: ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ x
-		// 8: ï¿½Ì¸ï¿½ï¿½ï¿½È®ï¿½ï¿½ Ã¼Å©ï¿½ï¿½ ï¿½Ô·ï¿½ x
-		// 9: ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ ï¿½ï¿½Ð¹ï¿½È£ È®ï¿½Î¶ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ x
-		// 10: ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½
-		// 11: ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Úµå°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-		// 12: ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½ ï¿½Ï¼ï¿½
-		if(req.getParameter("first_name").equals("") || req.getParameter("last_name").equals("") || req.getParameter("phone").equals("") || req.getParameter("id").equals("") || req.getParameter("password").equals("") || req.getParameter("re_password").equals("") || req.getParameter("email").equals("") || req.getParameter("what").equals("") || !(req.getParameter("password").equals(req.getParameter("re_password")))) {
-			if(req.getParameter("first_name").equals("")) {
-				req.setAttribute("anser", 1);
+		int idcheck=0;;
+		// 1: ÀÌ¸§ ÀÔ·Â x  
+		// 2: ¼º ÀÌ¸§ x
+		// 3: ÀüÈ­¹øÈ£ ÀÔ·Â x
+		// 4: ¾ÆÀÌµð ÀÔ·Â x
+		// 5: ºñ¹Ð¹øÈ£ ÀÔ·Â x
+		// 6: ºñ¹Ð¹øÈ£ È®ÀÎ ÀÔ·Â x
+		// 7: ÀÌ¸ÞÀÏ ÀÔ·Â x
+		// 8: ÀÌ¸ÞÀÏÈ®ÀÎ Ã¼Å©¶õ ÀÔ·Â x
+		// 9: ºñ¹Ð¹øÈ£¿Í ºñ¹Ð¹øÈ£ È®ÀÎ¶õÀÌ °°Áö¾ÊÀ½ x
+		// 10: ÀÌ¸ÞÀÏÄÚµå º¸³¿
+		// 11: ÀÌ¸ÞÀÏ ÄÚµå°¡ °°Áö°¡ ¾ÊÀ½
+		// 12: ÀÌ¸ÞÀÏ ÄÚµå±îÁö ¿Ï¼º
+		if(!(req.getParameter("idcheck").equals(""))) {
+			idcheck = Integer.parseInt(req.getParameter("idcheck"));
+		}
+		if(idcheck != 0) {
+			if(req.getParameter("first_name").equals("") || req.getParameter("last_name").equals("") || req.getParameter("phone").equals("") || req.getParameter("id").equals("") || req.getParameter("password").equals("") || req.getParameter("re_password").equals("") || req.getParameter("email").equals("") || req.getParameter("what").equals("") || !(req.getParameter("password").equals(req.getParameter("re_password")))) {
+				if(req.getParameter("first_name").equals("")) {
+					req.setAttribute("anser", 1);
+				}
+				if(req.getParameter("last_name").equals("")) {
+					req.setAttribute("anser", 2);
+				}
+				if(req.getParameter("phone").equals("")) {
+					req.setAttribute("anser", 3);
+				}
+				if(req.getParameter("id").equals("")) {
+					req.setAttribute("anser", 4);
+				}
+				
+				else if(req.getParameter("password").equals("")) {
+					req.setAttribute("anser", 5);
+				}
+				
+				else if(req.getParameter("re_password").equals("")) {
+					req.setAttribute("anser", 6);
+				}
+				
+				else if(req.getParameter("email").equals("")) {
+					req.setAttribute("anser", 7);
+				}
+				
+				else if(req.getParameter("what").equals("")) {
+					req.setAttribute("anser", 8);
+				}
+				
+				
+				if(first_name==null) {
+					first_name="";
+				}
+				
+				if(last_name==null) {
+					last_name="";
+				}
+				if(phone==null) {
+					phone="";
+				}
+				
+				if(id==null) {
+					id="";
+				}
+				if(password==null) {
+					password="";
+				}
+				if(email==null) {
+					email="";
+				}
+				req.setAttribute("first_name", first_name);
+				req.setAttribute("last_name", last_name);
+				req.setAttribute("phone", phone);
+				req.setAttribute("id", id);
+				req.setAttribute("password", password);
+				req.setAttribute("email", email);
+				req.setAttribute("idcheck", idcheck);
+				return "/JSP/register.jsp";
 			}
-			if(req.getParameter("last_name").equals("")) {
-				req.setAttribute("anser", 2);
-			}
-			if(req.getParameter("phone").equals("")) {
-				req.setAttribute("anser", 3);
-			}
-			if(req.getParameter("id").equals("")) {
-				req.setAttribute("anser", 4);
-			}
+		}else {
 			
-			else if(req.getParameter("password").equals("")) {
-				req.setAttribute("anser", 5);
-			}
-			
-			else if(req.getParameter("re_password").equals("")) {
-				req.setAttribute("anser", 6);
-			}
-			
-			else if(req.getParameter("email").equals("")) {
-				req.setAttribute("anser", 7);
-			}
-			
-			else if(req.getParameter("what").equals("")) {
-				req.setAttribute("anser", 8);
-			}
-			
-			
-			if(first_name==null) {
-				first_name="";
-			}
-			
-			if(last_name==null) {
-				last_name="";
-			}
-			if(phone==null) {
-				phone="";
-			}
-			
-			if(id==null) {
-				id="";
-			}
-			if(password==null) {
-				password="";
-			}
-			if(email==null) {
-				email="";
-			}
 			req.setAttribute("first_name", first_name);
 			req.setAttribute("last_name", last_name);
 			req.setAttribute("phone", phone);
 			req.setAttribute("id", id);
 			req.setAttribute("password", password);
+			req.setAttribute("re_password", re_password);
 			req.setAttribute("email", email);
-			req.setAttribute("idcheck", idcheck);
+			req.setAttribute("idcheck", 3);
 			return "/JSP/register.jsp";
 		}
+		
 		
 		if(!(req.getParameter("password").equals(req.getParameter("re_password")))) {
 			req.setAttribute("anser", 9);
@@ -142,7 +157,34 @@ public class registerProAction implements CommandAction {
 			for(int i=0; i<7; i++) {
 				code+=ran.nextInt(9);
 			}
-			
+		if(password.length() >=10 && password.length() <=25) {
+			char pasin;
+			for(int i=0; i<password.length(); i++) {
+				pasin = password.charAt(i);
+				if(pasin == 0x20) {
+					req.setAttribute("first_name", first_name);
+					req.setAttribute("last_name", last_name);
+					req.setAttribute("phone", phone);
+					req.setAttribute("id", id);
+					req.setAttribute("email", email);
+					req.setAttribute("code", req.getParameter("code"));
+					req.setAttribute("idcheck", idcheck);
+					req.setAttribute("passcheck", 1);
+					return "/JSP/register.jsp";
+				}
+			}
+		}else {
+			req.setAttribute("first_name", first_name);
+			req.setAttribute("last_name", last_name);
+			req.setAttribute("phone", phone);
+			req.setAttribute("id", id);
+			req.setAttribute("email", email);
+			req.setAttribute("code", req.getParameter("code"));
+			req.setAttribute("idcheck", idcheck);
+			req.setAttribute("passcheck", 1);
+			return "/JSP/register.jsp";
+		}
+		
 			req.setAttribute("code", code);
 			req.setAttribute("idcheck", idcheck);
 			return "/emailsend.do";

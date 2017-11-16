@@ -31,6 +31,23 @@
   alert("사용가능한 아이디입니다!");
   </script>
   </c:if>
+  <c:if test="${idcheck == 2 }">
+  <script type="text/javascript">
+  alert("5~15 영문 소문자,숫자로만 구성할수있습니다!");
+  </script>
+  </c:if>
+  <c:if test="${idcheck == 3 }">
+  <script type="text/javascript">
+  alert("아이디 체크를 하셔야합니다!");
+  </script>
+  </c:if>
+  <c:if test="${passcheck == 1 }">
+  <script type="text/javascript">
+  alert("10~25 공백을 제외한 모든 문자로 구성할 수 있습니다!")
+  </script>
+  </c:if>
+
+  
   
 </head>
 
@@ -82,6 +99,7 @@
               </div>
               </c:if>
                 <button type="submit" class="btn btn-secondary">회원가입</button>
+                &nbsp;&nbsp;<input type="reset" class="btn btn-secondary" value="다시입력">
               </form>
               <br><br>
               <c:if test="${anser == 1 }">
