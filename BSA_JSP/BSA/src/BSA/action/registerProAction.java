@@ -7,8 +7,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import BSA.model.memberDao;
 import BSA.model.memberDto;
-import oracle.net.aso.f;
-import oracle.net.aso.p;
 
 public class registerProAction implements CommandAction {
 	@Override
