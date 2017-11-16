@@ -30,7 +30,7 @@ public class emailSendAction implements CommandAction {
 		String code = (String)req.getAttribute("code");
 		int idcheck = (Integer)req.getAttribute("idcheck");
 		
-		Properties p = new Properties(); // Á¤º¸¸¦ ´ãÀ» °´Ã¼
+		Properties p = new Properties(); // ì •ë³´ë¥¼ ë‹´ì„ ê°ì²´
 		  
 		p.put("mail.smtp.host","smtp.naver.com");
 		p.put("mail.smtp.port", "465");
@@ -45,9 +45,9 @@ public class emailSendAction implements CommandAction {
 			    Session ses = Session.getInstance(p, auth);
 			      
 			    ses.setDebug(true);
-			    MimeMessage msg = new MimeMessage(ses); // ¸ŞÀÏÀÇ ³»¿ëÀ» ´ãÀ» °´Ã¼ 
+			    MimeMessage msg = new MimeMessage(ses); // ë©”ì¼ì˜ ë‚´ìš©ì„ ë‹´ì„ ê°ì²´ 
 			 
-			    msg.setSubject("BSA È®ÀÎÄÚµåÀÔ´Ï´Ù! "+id+"´Ô ÀúÈñ »çÀÌÆ®¿¡ °¡ÀÔÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù!");
+			    msg.setSubject("BSA í™•ì¸ì½”ë“œì…ë‹ˆë‹¤! "+id+"ë‹˜ ì €í¬ ì‚¬ì´íŠ¸ì— ê°€ì…í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤!");
 			    StringBuffer buffer = new StringBuffer();
 			    
 			    buffer.append("<style type=\"text/css\">");
@@ -94,8 +94,8 @@ public class emailSendAction implements CommandAction {
 			    buffer.append("<tbody><tr>");
 			    buffer.append("<td style='overflow-wrap: break-word;padding:30px 30px 15px;' align='left'>");
 			    buffer.append("<div style='color: #000; line-height: 150%; text-align: left; font-family: inherit;'>");
-			    buffer.append("<p style='line-height: 150%; font-size: 14px;'><span style='color: #282828;'><span style='font-size: 16px; line-height: 24px;'>"+id+"´Ô ÀúÈñ »çÀÌÆ®¸¦ °¡ÀÔÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù!</span></span></p>");
-			    buffer.append("<p style='line-height: 150%; font-size: 14px;'><span style='color: #282828;'><span style='font-size: 16px; line-height: 24px;'>¹Ù·Î¾Æ·¡¿¡ ÄÚµå°¡ ÀÖ½À´Ï´Ù.</span></span></p>");
+			    buffer.append("<p style='line-height: 150%; font-size: 14px;'><span style='color: #282828;'><span style='font-size: 16px; line-height: 24px;'>"+id+"ë‹˜ ì €í¬ ì‚¬ì´íŠ¸ë¥¼ ê°€ì…í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤</span></span></p>");
+			    buffer.append("<p style='line-height: 150%; font-size: 14px;'><span style='color: #282828;'><span style='font-size: 16px; line-height: 24px;'>ë°”ë¡œì•„ë˜ì— ì½”ë“œê°€ ìˆìŠµë‹ˆë‹¤.</span></span></p>");
 			    buffer.append("</div></td></tr></tbody></table></div>");
 			    buffer.append("</td></tr></tbody></table></div></td></tr></table>");
 			    buffer.append("<table align='center' border='0' cellpadding='0' cellspacing='0' width='100%' style='margin: 0; padding: 0'>");
@@ -138,8 +138,8 @@ public class emailSendAction implements CommandAction {
 			    buffer.append("<tbody> <tr>");
 			    buffer.append("<td style='overflow-wrap: break-word;padding:10px 30px 20px;' align='left'>");
 			    buffer.append("<div style='color: #292929; line-height: 160%; text-align: left; font-family: inherit;'>");
-			    buffer.append("<p style='line-height: 160%; font-size: 14px;'><span style='font-size: 16px; line-height: 25.6px;'>¹®Á¦°¡ ÀÖÀ»½Ã FAQs ¸¦ ÂüÁ¶ÇÏ½Ã±â ¹Ù¶ø´Ï´Ù.</span></p>");
-			    buffer.append("<p style='line-height: 160%; font-size: 14px;'><span style='font-size: 16px; line-height: 25.6px;'>±×°Íµµ µÇÁö ¾Ê´Â´Ù¸é <a href='mailto:ckdgus5820@gmail.com'>ckdgus5820@gmail.com</a>&nbsp;¿¡ ¸ŞÀÏÀ» º¸³»ÁÖ½Ê½Ã¿À!</span></p>");
+			    buffer.append("<p style='line-height: 160%; font-size: 14px;'><span style='font-size: 16px; line-height: 25.6px;'>ë¬¸ì œê°€ ìˆì„ì‹œ FAQs ë¥¼ ì°¸ì¡°í•˜ì‹œê¸° ë°”ëë‹ˆë‹¤.</span></p>");
+			    buffer.append("<p style='line-height: 160%; font-size: 14px;'><span style='font-size: 16px; line-height: 25.6px;'>ê·¸ê²ƒë„ ë˜ì§€ ì•ŠëŠ”ë‹¤ë©´ <a href='mailto:ckdgus5820@gmail.com'>ckdgus5820@gmail.com</a>&nbsp;ì— ë©”ì¼ì„ ë³´ë‚´ì£¼ì‹­ì‹œì˜¤!</span></p>");
 			    buffer.append("</div></td></tr></tbody></table></div></td></tr></tbody></table></div></td></tr></table></div>");
 			    
 
@@ -147,10 +147,10 @@ public class emailSendAction implements CommandAction {
 			    msg.setFrom(fromAddr); 
 			 
 			    Address toAddr = new InternetAddress(to);
-			    msg.addRecipient(Message.RecipientType.TO, toAddr); // ¹Ş´Â »ç¶÷
+			    msg.addRecipient(Message.RecipientType.TO, toAddr); // ë°›ëŠ” ì‚¬ëŒ
 			     
-			    msg.setContent(buffer.toString(), "text/html;charset=UTF-8"); // ³»¿ë
-			    Transport.send(msg); // Àü¼Û  
+			    msg.setContent(buffer.toString(), "text/html;charset=UTF-8"); // ë‚´ìš©
+			    Transport.send(msg); // ì „ì†¡  
 		}catch(Exception e) {
 			e.printStackTrace();
 			
