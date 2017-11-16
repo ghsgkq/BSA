@@ -22,7 +22,8 @@ public class PaymentProAction2  implements CommandAction{
 		CreditCardDao dbpro2 = CreditCardDao.getInstacne();
 		dbpro2.Creditinsert(article2);
 		
-		
+		//test
+		//test
 		return "/JSP/payment_pro.jsp";
 		
 	}

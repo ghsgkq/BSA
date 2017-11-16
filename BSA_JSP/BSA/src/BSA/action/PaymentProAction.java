@@ -10,6 +10,8 @@ public class PaymentProAction implements CommandAction {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 		request.setCharacterEncoding("UTF-8");
 		//test
+		//test
+		//test
 		NonMemberDto article = new NonMemberDto();
 		
 		article.setFirst_name(request.getParameter("first_name"));
@@ -17,11 +19,11 @@ public class PaymentProAction implements CommandAction {
 		article.setPhone_number(request.getParameter("phone_number"));
 		article.setEmail_address(request.getParameter("email_address"));
 		article.setComment(request.getParameter("comment"));
-
+		//test
 		NonMemberDao dbPro = NonMemberDao.getInstance();
 		dbPro.NonMemberinsert(article);
 
-		
+	
 		
 		return "/JSP/payment_pro.jsp";
 		
