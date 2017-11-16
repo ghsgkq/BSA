@@ -24,7 +24,7 @@ public class BookingDao {
 			String sql="";
 			try {
 				conn = ConnUtil.getConnection();
-				sql = "insert into BOOKING (FROM, TO, PICKUP, DROPFT, START_AIRLINE_NAME, "
+				sql = "insert into BOOKING(FROM, TO, PICKUP, DROPFT, START_AIRLINE_NAME, "
 						+ "START_AIRLINE_NO, START_FLIGHT_TIME, ARRIVAL_AIRLINE_NAME, ARRIVAL_AIRLINE_NO, ARRIVAL_AIRLINE_TIME, "
 						+ "START_DATE, ARRIVAL_DATE, ADULTS, YOUNG, CHILD, INFATNS, TRIP) "
 						+ "value(BOOKING_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -47,6 +47,7 @@ public class BookingDao {
 				pstmt.setString(16, article.getInfatns());
 				pstmt.setString(17, article.getTrip());
 				pstmt.executeQuery();
+				
 			}catch(SQLException e) {
 				e.printStackTrace();
 			}finally {
