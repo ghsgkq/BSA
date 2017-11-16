@@ -5,12 +5,7 @@
 <html>
 
 <head>
-  <c:if test="${logincheck == 1 }">
-  <%
-  	String id = (String)request.getAttribute("id");
-  	session.setAttribute("id", id);
-  %>
-  </c:if>
+ 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
@@ -44,22 +39,22 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto fixed-menu">
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <h2><b class="p-3 text-white">Your Exprerience</b></h2>
+            <a class="nav-link" href="${pageContext.request.contextPath}/YourExperience.do">
+              <h2><b class="p-3 text-white">Your Experience</b></h2>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link w-100 mx-3" href="#">
+            <a class="nav-link w-100 mx-3" href="${pageContext.request.contextPath}/schedule.do">
               <h2><b class="text-white">Schedule &amp; Rates &nbsp; &nbsp; &nbsp;&nbsp;</b></h2>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="href=${pageContext.request.contextPath}/FAQs.do"></a>
+            <a class="nav-link" href="${pageContext.request.contextPath}/FAQs.do">
               <h2><b class="p-5 text-white">FAQS</b></h2>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="${pageContext.request.contextPath}/Booking.do">
               <h2><b class="p-4 text-dark">Book Now &nbsp; &nbsp; &nbsp; &nbsp;</b></h2>
             </a>
           </li>
@@ -69,7 +64,7 @@
     <c:choose>
     <c:when test="${id != null }">
     <a class="btn navbar-btn ml-2 text-white btn-secondary" href="${pageContext.request.contextPath}/logout.do"><i class="fa d-inline fa-lg fa-user-circle-o"></i> Sign out</a>
-    <a class="btn navbar-btn ml-2 text-white btn-secondary" href="${pageContext.request.contextPath}/register.do"><i class="fa d-inline fa-lg fa-plus-square"></i>&nbsp;my info</a>
+    <a class="btn navbar-btn ml-2 text-white btn-secondary" href="${pageContext.request.contextPath}/userpage.do"><i class="fa d-inline fa-lg fa-plus-square"></i>&nbsp;my info</a>
     </c:when>
     <c:otherwise>
     <a class="btn navbar-btn ml-2 text-white btn-secondary" href="${pageContext.request.contextPath}/login.do"><i class="fa d-inline fa-lg fa-user-circle-o"></i> Sign in</a>

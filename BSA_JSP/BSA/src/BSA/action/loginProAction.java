@@ -22,8 +22,7 @@ public class loginProAction implements CommandAction {
 		memberDao mdao = memberDao.getInstance();
 		boolean anser = mdao.memberLogin(id, password);
 		if(anser) {
-			req.setAttribute("id", id);
-			req.setAttribute("logincheck", 1);
+			req.getSession().setAttribute("id", id);
 		}
 		else {
 			req.setAttribute("logincheck", 0);
