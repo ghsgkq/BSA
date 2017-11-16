@@ -15,8 +15,8 @@
   <meta name="description" content="비밀번호변경"> 
   <script type="text/javascript">
     $(document).ready( function() {
-    	$("#contents").load("top.jsp");
-    	$("#bt").load("bottom.jsp");
+    	$("#contents").load("JSP/top.jsp");
+    	$("#bt").load("JSP/bottom.jsp");
     });
   </script>
   </head>

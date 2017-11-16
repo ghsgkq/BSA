@@ -17,68 +17,41 @@
     $(document).ready( function() {
     	$("#contents").load("JSP/top.jsp");
     	$("#bt").load("JSP/bottom.jsp");
+    	$("#left").load("JSP/userpage_left.jsp");
     });
   </script>
 </head>
 
 <body class="px-2" style="margin-top: 150px;">
 <div id="contents"></div>
-  <div class="py-5">
+ <div class="py-5">
     <div class="container">
       <div class="row">
-        <div class="col-md-2">
-          <ul class="nav nav-pills flex-column">
-            <li class="nav-item">
-              <a href="#" class="active nav-link"><i class="fa fa-home fa-home"></i>&nbsp;회원정보관리</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">개인정보수정</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">비밀번호변경</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">회원탈퇴</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="active nav-link"><i class="fa fa-home fa-home"></i>&nbsp;결제정보</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">구매내역</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">취소반품내역</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="active nav-link"><i class="fa fa-home fa-home"></i>&nbsp;내가쓴 글관리</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">문의하기</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">자료요청</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-md-9">
+      <div class="col-md-2">
+         <div id="left"></div>
+       <div class="col-md-9">
           <h1 class="display-2 m-4">개인정보수정</h1>
+          <form>
           <div class="col-md-7 align-self-center">
             <div class="form-group"> <label>아이디</label>
-              <input type="id" name="id" class="form-control" placeholder="아이디">
-              <button type="submit" class="btn btn-primary">중복확인</button>
+              <input type="text" name="id" class="form-control" placeholder="아이디" value="${id }" readonly="readonly">
             </div>
             <div class="form-group"> <label>휴대폰번호</label>
-              <input type="phone" name="phone" class="form-control" placeholder="- 없이 입력해 주세요"> </div>
+              <input type="text" name="phone" class="form-control" placeholder="- 포함 입력" value="${phone }"> </div>
             <div class="form-group"> <label>이메일</label>
-              <input type="email" name="email" class="form-control" placeholder="이메일을 입력해주세요"> </div>
+              <input type="email" name="email" class="form-control" placeholder="이메일을 입력해주세요" value="${email }" readonly="readonly"> </div>
             <div class="form-group"> <label>이름</label>
-              <input type="name" name="name" class="form-control" placeholder="이름"> </div>
+              <input type="text" name="first_name" class="form-control" placeholder="이름" value="${first_name }"> </div>
+              <div class="form-group"> <label>성</label>
+              <input type="text" name="last_name" class="form-control" placeholder="이름" value="${last_name }"> </div>
           </div>
-          <a href="#" class="btn btn-outline-primary">수정</a>
-          <a href="#" class="btn btn-outline-primary">취소</a>
+          <input type="submit" class="btn btn-outline-primary">수정
+          <input type="reset" class="btn btn-outline-primary">취소
+          </form>
         </div>
       </div>
     </div>
+  </div>
   </div>
   <div id="bt" style="margin-top: 150px;"></div>
 </body>
