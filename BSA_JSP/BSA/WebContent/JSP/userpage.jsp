@@ -23,9 +23,9 @@
 </head>
 
 <body class="px-2">
-<div id="contents"></div>
+<div id="contents" style="margin: auto;"></div>
  <div class="py-5">
-    <div class="container" style="margin: auto;">
+    <div class="container">
       <div class="row">
        <div id="left" class="col-md-2"></div>
        <div class="col-md-9">
@@ -44,8 +44,8 @@
               <div class="form-group"> <label>성</label>
               <input type="text" name="last_name" class="form-control" placeholder="이름" value="${last_name }"> </div>
           </div>
-          <input type="submit" class="btn btn-outline-primary">수정
-          <input type="reset" class="btn btn-outline-primary">취소
+          <input type="submit" class="btn btn-outline-primary" value="수정">
+          <input type="reset" class="btn btn-outline-primary" value="취소">
           </form>
         </div>
       </div>
