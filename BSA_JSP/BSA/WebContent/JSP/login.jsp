@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
@@ -17,8 +18,13 @@
   	$("#contents").load("JSP/top.jsp");
   	$("#bt").load("JSP/bottom.jsp");
   });
-  
   </script>
+  <c:if test="${anser == 12 }">
+  <script type="text/javascript">
+  alert("회원가입이 완료됬습니다!")
+  </script>
+  </c:if>
+  
 </head>
 <body style="background-color: #EAEAEA;">
   <div id="contents" style="margin-top: 200px; "></div>
@@ -30,12 +36,22 @@
           <div class="card text-white p-5 bg-dark">
             <div class="card-body">
               <h1 class="mb-4">로그인</h1>
-              <form action="https://formspree.io/YOUREMAILHERE">
-                <div class="form-group"> <label>Email address</label>
-                  <input type="email" class="form-control" placeholder="Enter email"> </div>
+              <form action="${pageContext.request.contextPath}/loginPro.do" name="memberForm" method="post" >
+                <div class="form-group"> <label>id address</label>
+                  <input type="text" name="id" class="form-control" placeholder="아이디 입력"> </div>
                 <div class="form-group"> <label>Password</label>
-                  <input type="password" class="form-control" placeholder="Password"> </div>
+                  <input type="password" name="password" class="form-control" placeholder="패스워드 입력"> </div>
                 <button type="submit" class="btn btn-secondary">Login</button>
+                <br><br>
+                <c:if test="${anser == 1 }">
+                	아이디를 입력하세요!
+                </c:if>
+                <c:if test="${anser == 2 }">
+                	비밀번호를 입력하세요!
+                </c:if>
+                <c:if test="${logincheck == 0 }">
+					아이디나 비밀번호를 잘못입력했습니다!
+ 				</c:if>
               </form>
             </div>
           </div>
