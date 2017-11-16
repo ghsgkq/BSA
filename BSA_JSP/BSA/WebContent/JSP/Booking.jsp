@@ -56,7 +56,7 @@
           <div class="card">
             <div class="card-header py-4">
               <h5 class=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-              <form method="post" name="writeForm" action="${pageContext.request.contextPath}/Booking.do" onsubmit="return BookingSave()">
+              <form method="post" name="writeForm" action="${pageContext.request.contextPath}/BookingPro.do" onsubmit="return BookingSave()">
                 <input type="radio" value="0" name="trip"  class="triptype" onclick="div_OnOff(this.value,'con');"> Round Trip( 왕복) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
                 <input
                   type="radio" value="1" name="trip"  class="triptype" onclick="div_OnOff(this.value,'con');" checked>&nbsp;One Way (편도) </h5>
