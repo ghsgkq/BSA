@@ -79,7 +79,7 @@
     </div>
   </div>
    </form>
-   <form action=""></form>
+   <form method="post" action="${pageContext.request.contextPath}/paymentPro.do" onsubmit="return paymentSave()" enctype="multipart/form-data">
   <div class="p-5 text-muted bg-light">
     <div class="container">
       <div class="row">
@@ -128,7 +128,7 @@
       </div>
     </div>
   </div>
- 
+ </form>
   <div class="py-5 text-center border border-dark bg-light">
     <div class="container">
       <div class="row">
