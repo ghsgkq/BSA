@@ -19,6 +19,7 @@
 </script>
 </head>
 <body class="bg-light" style="margin-top:83px;">
+<form method="post" name="paymentForm" action="${pageContext.request.contextPath}/paymentPro.do" onsubmit="return paymentSave()" enctype="multipart/form-data">
   <div id="contents"></div>
   <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
     <div class="container">
@@ -123,6 +124,7 @@
       </div>
     </div>
   </div>
+  </form>
   <div class="py-5 text-center border border-dark bg-light">
     <div class="container">
       <div class="row">
