@@ -26,10 +26,10 @@ public class NonMemberDao {
 			pstmt = conn.prepareStatement("insert into NONMEMBER (FIRST_NAME, "
 					+ "LAST_NAME, PHONE_NUMBER, EMAIL_ADDRESS, COMMENT)"
 					+ "vlaue(NONMEMBER_SEQ.nextval, ?, ?, ?, ?, ?)");
-			pstmt.setString(1, article.getFirstname());
-			pstmt.setString(2, article.getLastname());
-			pstmt.setString(3, article.getPhonenum());
-			pstmt.setString(4, article.getEmail());
+			pstmt.setString(1, article.getFirst_name());
+			pstmt.setString(2, article.getLast_name());
+			pstmt.setString(3, article.getPhone_number());
+			pstmt.setString(4, article.getEmail_address());
 			pstmt.setString(5, article.getComment());
 			pstmt.executeUpdate();
 		}catch(SQLException e) {
