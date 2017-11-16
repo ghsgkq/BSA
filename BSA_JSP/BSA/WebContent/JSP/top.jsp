@@ -68,7 +68,7 @@
     </div>
     <c:choose>
     <c:when test="${id != null }">
-    <a class="btn navbar-btn ml-2 text-white btn-secondary" href="${pageContext.request.contextPath}/login.do"><i class="fa d-inline fa-lg fa-user-circle-o"></i> Sign out</a>
+    <a class="btn navbar-btn ml-2 text-white btn-secondary" href="${pageContext.request.contextPath}/logout.do"><i class="fa d-inline fa-lg fa-user-circle-o"></i> Sign out</a>
     <a class="btn navbar-btn ml-2 text-white btn-secondary" href="${pageContext.request.contextPath}/register.do"><i class="fa d-inline fa-lg fa-plus-square"></i>&nbsp;my info</a>
     </c:when>
     <c:otherwise>
