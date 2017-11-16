@@ -22,13 +22,12 @@
   </script>
 </head>
 
-<body class="px-2" style="margin-top: 150px;">
+<body class="px-2">
 <div id="contents"></div>
  <div class="py-5">
     <div class="container">
       <div class="row">
-      
-         <div id="left"></div>
+       <div id="left" class="col-md-2"></div>
        <div class="col-md-9">
           <h1 class="display-2 m-4">개인정보수정</h1>
           <form>

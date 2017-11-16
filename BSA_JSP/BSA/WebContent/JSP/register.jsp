@@ -26,7 +26,7 @@
   alert("아이디가 존재합니다!!");
   </script>
   </c:if>
-  <c:if test="${idcheck == 1 }">
+  <c:if test="${idcheck == 1 && anser != 10 }">
   <script type="text/javascript">
   alert("사용가능한 아이디입니다!");
   </script>
