@@ -24,6 +24,7 @@
   alert("회원가입이 완료됬습니다!")
   </script>
   </c:if>
+  
 </head>
 <body style="background-color: #EAEAEA;">
   <div id="contents" style="margin-top: 200px; "></div>
@@ -48,6 +49,9 @@
                 <c:if test="${anser == 2 }">
                 	비밀번호를 입력하세요!
                 </c:if>
+                <c:if test="${logincheck == 0 }">
+					아이디나 비밀번호를 잘못입력했습니다!
+ 				</c:if>
               </form>
             </div>
           </div>
