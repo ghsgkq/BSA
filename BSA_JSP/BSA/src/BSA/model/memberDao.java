@@ -70,4 +70,39 @@ public class memberDao {
 		}
 		return id;
 	}
+	public boolean memberLogin(String id, String password) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		boolean anser = false;
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement("select password from BSA_MEMBER where id=?");
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs == null) {
+				anser = false;
+			}else {
+			   rs.next();
+				if(rs.getString(1).equals(password)) {
+					anser = true;
+				}
+				else {
+					anser = false;
+				}
+				
+			}
+		}catch(SQLException e ) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null) pstmt.close();
+				if(rs != null)rs.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return anser;
+	}
 }
