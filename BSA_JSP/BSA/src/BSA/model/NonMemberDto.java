@@ -5,7 +5,7 @@ public class NonMemberDto {
 	private String last_name;
 	private String phone_number;
 	private String email_address;
-	private String comment;
+	private String comm;
 	private String name_on_card;
 	private String card_number;
 	private String expiry_year;
@@ -36,11 +36,11 @@ public class NonMemberDto {
 	public void setEmail_address(String email_address) {
 		this.email_address = email_address;
 	}
-	public String getComment() {
-		return comment;
+	public String getComm() {
+		return comm;
 	}
-	public void setComment(String comment) {
-		this.comment = comment;
+	public void setComm(String comm) {
+		this.comm = comm;
 	}
 	public String getName_on_card() {
 		return name_on_card;

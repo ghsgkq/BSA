@@ -18,7 +18,7 @@ public class NonMemberProAction implements CommandAction {
 		article.setLast_name(request.getParameter("last_name"));
 		article.setPhone_number(request.getParameter("phone_number"));
 		article.setEmail_address(request.getParameter("email_address"));
-		article.setComment(request.getParameter("comment"));
+		article.setComm(request.getParameter("comm"));
 		article.setName_on_card(request.getParameter("name_on_card"));
 		article.setCard_number(request.getParameter("card_number"));
 		article.setExpiry_year(request.getParameter("expiry_year"));

@@ -57,7 +57,7 @@
       </div>
     </div>
   </div>
-  <form method="post" name="paymentForm" action="${pageContext.request.contextPath}/nonMemberPro.do" onsubmit="return paymentSave()">
+  <form method="post" name="paymentForm" action="${pageContext.request.contextPath}/nonMemberPro.do">
   <div class="h-100 text-muted border border-dark bg-light">
     <div class="container">
       <div class="row">
@@ -73,7 +73,7 @@
             <div class="input-group w-100"> <i class="fa d-inline fa-envelope-open-o fa-2x"></i>
               <input type="text" class="form-control mr-3 my-1" placeholder="이메일을 입력해주세요." name="email_address"> </div><label><br>Comment *<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-comment-o"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="요청사항을 적어주세요." name="comment"> </div>
+              <input type="text" class="form-control mr-3 my-1" placeholder="요청사항을 적어주세요." name="comm"> </div>
           </div>
         </div>
       </div>
@@ -87,10 +87,10 @@
           <div class="card-body w-75">
             <h4 class="text-dark">Please &nbsp;Enter Your Payment Details</h4><label>Name On Credit Card<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-angellist"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="카드에 적힌 이름을 입력해주세요." id="nameoncard"> </div><label><br>Caredit Card Number<br></label>
+              <input type="text" class="form-control mr-3 my-1" placeholder="카드에 적힌 이름을 입력해주세요." name="name_on_card"> </div><label><br>Caredit Card Number<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-angellist"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="카드 번호를 입력해주세요." id="cardnumber"> </div><label><br>Expiry Date<br></label>
-            <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-angellist"></i> <select name="date" class="form-control-sm px-3 mx-2">
+              <input type="text" class="form-control mr-3 my-1" placeholder="카드 번호를 입력해주세요." name="card_number"> </div><label><br>Expiry Date<br></label>
+            <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-angellist"></i> <select name="expiry_month" class="form-control-sm px-3 mx-2">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -106,7 +106,7 @@
             
               
               </select> </div>
-            <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-angellist"></i> <select name="date1" class="form-control-sm mx-2">
+            <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-angellist"></i> <select name="expiry_year" class="form-control-sm mx-2">
                 <option value="2017">2017</option>
                 <option value="2018">2018</option>
                 <option value="2019">2019</option>
@@ -122,7 +122,7 @@
             
               </select> </div><label><br>CSV number<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-angellist"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="CSV 번호를 입력해주세요." id="csv"> </div>
+              <input type="text" class="form-control mr-3 my-1" placeholder="CSV 번호를 입력해주세요." name="csv_number"> </div>
           </div>
         </div>
       </div>
