@@ -29,7 +29,7 @@
 	  var expiry_year = document.paymentForm.expiry_year.value;
 	  var expiry_month = document.paymentForm.expiry_month.value;
 	  var csv_number = document.paymentForm.csv_number.value;
-	  
+	  var checkboxx = document.paymentForm.checkbox.checked;
 	 
 	  
 	  if(first_name=="" || first_name==null){
@@ -85,6 +85,11 @@
 		  return false;
 	  }
 	  
+	  if(!checkboxx){
+		  alert('약관에 동의 바랍니다.');
+		  document.paymentForm.checkboxx.focus();
+		  return false;
+	  }
 	 
 	  
   }
@@ -206,7 +211,7 @@
       <div class="row">
         <div class="col-md-12">
           <p class="lead mb-4 text-dark">
-            <input type="checkbox" name="check" value="" class="mx-3 text-secondary border border-secondary">I agree with the payment (결제에 동의 하시겠습니까?)</p>
+            <input type="checkboxx" name="check" value="" class="mx-3 text-secondary border border-secondary">I agree with the payment (결제에 동의 하시겠습니까?)</p>
           <form class="form-inline justify-content-center">
             <button type="submit" class="btn btn-secondary btn-lg p-4">Payment (결제)</button>
           </form>
