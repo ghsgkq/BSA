@@ -67,18 +67,18 @@ function div_OnOff(v,id){
             <div class="card-header py-4">
               <h5 class=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
               <form method="post" name="writeForm" action="${pageContext.request.contextPath}/BookingPro.do" onsubmit="return BookingSave()">
-                <input type="radio" value="왕복" name="trip"  class="triptype" onclick="div_OnOff(this.value,'con');"> Round Trip( 왕복) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+                <input type="radio" value="왕복" name="where_trip"  class="triptype" onclick="div_OnOff(this.value,'con');"> Round Trip( 왕복) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
                 <input
-                  type="radio" value="편도" name="trip"  class="triptype" onclick="div_OnOff(this.value,'con');" checked>&nbsp;One Way (편도) </h5>
+                  type="radio" value="편도" name="where_trip"  class="triptype" onclick="div_OnOff(this.value,'con');" checked>&nbsp;One Way (편도) </h5>
             </div>
             
              
             <div class="card-body">
               <h4 class="my-5">Select your destination &nbsp;(목적지를 선택해주세요.)</h4>
               <h6 class="text-muted">From (출발)</h6>
-              <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-right fa-lg"></i> <select name="from" class="form-control-sm px-3 mx-2">
-                <option value="${from}">Gimhea Airporter (김해공항)</option>
-                <option value="${from}">Busan (부산)</option>
+              <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-right fa-lg"></i> <select name="where_from" class="form-control-sm px-3 mx-2">
+                <option value="Gimhea Airporter(김해공항)">Gimhea Airporter (김해공항)</option>
+                <option value="Busan (부산)">Busan (부산)</option>
             
             
               
@@ -86,9 +86,9 @@ function div_OnOff(v,id){
               <p class=" p-y-1">&nbsp;</p>
               <div id="con" style="display:none">
               <h6 class="text-muted">to (도착)</h6>
-              <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-left fa-lg"></i> <select name="to" class="form-control-sm px-3 mx-2">
-                <option value="${to}">Busan (부산)</option>
-           			<option value="${to}">Gimhea Airporter (김해공항)</option>
+              <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-left fa-lg"></i> <select name="where_to" class="form-control-sm px-3 mx-2">
+                <option value="Busan(부산)">Busan (부산)</option>
+           			<option value="Gimhean Airporter(김해공항)">Gimhea Airporter (김해공항)</option>
             
               
               </select> </div></div>
@@ -131,7 +131,7 @@ function div_OnOff(v,id){
                 <input type="text" class="form-control mr-3 my-1" placeholder="Flight No (비행 번호를 입력해주세요.)" name="start_airline_no" value="${start_airline_no}"> </div>
               <h6 class="text-muted">Flight Time (비행 출발시간)</h6>
               <div class="input-group w-25"> <i class="fa d-inline fa-tachometer fa-lg"></i>
-                <input type="text" id="timepicker" class="from-control text-left w-50 m-2 border border-dark" name="start_flight_time" value="${start_flight_time}">
+                <input type="text" id="timepicker" class="from-control text-left w-50 m-2 border border-dark" name="start_airline_time" value="${start_airline_time}">
                 <script type="text/javascript">
                   $( "#timepicker" ).timepicker();
                 </script>
@@ -221,19 +221,19 @@ function div_OnOff(v,id){
               <h4 class="my-5">How many passengers? &nbsp;(승객수를선택해주세요.)</h4>
               <div class="input-group w-50 border border-dark"> <i class="fa d-inline fa-lg p-2 fa-user-circle"></i>
                 <h6 class="text-muted p-2">(어른)Adults 20+</h6>
-                <input type="number" class="form-control" placeholder="0" name="adults" value="${adults}"> </div>
+                <input type="number" class="form-control" placeholder="0" name="adults" value="0"> </div>
               <p class="p-y-1">&nbsp;</p>
               <div class="input-group w-50 border border-dark"> <i class="fa d-inline fa-lg p-2 fa-user-circle"></i>
                 <h6 class="text-muted p-2">(청소년)Young 13-20</h6>
-                <input type="number" class="form-control" placeholder="0" name="young" value="${young}"> </div>
+                <input type="number" class="form-control" placeholder="0" name="young" value="0"> </div>
               <p class="p-y-1">&nbsp;</p>
               <div class="input-group w-50 border border-dark"> <i class="fa d-inline fa-lg p-2 fa-user-circle"></i>
                 <h6 class="text-muted p-2">(어린이)Child 2-12</h6>
-                <input type="number" class="form-control" placeholder="0" name="child" value="${child}"> </div>
+                <input type="number" class="form-control" placeholder="0" name="child" value="0"> </div>
               <p class="p-y-1">&nbsp;</p>
               <div class="input-group w-50 border border-dark"> <i class="fa d-inline fa-lg p-2 fa-user-circle"></i>
                 <h6 class="text-muted p-2">(유아)Infatns 0-2</h6>
-                <input type="number" class="form-control" placeholder="0" name="infatns" value="${infatns}"> </div>
+                <input type="number" class="form-control" placeholder="0" name="infatns" value="0"> </div>
                 
                 
             </div>

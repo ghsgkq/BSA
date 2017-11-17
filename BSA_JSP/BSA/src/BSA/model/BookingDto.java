@@ -1,13 +1,14 @@
 package BSA.model;
 
 public class BookingDto {
-	private String from;
-	private String to;
+	private String where_trip;
+	private String where_from;
+	private String where_to;
 	private String pickup;
 	private String dropft;
 	private String start_airline_name;
 	private String start_airline_no;
-	private String start_flight_time;
+	private String start_airline_time;
 	private String arrival_airline_name;
 	private String arrival_airline_no;
 	private String arrival_airline_time;
@@ -17,18 +18,23 @@ public class BookingDto {
 	private String young;
 	private String child;
 	private String infatns;
-	private String trip;
-	public String getFrom() {
-		return from;
+	public String getWhere_trip() {
+		return where_trip;
 	}
-	public void setFrom(String from) {
-		this.from = from;
+	public void setWhere_trip(String where_trip) {
+		this.where_trip = where_trip;
 	}
-	public String getTo() {
-		return to;
+	public String getWhere_from() {
+		return where_from;
 	}
-	public void setTo(String to) {
-		this.to = to;
+	public void setWhere_from(String where_from) {
+		this.where_from = where_from;
+	}
+	public String getWhere_to() {
+		return where_to;
+	}
+	public void setWhere_to(String where_to) {
+		this.where_to = where_to;
 	}
 	public String getPickup() {
 		return pickup;
@@ -54,11 +60,11 @@ public class BookingDto {
 	public void setStart_airline_no(String start_airline_no) {
 		this.start_airline_no = start_airline_no;
 	}
-	public String getStart_flight_time() {
-		return start_flight_time;
+	public String getStart_airline_time() {
+		return start_airline_time;
 	}
-	public void setStart_flight_time(String start_flight_time) {
-		this.start_flight_time = start_flight_time;
+	public void setStart_airline_time(String start_flight_time) {
+		this.start_airline_time = start_flight_time;
 	}
 	public String getArrival_airline_name() {
 		return arrival_airline_name;
@@ -114,13 +120,6 @@ public class BookingDto {
 	public void setInfatns(String infatns) {
 		this.infatns = infatns;
 	}
-	public String getTrip() {
-		return trip;
-	}
-	public void setTrip(String trip) {
-		this.trip = trip;
-	}
 	
 	
-		
 }
