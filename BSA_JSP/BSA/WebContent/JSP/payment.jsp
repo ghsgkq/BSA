@@ -20,7 +20,7 @@
 </head>
 <body class="bg-light" style="margin-top:83px;">
 
-<form method="post" name="paymentForm" action="${pageContext.request.contextPath}/paymentPro.do">
+
 
   <div id="contents"></div>
   <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
@@ -57,6 +57,7 @@
       </div>
     </div>
   </div>
+  <form method="post" name="paymentForm" action="${pageContext.request.contextPath}/paymentPro.do" onsubmit="return paymentSave()">
   <div class="h-100 text-muted border border-dark bg-light">
     <div class="container">
       <div class="row">
@@ -64,22 +65,21 @@
           <div class="card-body w-75">
             <h4 class="text-dark">Please &nbsp;Enter Your Details</h4><label>First name *<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-user fa-2x"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="이름을 입력해주세요." id="firstname"> </div><label><br>Last name *<br></label>
+              <input type="text" class="form-control mr-3 my-1" placeholder="이름을 입력해주세요." name="first_name"> </div><label><br>Last name *<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-user"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="성을 입력해주세요." id="lastname"> </div><label><br>TelePhone *<br></label>
+              <input type="text" class="form-control mr-3 my-1" placeholder="성을 입력해주세요." name="last_name"> </div><label><br>TelePhone *<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-volume-control-phone fa-2x"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="휴대폰 번호를 입력해주세요." id="telephone"> </div><label><br>Email address *<br></label>
+              <input type="text" class="form-control mr-3 my-1" placeholder="휴대폰 번호를 입력해주세요." name="phone_number"> </div><label><br>Email address *<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-envelope-open-o fa-2x"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="이메일을 입력해주세요." id="emailaddress"> </div><label><br>Comment *<br></label>
+              <input type="text" class="form-control mr-3 my-1" placeholder="이메일을 입력해주세요." name="email_address"> </div><label><br>Comment *<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-comment-o"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="요청사항을 적어주세요." id="comment"> </div>
+              <input type="text" class="form-control mr-3 my-1" placeholder="요청사항을 적어주세요." name="comment"> </div>
           </div>
         </div>
       </div>
     </div>
   </div>
    </form>
-   <form method="post" action="${pageContext.request.contextPath}/paymentPro.do">
   <div class="p-5 text-muted bg-light">
     <div class="container">
       <div class="row">
@@ -128,7 +128,6 @@
       </div>
     </div>
   </div>
- </form>
   <div class="py-5 text-center border border-dark bg-light">
     <div class="container">
       <div class="row">

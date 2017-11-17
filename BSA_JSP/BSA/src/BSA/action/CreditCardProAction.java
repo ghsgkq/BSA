@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import BSA.model.CreditCardDao;
 import BSA.model.CreditCardDto;
 
-public class PaymentProAction2  implements CommandAction{
+public class CreditCardProAction  implements CommandAction{
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 		request.setCharacterEncoding("UTF-8");
 		 
