@@ -137,4 +137,44 @@ public class memberDao {
 		}
 		return mdto;
 	}
+	
+	public void updatemember(String id, String first_name, String last_name, String phone) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement("select * from BSA_MEMBER where ID=?");
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			rs.next();
+			if(first_name.equals("")) {
+				first_name = rs.getString("first_name");
+			}
+			if(last_name.equals("")) {
+				last_name = rs.getString("last_name");
+			}
+			if(phone.equals("")) {
+				phone = rs.getString("phone");
+			}
+			pstmt = null;
+			pstmt = conn.prepareStatement("update BSA_MEMBER set FIRST_NAME=?, LAST_NAME=?, PHONE=? where ID=?");
+			pstmt.setString(1, first_name);
+			pstmt.setString(2, last_name);
+			pstmt.setString(3, phone);
+			pstmt.setString(4, id);
+			pstmt.executeUpdate();
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null)pstmt.close();
+				if(rs != null) rs.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }

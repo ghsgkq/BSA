@@ -17,6 +17,7 @@ public class userpageAction implements CommandAction {
 		req.setAttribute("last_name", mdto.getLast_name());
 		req.setAttribute("email", mdto.getEmail());
 		req.setAttribute("phone", mdto.getPhone());
+		req.setAttribute("check", req.getAttribute("check"));
 		
 		return "/JSP/userpage.jsp";
 	}

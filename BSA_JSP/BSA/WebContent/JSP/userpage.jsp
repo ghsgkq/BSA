@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
@@ -20,6 +21,12 @@
     	$("#left").load("JSP/userpage_left.jsp");
     });
   </script>
+  <c:if test="${check == 1 }">
+  <script type="text/javascript">
+  alert("수정되었습니다!");
+  </script>
+  </c:if>
+  
 </head>
 
 <body class="px-2">
@@ -30,7 +37,7 @@
        <div id="left" class="col-md-2"></div>
        <div class="col-md-9">
           <h1 class="display-2 m-4">개인정보수정</h1>
-          <form>
+          <form method="post" action="${pageContext.request.contextPath}/userpagePro.do">
           <div class="col-md-7 align-self-center">
             <div class="form-group"> <label>아이디</label>
               <input type="text" name="id" class="form-control" placeholder="아이디" value="${id }" readonly="readonly">
