@@ -20,7 +20,7 @@
 </head>
 <body class="bg-light" style="margin-top:83px;">
 
-<form method="post" name="paymentForm" action="${pageContext.request.contextPath}/paymentPro.do" onsubmit="return paymentSave()" enctype="multipart/form-data">
+<form method="post" name="paymentForm" action="${pageContext.request.contextPath}/paymentPro.do">
 
   <div id="contents"></div>
   <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
@@ -79,7 +79,7 @@
     </div>
   </div>
    </form>
-   <form method="post" action="${pageContext.request.contextPath}/paymentPro.do" onsubmit="return paymentSave()" enctype="multipart/form-data">
+   <form method="post" action="${pageContext.request.contextPath}/paymentPro.do">
   <div class="p-5 text-muted bg-light">
     <div class="container">
       <div class="row">
