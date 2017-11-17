@@ -19,22 +19,17 @@ public class NonMemberProAction implements CommandAction {
 		article.setPhone_number(request.getParameter("phone_number"));
 		article.setEmail_address(request.getParameter("email_address"));
 		article.setComment(request.getParameter("comment"));
-		//test
+		article.setName_on_card(request.getParameter("name_on_card"));
+		article.setCard_number(request.getParameter("card_number"));
+		article.setExpiry_year(request.getParameter("expiry_year"));
+		article.setExpiry_month(request.getParameter("expiry_month"));
+		article.setCsv_number(request.getParameter("csv_number"));
+		
+		
+		
+	
 		NonMemberDao dbPro = NonMemberDao.getInstance();
 		dbPro.NonMemberinsert(article);
-		
-		CreditCardDto article2 = new CreditCardDto();
-		
-		article2.setName_on_card(request.getParameter("name_on_card"));
-		article2.setCard_number(request.getParameter("card_number"));
-		article2.setExpiry_year(request.getParameter("expiry_year"));
-		article2.setExpiry_month(request.getParameter("expiry_month"));
-		article2.setCsv_number(request.getParameter("csv_number"));
-		
-		
-		CreditCardDao dbpro2 = CreditCardDao.getInstacne();
-		dbpro2.Creditinsert(article2);
-	
 		
 		return "/JSP/payment_pro.jsp";
 		

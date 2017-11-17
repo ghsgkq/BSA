@@ -57,7 +57,7 @@
       </div>
     </div>
   </div>
-  <form method="post" name="paymentForm" action="${pageContext.request.contextPath}/paymentPro.do" onsubmit="return paymentSave()">
+  <form method="post" name="paymentForm" action="${pageContext.request.contextPath}/nonMemberPro.do" onsubmit="return paymentSave()">
   <div class="h-100 text-muted border border-dark bg-light">
     <div class="container">
       <div class="row">
@@ -79,7 +79,7 @@
       </div>
     </div>
   </div>
-   </form>
+  
   <div class="p-5 text-muted bg-light">
     <div class="container">
       <div class="row">
@@ -137,6 +137,7 @@
           <form class="form-inline justify-content-center">
             <button type="submit" class="btn btn-secondary btn-lg p-4">Payment (결제)</button>
           </form>
+           </form>
         </div>
       </div>
     </div>

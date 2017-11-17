@@ -18,7 +18,6 @@ public class NonMemberAction implements CommandAction{
 		String phone_number = request.getParameter("phone_number");
 		String email_address = request.getParameter("email_address");
 		String comment = request.getParameter("comment");
-		
 		String name_on_card = request.getParameter("name_on_card");
 		String card_number = request.getParameter("card_number");
 		String expiry_year = request.getParameter("expiry_year");
@@ -30,9 +29,6 @@ public class NonMemberAction implements CommandAction{
 		request.setAttribute("phone_number", phone_number);
 		request.setAttribute("email_address", email_address);
 		request.setAttribute("comment", comment);
-		
-		
-		
 		request.setAttribute("name_on_card", name_on_card);
 		request.setAttribute("card_number", card_number);
 		request.setAttribute("expiry_year", expiry_year);
