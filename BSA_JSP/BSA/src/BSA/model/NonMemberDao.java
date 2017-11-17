@@ -24,7 +24,7 @@ public class NonMemberDao {
 		try {
 			conn = ConnUtil.getConnection();
 			pstmt = conn.prepareStatement("insert into NONMEMBER (FIRST_NAME, "
-					+ "LAST_NAME, PHONE_NUMBER, EMAIL_ADDRESS, COMMENT, NAME_ON_CARD, CARD_NUMBER, EXPIRY_YEAR, EXPIRY_MONTH, CSV_MONTH)"
+					+ "LAST_NAME, PHONE_NUMBER, EMAIL_ADDRESS, COMMENT, NAME_ON_CARD, CARD_NUMBER, EXPIRY_YEAR, EXPIRY_MONTH, CSV_NUMBER)"
 					+ "vlaue(NONMEMBER_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			pstmt.setString(1, article.getFirst_name());
 			pstmt.setString(2, article.getLast_name());

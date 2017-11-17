@@ -137,13 +137,14 @@
           <form class="form-inline justify-content-center">
             <button type="submit" class="btn btn-secondary btn-lg p-4">Payment (결제)</button>
           </form>
-           </form>
+            </form>
         </div>
       </div>
     </div>
   </div>
   
     <div id="bt"></div>
+   
 </body>
 
 </html>
