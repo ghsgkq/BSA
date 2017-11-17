@@ -16,11 +16,81 @@
   	$("#contents").load("JSP/top.jsp");
   	$("#bt").load("JSP/bottom.jsp");
   });
+  
+  
+  function formCheck(){
+	  var first_name = document.paymentForm.first_name.value;
+	  var last_name = document.paymentForm.last_name.value;
+	  var phone_number = document.paymentForm.phone_number.value;
+	  var email_address = document.paymentForm.email_address.value;
+	  var comm = document.paymentForm.comm.value;
+	  var name_on_card = document.paymentForm.name_on_card.value;
+	  var card_number = document.paymentForm.card_number.value;
+	  var expiry_year = document.paymentForm.expiry_year.value;
+	  var expiry_month = document.paymentForm.expiry_month.value;
+	  var csv_number = document.paymentForm.csv_number.value;
+	 
+	  
+	  if(first_name=="" || first_name==null){
+		  alert('성을 입력하세요');
+		  document.paymentForm.first_name.focus();
+		  return false;
+	  }
+	  if(last_name=="" || last_name==null){
+		  alert('이름을 입력하세요');
+		  document.paymentForm.last_name.focus();
+		  return false;
+	  }
+	  if(phone_number=="" || phone_number==null){
+		  alert('전화번호를 입력하세요');
+		  document.paymentForm.phone_number.focus();
+		  return false;
+	  }
+	  if(email_address.match(/^([0-9a-zA-Z_-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/)==null){
+		  alert('이메일을 형식을 확인하세요');
+		  document.paymentForm.email_address.value="";
+		  document.paymentForm.email_address.focus();
+		  
+		  return false;
+	  }
+	  if(comm=="" || comm==null){
+		  alert('한 마디 입력 해주시면 감사하겠습니다.');
+		  document.paymentForm.comm.focus();
+		  return false;
+	  }
+	  if(name_on_card=="" || name_on_card==null){
+		  alert('카드에 적힌 이름을 입력하세요');
+		  document.paymentForm.name_on_card.focus();
+		  return false;
+	  }
+	  if(card_number=="" || card_number==null){
+		  alert('카드 번호를 입력하세요');
+		  document.paymentForm.card_number.focus();
+		  return false;
+	  }
+	  if(expiry_year=="" || expiry_year==null){
+		  alert('카드 년도를 입력하세요');
+		  document.paymentForm.expiry_year.focus();
+		  return false;
+	  }
+	  if(expiry_month=="" || expiry_month==null){
+		  alert('카드 달을 입력하세요');
+		  document.paymentForm.expiry_month.focus();
+		  return false;
+	  }
+	  if(csv_number=="" || csv_number==null){
+		  alert('카드 보안 번호를 입력바랍니다.');
+		  document.paymentForm.csv_number.focus();
+		  return false;
+	  }
+	  
+  }
+  
 </script>
 </head>
 <body class="bg-light" style="margin-top:83px;">
 
-<form method="post" name="paymentForm" action="${pageContext.request.contextPath}/paymentPro.do">
+
 
   <div id="contents"></div>
   <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
@@ -57,6 +127,7 @@
       </div>
     </div>
   </div>
+  <form method="post" name="paymentForm" action="${pageContext.request.contextPath}/nonMemberPro.do" onsubmit="return formCheck();">
   <div class="h-100 text-muted border border-dark bg-light">
     <div class="container">
       <div class="row">
@@ -64,22 +135,21 @@
           <div class="card-body w-75">
             <h4 class="text-dark">Please &nbsp;Enter Your Details</h4><label>First name *<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-user fa-2x"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="이름을 입력해주세요." id="firstname"> </div><label><br>Last name *<br></label>
+              <input type="text" class="form-control mr-3 my-1" placeholder="이름을 입력해주세요." name="first_name"> </div><label><br>Last name *<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-user"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="성을 입력해주세요." id="lastname"> </div><label><br>TelePhone *<br></label>
+              <input type="text" class="form-control mr-3 my-1" placeholder="성을 입력해주세요." name="last_name"> </div><label><br>TelePhone *<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-volume-control-phone fa-2x"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="휴대폰 번호를 입력해주세요." id="telephone"> </div><label><br>Email address *<br></label>
+              <input type="text" class="form-control mr-3 my-1" placeholder="휴대폰 번호를 입력해주세요." name="phone_number"> </div><label><br>Email address *<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-envelope-open-o fa-2x"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="이메일을 입력해주세요." id="emailaddress"> </div><label><br>Comment *<br></label>
+              <input type="text" class="form-control mr-3 my-1" placeholder="이메일을 입력해주세요." name="email_address"> </div><label><br>Comment *<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-comment-o"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="요청사항을 적어주세요." id="comment"> </div>
+              <input type="text" class="form-control mr-3 my-1" placeholder="요청사항을 적어주세요." name="comm"> </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-   </form>
-   <form method="post" action="${pageContext.request.contextPath}/paymentPro.do">
+  
   <div class="p-5 text-muted bg-light">
     <div class="container">
       <div class="row">
@@ -87,10 +157,10 @@
           <div class="card-body w-75">
             <h4 class="text-dark">Please &nbsp;Enter Your Payment Details</h4><label>Name On Credit Card<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-angellist"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="카드에 적힌 이름을 입력해주세요." id="nameoncard"> </div><label><br>Caredit Card Number<br></label>
+              <input type="text" class="form-control mr-3 my-1" placeholder="카드에 적힌 이름을 입력해주세요." name="name_on_card"> </div><label><br>Caredit Card Number<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-angellist"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="카드 번호를 입력해주세요." id="cardnumber"> </div><label><br>Expiry Date<br></label>
-            <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-angellist"></i> <select name="date" class="form-control-sm px-3 mx-2">
+              <input type="text" class="form-control mr-3 my-1" placeholder="카드 번호를 입력해주세요." name="card_number"> </div><label><br>Expiry Date<br></label>
+            <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-angellist"></i> <select name="expiry_month" class="form-control-sm px-3 mx-2">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -106,7 +176,7 @@
             
               
               </select> </div>
-            <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-angellist"></i> <select name="date1" class="form-control-sm mx-2">
+            <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-angellist"></i> <select name="expiry_year" class="form-control-sm mx-2">
                 <option value="2017">2017</option>
                 <option value="2018">2018</option>
                 <option value="2019">2019</option>
@@ -122,13 +192,12 @@
             
               </select> </div><label><br>CSV number<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-angellist"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="CSV 번호를 입력해주세요." id="csv"> </div>
+              <input type="text" class="form-control mr-3 my-1" placeholder="CSV 번호를 입력해주세요." name="csv_number"> </div>
           </div>
         </div>
       </div>
     </div>
   </div>
- </form>
   <div class="py-5 text-center border border-dark bg-light">
     <div class="container">
       <div class="row">
@@ -138,12 +207,14 @@
           <form class="form-inline justify-content-center">
             <button type="submit" class="btn btn-secondary btn-lg p-4">Payment (결제)</button>
           </form>
+            </form>
         </div>
       </div>
     </div>
   </div>
   
     <div id="bt"></div>
+   
 </body>
 
 </html>
