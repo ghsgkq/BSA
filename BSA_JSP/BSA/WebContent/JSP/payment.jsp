@@ -16,6 +16,76 @@
   	$("#contents").load("JSP/top.jsp");
   	$("#bt").load("JSP/bottom.jsp");
   });
+  
+  
+  function formCheck(){
+	  var first_name = document.paymentForm.first_name.value;
+	  var last_name = document.paymentForm.last_name.value;
+	  var phone_number = document.paymentForm.phone_number.value;
+	  var email_address = document.paymentForm.email_address.value;
+	  var comm = document.paymentForm.comm.value;
+	  var name_on_card = document.paymentForm.name_on_card.value;
+	  var card_number = document.paymentForm.card_number.value;
+	  var expiry_year = document.paymentForm.expiry_year.value;
+	  var expiry_month = document.paymentForm.expiry_month.value;
+	  var csv_number = document.paymentForm.csv_number.value;
+	 
+	  
+	  if(first_name=="" || first_name==null){
+		  alert('성을 입력하세요');
+		  document.paymentForm.first_name.focus();
+		  return false;
+	  }
+	  if(last_name=="" || last_name==null){
+		  alert('이름을 입력하세요');
+		  document.paymentForm.last_name.focus();
+		  return false;
+	  }
+	  if(phone_number=="" || phone_number==null){
+		  alert('전화번호를 입력하세요');
+		  document.paymentForm.phone_number.focus();
+		  return false;
+	  }
+	  if(email_address.match(/^([0-9a-zA-Z_-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/)==null){
+		  alert('이메일을 형식을 확인하세요');
+		  document.paymentForm.email_address.value="";
+		  document.paymentForm.email_address.focus();
+		  
+		  return false;
+	  }
+	  if(comm=="" || comm==null){
+		  alert('한 마디 입력 해주시면 감사하겠습니다.');
+		  document.paymentForm.comm.focus();
+		  return false;
+	  }
+	  if(name_on_card=="" || name_on_card==null){
+		  alert('카드에 적힌 이름을 입력하세요');
+		  document.paymentForm.name_on_card.focus();
+		  return false;
+	  }
+	  if(card_number=="" || card_number==null){
+		  alert('카드 번호를 입력하세요');
+		  document.paymentForm.card_number.focus();
+		  return false;
+	  }
+	  if(expiry_year=="" || expiry_year==null){
+		  alert('카드 년도를 입력하세요');
+		  document.paymentForm.expiry_year.focus();
+		  return false;
+	  }
+	  if(expiry_month=="" || expiry_month==null){
+		  alert('카드 달을 입력하세요');
+		  document.paymentForm.expiry_month.focus();
+		  return false;
+	  }
+	  if(csv_number=="" || csv_number==null){
+		  alert('카드 보안 번호를 입력바랍니다.');
+		  document.paymentForm.csv_number.focus();
+		  return false;
+	  }
+	  
+  }
+  
 </script>
 </head>
 <body class="bg-light" style="margin-top:83px;">
@@ -57,7 +127,7 @@
       </div>
     </div>
   </div>
-  <form method="post" name="paymentForm" action="${pageContext.request.contextPath}/nonMemberPro.do">
+  <form method="post" name="paymentForm" action="${pageContext.request.contextPath}/nonMemberPro.do" onsubmit="return formCheck();">
   <div class="h-100 text-muted border border-dark bg-light">
     <div class="container">
       <div class="row">
