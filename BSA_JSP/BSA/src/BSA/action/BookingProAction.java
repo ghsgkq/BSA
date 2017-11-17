@@ -16,13 +16,14 @@ public class BookingProAction implements CommandAction{
 		// TODO Auto-generated method stub
 		req.setCharacterEncoding("UTF-8");
 		BookingDto article = new BookingDto();	
-		article.setFrom(req.getParameter("from"));
-		article.setTo(req.getParameter("to"));
+		article.setWhere_trip(req.getParameter("where_trip"));
+		article.setWhere_from(req.getParameter("where_from"));
+		article.setWhere_to(req.getParameter("where_to"));
 		article.setPickup(req.getParameter("pickup"));
 		article.setDropft(req.getParameter("dropft"));
 		article.setStart_airline_name(req.getParameter("start_airline_name"));
 		article.setStart_airline_no(req.getParameter("start_airline_no"));
-		article.setStart_flight_time(req.getParameter("start_flight_time"));
+		article.setStart_airline_time(req.getParameter("start_airline_time"));
 		article.setArrival_airline_name(req.getParameter("arrival_airline_name"));
 		article.setArrival_airline_no(req.getParameter("arrival_airline_no"));
 		article.setArrival_airline_time(req.getParameter("arrival_airline_time"));
