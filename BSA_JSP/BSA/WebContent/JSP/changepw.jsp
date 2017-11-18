@@ -36,6 +36,21 @@
   alert("비밀번호 확인이 맞지않습니다.");
   </script>
   </c:if>
+  <c:if test="${check == 3 }">
+  <script type="text/javascript">
+  alert("새로운 비밀번호를 입력하세요");
+  </script>
+  </c:if>
+  <c:if test="${check == 4 }">
+  <script type="text/javascript">
+  alert("새로운 비밀번호 확인을 입력하세요");
+  </script>
+  </c:if>
+  <c:if test="${check == 5 }">
+  <script type="text/javascript">
+  alert("원래 비밀번호를 입력하세요");
+  </script>
+  </c:if>
   </head>
 
 <body>
@@ -49,11 +64,11 @@
           <form action="${pageContext.request.contextPath}/changepwPro.do" method="post">
           <div class="col-md-7 align-self-center">
             <div class="form-group"> <label>현재 비밀번호</label>
-              <input type="password" name="password" class="form-control" placeholder="현재 비밀번호"> </div>
+              <input type="password" name="password" class="form-control" placeholder="현재 비밀번호" value="${password }"> </div>
             <div class="form-group"> <label>새 비밀번호</label>
-              <input type="password" name="new_password" class="form-control" placeholder="새 비밀번호"> </div>
+              <input type="password" name="new_password" class="form-control" placeholder="새 비밀번호" value="${new_password }"> </div>
             <div class="form-group"> <label>새 비밀번호 확인</label>
-              <input type="password" name="new_re_password" class="form-control" placeholder="새 비밀번호 확인"> </div>
+              <input type="password" name="new_re_password" class="form-control" placeholder="새 비밀번호 확인" > </div>
           </div>
           <input type="submit" class="btn btn-outline-primary" value="수정">
           <input type="reset" class="btn btn-outline-primary" value="다시입력">
