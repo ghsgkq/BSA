@@ -177,14 +177,14 @@ public class memberDao {
 			}
 		}
 	}
-	public int changepw(String password, String new_password) {
+	public int changepw(String id,String password, String new_password) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		int check = 0;
 		try {
 			conn = ConnUtil.getConnection();
-			pstmt = conn.prepareStatement("update BSA_MEMBER set PASSWORD=? where PASSWORD=?");
+			pstmt = conn.prepareStatement("update BSA_MEMBER set PASSWORD=? where PASSWORD=? and ID=?");
 			pstmt.setString(1, new_password);
 			pstmt.setString(2, password);
 			check = pstmt.executeUpdate();
@@ -200,5 +200,30 @@ public class memberDao {
 			}
 		}
 		return check;
+	}
+	
+	public int unregister(String id, String password) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int un_check = 0;
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement("delete from BSA_MEMBER where ID=? and PASSWORD=?");
+			pstmt.setString(1, id);
+			pstmt.setString(2, password);
+			un_check = pstmt.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null) pstmt.close();
+				if(rs != null) rs.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return un_check;
 	}
 }

@@ -21,7 +21,7 @@ public class changepwProAction implements CommandAction {
 			else if(req.getParameter("new_re_password").equals("")) {
 				check = 4;
 			}else {
-				check = mdao.changepw(req.getParameter("password"), req.getParameter("new_password"));
+				check = mdao.changepw((String)req.getSession().getAttribute("id"),req.getParameter("password"), req.getParameter("new_password"));
 			}
 			
 		}
