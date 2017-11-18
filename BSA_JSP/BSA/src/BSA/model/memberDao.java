@@ -177,4 +177,28 @@ public class memberDao {
 			}
 		}
 	}
+	public int changepw(String password, String new_password) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int check = 0;
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement("update BSA_MEMBER set PASSWORD=? where PASSWORD=?");
+			pstmt.setString(1, new_password);
+			pstmt.setString(2, password);
+			check = pstmt.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null) pstmt.close();
+				if(rs != null) rs.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return check;
+	}
 }

@@ -7,7 +7,6 @@ public class changepwAction implements CommandAction{
 
 	@Override
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
-		
 		return "/JSP/changepw.jsp";
 	}
 	

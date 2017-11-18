@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
@@ -20,6 +21,21 @@
     	$("#left").load("JSP/userpage_left.jsp")
     });
   </script>
+  <c:if test="${check == 0 }">
+  <script type="text/javascript">
+  alert("원래 비밀번호가 맞지않습니다.");
+  </script>
+  </c:if>
+  <c:if test="${check == 1 }">
+  <script type="text/javascript">
+  alert("비밀번호가 변경되었습니다.");
+  </script>
+  </c:if>
+  <c:if test="${check == 2 }">
+  <script type="text/javascript">
+  alert("비밀번호 확인이 맞지않습니다.");
+  </script>
+  </c:if>
   </head>
 
 <body>
@@ -30,16 +46,18 @@
         <div class="col-md-2" id="left"></div>
         <div class="col-md-9">
           <h1 class="display-2 m-4">비밀번호 변경</h1>
+          <form action="${pageContext.request.contextPath}/changepwPro.do" method="post">
           <div class="col-md-7 align-self-center">
             <div class="form-group"> <label>현재 비밀번호</label>
               <input type="password" name="password" class="form-control" placeholder="현재 비밀번호"> </div>
             <div class="form-group"> <label>새 비밀번호</label>
-              <input type="newpassword" name="newpassword" class="form-control" placeholder="새 비밀번호"> </div>
+              <input type="password" name="new_password" class="form-control" placeholder="새 비밀번호"> </div>
             <div class="form-group"> <label>새 비밀번호 확인</label>
-              <input type="newpasswordcheck" name="newpasswordcheck" class="form-control" placeholder="새 비밀번호 확인"> </div>
+              <input type="password" name="new_re_password" class="form-control" placeholder="새 비밀번호 확인"> </div>
           </div>
-          <a href="#" class="btn btn-outline-primary">수정</a>
-          <a href="#" class="btn btn-outline-primary">취소</a>
+          <input type="submit" class="btn btn-outline-primary" value="수정">
+          <input type="reset" class="btn btn-outline-primary" value="다시입력">
+          </form>
         </div>
       </div>
     </div>
