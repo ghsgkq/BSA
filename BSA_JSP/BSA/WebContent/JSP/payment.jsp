@@ -29,7 +29,6 @@
 	  var expiry_year = document.paymentForm.expiry_year.value;
 	  var expiry_month = document.paymentForm.expiry_month.value;
 	  var csv_number = document.paymentForm.csv_number.value;
-	  var checkboxx = document.paymentForm.checkbox.checked;
 	 
 	  
 	  if(first_name=="" || first_name==null){
@@ -85,11 +84,6 @@
 		  return false;
 	  }
 	  
-	  if(!checkboxx){
-		  alert('약관에 동의 바랍니다.');
-		  document.paymentForm.checkboxx.focus();
-		  return false;
-	  }
 	 
 	  
   }
