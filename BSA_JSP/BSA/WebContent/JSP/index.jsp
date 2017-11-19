@@ -32,6 +32,11 @@
       }
      }
   </script>
+  <c:if test="${un_check == 1 }">
+  <script type="text/javascript">
+  alert("회원탈퇴 되었습니다.");
+  </script>
+  </c:if>
   
 </head>
 <body class="bg-light" style="margin-top:0px;">

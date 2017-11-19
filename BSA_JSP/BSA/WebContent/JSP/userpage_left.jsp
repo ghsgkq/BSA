@@ -21,7 +21,7 @@
               <a href="${pageContext.request.contextPath}/changepw.do" class="nav-link">비밀번호변경</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">회원탈퇴</a>
+              <a href="${pageContext.request.contextPath}/unregister.do" class="nav-link">회원탈퇴</a>
             </li>
             <li class="nav-item">
               <a href="#" class="active nav-link"><i class="fa fa-home fa-home"></i>&nbsp;결제정보</a>
