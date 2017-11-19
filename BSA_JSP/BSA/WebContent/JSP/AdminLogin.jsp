@@ -5,7 +5,7 @@
 <html>
 
 <head>
-  <title>로그인</title>
+  <title>관리자 로그인</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
@@ -13,7 +13,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
- 
+  <script src="${pageContext.request.contextPath}/JSP/adminlog.js"></script>
   <script type="text/javascript">
   $(document).ready( function() {
   	$("#contents").load("JSP/topa.jsp");
@@ -33,23 +33,16 @@
           <div class="card text-white p-5 bg-dark">
             <div class="card-body">
               <h1 class="mb-4">Admin Login</h1>
-              <form action="${pageContext.request.contextPath}/loginPro.do" name="memberForm" method="post" >
+     
+              <form action="${pageContext.request.contextPath}/adminlogpro.do" name="writeForm" method="post" onsubmit="return AdminLogSave()">
                 <div class="form-group"> <label>ID</label>
-                  <input type="text" name="id" class="form-control" placeholder="아이디 입력"> </div>
+                  <input type="text" name="admin_id" class="form-control" placeholder="아이디 입력"> </div>
                 <div class="form-group"> <label>Password</label>
-                  <input type="password" name="password" class="form-control" placeholder="패스워드 입력"> </div>
+                  <input type="password" name="admin_pw" class="form-control" placeholder="패스워드 입력"> </div>
                 <button type="submit" class="btn btn-secondary">Login</button>
-                <br><br>
-                <c:if test="${anser == 1 }">
-                	아이디를 입력하세요!
-                </c:if>
-                <c:if test="${anser == 2 }">
-                	비밀번호를 입력하세요!
-                </c:if>
-                <c:if test="${logincheck == 0 }">
-					아이디나 비밀번호를 잘못입력했습니다!
- 				</c:if>
+    
               </form>
+              
             </div>
           </div>
         </div>
