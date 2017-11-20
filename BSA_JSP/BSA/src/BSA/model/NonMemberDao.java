@@ -49,4 +49,29 @@ public class NonMemberDao {
 			}
 		}
 	}
+	
+	public int getArticleCount() {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int count = 0;
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement("select count(*) from NONMEMBER");
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				count = rs.getInt(1);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null)pstmt.close();
+				if(conn != null)pstmt.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}return count;
+	}
 }
