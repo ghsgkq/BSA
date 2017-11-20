@@ -5,7 +5,6 @@
 <html>
 
 <head>
- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.3/jquery.timepicker.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.3/jquery.timepicker.min.js"></script>
@@ -38,16 +37,21 @@
     	$("#bt").load("JSP/bottom.jsp");
     });
   </script>
-
-
-
+    <script>
+function div_OnOff(v,id){
+ // 라디오 버튼 value 값 조건 비교
+ if(v == "왕복"){
+  document.getElementById(id).style.display = ""; // 보여줌
+ }else{
+  document.getElementById(id).style.display = "none"; // 숨김
+ }
+}
+</script>
 <script type="text/javascript">	
 function booking(){
-	location.href="${pageContext.request.contextPath}/Bookinground.do";
+	location.href="${pageContext.request.contextPath}/Booking.do";
 	}
 </script>
-
-
 </head>
 
 <body>
@@ -70,52 +74,43 @@ function booking(){
             <div class="card-header py-4">
               <h5 class=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
               <form method="post" name="writeForm" action="${pageContext.request.contextPath}/BookingPro.do" onsubmit="return BookingSave()">
-              	
-                <input type="radio" value="왕복" name="where_trip"  class="triptype" onclick="booking()"> Round Trip( 왕복) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-               
-                <input type="radio" value="편도" name="where_trip"  class="triptype" checked>&nbsp;One Way (편도) </h5>
-           
+                <input type="radio" value="왕복" name="where_trip"  class="triptype" onclick=""checked> Round Trip( 왕복) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+                <input
+                  type="radio" value="편도" name="where_trip"  class="triptype" onclick="booking()" >&nbsp;One Way (편도) </h5>
             </div>
-            </form>
             
              
             <div class="card-body">
               <h4 class="my-5">Select your destination &nbsp;(목적지를 선택해주세요.)</h4>
               <h6 class="text-muted">From (출발)</h6>
-              <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-right fa-lg"></i> <select id="select" name="where_from" class="form-control-sm px-3 mx-2">
-               
-                <option id="1" value="#">----select-----</option>
-                <option id="2"value="GimheaAirporter(김해공항)">Gimhea Airporter (김해공항)</option>
-                <option id="3"value="Busan(부산)">Busan (부산)</option>
-            	
+              <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-right fa-lg"></i> <select name="where_from" class="form-control-sm px-3 mx-2">
+               	<option value="#">-----select-----</option>
+                <option value="Gimhea Airporter(김해공항)">Gimhea Airporter (김해공항)</option>
+                <option value="Busan (부산)">Busan (부산)</option>
+            
             
               
               </select> </div>
+              <p class=" p-y-1">&nbsp;</p>
              
-				 <div id="abc3">
-              <p class=" p-y-1">&nbsp;</p>  
-                   
+              <h6 class="text-muted">to (도착)</h6>
+              <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-left fa-lg"></i> <select name="where_to" class="form-control-sm px-3 mx-2">
+                <option value="#">-----select-----</option>
+                <option value="Busan(부산)">Busan (부산)</option>
+           		<option value="Gimhean Airporter(김해공항)">Gimhea Airporter (김해공항)</option>
+            
+              
+              </select> </div>
+              <p class=" p-y-1">&nbsp;</p>
               <h6 class="text-muted">Pickup Loaction &nbsp;(태울장소)</h6>
               <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-up fa-lg"></i>
                 <input type="text" class="form-control mr-3 my-1" placeholder="input text (태울 장소를 입력해주세요.)" name="pickup" value="${pickup}"> </div>
-               </div> 
-               
-               <div id="abc2">
               <p class=" p-y-1">&nbsp;</p>
+              
               <h6 class="text-muted">Dropft Location (내려줄 장소)</h6>
               <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-down fa-lg"></i>
-                <input type="text" class="form-control mr-3 my-1" placeholder="input text (내릴 장소를 입력해주세요.)" name="dropft" value="${dropft}"> </div> 
-                </div>
-              <h4 class="my-5">Airline and Flight Details &nbsp;(비행편을 선택해주세요.)</h4>
-              
-            <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-right fa-lg"></i>  <select id="select1" class="form-control-sm px-3 mx-2">
-              	<option id="1">-----select-----</option>
-              	<option id="2">Departing</option>
-              	<option id="3">Arrival</option>
-              
-              
-              </select> </div>
-              <div id="bbb2">
+                <input type="text" class="form-control mr-3 my-1" placeholder="input text (내릴 장소를 입력해주세요.)" name="dropft" value="${dropft}"> </div>
+              <h4 class="my-5">Airline and Flight Details &nbsp;(비행편을 적어주세요.)</h4>
               <h6 class="text-muted">Outbound/Departing Airline (비행편을 선택해주세요.)</h6>
               <div class="input-group w-100"> <i class="fa d-inline fa-plane fa-lg"></i> <select name="start_airline_name" class="form-control-sm px-3 mx-2">
                 <option value="#">-- select airline --</option>
@@ -150,9 +145,6 @@ function booking(){
                   $( "#timepicker" ).timepicker();
                 </script>
               </div>
-              </div>
-              
-              <div id="bbb3">
               <p class=" p-y-1">&nbsp;</p>
               <h6 class="text-muted">Inbound/Arrival Airline (비행편을 선택헤주세요.)</h6>
               <div class="input-group w-100"> <i class="fa d-inline fa-plane fa-lg"></i> <select name="arrival_airline_name" class="form-control-sm px-3 mx-2">
@@ -188,16 +180,8 @@ function booking(){
                   $( "#timepicker1" ).timepicker();
                 </script>
               </div>
-				</div>
+
               <h4 class="my-5">Date &nbsp;(날짜를 선택해주세요.)</h4>
-              
-         <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-right fa-lg"></i>      <select id="select2" class="form-control-sm px-3 mx-2">
-              <option id="1">-----select-----</option>
-              <option id="2">Departing Date</option>
-              <option id="3">Arrival Date</option>
-              </select></div>
-              
-              <div id="aaa2">
               <h6 class="text-muted">Departing (출발 날짜를 선택해주세요.)</h6>
               <div class="input-group w-25"> <i class="fa d-inline fa-lg fa-calendar"></i>
                 <input type="text" id="datepicker" name="start_date" value="${start_date}">
@@ -217,8 +201,8 @@ function booking(){
     </script>
                
               </div>
-              </div>
-            	<div id="aaa3">
+              
+            
               <p class=" p-y-1">&nbsp;</p>
             
               <h6 class="text-muted">Returning (Same day return) &nbsp;(도착날짜를 선택해주세요.)</h6>
@@ -240,7 +224,7 @@ function booking(){
     </script>
     
                </div>
-              </div>
+              
               <p class=" p-y-1">&nbsp;</p>
               <p class=" p-y-1">&nbsp;</p>
               <h4 class="my-5">How many passengers? &nbsp;(승객수를선택해주세요.)</h4>
@@ -275,9 +259,7 @@ function booking(){
           <form class="form-inline">
             <button type="submit" class="btn ml-3 btn-secondary">Next</button>
             </form>
-         </form>
-         
-         
+          </form>
         </div>
       </div>
       <div class="row">
@@ -302,32 +284,6 @@ function booking(){
     </div>
   </div>
   <div id="bt"></div>
-  <script type="text/javascript">
-    $("#abc2,#abc3").hide();
-    $("#select").change(function () {
-		$("#abc1, #abc2, #abc3").hide();
-		$('#abc' + $(this).find('option:selected').attr('id')).show();
-	});
-                    
-</script>
-
-<script type="text/javascript">
-    $("#bbb2,#bbb3").hide();
-    $("#select1").change(function () {
-		$("#bbb1, #bbb2, #bbb3").hide();
-		$('#bbb' + $(this).find('option:selected').attr('id')).show();
-	});
-                    
-</script>
-
-<script type="text/javascript">
-    $("#aaa2,#aaa3").hide();
-    $("#select2").change(function () {
-		$("#aaa1, #aaa2, #aaa3").hide();
-		$('#aaa' + $(this).find('option:selected').attr('id')).show();
-	});
-                    
-</script>
 </body>
 
 </html>
