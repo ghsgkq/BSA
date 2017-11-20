@@ -49,10 +49,10 @@ function div_OnOff(v,id){
 </script>
 </head>
 
-<body style="margin-top: 83px;">
+<body>
   <div id="contents"></div>
   <nav class="navbar navbar-expand-md bg-dark navbar-dark my-3">
-    <div class="container">
+    <div class="container" style="margin-top: 60px;">
       <a class="navbar-brand" href="#"></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
       <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
