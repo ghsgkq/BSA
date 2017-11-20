@@ -69,14 +69,14 @@ function booking(){
           <div class="card">
             <div class="card-header py-4">
               <h5 class=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-              <form method="post" name="writeForm" action="${pageContext.request.contextPath}/BookingPro.do" onsubmit="return BookingSave()">
+              <form method="post" name="writeForm" action="${pageContext.request.contextPath}/BookingPro.do" onsubmit="return BookingSaves()">
               	
                 <input type="radio" value="왕복" name="where_trip"  class="triptype" onclick="booking()"> Round Trip( 왕복) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
                
                 <input type="radio" value="편도" name="where_trip"  class="triptype" checked>&nbsp;One Way (편도) </h5>
            
             </div>
-            </form>
+          
             
              
             <div class="card-body">
