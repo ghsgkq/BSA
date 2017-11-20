@@ -140,10 +140,10 @@
     <table id="customers">
       <tbody>
         <tr>
-          <th class="c1">회원 번호</th>
-          <th class="c3">회원 아이디</th>
-          <th class="c2">회원 성함</th>
-          <th class="c3">회원 연락처</th>
+          <th class="c1" id="first_name">회원님 성</th>
+          <th class="c3" id="last_name">회원님 이름</th>
+          <th class="c2" id="phone_number">회원님 연락처</th>
+          <th class="c3" id="email_address">회원님 이메일</th>
           <th class="c1">회원 예매 번호</th>
           <th class="c3">회원 예매 시간</th>
         </tr>
