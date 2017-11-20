@@ -11,6 +11,10 @@ public class NonMemberDto {
 	private String expiry_year;
 	private String expiry_month;
 	private String csv_number;
+	private int ref;
+	private int step;
+	private int depth;
+	
 	
 	public String getFirst_name() {
 		return first_name;
@@ -71,6 +75,24 @@ public class NonMemberDto {
 	}
 	public void setCsv_number(String csv_number) {
 		this.csv_number = csv_number;
+	}
+	public int getRef() {
+		return ref;
+	}
+	public void setRef(int ref) {
+		this.ref = ref;
+	}
+	public int getStep() {
+		return step;
+	}
+	public void setStep(int step) {
+		this.step = step;
+	}
+	public int getDepth() {
+		return depth;
+	}
+	public void setDepth(int depth) {
+		this.depth = depth;
 	}
 	
 	
