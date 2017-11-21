@@ -30,7 +30,7 @@
         <div class="col-md-6 col-xl-8">
           <h4>
             <p class="text-light h-75 text-left">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-              <a href="#" class="btn btn-lg active btn-outline-secondary text-light">Book Now</a>&nbsp; You can experience our company.</p>
+              <a href="${pageContext.request.contextPath}/Booking.do" class="btn btn-lg active btn-outline-secondary text-light">Book Now</a>&nbsp; You can experience our company.</p>
           </h4>
         </div>
       </div>

@@ -37,16 +37,7 @@
     	$("#bt").load("JSP/bottom.jsp");
     });
   </script>
-    <script>
-function div_OnOff(v,id){
- // 라디오 버튼 value 값 조건 비교
- if(v == "왕복"){
-  document.getElementById(id).style.display = ""; // 보여줌
- }else{
-  document.getElementById(id).style.display = "none"; // 숨김
- }
-}
-</script>
+ 
 </head>
 
 <body style="margin-top: 83px;">
@@ -76,27 +67,33 @@ function div_OnOff(v,id){
             <div class="card-body">
               <h4 class="my-5">Select your destination &nbsp;(목적지를 선택해주세요.)</h4>
               <h6 class="text-muted">From (출발)</h6>
-              <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-right fa-lg"></i> <select name="where_from" class="form-control-sm px-3 mx-2">
-                <option value="Gimhea Airporter(김해공항)">Gimhea Airporter (김해공항)</option>
-                <option value="Busan (부산)">Busan (부산)</option>
+              <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-right fa-lg"></i> <select name="where_from" class="form-control-sm px-3 mx-2"
+              onclick="div_OnOf(this.value,'cona');">
+                <option value="GimheaAirporter(김해공항)">Gimhea Airporter (김해공항)</option>
+                <option value="Busan(부산)">Busan (부산)</option>
             
             
               
               </select> </div>
               <p class=" p-y-1">&nbsp;</p>
-              <div id="con" style="display:none">
+              
+            
+              
               <h6 class="text-muted">to (도착)</h6>
               <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-left fa-lg"></i> <select name="where_to" class="form-control-sm px-3 mx-2">
                 <option value="Busan(부산)">Busan (부산)</option>
            			<option value="Gimhean Airporter(김해공항)">Gimhea Airporter (김해공항)</option>
             
               
-              </select> </div></div>
+              </select> </div>
+              
               <p class=" p-y-1">&nbsp;</p>
+               
               <h6 class="text-muted">Pickup Loaction &nbsp;(태울장소)</h6>
               <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-up fa-lg"></i>
                 <input type="text" class="form-control mr-3 my-1" placeholder="input text (태울 장소를 입력해주세요.)" name="pickup" value="${pickup}"> </div>
               <p class=" p-y-1">&nbsp;</p>
+              
               
               <h6 class="text-muted">Dropft Location (내려줄 장소)</h6>
               <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-down fa-lg"></i>
