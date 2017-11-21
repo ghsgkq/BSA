@@ -66,10 +66,10 @@
         <div id="divHid3" style="display:none" class="border border-dark">
           <img src="JSP/img/reclining.png" width="260" height="260"> </div>
       </a>
-      <a class="ml-3 btn navbar-btn btn-primary w-25" href="#b"  >Route Map<i class="d-block fa fa-3x text-white fa-map-marker"></i>
+      <a class="ml-3 btn navbar-btn btn-primary w-25" href="index.do#route anchor"  >Route Map<i class="d-block fa fa-3x text-white fa-map-marker"></i>
         
       </a>
-      <a class="ml-3 btn navbar-btn btn-primary w-25" href="#d"  >Dayily Schedule<i class="d-block fa fa-3x text-white fa-calendar-check-o"></i>
+      <a class="ml-3 btn navbar-btn btn-primary w-25" href="index.do#schedule anchor"  >Dayily Schedule<i class="d-block fa fa-3x text-white fa-calendar-check-o"></i>
        
       </a>
     </div>
@@ -191,7 +191,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <a id="D">
+          <a id="schedule anchor">
             <h1 class="text-center display-3 text-primary">Schedule &amp; Rates</h1>
           </a>
           <h5>
@@ -372,7 +372,7 @@
             <tbody>
               <tr>
                 <td style="border:1px solid #cecece;">
-                  <a href="http://map.naver.com/?mpx=08260750%3A35.1899268%2C129.1123347%3AZ12%3A0.0165051%2C0.0078744&amp;searchCoord=104778cc46a253d284a65ffc8206bf8fb28e53bb5491e758949a82a04c4f469c&amp;query=7JWE7J207Yuw67GF7YGs&amp;menu=location&amp;tab=1&amp;lng=85f7bfac309db2fcdd677e36bef730f4&amp;mapMode=0&amp;lat=173e8a005a9756c7aa8bf51262d076d9&amp;dlevel=12&amp;enc=b64"
+                  <a id="route anchor" href="http://map.naver.com/?mpx=08260750%3A35.1899268%2C129.1123347%3AZ12%3A0.0165051%2C0.0078744&amp;searchCoord=104778cc46a253d284a65ffc8206bf8fb28e53bb5491e758949a82a04c4f469c&amp;query=7JWE7J207Yuw67GF7YGs&amp;menu=location&amp;tab=1&amp;lng=85f7bfac309db2fcdd677e36bef730f4&amp;mapMode=0&amp;lat=173e8a005a9756c7aa8bf51262d076d9&amp;dlevel=12&amp;enc=b64"
                     target="_blank">
                     <img src="http://prt.map.naver.com/mashupmap/print?key=p1510191746028_2143875559" width="460" height="340" alt="지도 크게 보기" title="지도 크게 보기" border="0" style="vertical-align:top;" class="mx-auto"> </a>
                 </td>
@@ -383,7 +383,7 @@
                     <tbody>
                       <tr>
                         <td height="30" bgcolor="#f9f9f9" align="left" style="padding-left:9px; border-left:1px solid #cecece; border-bottom:1px solid #cecece;"> <span style="font-family: tahoma; font-size: 11px; color:#666;">2017.11.9</span>&nbsp;<span style="font-size: 11px; color:#e5e5e5;">|</span>&nbsp;
-                          <a style="font-family: dotum,sans-serif; font-size: 11px; color:#666; text-decoration: none; letter-spacing: -1px;"
+                         <a style="font-family: dotum,sans-serif; font-size: 11px; color:#666; text-decoration: none; letter-spacing: -1px;"
                             href="http://map.naver.com/?mpx=08260750%3A35.1899268%2C129.1123347%3AZ12%3A0.0165051%2C0.0078744&amp;searchCoord=104778cc46a253d284a65ffc8206bf8fb28e53bb5491e758949a82a04c4f469c&amp;query=7JWE7J207Yuw67GF7YGs&amp;menu=location&amp;tab=1&amp;lng=85f7bfac309db2fcdd677e36bef730f4&amp;mapMode=0&amp;lat=173e8a005a9756c7aa8bf51262d076d9&amp;dlevel=12&amp;enc=b64"
                             target="_blank">지도 크게 보기</a>
                         </td>

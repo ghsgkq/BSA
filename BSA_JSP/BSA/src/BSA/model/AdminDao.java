@@ -21,14 +21,14 @@ public class AdminDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql="";
+		StringBuffer sql=new StringBuffer();
 		try {
 			conn = ConnUtil.getConnection();
-			sql="insert into ADMINLOG (ADMIN_ID, ADMIN_PW) "
-					+ "values(?, ?)";
-			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1, article.getAdmin_id());
-			pstmt.setString(2, article.getAdmin_pw());
+			sql.append("insert into ADMINLOG  "
+					+ "values(?, ?)");
+			pstmt=conn.prepareStatement(sql.toString());
+			pstmt.setString(1, "admin");
+			pstmt.setString(2, "1234");
 			pstmt.executeQuery();
 		}catch(SQLException e) {
 			e.printStackTrace();

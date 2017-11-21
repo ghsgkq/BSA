@@ -42,11 +42,13 @@
 
 
 
+
 <script type="text/javascript">	
 function booking(){
 	location.href="${pageContext.request.contextPath}/Bookinground.do";
 	}
 </script>
+
 
 
 </head>
@@ -59,7 +61,6 @@ function booking(){
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
       <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
         <a class="ml-3 btn navbar-btn btn-dark border border-warning" href="#">Reservation</a><i class="fa fa-stack-exchange fa-fw fa-3x d-inline pull-right bg-dark text-white"></i> 
-         <a class="ml-3 btn navbar-btn btn-dark border border-warning" href="#">예약 확인</a><i class="fa fa-stack-exchange fa-fw fa-3x d-inline pull-right bg-dark text-white"></i>
         </div>
     </div>
   </nav>
@@ -82,21 +83,20 @@ function booking(){
             <div class="card-body">
               <h4 class="my-5">Select your destination &nbsp;(목적지를 선택해주세요.)</h4>
               <h6 class="text-muted">From (출발)</h6>
-              <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-right fa-lg"></i> 
-              <select id="select" name="where_from" class="form-control-sm px-3 mx-2">
-               
-                <option id="1" value="#">----select-----</option>
-                <option id="2"value="GimheaAirporter">Gimhea Airporter (김해공항)</option>
-                <option id="3"value="Busan">Busan (부산)</option>
-              </select> </div>
-             
+
+
+
+              <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-right fa-lg"></i> <select id="select" name="where_from" class="form-control-sm px-3 mx-2">
+            	<option id="1">-----select-----</option>
+                <option id="2">Gimhea Airporter (김해공항)</option>
+                <option id="3">Busan (부산)</option>
+			</select> </div>
+
 				 <div id="abc3">
-              <p class=" p-y-1">&nbsp;</p>  
-                   
+              <p class=" p-y-1">&nbsp;</p>        
               <h6 class="text-muted">Pickup Loaction &nbsp;(태울장소)</h6>
               <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-up fa-lg"></i>
-                <input type="text" class="form-control mr-3 my-1" placeholder="input text (태울 장소를 입력해주세요.)" name="pickup" value="${pickup}"> </div>
-                  <p class=" p-y-1">&nbsp;</p>
+                <input type="text" class="form-control mr-3 my-1" placeholder="input text (태울 장소를 입력해주세요.)" name="pickup" value="${pickup}"> </div><br><br>
               <h6 class="text-muted">Outbound/Departing Airline (비행편을 선택해주세요.)</h6>
               <div class="input-group w-100"> <i class="fa d-inline fa-plane fa-lg"></i> <select name="start_airline_name" class="form-control-sm px-3 mx-2">
                 <option value="#">-- select airline --</option>

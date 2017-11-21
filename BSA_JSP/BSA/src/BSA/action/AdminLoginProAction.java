@@ -9,15 +9,21 @@ public class AdminLoginProAction implements CommandAction{
 	@Override
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
 		// TODO Auto-generated method stub
+		
+		
 		String admin_id=req.getParameter("admin_id");
+		
+		//req.getSession().getAttribute(arg0);
+		
 		String admin_pw=req.getParameter("admin_pw");
 		//아이디와 패스워드 저장
 		HttpSession session=req.getSession();
-		//세션 객체 생성
+		//서버 세션 객체 생성
+		
 		
 		if(admin_id.equals("admin")&& admin_pw.equals("1234")) {
 			session.setAttribute("admin_id", admin_id);
-			//관리자 아이디"admin" 비밀번호 "1234" 임시세션에 저장
+			//관리자 아이디"admin" 비밀번호 "1234" server session에 저장
 			
 		}
 		else {
