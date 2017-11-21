@@ -149,7 +149,9 @@
         </tr>
         <c:forEach var="article" items="${articleList}">
         	<tr>
-        		<td align="center" width="5"></td>
+        		<td align="center" width="50"></td>
+        			<c:out value="${number}"/>
+        			<c:set var="number" value="${number -1}"/>
         	</tr>
         
         </c:forEach>
