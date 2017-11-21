@@ -84,38 +84,15 @@ function booking(){
               <h4 class="my-5">Select your destination &nbsp;(목적지를 선택해주세요.)</h4>
               <h6 class="text-muted">From (출발)</h6>
 
-              <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-right fa-lg"></i> <select name="where_from" class="form-control-sm px-3 mx-2"
-              onclick="div_OnOf(this.value,'cona');">
-                <option value="GimheaAirporter(김해공항)">Gimhea Airporter (김해공항)</option>
-                <option value="Busan(부산)">Busan (부산)</option>
-            
-            
-              
-              </select> </div>
-              <p class=" p-y-1">&nbsp;</p>
-              
-            
-              
-              <h6 class="text-muted">to (도착)</h6>
-              <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-left fa-lg"></i> <select name="where_to" class="form-control-sm px-3 mx-2">
-                <option value="Busan(부산)">Busan (부산)</option>
-           			<option value="Gimhean Airporter(김해공항)">Gimhea Airporter (김해공항)</option>
-            
-              
-              </select> </div>
-              
-              <p class=" p-y-1">&nbsp;</p>
-
               <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-right fa-lg"></i> <select id="select" name="where_from" class="form-control-sm px-3 mx-2">
-               
-                <option id="1" value="#">----select-----</option>
-                <option id="2"value="GimheaAirporter(김해공항)">Gimhea Airporter (김해공항)</option>
-                <option id="3"value="Busan(부산)">Busan (부산)</option>
-            	
+            	<option id="1">-----select-----</option>
+                <option id="2">Gimhea Airporter (김해공항)</option>
+                <option id="3">Busan (부산)</option>
+            
             
               
               </select> </div>
-             
+
 				 <div id="abc3">
               <p class=" p-y-1">&nbsp;</p>  
                    
