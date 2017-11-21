@@ -77,23 +77,19 @@ function booking(){
                 <input type="radio" value="편도" name="where_trip"  class="triptype" checked>&nbsp;One Way (편도) </h5>
            
             </div>
-          
-            
-             
             <div class="card-body">
               <h4 class="my-5">Select your destination &nbsp;(목적지를 선택해주세요.)</h4>
               <h6 class="text-muted">From (출발)</h6>
 
-
-
               <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-right fa-lg"></i> <select id="select" name="where_from" class="form-control-sm px-3 mx-2">
             	<option id="1">-----select-----</option>
-                <option id="2">Gimhea Airporter (김해공항)</option>
-                <option id="3">Busan (부산)</option>
+                <option id="2" value="GimheaAirporter">Gimhea Airporter (김해공항)</option>
+                <option id="3" value="Busan">Busan (부산)</option>
 			</select> </div>
 
 				 <div id="abc3">
-              <p class=" p-y-1">&nbsp;</p>        
+              <p class=" p-y-1">&nbsp;</p>
+              
               <h6 class="text-muted">Pickup Loaction &nbsp;(태울장소)</h6>
               <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-up fa-lg"></i>
                 <input type="text" class="form-control mr-3 my-1" placeholder="input text (태울 장소를 입력해주세요.)" name="pickup" value="${pickup}"> </div><br><br>
