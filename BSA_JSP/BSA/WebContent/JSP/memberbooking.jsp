@@ -147,87 +147,15 @@
           <th class="c1">회원 예매 번호</th>
           <th class="c3">회원 예매 시간</th>
         </tr>
-        <tr>
-          <td>123</td>
-          <td>1234</td>
-          <td>12345</td>
-          <td>222</td>
-          <td>4454</td>
-          <td>4454</td>
-        </tr>
-        <tr class="alt">
-          <td>Berglunds snabbk�p</td>
-          <td>Christina Berglund</td>
-          <td>Helen Bennett</td>
-          <td>Helen Bennett</td>
-          <td>Sweden</td>
-          <td>4454</td>
-        </tr>
-        <tr>
-          <td>Centro comercial Moctezuma</td>
-          <td>Francisco Chang</td>
-          <td>Mexico</td>
-          <td>Helen Bennett</td>
-          <td>Helen Bennett</td>
-          <td>4454</td>
-        </tr>
-        <tr class="alt">
-          <td>Ernst Handel</td>
-          <td>Roland Mendel</td>
-          <td>Austria</td>
-          <td>Helen Bennett</td>
-          <td>Helen Bennett</td>
-          <td>4454</td>
-        </tr>
-        <tr>
-          <td>Island Trading</td>
-          <td>Helen Bennett</td>
-          <td>UK</td>
-          <td>4454</td>
-          <td>Helen Bennett</td>
-          <td>Helen Bennett</td>
-        </tr>
-        <tr class="alt">
-          <td>K�niglich Essen</td>
-          <td>Philip Cramer</td>
-          <td>Germany</td>
-          <td>4454</td>
-          <td>Helen Bennett</td>
-          <td>Helen Bennett</td>
-        </tr>
-        <tr>
-          <td>Laughing Bacchus Winecellars</td>
-          <td>Yoshi Tannamuri</td>
-          <td>Canada</td>
-          <td>Helen Bennett</td>
-          <td>4454</td>
-          <td>Helen Bennett</td>
-        </tr>
-        <tr class="alt">
-          <td>Magazzini Alimentari Riuniti</td>
-          <td>Giovanni Rovelli</td>
-          <td>Italy</td>
-          <td>Helen Bennett</td>
-          <td>4454</td>
-          <td>Helen Bennett</td>
-        </tr>
-        <tr>
-          <td>North/South</td>
-          <td>Simon Crowther</td>
-          <td>UK</td>
-          <td>4454</td>
-          <td>Helen Bennett</td>
-          <td>Helen Bennett</td>
-        </tr>
-        <tr class="alt">
-          <td>Paris sp�cialit�s</td>
-          <td>Marie Bertrand</td>
-          <td>France</td>
-          <td>4454</td>
-          <td>Helen Bennett</td>
-          <td>Helen Bennett</td>
-        </tr>
-      </tbody>
+        <c:forEach var="article" items="${articleList}">
+        	<tr>
+        		<td align="center" width="50"></td>
+        			<c:out value="${number}"/>
+        			<c:set var="number" value="${number -1}"/>
+        	</tr>
+        
+        </c:forEach>
+       </tbody>
     </table>
   </c:if>
   <div class="container">
