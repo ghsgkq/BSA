@@ -131,7 +131,7 @@
       </table>
     </div>
   </center>
-  <c:if test="${count ==0}">
+  <c:if test="${count == 0}">
     <div class="wrap">
       <div class="box">현재 예매하신 회원은 없습니다.</div>
     </div>
@@ -168,9 +168,6 @@
     </div>
   </div>
   <div class="wrap">
-    <center>
-      <a href="">비회원 예매 현황 보러가기</a>
-    </center>
   </div>
   <div class="py-5">
     <div class="container">
@@ -210,6 +207,35 @@
             </li>
           </ul>
         </div>
+        
+        <!-- 페이지 넘기기 -->
+        <c:if test="${count > 0}">
+	<c:set var="imsi" value="${count % pageSize == 0 ? 0 : 1 }"/>
+	<c:set var="pageCount" value="${count / pageSize + imsi }"/>
+	<c:set var="pageBlock" value="${3}"/>
+	<fmt:parseNumber var="result" value="${currentPage / pageBlock}" 
+	integerOnly="true"/>
+	<c:set var="startPage" value="${result * pageBlock + 1 }"/>
+	<c:set var="endPage" value="${startPage + pageBlock - 1 }"/>
+	
+	<c:if test="${endPage > pageCount}">
+		<c:set var="endPage" value="${pageCount}"/>
+	</c:if>
+	
+	<c:if test="${startPage > pageBlock}">
+		<a href="${pageContext.request.contextPath}/board/list.do?pageNum=${startPage - pageBlock }">이전</a>
+	</c:if>
+	
+	<c:forEach var="i" begin="${startPage}" end="${endPage}">
+		<a href="${pageContext.request.contextPath}/board/list.do?pageNum=${i}">[${i}]</a>
+	</c:forEach>
+	
+	<c:if test="${endPage < pageCount}">
+		<a href="${pageContext.request.contextPath}/board/list.do?pageNum=${startPage + pageBlock }">다음</a>
+	</c:if>
+</c:if>
+
+
         <div class="col-md-4"></div>
       </div>
     </div>
