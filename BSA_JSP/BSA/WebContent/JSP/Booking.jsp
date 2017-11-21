@@ -94,9 +94,7 @@ function booking(){
               </select> </div>
 
 				 <div id="abc3">
-              <p class=" p-y-1">&nbsp;</p>  
-                   
-
+              <p class=" p-y-1">&nbsp;</p>        
               <h6 class="text-muted">Pickup Loaction &nbsp;(태울장소)</h6>
               <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-up fa-lg"></i>
                 <input type="text" class="form-control mr-3 my-1" placeholder="input text (태울 장소를 입력해주세요.)" name="pickup" value="${pickup}"> </div>
