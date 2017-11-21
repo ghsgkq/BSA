@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -112,38 +113,47 @@
       </div>
     </div>
   </nav>
+  <form method="post" name="paymentForm" action="${pageContext.request.contextPath}/payment.do" onsubmit="return formCheck();">
   <div class="py-5 h-50 w-100 bg-light">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="card border border-light">
             <div class="card-body">
-              <h2 class="text-left text-secondary">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Your payment</h2>
-              <h6 class="text-muted">여기는 시간 &nbsp;그리고 출발 도착 글자 날짜 순으로 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h6>
-              <p class=" p-y-1" style="opacity: 0.5;">어디서 출발하는 시간 도착하는 시간 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                <a class="btn btn-lg active border border-dark btn-light text-secondary" href="" data-toggle="">Remove&nbsp;</a>
-              </p>
+            <c:choose>
+            <c:when test="">
+            <div class="input-group w-25"> <i class="fa d-inline fa-tachometer fa-lg"></i>
+              <label>BUS TIME  *<br></label>
+              <input type="text" class="from-control text-left w-50 m-2 border border-dark"  name="first_name" value="${first_name}"> </div>
+            </c:when>
+            </c:choose>
+             
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <form method="post" name="paymentForm" action="${pageContext.request.contextPath}/payment.do" onsubmit="return formCheck();">
+  
   <div class="h-100 text-muted border border-dark bg-light">
     <div class="container">
       <div class="row">
         <div class="col-md-12 h-100 m-5">
           <div class="card-body w-75">
-            <h4 class="text-dark">Please &nbsp;Enter Your Details</h4><label>First name *<br></label>
+            <h4 class="text-dark">Please &nbsp;Enter Your Details</h4>
+            <label>First name *<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-user fa-2x"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="이름을 입력해주세요." name="first_name" value="${first_name }"> </div><label><br>Last name *<br></label>
+              <input type="text" class="form-control mr-3 my-1" placeholder="이름을 입력해주세요." name="first_name" value="${first_name}"></div>
+              <label><br>Last name *<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-user"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="성을 입력해주세요." name="last_name" value="${last_name }"> </div><label><br>TelePhone *<br></label>
+              <input type="text" class="form-control mr-3 my-1" placeholder="성을 입력해주세요." name="last_name" value="${last_name}"> </div>
+              <label><br>TelePhone *<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-volume-control-phone fa-2x"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="휴대폰 번호를 입력해주세요." name="phone" value="${phone }"> </div><label><br>Email address *<br></label>
+              <input type="text" class="form-control mr-3 my-1" placeholder="휴대폰 번호를 입력해주세요." name="phone" value="${phone}"> </div>
+              <label><br>Email address *<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-envelope-open-o fa-2x"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="이메일을 입력해주세요." name="email" value="${email }"> </div><label><br>Comment *<br></label>
+              <input type="text" class="form-control mr-3 my-1" placeholder="이메일을 입력해주세요." name="email" value="${email }"> </div>
+              <label><br>Comment *<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-comment-o"></i>
               <input type="text" class="form-control mr-3 my-1" placeholder="요청사항을 적어주세요." name="comm"> </div>
           </div>

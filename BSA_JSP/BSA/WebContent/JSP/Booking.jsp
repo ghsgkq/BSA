@@ -73,7 +73,6 @@ function booking(){
             <div class="card-header py-4">
               <h5 class=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
                 <input type="radio" value="왕복" name="where_trip"  class="triptype" onclick="booking()"> Round Trip( 왕복) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-               
                 <input type="radio" value="편도" name="where_trip"  class="triptype" checked>&nbsp;One Way (편도) </h5>
            
             </div>
@@ -86,7 +85,8 @@ function booking(){
 
 
 
-              <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-right fa-lg"></i> <select id="select" name="where_from" class="form-control-sm px-3 mx-2">
+              <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-right fa-lg"></i> 
+              <select id="select" name="where_from" class="form-control-sm px-3 mx-2">
             	<option id="1" value="#">-----select-----</option>
                 <option id="2" value="GimheaAirporter">Gimhea Airporter (김해공항)</option>
                 <option id="3" value="Busan">Busan (부산)</option>
