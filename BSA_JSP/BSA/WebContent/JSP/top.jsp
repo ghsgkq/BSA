@@ -33,7 +33,7 @@
 <body>
   <nav class="navbar navbar-expand-md main-content navbar-light bg-warning" style="margin: auto;">
     <div class="container-fluid">
-      <a class="navbar-brand bg-warning" href="${pageContext.request.contextPath}/index.do"><i class="d-block fa fa-life-ring fa-3x pull-right fa-fw bg-warning text-dark"></i> </a>
+      <a class="navbar-brand bg-warning" href="${pageContext.request.contextPath}/index.do"></a><a class="ml-3 btn navbar-btn btn-sm btn-warning text-dark" href="${pageContext.request.contextPath}/index.do" data-toggle=""><i class="d-block fa fa-life-ring fa-3x fa-fw bg-warning text-dark pull-left"></i><b>Busan Shuttle &nbsp; &nbsp;<br>Airporter &nbsp; &nbsp; &nbsp; &nbsp;</b></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
         aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -45,7 +45,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link w-100 mx-3" href="${pageContext.request.contextPath}/schedule.do">
-              <h2><b class="text-white">Schedule &amp; Rates &nbsp; &nbsp; &nbsp;&nbsp;</b></h2>
+              <h2><b class="text-white">Schedule&amp;Rates &nbsp; &nbsp; &nbsp;&nbsp;</b></h2>
             </a>
           </li>
           <li class="nav-item">

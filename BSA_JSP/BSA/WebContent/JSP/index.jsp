@@ -40,6 +40,17 @@
   
 </head>
 <body class="bg-light" style="margin-top:0px;">
+<nav class="navbar navbar-expand-md navbar-light" style="margin-top:100px; background-color:#819FF7">
+    <div class="container">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
+        <ul class="navbar-nav"></ul><i class="d-block fa pull-right fa-fw fa-lg text-dark fa-car"></i>
+        <p class="text-light m-2">You can now book book private sedans at
+          <a class="ml-3 btn navbar-btn btn-sm ml-auto text-white  border border-light" style="background-color:#819FF7" href="#"><b>Busan Shuttle Airporter</b></a>&nbsp;</p><i class="d-block fa pull-right fa-fw fa-lg text-dark text-left fa-spinner"></i>
+      </div>
+    </div>
+  </nav>
   <div id="contents"></div>
   <div class="gradient-overlay px-5" style="background-image: url(&quot;JSP/img/sol2.jpg&quot;); height:800px;">
     <div class="py-5 m-5 text-left container-fluid text-capitalize h-100">
@@ -50,28 +61,38 @@
       </div>
     </div>
   </div>
-  <nav class="navbar navbar-expand-md bg-primary navbar-light">
+  <nav class="navbar navbar-expand-md navbar-light" style="background-color:#5858FA">
     <a class="navbar-brand" href="#"></a>
-    <div class="collapse navbar-collapse text-center justify-content-center" id="divBtn1" style="display:block">
+    
       <ul class="navbar-nav"></ul>
-      <a class="ml-3 btn navbar-btn btn-primary w-25" href="#a" name="btnTest1_1" title="We ask for your age only for statistical purposes.">Power Outlet<i class="d-block fa fa-3x fa-plug text-white"></i>
+      <a class="ml-3 btn navbar-btn  w-25 text-white" style="background-color:#5858FA" href="#a" name="btnTest1_1" title="We ask for your age only for statistical purposes.">Power Outlet<i class="d-block fa fa-3x fa-plug text-white"></i>
         
       </a>
-      <a class="ml-3 btn navbar-btn btn-primary w-25" href="#a" name="btnTest1_1"  title="We ask for your age only for statistical purposes.">Bottle Water<i class="d-block fa fa-3x text-white fa-bitbucket"></i>
+      <a class="ml-3 btn navbar-btn  w-25 text-white" style="background-color:#5858FA" href="#a" name="btnTest1_1"  title="We ask for your age only for statistical purposes.">Bottle Water<i class="d-block fa fa-3x text-white fa-bitbucket"></i>
        
       </a>
-      <a class="ml-3 btn navbar-btn btn-primary w-25" href="#a" name="btnTest1_1"  title="We ask for your age only for statistical purposes.">Reclining Seat<i class="d-block fa fa-3x text-white fa-wheelchair"></i>
+      <a class="ml-3 btn navbar-btn  w-25 text-white" style="background-color:#5858FA" href="#a" name="btnTest1_1"  title="We ask for your age only for statistical purposes.">Reclining Seat<i class="d-block fa fa-3x text-white fa-wheelchair"></i>
         
       </a>
-      <a class="ml-3 btn navbar-btn btn-primary w-25" href="index.do#route anchor"  >Route Map<i class="d-block fa fa-3x text-white fa-map-marker"></i>
+      <a class="ml-3 btn navbar-btn  w-25 text-white" style="background-color:#5858FA" href="index.do#route anchor"  >Route Map<i class="d-block fa fa-3x text-white fa-map-marker"></i>
         
       </a>
-      <a class="ml-3 btn navbar-btn btn-primary w-25" href="index.do#schedule anchor"  >Dayily Schedule<i class="d-block fa fa-3x text-white fa-calendar-check-o"></i>
+      <a class="ml-3 btn navbar-btn  w-25 text-white" style="background-color:#5858FA" href="index.do#schedule anchor"  >Dayily Schedule<i class="d-block fa fa-3x text-white fa-calendar-check-o"></i>
        
       </a>
+   
+  </nav>
+  <nav class="navbar navbar-expand-md navbar-dark ">
+    <div class="container">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
+        <ul class="navbar-nav"></ul>
+        <a class="ml-3 btn navbar-btn btn-light" href="#">여기다가 뭐넣을꺼임</a>
+      </div>
     </div>
   </nav>
-  <div class="py-5 m-5 bg-light">
+  <div  style="background-color:#E0E6F8">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
