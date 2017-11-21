@@ -129,7 +129,7 @@
       </div>
     </div>
   </div>
-  <form method="post" name="paymentForm" action="${pageContext.request.contextPath}/nonMemberPro.do" onsubmit="return formCheck();">
+  <form method="post" name="paymentForm" action="${pageContext.request.contextPath}/payment.do" onsubmit="return formCheck();">
   <div class="h-100 text-muted border border-dark bg-light">
     <div class="container">
       <div class="row">
@@ -137,13 +137,13 @@
           <div class="card-body w-75">
             <h4 class="text-dark">Please &nbsp;Enter Your Details</h4><label>First name *<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-user fa-2x"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="이름을 입력해주세요." name="first_name"> </div><label><br>Last name *<br></label>
+              <input type="text" class="form-control mr-3 my-1" placeholder="이름을 입력해주세요." name="first_name" value="${first_name }"> </div><label><br>Last name *<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-user"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="성을 입력해주세요." name="last_name"> </div><label><br>TelePhone *<br></label>
+              <input type="text" class="form-control mr-3 my-1" placeholder="성을 입력해주세요." name="last_name" value="${last_name }"> </div><label><br>TelePhone *<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-volume-control-phone fa-2x"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="휴대폰 번호를 입력해주세요." name="phone_number"> </div><label><br>Email address *<br></label>
+              <input type="text" class="form-control mr-3 my-1" placeholder="휴대폰 번호를 입력해주세요." name="phone" value="${phone }"> </div><label><br>Email address *<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-envelope-open-o fa-2x"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="이메일을 입력해주세요." name="email_address"> </div><label><br>Comment *<br></label>
+              <input type="text" class="form-control mr-3 my-1" placeholder="이메일을 입력해주세요." name="email" value="${email }"> </div><label><br>Comment *<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-comment-o"></i>
               <input type="text" class="form-control mr-3 my-1" placeholder="요청사항을 적어주세요." name="comm"> </div>
           </div>
@@ -204,17 +204,15 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <p class="lead mb-4 text-dark">
-            <input type="checkbox" name="check" value="" class="mx-3 text-secondary border border-secondary">I agree with the payment (결제에 동의 하시겠습니까?)</p>
-          <form class="form-inline justify-content-center">
+          <div class="form-inline justify-content-center">
             <button type="submit" class="btn btn-secondary btn-lg p-4">Payment (결제)</button>
-          </form>
-            </form>
+          </div>
+            
         </div>
       </div>
     </div>
   </div>
-  
+  </form>
     <div id="bt"></div>
    
 </body>

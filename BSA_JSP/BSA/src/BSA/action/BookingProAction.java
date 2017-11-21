@@ -42,7 +42,7 @@ public class BookingProAction implements CommandAction{
 		req.getSession().setAttribute("arrival_airline_no", req.getParameter("arrival_airline_no"));
 		req.getSession().setAttribute("arrival_airline_time", req.getParameter("arrival_airline_time"));
 		req.getSession().setAttribute("arrival_date", req.getParameter("arrival_date"));
-		return "/JSP/Booking_pro.jsp";
+		return "/JSP/payment.jsp";
 		
 		
 		

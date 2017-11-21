@@ -6,12 +6,10 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import BSA.model.NonMemberDao;
-import BSA.model.NonMemberDto;
 
 public class ListAction implements CommandAction{
 		public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
-			String pageNum = request.getParameter("pageNum");
+			/*String pageNum = request.getParameter("pageNum");
 			if(pageNum == null) {
 				pageNum = "1";
 			}
@@ -41,6 +39,7 @@ public class ListAction implements CommandAction{
 			request.setAttribute("number", new Integer(number));
 			request.setAttribute("articleList", articleList);
 			
-			return "/JSP/memberbooking.jsp";
+			return "/JSP/memberbooking.jsp";*/
+			return null;
 		}
 }
