@@ -16,6 +16,8 @@ public class BookingDto {
 	private String arrival_airline_name;
 	private String arrival_airline_no;
 	private String arrival_airline_time;
+	private String bus_time_pickup;
+	private String bus_time_dropft;
 	private String start_date;
 	private String arrival_date;
 	private String adults;
@@ -30,6 +32,18 @@ public class BookingDto {
 	private String comm;
 	
 	
+	public String getBus_time_pickup() {
+		return bus_time_pickup;
+	}
+	public void setBus_time_pickup(String bus_time_pickup) {
+		this.bus_time_pickup = bus_time_pickup;
+	}
+	public String getBus_time_dropft() {
+		return bus_time_dropft;
+	}
+	public void setBus_time_dropft(String bus_time_dropft) {
+		this.bus_time_dropft = bus_time_dropft;
+	}
 	public String getFirst_name() {
 		return first_name;
 	}
