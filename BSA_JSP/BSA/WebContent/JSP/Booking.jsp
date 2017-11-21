@@ -38,9 +38,7 @@
     	$("#bt").load("JSP/bottom.jsp");
     });
   </script>
-<<<<<<< HEAD
- 
-=======
+
 
 
 
@@ -51,7 +49,7 @@ function booking(){
 </script>
 
 
->>>>>>> d01e2e87b793142daf677b12184740c44104536d
+
 </head>
 
 <body>
@@ -85,7 +83,7 @@ function booking(){
             <div class="card-body">
               <h4 class="my-5">Select your destination &nbsp;(목적지를 선택해주세요.)</h4>
               <h6 class="text-muted">From (출발)</h6>
-<<<<<<< HEAD
+
               <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-right fa-lg"></i> <select name="where_from" class="form-control-sm px-3 mx-2"
               onclick="div_OnOf(this.value,'cona');">
                 <option value="GimheaAirporter(김해공항)">Gimhea Airporter (김해공항)</option>
@@ -107,8 +105,7 @@ function booking(){
               </select> </div>
               
               <p class=" p-y-1">&nbsp;</p>
-               
-=======
+
               <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-right fa-lg"></i> <select id="select" name="where_from" class="form-control-sm px-3 mx-2">
                
                 <option id="1" value="#">----select-----</option>
@@ -122,7 +119,7 @@ function booking(){
 				 <div id="abc3">
               <p class=" p-y-1">&nbsp;</p>  
                    
->>>>>>> d01e2e87b793142daf677b12184740c44104536d
+
               <h6 class="text-muted">Pickup Loaction &nbsp;(태울장소)</h6>
               <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-up fa-lg"></i>
                 <input type="text" class="form-control mr-3 my-1" placeholder="input text (태울 장소를 입력해주세요.)" name="pickup" value="${pickup}"> </div>
@@ -130,11 +127,9 @@ function booking(){
                
                <div id="abc2">
               <p class=" p-y-1">&nbsp;</p>
-<<<<<<< HEAD
+
               
-              
-=======
->>>>>>> d01e2e87b793142daf677b12184740c44104536d
+
               <h6 class="text-muted">Dropft Location (내려줄 장소)</h6>
               <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-down fa-lg"></i>
                 <input type="text" class="form-control mr-3 my-1" placeholder="input text (내릴 장소를 입력해주세요.)" name="dropft" value="${dropft}"> </div> 
