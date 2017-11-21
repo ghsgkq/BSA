@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+  <style>
+ p{
+    display: inline-block;
+    width: 6em;
+  }
+  .ui-tooltip {
+    width: 220px;
+    text-align: center;
+    color:orange;
+    box-shadow: 0 0 10px blue;
+    border-radius:60px;
+    padding: 10px 20px;
+}
+
+  
+  </style>
