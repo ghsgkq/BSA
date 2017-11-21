@@ -20,19 +20,7 @@
     	$("#bt").load("JSP/bottom.jsp");
     });
   </script>
-  
-  <script>
-    function fnTest1(divName) {
-      var frm = document.getElementById(divName);
-      
-      if (frm.style.display != "block") {
-       frm.style.display = "block";
-      } else {
-       frm.style.display = "none";
-      }
-     }
-  </script>
-  
+
 </head>
 <body class="bg-light" style="margin-top:0px;">
   <div id="contents"></div>
@@ -49,17 +37,14 @@
     <a class="navbar-brand" href="#"></a>
     <div class="collapse navbar-collapse text-center justify-content-center" id="divBtn1" style="display:block">
       <ul class="navbar-nav"></ul>
-      <a class="ml-3 btn navbar-btn btn-primary w-25" href="#a" name="btnTest1_1" onclick="javascript:fnTest1('divHid1')">Power Outlet<i class="d-block fa fa-3x fa-plug text-white"></i>
-        <div id="divHid1" style="display:none" class="border border-dark">
-          <img src="JSP/img/power.png" width="260" height="260"> </div>
+      <a class="ml-3 btn navbar-btn btn-primary w-25" href="#a" name="btnTest1_1" title="We ask for your age only for statistical purposes.">Power Outlet<i class="d-block fa fa-3x fa-plug text-white"></i>
+        
       </a>
-      <a class="ml-3 btn navbar-btn btn-primary w-25" href="#a" name="btnTest1_1" onclick="javascript:fnTest1('divHid2')">Bottle Water<i class="d-block fa fa-3x text-white fa-bitbucket"></i>
-        <div id="divHid2" style="display:none" class="border border-dark">
-          <img src="JSP/img/bottle.png" width="260" height="260"> </div>
+      <a class="ml-3 btn navbar-btn btn-primary w-25" href="#a" name="btnTest1_1" title="We ask for your age only for statistical purposes.">Bottle Water<i class="d-block fa fa-3x text-white fa-bitbucket"></i>
+        
       </a>
-      <a class="ml-3 btn navbar-btn btn-primary w-25" href="#a" name="btnTest1_1" onclick="javascript:fnTest1('divHid3')">Reclining Seat<i class="d-block fa fa-3x text-white fa-wheelchair"></i>
-        <div id="divHid3" style="display:none" class="border border-dark">
-          <img src="JSP/img/reclining.png" width="260" height="260"> </div>
+      <a class="ml-3 btn navbar-btn btn-primary w-25" href="#a" name="btnTest1_1" title="We ask for your age only for statistical purposes.">Reclining Seat<i class="d-block fa fa-3x text-white fa-wheelchair"></i>
+      
       </a>
       <a class="ml-3 btn navbar-btn btn-primary w-25" href="#b"  >Route Map<i class="d-block fa fa-3x text-white fa-map-marker"></i>
         
