@@ -21,7 +21,10 @@ public class BookingProAction implements CommandAction{
 		}else {
 			idcheck = 1;
 		}
-		
+		req.getSession().setAttribute("where_trip", req.getParameter("where_trip"));
+		req.getSession().setAttribute("where_from", req.getParameter("where_from"));
+		req.getSession().setAttribute("where_to", req.getParameter("where_to"));
+		req.getSession().setAttribute("pickup", req.getParameter("pickup"));
 		return "/JSP/Booking_pro.jsp";
 		
 		

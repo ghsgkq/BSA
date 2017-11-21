@@ -88,8 +88,8 @@ function booking(){
 
               <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-right fa-lg"></i> <select id="select" name="where_from" class="form-control-sm px-3 mx-2">
             	<option id="1">-----select-----</option>
-                <option id="2">Gimhea Airporter (김해공항)</option>
-                <option id="3">Busan (부산)</option>
+                <option id="2" value="GimheaAirporter">Gimhea Airporter (김해공항)</option>
+                <option id="3" value="Busan">Busan (부산)</option>
 			</select> </div>
 
 				 <div id="abc3">
