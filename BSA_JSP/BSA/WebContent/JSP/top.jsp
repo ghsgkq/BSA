@@ -31,7 +31,7 @@
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-md main-content navbar-light bg-warning">
+  <nav class="navbar navbar-expand-md main-content navbar-light bg-warning" style="margin: auto;">
     <div class="container-fluid">
       <a class="navbar-brand bg-warning" href="${pageContext.request.contextPath}/index.do"><i class="d-block fa fa-life-ring fa-3x pull-right fa-fw bg-warning text-dark"></i> </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
