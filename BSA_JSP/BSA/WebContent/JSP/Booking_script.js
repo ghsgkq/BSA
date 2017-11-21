@@ -53,3 +53,11 @@ function BookingSave(){
 		return false;
 	}
 }
+
+function BookingSaves(){
+	if(document.writeForm.adults.value == ""){
+		alert("승객수를 선택하세요.");
+		document.writeForm.adults.focus();
+		return false;
+	}
+}
