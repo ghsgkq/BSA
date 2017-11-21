@@ -66,6 +66,7 @@ function booking(){
         </div>
     </div>
   </nav>
+  <form method="post" name="writeForm" action="${pageContext.request.contextPath}/BookingPro.do" onsubmit="return BookingSave()">
   <div class="py-5">
     <div class="container">
       <div class="row">
@@ -73,7 +74,7 @@ function booking(){
           <div class="card">
             <div class="card-header py-4">
               <h5 class=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-              <form method="post" name="writeForm" action="${pageContext.request.contextPath}/BookingPro.do" onsubmit="return BookingSave()">
+              
                 <input type="radio" value="왕복" name="where_trip"  class="triptype" onclick=""checked> Round Trip( 왕복) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
                 <input
                   type="radio" value="편도" name="where_trip"  class="triptype" onclick="booking()" >&nbsp;One Way (편도) </h5>
@@ -256,10 +257,10 @@ function booking(){
       <div class="row">
         <div class="col-md-12 bg-light">
           <p class="lead bg-light">Sign up to our newsletter for the latest news</p>
-          <form class="form-inline">
+          <div class="form-inline">
             <button type="submit" class="btn ml-3 btn-secondary">Next</button>
-            </form>
-          </form>
+            </div>
+          
         </div>
       </div>
       <div class="row">
@@ -283,6 +284,7 @@ function booking(){
       </div>
     </div>
   </div>
+  </form>
   <div id="bt"></div>
 </body>
 
