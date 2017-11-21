@@ -251,6 +251,7 @@ function booking(){
       </div>
     </div>
   </div>
+  
   <nav class="navbar navbar-expand-md bg-dark navbar-dark my-2">
     <div class="container">
       <a class="navbar-brand" href="#"></a>
@@ -266,6 +267,7 @@ function booking(){
     </div>
   </div>
   </form>
+  
   <div id="bt"></div>
   <script type="text/javascript">
     $("#abc2,#abc3").hide();
