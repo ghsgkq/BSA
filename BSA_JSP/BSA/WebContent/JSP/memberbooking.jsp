@@ -223,15 +223,15 @@
 	</c:if>
 	
 	<c:if test="${startPage > pageBlock}">
-		<a href="${pageContext.request.contextPath}/board/list.do?pageNum=${startPage - pageBlock }">이전</a>
+		<a href="${pageContext.request.contextPath}/memberbooking.do?pageNum=${startPage - pageBlock }">이전</a>
 	</c:if>
 	
 	<c:forEach var="i" begin="${startPage}" end="${endPage}">
-		<a href="${pageContext.request.contextPath}/board/list.do?pageNum=${i}">[${i}]</a>
+		<a href="${pageContext.request.contextPath}/memberbooking.do?pageNum=${i}">[${i}]</a>
 	</c:forEach>
 	
 	<c:if test="${endPage < pageCount}">
-		<a href="${pageContext.request.contextPath}/board/list.do?pageNum=${startPage + pageBlock }">다음</a>
+		<a href="${pageContext.request.contextPath}/memberboooking.do?pageNum=${startPage + pageBlock }">다음</a>
 	</c:if>
 </c:if>
 
