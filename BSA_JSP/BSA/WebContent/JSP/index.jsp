@@ -198,7 +198,7 @@
               <div class="carousel-item">
                 <img class="d-block img-fluid w-100" src="JSP/img/car2.jpg" data-holder-rendered="true"> </div>
               <div class="carousel-item active">
-                <img class="d-block img-fluid h-100" src="JSP/img/airporter.jpg" data-holder-rendered="true"> </div>
+                <img class="d-block img-fluid w-100" src="JSP/img/airporter.jpg" data-holder-rendered="true"> </div>
             </div>
           </div>
         </div>
