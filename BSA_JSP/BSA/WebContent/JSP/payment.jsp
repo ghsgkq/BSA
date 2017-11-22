@@ -130,7 +130,7 @@
             </select>
             </c:if>  
             <c:if test="${arrival_time_list != null }">
-            <select name="bus_time_pickup" class="form-control-sm px-3 mx-2">
+            <select name="bus_time_dropft" class="form-control-sm px-3 mx-2">
             <c:forEach var="bus_time" items="${arrival_time_list }">
             <option value="${bus_time }">${bus_time }</option>
             </c:forEach>
@@ -224,7 +224,24 @@
       <div class="row">
         <div class="col-md-12">
           <div class="form-inline justify-content-center">
-            <button type="submit" class="btn btn-secondary btn-lg p-4">Payment (결제)</button>
+           <input type="hidden" name="where_trip" value="${where_trip }">
+           <input type="hidden" name="where_from" value="${where_from }">
+           <input type="hidden" name="where_to" value="${where_to }">
+           <input type="hidden" name="pickup" value="${pickup }">
+           <input type="hidden" name="start_airline_name" value="${start_airline_name }">
+           <input type="hidden" name="start_airline_no" value="${start_airline_no }">
+           <input type="hidden" name="start_airline_time" value="${start_airline_time }">
+           <input type="hidden" name="start_date" value="${start_date }">
+           <input type="hidden" name="dropft" value="${dropft }">
+           <input type="hidden" name="arrival_airline_name" value="${arrival_airline_name }">
+           <input type="hidden" name="arrival_airline_no" value="${arrival_airline_no }">
+           <input type="hidden" name="arrival_airline_time" value="${arrival_airline_time }">
+           <input type="hidden" name="arrival_date" value="${arrival_date }">
+           <input type="hidden" name="adults" value="${adults }">
+           <input type="hidden" name="young" value="${young }">
+           <input type="hidden" name="child" value="${child }">
+           <input type="hidden" name="infatns" value="${infatns }">
+            <button type="submit" class="btn btn-secondary btn-lg p-4">next</button>
           </div>
             
         </div>

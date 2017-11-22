@@ -25,9 +25,9 @@ public class BookingDao {
 			try {
 				conn = ConnUtil.getConnection();
 				sql = "insert into BOOKING (FIRST_NAME, LAST_NAME, PHONE, EMAIL, WHERE_TRIP, WHERE_FROM, WHERE_TO, PICKUP, DROPFT, START_AIRLINE_NAME, "
-						+ "START_AIRLINE_NO, START_AIRLINE_TIME, ARRIVAL_AIRLINE_NAME, ARRIVAL_AIRLINE_NO, ARRIVAL_AIRLINE_TIME, "
-						+ "START_DATE, ARRIVAL_DATE, ADULTS, YOUNG, CHILD, INFATNS, NAME_ON_CARD, CARD_NUMBER, EXPIRY_YEAR, EXPIRY_MONTH, CSV_NUMBER,COMM) "
-						+ "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+						+ "START_AIRLINE_NO, START_AIRLINE_TIME, ARRIVAL_AIRLINE_NAME, ARRIVAL_AIRLINE_NO, ARRIVAL_AIRLINE_TIME, BUS_TIME_PICKUP, BUS_TIME_DROPFT, "
+						+ "START_DATE, ARRIVAL_DATE, ADULTS, YOUNG, CHILD, INFATNS, NAME_ON_CARD, CARD_NUMBER, EXPIRY_YEAR, EXPIRY_MONTH, CSV_NUMBER, COMM) "
+						+ "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 				pstmt=conn.prepareStatement(sql);
 				pstmt.setString(1, article.getFirst_name());
 				pstmt.setString(2, article.getLast_name());
@@ -44,18 +44,20 @@ public class BookingDao {
 				pstmt.setString(13, article.getArrival_airline_name());
 				pstmt.setString(14, article.getArrival_airline_no());
 				pstmt.setString(15, article.getArrival_airline_time());
-				pstmt.setString(16, article.getStart_date());
-				pstmt.setString(17, article.getArrival_date());
-				pstmt.setString(18, article.getAdults());
-				pstmt.setString(19, article.getYoung());
-				pstmt.setString(20, article.getChild());
-				pstmt.setString(21, article.getInfatns());
-				pstmt.setString(22, article.getName_on_card());
-				pstmt.setString(23, article.getCard_number());
-				pstmt.setString(24, article.getExpiry_year());
-				pstmt.setString(25, article.getExpiry_month());
-				pstmt.setString(26, article.getCsv_number());
-				pstmt.setString(27, article.getComm());
+				pstmt.setString(16, article.getBus_time_pickup());
+				pstmt.setString(17, article.getBus_time_dropft());
+				pstmt.setString(18, article.getStart_date());
+				pstmt.setString(19, article.getArrival_date());
+				pstmt.setString(20, article.getAdults());
+				pstmt.setString(21, article.getYoung());
+				pstmt.setString(22, article.getChild());
+				pstmt.setString(23, article.getInfatns());
+				pstmt.setString(24, article.getName_on_card());
+				pstmt.setString(25, article.getCard_number());
+				pstmt.setString(26, article.getExpiry_year());
+				pstmt.setString(27, article.getExpiry_month());
+				pstmt.setString(28, article.getCsv_number());
+				pstmt.setString(29, article.getComm());
 				pstmt.executeUpdate();
 				
 			}catch(SQLException e) {

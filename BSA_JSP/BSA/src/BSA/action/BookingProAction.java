@@ -23,25 +23,31 @@ public class BookingProAction implements CommandAction{
 			
 		}else {
 			memberDto mdto = memberDao.getInstance().getmember((String)req.getSession().getAttribute("id"));
-			req.getSession().setAttribute("first_name", mdto.getFirst_name());
-			req.getSession().setAttribute("last_name", mdto.getLast_name());
-			req.getSession().setAttribute("phone", mdto.getPhone());
-			req.getSession().setAttribute("email", mdto.getEmail());
+			
+			req.setAttribute("first_name", mdto.getFirst_name());
+			req.setAttribute("last_name", mdto.getLast_name());
+			req.setAttribute("phone", mdto.getPhone());
+			req.setAttribute("email", mdto.getEmail());
 			
 		}
-		req.getSession().setAttribute("where_trip", req.getParameter("where_trip"));
-		req.getSession().setAttribute("where_from", req.getParameter("where_from"));
-		req.getSession().setAttribute("where_to", req.getParameter("where_to"));
-		req.getSession().setAttribute("pickup", req.getParameter("pickup"));
-		req.getSession().setAttribute("start_airline_name", req.getParameter("start_airline_name"));
-		req.getSession().setAttribute("start_airline_no", req.getParameter("start_airline_no"));
-		req.getSession().setAttribute("start_airline_time", req.getParameter("start_airline_time"));
-		req.getSession().setAttribute("start_date", req.getParameter("start_date"));
-		req.getSession().setAttribute("dropft", req.getParameter("dropft"));
-		req.getSession().setAttribute("arrival_airline_name", req.getParameter("arrival_airline_name"));
-		req.getSession().setAttribute("arrival_airline_no", req.getParameter("arrival_airline_no"));
-		req.getSession().setAttribute("arrival_airline_time", req.getParameter("arrival_airline_time"));
-		req.getSession().setAttribute("arrival_date", req.getParameter("arrival_date"));
+		
+		req.setAttribute("where_trip", req.getParameter("where_trip"));
+		req.setAttribute("where_from", req.getParameter("where_from"));
+		req.setAttribute("where_to", req.getParameter("where_to"));
+		req.setAttribute("pickup", req.getParameter("pickup"));
+		req.setAttribute("start_airline_name", req.getParameter("start_airline_name"));
+		req.setAttribute("start_airline_no", req.getParameter("start_airline_no"));
+		req.setAttribute("start_airline_time", req.getParameter("start_airline_time"));
+		req.setAttribute("start_date", req.getParameter("start_date"));
+		req.setAttribute("dropft", req.getParameter("dropft"));
+		req.setAttribute("arrival_airline_name", req.getParameter("arrival_airline_name"));
+		req.setAttribute("arrival_airline_no", req.getParameter("arrival_airline_no"));
+		req.setAttribute("arrival_airline_time", req.getParameter("arrival_airline_time"));
+		req.setAttribute("arrival_date", req.getParameter("arrival_date"));
+		req.setAttribute("adults", req.getParameter("adults"));
+		req.setAttribute("young", req.getParameter("young"));
+		req.setAttribute("child", req.getParameter("child"));
+		req.setAttribute("infatns", req.getParameter("infatns"));
 		
 		if(!(req.getParameter("start_airline_time").equals(""))) {
 			String time = "";

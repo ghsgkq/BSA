@@ -10,37 +10,36 @@ public class paymentAction implements CommandAction{
 
 	@Override
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
-		BookingDto bdto = new BookingDto();
-		String id = (String)req.getSession().getAttribute("id");
-		bdto.setFirst_name(req.getParameter("first_name"));
-		bdto.setLast_name(req.getParameter("last_name"));
-		bdto.setPhone(req.getParameter("phone"));
-		bdto.setEmail(req.getParameter("email"));
-		bdto.setWhere_trip((String)req.getSession().getAttribute("where_trip"));
-		bdto.setWhere_from((String)req.getSession().getAttribute("where_from"));
-		bdto.setWhere_to((String)req.getSession().getAttribute("where_to"));
-		bdto.setPickup((String)req.getSession().getAttribute("pickup"));
-		bdto.setDropft((String)req.getSession().getAttribute("dropft"));
-		bdto.setStart_airline_name((String)req.getSession().getAttribute("start_airline_name"));
-		bdto.setStart_airline_no((String)req.getSession().getAttribute("start_airline_no"));
-		bdto.setStart_airline_time((String)req.getSession().getAttribute("start_airline_time"));
-		bdto.setArrival_airline_name((String)req.getSession().getAttribute("arrival_airline_name"));
-		bdto.setArrival_airline_no((String)req.getSession().getAttribute("arrival_airline_no"));
-		bdto.setArrival_airline_time((String)req.getSession().getAttribute("arrival_airline_time"));
-		bdto.setStart_date((String)req.getSession().getAttribute("start_date"));
-		bdto.setArrival_date((String)req.getSession().getAttribute("arrival_date"));
-		bdto.setAdults((String)req.getSession().getAttribute("adults"));
-		bdto.setYoung((String)req.getSession().getAttribute("young"));
-		bdto.setChild((String)req.getSession().getAttribute("child"));
-		bdto.setInfatns(req.getParameter("name_on_card"));
-		bdto.setCard_number(req.getParameter("card_number"));
-		bdto.setExpiry_year(req.getParameter("expiry_year"));
-		bdto.setExpiry_month(req.getParameter("expiry_month"));
-		bdto.setCsv_number(req.getParameter("csv_number"));
-		bdto.setComm(req.getParameter("comm"));
-		req.getSession().invalidate();
-		req.getSession().setAttribute("id", id);
-		
+		req.setCharacterEncoding("UTF-8");
+		req.setAttribute("first_name", req.getParameter("first_name"));
+		req.setAttribute("last_name", req.getParameter("last_name"));
+		req.setAttribute("phone", req.getParameter("phone"));
+		req.setAttribute("email", req.getParameter("email"));
+		req.setAttribute("where_trip", req.getParameter("where_trip"));
+		req.setAttribute("where_from", req.getParameter("where_from"));
+		req.setAttribute("where_to", req.getParameter("where_to"));
+		req.setAttribute("pickup", req.getParameter("pickup"));
+		req.setAttribute("start_airline_name", req.getParameter("start_airline_name"));
+		req.setAttribute("start_airline_no", req.getParameter("start_airline_no"));
+		req.setAttribute("start_airline_time", req.getParameter("start_airline_time"));
+		req.setAttribute("start_date", req.getParameter("start_date"));
+		req.setAttribute("dropft", req.getParameter("dropft"));
+		req.setAttribute("arrival_airline_name", req.getParameter("arrival_airline_name"));
+		req.setAttribute("arrival_airline_no", req.getParameter("arrival_airline_no"));
+		req.setAttribute("arrival_airline_time", req.getParameter("arrival_airline_time"));
+		req.setAttribute("arrival_date", req.getParameter("arrival_date"));
+		req.setAttribute("adults", req.getParameter("adults"));
+		req.setAttribute("young", req.getParameter("young"));
+		req.setAttribute("child", req.getParameter("child"));
+		req.setAttribute("infatns", req.getParameter("infatns"));
+		req.setAttribute("name_on_card", req.getParameter("name_on_card"));
+		req.setAttribute("card_number", req.getParameter("card_number"));
+		req.setAttribute("expiry_year", req.getParameter("expiry_year"));
+		req.setAttribute("expiry_month", req.getAttribute("expiry_month"));
+		req.setAttribute("csv_number", req.getAttribute("csv_number"));
+		req.setAttribute("comm", req.getParameter("comm"));
+		req.setAttribute("bus_time_pickup", req.getParameter("bus_time_pickup"));
+		req.setAttribute("bus_time_dropft", req.getParameter("bus_time_dropft"));
 		
 		
 		return "/JSP/payment_check.jsp";

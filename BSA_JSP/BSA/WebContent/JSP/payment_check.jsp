@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
@@ -19,42 +20,100 @@
   </script>
   </head>
 
-<body>
+<body style="margin-top: 80px;">
   <div id="contents"></div>
+  <form action="" method="post">
   <div class="py-5">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="card">
             <div class="card-header">
-              <center>
                 <h1><b> 예약 확인 </b></h1>
-              </center>
             </div>
+            
             <div class="card-body">
               <ul class="list-group"></ul>
             </div>
-            <div class="form-group"> <label><h2><b> 목적지 </b></h2><p class="lead">Lead paragraph </p></label>
-              <div class="form-group"> <label><h2><b> 출발 위치 </b></h2><p class="lead">Lead paragraph </p></label> </div>
-              <div class="form-group"> <label><h2><b> 도착 위치 </b></h2><p class="lead">Lead paragraph </p></label> </div>
-              <div class="form-group"> <label><h2><b> 탑승 장소 </b></h2></label>
-                <p class="lead">Lead paragraph </p>
-              </div>
-              <div class="form-group"> <label><h2><b>하차 장소</b></h2><p class="lead">Lead paragraph </p></label> </div>
-              <div class="form-group"> <label><h2><b>항공사</b></h2><p class="lead">Lead paragraph </p></label> </div>
-              <div class="form-group"> <label><h2><b>비행 번호</b></h2><p class="lead">Lead paragraph </p></label> </div>
-              <div class="form-group"> <label><h2><b>비행 도착시간</b></h2><p class="lead">Lead paragraph </p></label> </div>
-              <div class="form-group"> <label><h2><b>출발 날짜</b></h2><p class="lead">Lead paragraph </p></label> </div>
-              <div class="form-group"> <label><h2><b>도착 날짜</b></h2><p class="lead">Lead paragraph </p></label> </div>
-              <div class="form-group"> <label><h2><b>승객 수</b></h2><p class="lead">Lead paragraph </p></label> </div>
+            <div class="form-group"> <label><p class="lead"><h2><b> ${where_trip} </b></h2></p></label><br><br>
+           	<input type="hidden" name="where_trip" value="${where_trip }">
+           
+           	<div class="form-group"> <label><h2><b> 이름 </b></h2><p class="lead">${first_name } </p></label></div>
+           	<input type="hidden" name="first_name" value="${first_name }">
+           	
+           	<div class="form-group"> <label><h2><b> 성 </b></h2><p class="lead">${last_name } </p></label></div>
+           	<input type="hidden" name="last_name" value="${last_name }">
+           	
+           	<div class="form-group"> <label><h2><b> 휴대폰번호 </b></h2><p class="lead">${phone } </p></label></div>
+           	<input type="hidden" name="phone" value="${phone }">
+           	
+           	<div class="form-group"> <label><h2><b> 이메일 </b></h2><p class="lead">${email } </p></label></div>
+           	<input type="hidden" name="email" value=${email }>
+           	
+           	<div class="form-group"> <label><h2><b> from </b></h2><p class="lead">${where_from } </p></label></div>
+           	<input type="hidden" name="where_from" value=${where_from }>
+           	
+           	<c:if test="${where_to != '' }">
+           	<div class="form-group"> <label><h2><b> to </b></h2><p class="lead">${to } </p></label></div>
+           	<input type="hidden" name="where_to" value="${where_to }">
+           	</c:if>
+           	
+           	<c:if test="${pickup != '' }">
+           	<div class="form-group"> <label><h2><b> 태울장소 </b></h2><p class="lead">${pickup } </p></label></div>
+           	<input type="hidden" name="pickup" value="${pickup }">
+           	<div class="form-group"> <label><h2><b> 항공이름  </b></h2><p class="lead">${start_airline_name } </p></label></div>
+           	<input type="hidden" name="start_airline_name" value="${start_airline_name }">
+           	<div class="form-group"> <label><h2><b> 비행기넘버  </b></h2><p class="lead">${start_airline_no } </p></label></div>
+           	<input type="hidden" name="start_airline_no" value="${start_airline_no }">
+           	<div class="form-group"> <label><h2><b> 비행기예약시간  </b></h2><p class="lead">${start_airline_time } </p></label></div>
+           	<input type="hidden" name="start_airline_time" value="${start_airline_time }">
+           	<div class="form-group"> <label><h2><b> 버스예약시간  </b></h2><p class="lead">${bus_time_pickup } </p></label></div>
+           	<input type="hidden" name="bus_time_pickup" value="${bus_time_pickup }">
+           	<div class="form-group"> <label><h2><b> 예약날짜  </b></h2><p class="lead">${start_date } </p></label></div>
+           	<input type="hidden" name="start_date" value="${start_date }">
+           	</c:if>
+
+           	
+           	<c:if test="${dropft != '' }">
+           	<div class="form-group"> <label><h2><b> 내릴장소 </b></h2><p class="lead">${dropft } </p></label></div>
+           	<input type="hidden" name="dropft" value="${dropft}">
+           	<div class="form-group"> <label><h2><b> 항공이름  </b></h2><p class="lead">${arrival_airline_name } </p></label></div>
+           	<input type="hidden" name="arrival_airline_name" value="${arrival_airline_name }">
+           	<div class="form-group"> <label><h2><b> 비행기넘버  </b></h2><p class="lead">${arrival_airline_no } </p></label></div>
+           	<input type="hidden" name="arrival_airline_no" value="${arrival_airline_no }">
+           	<div class="form-group"> <label><h2><b> 비행기예약시간  </b></h2><p class="lead">${arrival_airline_time } </p></label></div>
+           	<input type="hidden" name="arrival_airline_time" value="${arrival_airline_time }">
+           	<div class="form-group"> <label><h2><b> 버스예약시간  </b></h2><p class="lead">${bus_time_dropft } </p></label></div>
+           	<input type="hidden" name="bus_time_dropft" value="${bus_time_dropft }">
+           	<div class="form-group"> <label><h2><b> 예약날짜  </b></h2><p class="lead">${arrival_date } </p></label></div>
+           	<input type="hidden" name="arrival_date" value="${arrival_date }">
+           	</c:if>
+          	
+        
+          	
               <h3><b>어른</b></h3>
-              <div class="blockquote-footer">Someone famous</div>
+              <div class="blockquote-footer">${adults }명</div>
+              <input type="hidden" name="adults" value="${adults }">
+              
               <h3><b>청소년</b></h3>
-              <div class="blockquote-footer">Someone famous</div>
+              <div class="blockquote-footer">${young }명</div>
+              <input type="hidden" name="young" value="${young }">
+              
               <h3><b>어린이</b></h3>
-              <div class="blockquote-footer">Someone famous</div>
+              <div class="blockquote-footer">${child }명</div>
+              <input type="hidden" name="child" value="${child }">
+              
               <h3><b>유아</b></h3>
-              <div class="blockquote-footer">Someone famous</div>
+              <div class="blockquote-footer">${infatns}명</div>
+              <input type="hidden" name="infatns" value="${infatns }">
+              
+              <input type="hidden" name="name_on_card" value="${name_on_card }">
+              <input type="hidden" name="card_number" value="${card_number }">
+              <input type="hidden" name="expiry_year" value="${expiry_year }">
+              <input type="hidden" name="expiry_month" value="${expiry_month }">
+              <input type="hidden" name="csv_number" value="${csv_number }">
+              <div class="form-group"> <label><h2><b> 하고싶은말  </b></h2><p class="lead">${comm } </p></label></div>
+              <input type="hidden" name="comm" value="${comm }">
             </div>
           </div>
         </div>
@@ -65,14 +124,16 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <center>
+            <input type="submit" class="btn btn-primary">예약하기
+    </form>
+   	 <form>
             <a class="btn btn-primary" href="">Button </a>
-            <a class="btn btn-primary" href="">Button </a>
-          </center>
+ 	 </form>
         </div>
       </div>
     </div>
   </div>
+   
   <div id="bt"></div>
 </body>
 
