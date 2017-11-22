@@ -22,7 +22,7 @@
 
 <body style="margin-top: 80px;">
   <div id="contents"></div>
-  <form action="" method="post">
+  <form action="${pageContext.request.contextPath}/paymentPro.do" method="post">
   <div class="py-5">
     <div class="container">
       <div class="row">
@@ -124,10 +124,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-            <input type="submit" class="btn btn-primary">예약하기
+            <input type="submit" class="btn btn-primary" value="예약하기">
     </form>
-   	 <form>
-            <a class="btn btn-primary" href="">Button </a>
+   	 <form action="${pageContext.request.contextPath}/Booking.do" method="post">
+            <input type="submit" class="btn btn-primary" value="다시입력">
  	 </form>
         </div>
       </div>
