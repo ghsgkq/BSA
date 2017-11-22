@@ -11,6 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/JSP/style/style_index.css" type="text/css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/JSP/style/tooltip.css" type="text/css">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
@@ -20,17 +21,27 @@
     	$("#bt").load("JSP/bottom.jsp");
     });
   </script>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/JSP/style/tooltip.css" type="text/css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="jQuery Logo Slider Ticker by webdesignandsuch.com">
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="${pageContext.request.contextPath}/JSP/jquery.bxSlider.js"></script>
+		<script type="text/javascript">
+  		$(document).ready(function(){
+     		$('#slider').bxSlider({
+    		ticker: true,
+    		minSlides:1,
+    		maxSlides:2,
+    		slideWidth:500,
+    		slideMargin:20,
+    		ticker:true,
+    		tickerSpeed: 5000,
+			tickerHover: true
+  		});
+  		});
+		</script>
   
-   <script>
-  $( function() {
-    $( document ).tooltip();
-  } );
-  </script>
+  
   
   <c:if test="${un_check == 1 }">
   <script type="text/javascript">
@@ -65,21 +76,24 @@
     <a class="navbar-brand" href="#"></a>
     
       <ul class="navbar-nav"></ul>
-      <a class="ml-3 btn navbar-btn  w-25 text-white" style="background-color:#5858FA" href="#a" name="btnTest1_1" title="We ask for your age only for statistical purposes.">Power Outlet<i class="d-block fa fa-3x fa-plug text-white"></i>
+    <div class="tip text-center w-50">  <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#5858FA" href="#a" name="btnTest1_1" >Power Outlet<i class="d-block fa fa-3x fa-plug text-white"></i>     
+    <span>차량내부에 전자제품 관련 
+  <br>  장비들이 구비되어있습니다.</br></span>  
+    
+    </a></div>
+    
+  <div1 class="tip text-center w-50">    <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#5858FA" href="#a" name="btnTest1_1"  title="We ask for your age only for statistical purposes.">Bottle Water<i class="d-block fa fa-3x text-white fa-bitbucket"></i>  
+   <span>444</span>   </a></div1>
+   
+   <div2 class="tip text-center w-50">   <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#5858FA" href="#a" name="btnTest1_1"  title="We ask for your age only for statistical purposes.">Reclining Seat<i class="d-block fa fa-3x text-white fa-wheelchair"></i>   
+  <span>555</span>    </a></div2>
+  
+     <div3 class="tip text-center w-50">  <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#5858FA" href="index.do#route anchor"  >Route Map<i class="d-block fa fa-3x text-white fa-map-marker"></i>
         
-      </a>
-      <a class="ml-3 btn navbar-btn  w-25 text-white" style="background-color:#5858FA" href="#a" name="btnTest1_1"  title="We ask for your age only for statistical purposes.">Bottle Water<i class="d-block fa fa-3x text-white fa-bitbucket"></i>
+     <span> </span> </a></div3>
+     <div4 class="tip text-center w-50">  <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#5858FA" href="index.do#schedule anchor"  >Dayily Schedule<i class="d-block fa fa-3x text-white fa-calendar-check-o"></i>
        
-      </a>
-      <a class="ml-3 btn navbar-btn  w-25 text-white" style="background-color:#5858FA" href="#a" name="btnTest1_1"  title="We ask for your age only for statistical purposes.">Reclining Seat<i class="d-block fa fa-3x text-white fa-wheelchair"></i>
-        
-      </a>
-      <a class="ml-3 btn navbar-btn  w-25 text-white" style="background-color:#5858FA" href="index.do#route anchor"  >Route Map<i class="d-block fa fa-3x text-white fa-map-marker"></i>
-        
-      </a>
-      <a class="ml-3 btn navbar-btn  w-25 text-white" style="background-color:#5858FA" href="index.do#schedule anchor"  >Dayily Schedule<i class="d-block fa fa-3x text-white fa-calendar-check-o"></i>
-       
-      </a>
+    <span> </span>  </a></div4>
    
   </nav>
   <nav class="navbar navbar-expand-md navbar-dark ">
@@ -88,7 +102,13 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
       <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
         <ul class="navbar-nav"></ul>
-        <a class="ml-3 btn navbar-btn btn-light" href="#">여기다가 뭐넣을꺼임</a>
+        <div class="slider-container">
+
+	<ul id="slider">
+		<li><a href="#"> Welcom to BusanAirporter Service</a></li>
+	</ul>
+
+</div>
       </div>
     </div>
   </nav>

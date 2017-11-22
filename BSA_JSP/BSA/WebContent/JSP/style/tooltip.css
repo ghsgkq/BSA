@@ -1,18 +1,119 @@
 @charset "UTF-8";
-
-  <style>
- p{
-    display: inline-block;
-    width: 6em;
-  }
-  .ui-tooltip {
-    width: 220px;
-    text-align: center;
-    color:orange;
-    box-shadow: 0 0 10px blue;
-    border-radius:60px;
-    padding: 10px 20px;
+<style>
+div.tip {
+    position: relative;
 }
 
-  
-  </style>
+div.tip span {
+  	position: absolute;
+  	top:-70px;
+  	left:200px;
+	width: 180px;
+	color: #FFFFFF;
+	background: #000000;
+	height: 80px;
+	line-height: 30px;
+	
+	display: none;
+	border-radius: 6px;
+   
+}
+div.tip span:after{
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -8px;
+	width: 0;
+	height: 0;
+	border-top: 8px solid #000000;
+	border-right: 8px solid transparent;
+	border-left: 8px solid transparent;
+}
+div:hover.tip span {
+    display: block;
+    opacity: 0.8;
+	bottom: 30px;
+	
+	margin-left: -76px;
+	z-index: 999;
+} 
+
+div1.tip {
+    position: relative;
+}
+
+div1.tip span {
+  	position: absolute;
+  	top:-80px;
+  	left:160px;
+	width: 250px;
+	color: #FFFFFF;
+	background: #000000;
+	height: 80px;
+	line-height: 30px;
+	
+	display: none;
+	border-radius: 6px;
+   
+}
+div1.tip span:after{
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -8px;
+	width: 0;
+	height: 0;
+	border-top: 8px solid #000000;
+	border-right: 8px solid transparent;
+	border-left: 8px solid transparent;
+}
+div1:hover.tip span {
+    display: block;
+    opacity: 0.8;
+	bottom: 30px;
+	
+	margin-left: -76px;
+	z-index: 999;
+}   
+
+div2.tip {
+    position: relative;
+}
+
+div2.tip span {
+  	position: absolute;
+  	top:-80px;
+  	left:160px;
+	width: 150px;
+	color: #FFFFFF;
+	background: #000000;
+	height: 80px;
+	line-height: 30px;
+	
+	display: none;
+	border-radius: 6px;
+   
+}
+div2.tip span:after{
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -8px;
+	width: 0;
+	height: 0;
+	border-top: 8px solid #000000;
+	border-right: 8px solid transparent;
+	border-left: 8px solid transparent;
+}
+div2:hover.tip span {
+    display: block;
+    opacity: 0.8;
+	bottom: 30px;
+	
+	margin-left: -76px;
+	z-index: 999;
+}   
+</style>
