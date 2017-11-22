@@ -96,7 +96,7 @@ function booking(){
               <p class=" p-y-1">&nbsp;</p>        
               <h6 class="text-muted">Pickup Loaction &nbsp;(태울장소)</h6>
               <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-up fa-lg"></i>
-                <input type="text" class="form-control mr-3 my-1" placeholder="input text (태울 장소를 입력해주세요.)" name="pickup" value="${pickup}"> </div><br><br>
+                <input type="text" class="form-control mr-3 my-1" placeholder="input text (태울 장소를 입력해주세요.)" name="pickup"> </div><br><br>
               <h6 class="text-muted">Outbound/Departing Airline (비행편을 선택해주세요.)</h6>
               <div class="input-group w-100"> <i class="fa d-inline fa-plane fa-lg"></i> <select name="start_airline_name" class="form-control-sm px-3 mx-2">
                 <option value="#">-- select airline --</option>
@@ -121,10 +121,10 @@ function booking(){
                 <option value="1"> </option>
 
               </select><i class="fa d-inline fa-hashtag fa-lg"></i>
-               <input type="text" class="form-control mr-3 my-1" placeholder="Flight No (비행 번호를 입력해주세요.)" name="start_airline_no" value="${start_airline_no}"> </div><br><br>
+               <input type="text" class="form-control mr-3 my-1" placeholder="Flight No (비행 번호를 입력해주세요.)" name="start_airline_no"> </div><br><br>
               <h6 class="text-muted">Flight Time (비행 출발시간)</h6>
               <div class="input-group w-25"> <i class="fa d-inline fa-tachometer fa-lg"></i>
-                <input type="text" id="timepicker" class="from-control text-left w-50 m-2 border border-dark" name="start_airline_time" value="${start_airline_time}">
+                <input type="text" id="timepicker" class="from-control text-left w-50 m-2 border border-dark" name="start_airline_time">
                 <script type="text/javascript">
                   $( "#timepicker" ).timepicker({
                 	  step: 30,
@@ -135,7 +135,7 @@ function booking(){
                 </div><br><br>
                 <h6 class="text-muted">Departing (출발 날짜를 선택해주세요.)</h6>
              	 <div class="input-group w-25"> <i class="fa d-inline fa-lg fa-calendar"></i>
-             	   <input type="text" id="datepicker" name="start_date" value="${start_date}">
+             	   <input type="text" id="datepicker" name="start_date">
                
              	    <script src="JSP/pikaday.js"></script>
              	<script>
@@ -157,7 +157,7 @@ function booking(){
               <p class=" p-y-1">&nbsp;</p>
               <h6 class="text-muted">Dropft Location (내려줄 장소)</h6>
               <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-down fa-lg"></i>
-                <input type="text" class="form-control mr-3 my-1" placeholder="input text (내릴 장소를 입력해주세요.)" name="dropft" value="${dropft}"> </div><br><br>
+                <input type="text" class="form-control mr-3 my-1" placeholder="input text (내릴 장소를 입력해주세요.)" name="dropft"> </div><br><br>
                 <h6 class="text-muted">Inbound/Arrival Airline (비행편을 선택헤주세요.)</h6>
               <div class="input-group w-100"> <i class="fa d-inline fa-plane fa-lg"></i> <select name="arrival_airline_name" class="form-control-sm px-3 mx-2">
                 <option value="#">-- select airline --</option>
@@ -181,10 +181,10 @@ function booking(){
                 <option value="1"> </option>
                 <option value="1"> </option>
               </select><i class="fa d-inline fa-hashtag fa-lg"></i>
-                <input type="text" class="form-control mr-3 my-1" placeholder="Flight No (비행 번호를 입력해주세요.)" id="firstname" name="arrival_airline_no" value="${arrival_airline_no}"> </div> <br><br>
+                <input type="text" class="form-control mr-3 my-1" placeholder="Flight No (비행 번호를 입력해주세요.)" id="firstname" name="arrival_airline_no"> </div> <br><br>
                 <h6 class="text-muted">Flight Time (비행 도착시간)</h6>
               <div class="input-group w-25"> <i class="fa d-inline fa-tachometer fa-lg"></i>
-                <input type="text" id="timepicker1" class="from-control text-left w-50 m-2 border border-dark" name="arrival_airline_time" value="${arrival_airline_time}">
+                <input type="text" id="timepicker1" class="from-control text-left w-50 m-2 border border-dark" name="arrival_airline_time">
                 <script type="text/javascript">
                   $( "#timepicker1" ).timepicker({
                 	  step: 30,
@@ -195,7 +195,7 @@ function booking(){
                <p class=" p-y-1">&nbsp;</p>
              	 <h6 class="text-muted">Returning (Same day return) &nbsp;(도착날짜를 선택해주세요.)</h6>
             	  <div class="input-group w-25"> <i class="fa d-inline fa-lg fa-calendar"></i>
-             	   <input type="text" id="datepicker1" name="arrival_date" value="${arrival_date}">
+             	   <input type="text" id="datepicker1" name="arrival_date">
                 
             	 <script src="JSP/pikaday.js"></script>
           	   <script>

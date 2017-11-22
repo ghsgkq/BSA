@@ -2,6 +2,8 @@ package BSA.action;
 
 
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -16,12 +18,10 @@ public class BookingProAction implements CommandAction{
 	@Override
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
 		// TODO Auto-generated method stub
-		int idcheck =0;
 		req.setCharacterEncoding("UTF-8");
 		if(req.getSession().getAttribute("id") == null) {
 			
 		}else {
-			idcheck = 1;
 			memberDto mdto = memberDao.getInstance().getmember((String)req.getSession().getAttribute("id"));
 			req.getSession().setAttribute("first_name", mdto.getFirst_name());
 			req.getSession().setAttribute("last_name", mdto.getLast_name());
@@ -42,6 +42,50 @@ public class BookingProAction implements CommandAction{
 		req.getSession().setAttribute("arrival_airline_no", req.getParameter("arrival_airline_no"));
 		req.getSession().setAttribute("arrival_airline_time", req.getParameter("arrival_airline_time"));
 		req.getSession().setAttribute("arrival_date", req.getParameter("arrival_date"));
+		
+		if(!(req.getParameter("start_airline_time").equals(""))) {
+			String time = "";
+			for(int i=0; i<2; i++) {
+				if(req.getParameter("start_airline_time").charAt(i) != '0') {
+					time += req.getParameter("start_airline_time").charAt(i);
+				}
+			}
+		
+			int start_time = Integer.parseInt(time);
+			ArrayList<String> start_time_list = new ArrayList<String>();
+			for(int i = 0; i<start_time; i++) {
+				String start_times ="";
+				if(i<10) {
+					start_times += "0";
+				}
+				start_times += i+":00";
+				start_time_list.add(start_times);
+			}
+			req.setAttribute("start_time_list", start_time_list);
+		}
+		
+		
+		if(!(req.getParameter("arrival_airline_time").equals(""))) {
+			String time = "";
+			for(int i=0; i<2; i++) {
+				if(req.getParameter("arrival_airline_time").charAt(i) != '0') {
+					time += req.getParameter("arrival_airline_time").charAt(i);
+				}
+			}
+			int arrival_time = Integer.parseInt(time);
+			ArrayList<String> arrival_time_list = new ArrayList<String>();
+			for(int i=arrival_time; i<24; i++) {
+				String arrival_times = "";
+				if(i<10) {
+					arrival_times += "0";
+				}
+				arrival_times += i+":00";
+				arrival_time_list.add(arrival_times);
+			}
+			
+			req.setAttribute("arrival_time_list", arrival_time_list);
+		}
+		
 		return "/JSP/payment.jsp";
 		
 		

@@ -120,14 +120,23 @@
         <div class="col-md-12">
           <div class="card border border-light">
             <div class="card-body">
-            <c:choose>
-            <c:when test="">
-            <div class="input-group w-25"> <i class="fa d-inline fa-tachometer fa-lg"></i>
-              <label>BUS TIME  *<br></label>
-              <input type="text" class="from-control text-left w-50 m-2 border border-dark"  name="first_name" value="${first_name}"> </div>
-            </c:when>
-            </c:choose>
-             
+            <h6 class="text-muted">버스시간대를 골라주세요</h6>
+            <i class="fa d-inline fa-hashtag fa-lg"></i>
+      		<c:if test="${start_time_list != null }">
+            <select name="bus_time_pickup" class="form-control-sm px-3 mx-2">
+            <c:forEach var="bus_time" items="${start_time_list }">
+            <option value="${bus_time }">${bus_time }</option>
+            </c:forEach>
+            </select>
+            </c:if>  
+            <c:if test="${arrival_time_list != null }">
+            <select name="bus_time_pickup" class="form-control-sm px-3 mx-2">
+            <c:forEach var="bus_time" items="${arrival_time_list }">
+            <option value="${bus_time }">${bus_time }</option>
+            </c:forEach>
+            </select>
+            </c:if>
+            
             </div>
           </div>
         </div>
