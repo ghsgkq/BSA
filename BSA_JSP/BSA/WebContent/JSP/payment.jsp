@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>payment</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
@@ -214,6 +215,10 @@
               </select> </div><label><br>CSV number<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-angellist"></i>
               <input type="text" class="form-control mr-3 my-1" placeholder="CSV 번호를 입력해주세요." name="csv_number"> </div>
+              <br><br>
+              <div class="form-group"><h2><b> 결제금액  </b></h2></div>
+              <br><br>
+              <div class="form-group"><h2><b> ${money }  </b></h2></div>
           </div>
         </div>
       </div>
@@ -241,6 +246,7 @@
            <input type="hidden" name="young" value="${young }">
            <input type="hidden" name="child" value="${child }">
            <input type="hidden" name="infatns" value="${infatns }">
+           <input type="hidden" name="money" value="${money }">
             <button type="submit" class="btn btn-secondary btn-lg p-4">next</button>
           </div>
             

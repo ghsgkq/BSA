@@ -40,7 +40,7 @@ public class paymentAction implements CommandAction{
 		req.setAttribute("comm", req.getParameter("comm"));
 		req.setAttribute("bus_time_pickup", req.getParameter("bus_time_pickup"));
 		req.setAttribute("bus_time_dropft", req.getParameter("bus_time_dropft"));
-		
+		req.setAttribute("money", req.getParameter("money"));
 		
 		return "/JSP/payment_check.jsp";
 	}

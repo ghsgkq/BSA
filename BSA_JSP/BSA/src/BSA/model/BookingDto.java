@@ -30,8 +30,16 @@ public class BookingDto {
 	private String expiry_month;
 	private String csv_number;
 	private String comm;
+	private String money;
 	
 	
+	
+	public String getMoney() {
+		return money;
+	}
+	public void setMoney(String money) {
+		this.money = money;
+	}
 	public String getBus_time_pickup() {
 		return bus_time_pickup;
 	}

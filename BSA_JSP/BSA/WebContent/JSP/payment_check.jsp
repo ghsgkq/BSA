@@ -114,6 +114,8 @@
               <input type="hidden" name="csv_number" value="${csv_number }">
               <div class="form-group"> <label><h2><b> 하고싶은말  </b></h2><p class="lead">${comm } </p></label></div>
               <input type="hidden" name="comm" value="${comm }">
+              <div class="form-group"> <label><h2><b> 가격  </b></h2><p class="lead">${money } </p></label></div>
+           	<input type="hidden" name="money" value="${money }">
             </div>
           </div>
         </div>

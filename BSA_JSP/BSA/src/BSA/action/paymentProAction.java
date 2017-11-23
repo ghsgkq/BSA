@@ -38,10 +38,13 @@ public class paymentProAction implements CommandAction {
 		bdto.setName_on_card(req.getParameter("name_on_card"));
 		bdto.setCard_number(req.getParameter("card_number"));
 		bdto.setExpiry_year(req.getParameter("expiry_year"));
-		System.out.println(req.getParameter("expiry_month"));
 		bdto.setExpiry_month(req.getParameter("expiry_month"));
 		bdto.setCsv_number(req.getParameter("csv_number"));
 		bdto.setComm(req.getParameter("comm"));
+		bdto.setMoney(req.getParameter("money"));
+		req.setAttribute("booking_check", 1);
+		
+		
 		BookingDao bdao = BookingDao.getInstance();
 		bdao.Bookinginsert(bdto);
 		return "/JSP/index.jsp";

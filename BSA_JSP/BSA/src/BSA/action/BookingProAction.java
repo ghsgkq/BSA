@@ -2,6 +2,7 @@ package BSA.action;
 
 
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +20,7 @@ public class BookingProAction implements CommandAction{
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
 		// TODO Auto-generated method stub
 		req.setCharacterEncoding("UTF-8");
+		int money=0;
 		if(req.getSession().getAttribute("id") == null) {
 			
 		}else {
@@ -49,6 +51,20 @@ public class BookingProAction implements CommandAction{
 		req.setAttribute("child", req.getParameter("child"));
 		req.setAttribute("infatns", req.getParameter("infatns"));
 		
+		
+		if(req.getParameter("where_trip").equals("왕복")) {
+			money = (Integer.parseInt(req.getParameter("adults"))*35000)
+					+(Integer.parseInt(req.getParameter("young"))*25000)
+					+(Integer.parseInt(req.getParameter("child"))*15000);
+		}
+		else if(req.getParameter("where_trip").equals("편도")) {
+			money = (Integer.parseInt(req.getParameter("adults"))*20000)
+					+(Integer.parseInt(req.getParameter("young"))*15000)
+					+(Integer.parseInt(req.getParameter("child"))*10000);
+		}
+		DecimalFormat df = new DecimalFormat("#,###원");
+		req.setAttribute("money", df.format(money));
+		
 		if(!(req.getParameter("start_airline_time").equals(""))) {
 			String time = "";
 			for(int i=0; i<2; i++) {
@@ -69,6 +85,7 @@ public class BookingProAction implements CommandAction{
 			}
 			req.setAttribute("start_time_list", start_time_list);
 		}
+		
 		
 		
 		if(!(req.getParameter("arrival_airline_time").equals(""))) {
