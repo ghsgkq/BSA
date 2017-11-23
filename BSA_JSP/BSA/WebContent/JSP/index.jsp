@@ -101,10 +101,8 @@
   </nav>
   <nav class="navbar-expand-md navbar-dark">
     <div class="container">
-      <a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-      <div class="collapse navbar-collapse justify-content-top" id="navbar3SupportedContent">
-         <a class="btn navbar-btn text-warning btn-light border border-success active btn-sm text-center" href="#a" name="btnTest1_1" onclick="javascript:fnTest1('divHid1')" data-toggle="">Trip Advisor<i class="d-block fa fa-tripadvisor fa-lg text-dark"></i></a>
+     <a class="btn navbar-btn text-warning btn-light border border-success btn-sm text-center" href="#a" name="btnTest1_1" onclick="javascript:fnTest1('divHid1')" data-toggle="">Trip Advisor<i class="d-block fa fa-tripadvisor fa-lg text-dark"></i></a>
+      <div class="collapse navbar-collapse justify-content-top" id="navbar3SupportedContent">      
         <div id="slider" class="">
           <a href="#" style="color:black" ;="" class="mx-5"><b class="">"Grate bus Service to the Busan Airporter!"&nbsp;&nbsp;&nbsp;&nbsp;Welcom to Busan Airporter Service!</b></a>
           <a href="#"> </a>
