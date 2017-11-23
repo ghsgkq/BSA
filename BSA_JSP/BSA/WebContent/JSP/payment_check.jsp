@@ -54,7 +54,7 @@
            	<input type="hidden" name="where_from" value=${where_from }>
            	
            	<c:if test="${where_to != '' }">
-           	<div class="form-group"> <label><h2><b> to </b></h2><p class="lead">${to } </p></label></div>
+           	<div class="form-group"> <label><h2><b> to </b></h2><p class="lead">${where_to } </p></label></div>
            	<input type="hidden" name="where_to" value="${where_to }">
            	</c:if>
            	
