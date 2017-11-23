@@ -57,7 +57,8 @@
       <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
         <ul class="navbar-nav"></ul><i class="d-block fa pull-right fa-fw fa-lg text-dark fa-car"></i>
         <p class="text-light m-2">You can now book book private sedans at
-          <a class="ml-3 btn navbar-btn btn-sm ml-auto text-white  border border-light btn-sm" style="background-color:#819FF7" href="#"><b>Busan Shuttle Airporter</b></a>&nbsp;</p><i class="d-block fa pull-right fa-fw fa-lg text-dark text-left fa-spinner"></i>
+          <a class="ml-3 btn navbar-btn btn-sm ml-auto text-white  border border-light btn-sm" style="background-color:#819FF7" href="${pageContext.request.contextPath}/Booking.do"><b>Busan Shuttle Airporter</b></a>&nbsp;</p><i class="d-block fa pull-right fa-fw fa-lg text-dark text-left fa-spinner"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="#" class="btn btn-outline-warning text-dark border-dark"><b>Check Booking</b></a>
       </div>
     </div>
   </nav>
@@ -81,12 +82,12 @@
     
     </a></div>
     
-  <div1 class="tip text-center w-50">    <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#5858FA" href="#a" name="btnTest1_1"  title="We ask for your age only for statistical purposes.">Bottle Water<i class="d-block fa fa-3x text-white fa-bitbucket"></i>  
+  <div1 class="tip text-center w-50">    <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#5858FA" href="#a" name="btnTest1_1" >Bottle Water<i class="d-block fa fa-3x text-white fa-bitbucket"></i>  
    <span>고객들을 위해 항상 차량
    <br>  내부에 음료가 준비되어있습니다.</br></span>   
    </a></div1>
    
-   <div2 class="tip text-center w-50">   <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#5858FA" href="#a" name="btnTest1_1"  title="We ask for your age only for statistical purposes.">Reclining Seat<i class="d-block fa fa-3x text-white fa-wheelchair"></i>   
+   <div2 class="tip text-center w-50">   <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#5858FA" href="#a" name="btnTest1_1" >Reclining Seat<i class="d-block fa fa-3x text-white fa-wheelchair"></i>   
   <span>키 높이에 따라 의자 조절이
   <br>  Auto 방식으로 조절이 가능합니다</br></span>    
   </a></div2>
