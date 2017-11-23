@@ -35,8 +35,8 @@ public class paymentAction implements CommandAction{
 		req.setAttribute("name_on_card", req.getParameter("name_on_card"));
 		req.setAttribute("card_number", req.getParameter("card_number"));
 		req.setAttribute("expiry_year", req.getParameter("expiry_year"));
-		req.setAttribute("expiry_month", req.getAttribute("expiry_month"));
-		req.setAttribute("csv_number", req.getAttribute("csv_number"));
+		req.setAttribute("expiry_month", req.getParameter("expiry_month"));
+		req.setAttribute("csv_number", req.getParameter("csv_number"));
 		req.setAttribute("comm", req.getParameter("comm"));
 		req.setAttribute("bus_time_pickup", req.getParameter("bus_time_pickup"));
 		req.setAttribute("bus_time_dropft", req.getParameter("bus_time_dropft"));

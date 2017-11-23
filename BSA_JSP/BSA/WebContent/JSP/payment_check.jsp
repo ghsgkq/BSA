@@ -125,15 +125,16 @@
       <div class="row">
         <div class="col-md-12">
             <input type="submit" class="btn btn-primary" value="예약하기">
-    </form>
-   	 <form action="${pageContext.request.contextPath}/Booking.do" method="post">
+         </form>
+         <form action="${pageContext.request.contextPath}/Booking.do" method="post">
             <input type="submit" class="btn btn-primary" value="다시입력">
- 	 </form>
+ 	 
+   		</form>
         </div>
       </div>
     </div>
   </div>
-   
+  
   <div id="bt"></div>
 </body>
 

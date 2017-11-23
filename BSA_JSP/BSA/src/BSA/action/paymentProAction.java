@@ -10,6 +10,7 @@ public class paymentProAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
+		req.setCharacterEncoding("UTF-8");
 		BookingDto bdto = new BookingDto();
 		bdto.setFirst_name(req.getParameter("first_name"));
 		bdto.setLast_name(req.getParameter("last_name"));
@@ -37,12 +38,13 @@ public class paymentProAction implements CommandAction {
 		bdto.setName_on_card(req.getParameter("name_on_card"));
 		bdto.setCard_number(req.getParameter("card_number"));
 		bdto.setExpiry_year(req.getParameter("expiry_year"));
+		System.out.println(req.getParameter("expiry_month"));
 		bdto.setExpiry_month(req.getParameter("expiry_month"));
 		bdto.setCsv_number(req.getParameter("csv_number"));
 		bdto.setComm(req.getParameter("comm"));
 		BookingDao bdao = BookingDao.getInstance();
 		bdao.Bookinginsert(bdto);
-		return null;
+		return "/JSP/index.jsp";
 	}
 	
 }
