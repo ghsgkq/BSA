@@ -26,14 +26,14 @@
   alert("아이디가 존재합니다!!");
   </script>
   </c:if>
-  <c:if test="${idcheck == 1 && anser != 10 }">
+  <c:if test="${idcheck == 1 && !(anser>=1 && anser<=11) }">
   <script type="text/javascript">
   alert("사용가능한 아이디입니다!");
   </script>
   </c:if>
   <c:if test="${idcheck == 2 }">
   <script type="text/javascript">
-  alert("5~15 영문 소문자,숫자로만 구성할수있습니다!");
+  alert("아이디는 5~15 영문 소문자,숫자로만 구성할수있습니다!");
   </script>
   </c:if>
   <c:if test="${idcheck == 3 }">
@@ -43,7 +43,7 @@
   </c:if>
   <c:if test="${passcheck == 1 }">
   <script type="text/javascript">
-  alert("10~25 공백을 제외한 모든 문자로 구성할 수 있습니다!")
+  alert("패스워드는 10~25 공백을 제외한 모든 문자로 구성할 수 있습니다!")
   </script>
   </c:if>
 
