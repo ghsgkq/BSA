@@ -21,21 +21,20 @@
     	$("#bt").load("JSP/bottom.jsp");
     });
   </script>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="jQuery Logo Slider Ticker by webdesignandsuch.com">
-
-		<script src="http://code.jquery.com/jquery-latest.js"></script>
-		<script src="${pageContext.request.contextPath}/JSP/jquery.bxSlider.js"></script>
-		<script type="text/javascript">
-  		$(document).ready(function(){
+  
+  	<link rel="stylesheet" href="http://cdn.jsdelivr.net/bxslider/4.2.5/jquery.bxslider.css">
+	<script src="http://cdn.jsdelivr.net/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://cdn.jsdelivr.net/bxslider/4.2.5/jquery.bxslider.min.js"></script>
+	<script type="text/javascript">
+  		
+		$(document).ready(function(){
      		$('#slider').bxSlider({
-    		ticker: true,
+     	
     		minSlides:1,
     		maxSlides:2,
-    		slideWidth:500,
-    		slideMargin:20,
+    		slideWidth:1500,
+    		speed:35000,
     		ticker:true,
-    		tickerSpeed: 5000,
 			tickerHover: true
   		});
   		});
@@ -43,7 +42,7 @@
   
   
   
-  <c:if test="${un_check == 1 }">
+  <c:if test="${un_check == 1 }"> 
   <script type="text/javascript">
   alert("회원탈퇴 되었습니다.");
   </script>
@@ -58,7 +57,7 @@
       <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
         <ul class="navbar-nav"></ul><i class="d-block fa pull-right fa-fw fa-lg text-dark fa-car"></i>
         <p class="text-light m-2">You can now book book private sedans at
-          <a class="ml-3 btn navbar-btn btn-sm ml-auto text-white  border border-light" style="background-color:#819FF7" href="#"><b>Busan Shuttle Airporter</b></a>&nbsp;</p><i class="d-block fa pull-right fa-fw fa-lg text-dark text-left fa-spinner"></i>
+          <a class="ml-3 btn navbar-btn btn-sm ml-auto text-white  border border-light btn-sm" style="background-color:#819FF7" href="#"><b>Busan Shuttle Airporter</b></a>&nbsp;</p><i class="d-block fa pull-right fa-fw fa-lg text-dark text-left fa-spinner"></i>
       </div>
     </div>
   </nav>
@@ -83,10 +82,14 @@
     </a></div>
     
   <div1 class="tip text-center w-50">    <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#5858FA" href="#a" name="btnTest1_1"  title="We ask for your age only for statistical purposes.">Bottle Water<i class="d-block fa fa-3x text-white fa-bitbucket"></i>  
-   <span>444</span>   </a></div1>
+   <span>고객들을 위해 항상 차량
+   <br>  내부에 음료가 준비되어있습니다.</br></span>   
+   </a></div1>
    
    <div2 class="tip text-center w-50">   <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#5858FA" href="#a" name="btnTest1_1"  title="We ask for your age only for statistical purposes.">Reclining Seat<i class="d-block fa fa-3x text-white fa-wheelchair"></i>   
-  <span>555</span>    </a></div2>
+  <span>키 높이에 따라 의자 조절이
+  <br>  Auto 방식으로 조절이 가능합니다</br></span>    
+  </a></div2>
   
      <div3 class="tip text-center w-50">  <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#5858FA" href="index.do#route anchor"  >Route Map<i class="d-block fa fa-3x text-white fa-map-marker"></i>
         
@@ -96,19 +99,17 @@
     <span> </span>  </a></div4>
    
   </nav>
-  <nav class="navbar navbar-expand-md navbar-dark ">
+  <nav class="navbar-expand-md navbar-dark">
     <div class="container">
       <a class="navbar-brand" href="#"></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-      <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
-        <ul class="navbar-nav"></ul>
-        <div class="slider-container">
-
-	<ul id="slider">
-		<li><a href="#"> Welcom to BusanAirporter Service</a></li>
-	</ul>
-
-</div>
+      <div class="collapse navbar-collapse justify-content-top" id="navbar3SupportedContent">
+         <a class="btn navbar-btn text-warning btn-light border border-success active btn-sm text-center" href="#a" name="btnTest1_1" onclick="javascript:fnTest1('divHid1')" data-toggle="">Trip Advisor<i class="d-block fa fa-tripadvisor fa-lg text-dark"></i></a>
+        <div id="slider" class="">
+          <a href="#" style="color:black" ;="" class="mx-5"><b class="">"Grate bus Service to the Busan Airporter!"&nbsp;&nbsp;&nbsp;&nbsp;Welcom to Busan Airporter Service!</b></a>
+          <a href="#"> </a>
+        </div>
+       
       </div>
     </div>
   </nav>
