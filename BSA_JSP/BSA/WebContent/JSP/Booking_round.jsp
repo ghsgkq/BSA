@@ -5,9 +5,11 @@
 <html>
 
 <head>
+<title>booking</title>
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.3/jquery.timepicker.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.3/jquery.timepicker.min.js"></script>
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/JSP/timepicker/jquery.timepicker.css">
+  <script src="${pageContext.request.contextPath}/JSP/timepicker/jquery.timepicker.min.js"></script>
   <script src="${pageContext.request.contextPath}/JSP/Booking_script.js"></script>
   <!-- test -->
  <meta charset="utf-8">
@@ -143,7 +145,10 @@ function booking(){
               <div class="input-group w-25"> <i class="fa d-inline fa-tachometer fa-lg"></i>
                 <input type="text" id="timepicker" class="from-control text-left w-50 m-2 border border-dark" name="start_airline_time" value="${start_airline_time}">
                 <script type="text/javascript">
-                  $( "#timepicker" ).timepicker();
+                  $( "#timepicker" ).timepicker({
+                	  step: 30,
+                	  timeFormat: "H:i"
+                  });
                 </script>
               </div>
               <p class=" p-y-1">&nbsp;</p>
@@ -177,8 +182,12 @@ function booking(){
               <h6 class="text-muted">Flight Time (비행 도착시간)</h6>
               <div class="input-group w-25"> <i class="fa d-inline fa-tachometer fa-lg"></i>
                 <input type="text" id="timepicker1" class="from-control text-left w-50 m-2 border border-dark" name="arrival_airline_time" value="${arrival_airline_time}">
-                <script type="text/javascript">
-                  $( "#timepicker1" ).timepicker();
+               <script type="text/javascript">
+                  $( "#timepicker1" ).timepicker({
+                	  step: 30,
+                	  timeFormat: "H:i"
+                  });
+                  
                 </script>
               </div>
 

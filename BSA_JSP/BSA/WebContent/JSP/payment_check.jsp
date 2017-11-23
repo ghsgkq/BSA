@@ -114,6 +114,8 @@
               <input type="hidden" name="csv_number" value="${csv_number }">
               <div class="form-group"> <label><h2><b> 하고싶은말  </b></h2><p class="lead">${comm } </p></label></div>
               <input type="hidden" name="comm" value="${comm }">
+              <div class="form-group"> <label><h2><b> 가격  </b></h2><p class="lead">${money } </p></label></div>
+           	<input type="hidden" name="money" value="${money }">
             </div>
           </div>
         </div>
@@ -125,15 +127,16 @@
       <div class="row">
         <div class="col-md-12">
             <input type="submit" class="btn btn-primary" value="예약하기">
-    </form>
-   	 <form action="${pageContext.request.contextPath}/Booking.do" method="post">
+         </form>
+         <form action="${pageContext.request.contextPath}/Booking.do" method="post">
             <input type="submit" class="btn btn-primary" value="다시입력">
- 	 </form>
+ 	 
+   		</form>
         </div>
       </div>
     </div>
   </div>
-   
+  
   <div id="bt"></div>
 </body>
 
