@@ -124,6 +124,15 @@ public class BookingDao {
 				}
 			}catch(SQLException e){
 				e.printStackTrace();
+			}finally {
+				try {
+					if(conn != null) conn.close();
+					if(pstmt != null) pstmt.close();
+					if(rs != null) rs.close();
+					
+				}catch(SQLException e) {
+					e.printStackTrace();
+				}
 			}
 			
 			return arrbdto;
