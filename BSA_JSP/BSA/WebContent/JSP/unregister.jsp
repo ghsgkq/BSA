@@ -38,13 +38,13 @@
           <h1 class="display-2 m-4">회원탈퇴</h1>
           <form action="${pageContext.request.contextPath}/unregisterPro.do" method="post">
           <div class="col-md-7 align-self-center">
-            <div class="form-group"> <label>비밀번호</label>
+            <div class="form-group"> <label>Password</label>
               <input type="password" name="password" class="form-control" placeholder="비밀번호" value="${password }"> </div>
-            <div class="form-group"> <label>비밀번호 확인</label>
+            <div class="form-group"> <label>Password Check</label>
               <input type="password" name="re_password" class="form-control" placeholder="비밀번호 확인" value="${new_password }"> </div>
           </div>
-          <input type="submit" class="btn btn-outline-primary" value="탈퇴">
-          <input type="reset" class="btn btn-outline-primary" value="다시입력">
+          <input type="submit" class="btn btn-outline-primary" value="Resign">
+          <input type="reset" class="btn btn-outline-primary" value="Reset">
           </form>
         </div>
       </div>

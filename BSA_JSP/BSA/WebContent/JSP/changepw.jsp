@@ -63,15 +63,15 @@
           <h1 class="display-2 m-4">비밀번호 변경</h1>
           <form action="${pageContext.request.contextPath}/changepwPro.do" method="post">
           <div class="col-md-7 align-self-center">
-            <div class="form-group"> <label>현재 비밀번호</label>
+            <div class="form-group"> <label>Now Password</label>
               <input type="password" name="password" class="form-control" placeholder="현재 비밀번호" value="${password }"> </div>
-            <div class="form-group"> <label>새 비밀번호</label>
+            <div class="form-group"> <label>New Password</label>
               <input type="password" name="new_password" class="form-control" placeholder="새 비밀번호" value="${new_password }"> </div>
-            <div class="form-group"> <label>새 비밀번호 확인</label>
+            <div class="form-group"> <label>New Password Check</label>
               <input type="password" name="new_re_password" class="form-control" placeholder="새 비밀번호 확인" > </div>
           </div>
-          <input type="submit" class="btn btn-outline-primary" value="수정">
-          <input type="reset" class="btn btn-outline-primary" value="다시입력">
+          <input type="submit" class="btn btn-outline-primary" value="Modify">
+          <input type="reset" class="btn btn-outline-primary" value="Reset">
           </form>
         </div>
       </div>
