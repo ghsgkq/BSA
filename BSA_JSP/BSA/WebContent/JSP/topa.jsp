@@ -33,7 +33,7 @@
 <body>
   <nav class="navbar navbar-expand-md main-content navbar-light bg-warning">
     <div class="container-fluid">
-      <a class="navbar-brand bg-warning" href="${pageContext.request.contextPath}/admin.do"><i class="d-block fa fa-life-ring fa-3x pull-right fa-fw bg-warning text-dark"></i> </a>
+      <a class="navbar-brand bg-warning" href="${pageContext.request.contextPath}/admin.do"><i class="d-block fa fa-life-ring fa-3x pull-right fa-fw bg-warning text-dark"></i><b>Busan Shuttle &nbsp; &nbsp;<br>Airporter &nbsp; &nbsp; &nbsp; &nbsp;</b> </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
         aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -62,9 +62,9 @@
       </div>
     </div>
     <c:choose>
-    <c:when test="${id != null }">
-    <a class="btn navbar-btn ml-2 text-white btn-secondary" href="${pageContext.request.contextPath}/logout.do"><i class="fa d-inline fa-lg fa-user-circle-o"></i> Sign out</a>
-    <a class="btn navbar-btn ml-2 text-white btn-secondary" href="${pageContext.request.contextPath}/userpage.do"><i class="fa d-inline fa-lg fa-plus-square"></i>&nbsp;my info</a>
+    <c:when test="${admin_id != null }">
+    <a class="btn navbar-btn ml-2 text-white btn-secondary" href="${pageContext.request.contextPath}/adminlogout.do"><i class="fa d-inline fa-lg fa-user-circle-o"></i> Admin out</a>
+   
     </c:when>
     <c:otherwise>
     <a class="btn navbar-btn ml-2 text-white btn-secondary" href="${pageContext.request.contextPath}/adminlogin.do"><i class="fa d-inline fa-lg fa-user-circle-o"></i> Admin in</a>

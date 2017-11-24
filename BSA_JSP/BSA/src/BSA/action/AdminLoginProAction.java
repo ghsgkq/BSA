@@ -34,7 +34,7 @@ public class AdminLoginProAction implements CommandAction{
 		}
 		
 		
-		return "/JSP/AdminLogout.jsp";
+		return "/JSP/memberbooking.jsp";
 	}
 
 }

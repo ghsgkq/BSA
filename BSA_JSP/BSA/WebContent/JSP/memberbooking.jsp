@@ -7,11 +7,20 @@
 <html>
 <head>
 
-<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
-
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
- <link rel="stylesheet" href="${pageContext.request.contextPath}/JSP/style/style_memberbooking.css" type="text/css">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-beta.1.css" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+    $(document).ready( function() {
+    	$("#contents").load("JSP/topa.jsp");
+    	
+    });
+  </script>
 <title>회원 예매 화면</title>
 <style type="text/css">
     .my-box {
@@ -88,46 +97,9 @@
 	}
   </style>
 </head>
-<body>
-<nav class="navbar navbar-expand-md bg-warning navbar-light main-content">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="img/BSA_Logo_intro.png"> </a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto fixed-menu">
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <h2><b class="p-3">예매 회원 목록</b></h2>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <h2><b class="p-4">회원 관리</b></h2>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <h2><b class="p-5">이벤트 관리</b></h2>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <h2><b class="p-4">셔틀 관리</b></h2>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <a class="btn navbar-btn ml-2 text-white btn-secondary"><i class="fa d-inline fa-lg fa-window-close"></i>로그아웃</a>
-    <div id="google_translate_element" class="p-3"></div>
-    <script type="text/javascript">
-      function googleTranslateElementInit() {
-        			new google.translate.TranslateElement({pageLanguage: 'ko', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-      				}
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  </nav>
+<body style="margin-top:80pt;">
+<form method="post" name="checking_Booked" action="${pagecontext.request.contextpath}/checkbooked.do">
+<div id="contents"></div>
   <center>
     <div style="border:4px solid; padding:10px;">
       <table class="null">
@@ -222,8 +194,7 @@
 </div>
 </div>
 		
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+</form>
+  <div id="bt"></div>
 </body>
 </html>

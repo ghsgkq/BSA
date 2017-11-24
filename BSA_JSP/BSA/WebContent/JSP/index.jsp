@@ -32,7 +32,7 @@
      	
     		minSlides:1,
     		maxSlides:2,
-    		slideWidth:1500,
+    		slideWidth:800,
     		speed:35000,
     		ticker:true,
 			tickerHover: true
@@ -48,10 +48,26 @@
   </script>
   </c:if>
   
+   <style type="text/css">
+  .main-content {
+  	width: 100%;
+ 	 color: #555;
+  	font-size: 12px;
+ 	 position: fixed;
+ 	 z-index: 999;
+ 	 top: 0px;
+ 	 left: 0px;
+ 	 -webkit-box-shadow: 0 1px 2px 0 #777;
+ 	 box-shadow: 0 1px 2px 0 #777;
+ 	 background-color: #ccc; 
+ 	 }
+  
+  </style>
+  
 </head>
 <body class="bg-light" style="margin-top:0px;">
 <div id="contents"></div>
-<nav class="navbar navbar-expand-md navbar-light" style="margin-top:100px; background-color:#819FF7">
+<nav class="navbar main-content navbar-expand-md navbar-light" style="margin-top:100px; background-color:#819FF7">
     <div class="container">
       <a class="navbar-brand" href="#"></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
@@ -103,7 +119,7 @@
   </nav>
   <nav class="navbar-expand-md navbar-dark">
     <div class="container">
-     <a class="btn navbar-btn text-warning btn-light border border-success btn-sm text-center" href="#a" name="btnTest1_1" onclick="javascript:fnTest1('divHid1')" data-toggle="">Trip Advisor<i class="d-block fa fa-tripadvisor fa-lg text-dark"></i></a>
+     <a class="btn navbar-btn text-warning btn-light border border-success btn-sm text-center" href="#a" onClick="window.open('https://www.tripadvisor.com/','win','width=600,height=1000,toolbar=0,scrollbars=0,resizable=0')";>Trip Advisor<i class="d-block fa fa-tripadvisor fa-lg text-dark"></i></a>
       <div class="collapse navbar-collapse justify-content-top" id="navbar3SupportedContent">      
         <div id="slider" class="">
           <a href="#" style="color:black" ;="" class="mx-5"><b class="">"Grate bus Service to the Busan Airporter!"&nbsp;&nbsp;&nbsp;&nbsp;Welcom to Busan Airporter Service!</b></a>

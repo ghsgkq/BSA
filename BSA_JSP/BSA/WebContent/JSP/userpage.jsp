@@ -42,7 +42,7 @@
             <div class="form-group"> <label>Id</label>
               <input type="text" name="id" class="form-control" placeholder="아이디" value="${id }" readonly="readonly">
             </div>
-            <div class="form-group"> <label>Password</label>
+            <div class="form-group"> <label>PhoneNumber</label>
               <input type="text" name="phone" class="form-control" placeholder="- 포함 입력" value="${phone }"> </div>
             <div class="form-group"> <label>E-mail</label>
               <input type="email" name="email" class="form-control" placeholder="이메일을 입력해주세요" value="${email }" readonly="readonly"> </div>
