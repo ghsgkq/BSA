@@ -61,8 +61,13 @@
             </tr>
              <c:forEach items="${arrbdto }" var="arr">
              <c:if test="${arr.where_trip == '편도'}">
-            <tr>
+            <tr> 
+           	  <c:if test="${arr.pickup != null}">
               <th class="text-center">${arr.start_date }</th>
+              </c:if>
+              <c:if test="${arr.dropft != null}">
+              <th class="text-center">${arr.arrival_date }</th>
+              </c:if>
               <th class="text-center">${arr.where_trip }</th>
               <c:if test="${arr.pickup != null}">
               <th class="text-center">${arr.bus_time_pickup }</th>
@@ -71,7 +76,7 @@
               </c:if>
               <c:if test="${arr.dropft != null }">
               <th class="text-center">${arr.bus_time_dropft }</th>
-              <th class="text-center">${arr.where_to }</th>
+              <th class="text-center">${arr.where_from }</th>
               <th class="text-center">${arr.dropft }</th>
               </c:if>
               <th class="text-center">${arr.adults+arr.young+arr.child+arr.infatns }</th>
