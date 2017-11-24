@@ -58,7 +58,7 @@
         <ul class="navbar-nav"></ul><i class="d-block fa pull-right fa-fw fa-lg text-dark fa-car"></i>
         <p class="text-light m-2">You can now book book private sedans at
           <a class="ml-3 btn navbar-btn btn-sm ml-auto text-white  border border-light btn-sm" style="background-color:#819FF7" href="${pageContext.request.contextPath}/Booking.do"><b>Busan Shuttle Airporter</b></a>&nbsp;</p><i class="d-block fa pull-right fa-fw fa-lg text-dark text-left fa-spinner"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <a href="#" class="btn btn-outline-warning text-dark border-dark"><b>Check Booking</b></a>
+          <a href="${pageContext.request.contextPath}/checkbooked.do" class="btn btn-outline-warning text-dark border-dark"><b>Checking Booked</b></a>
       </div>
     </div>
   </nav>
