@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
@@ -20,7 +21,7 @@
   </script>
 </head>
 <body style="margin-top:80pt;">
-<form method="post" name="checking_Booked" action="${pagecontext.request.contextpath}/checkbooked.do">
+
 <div id="contents"></div>
  <div class="py-5">
     <div class="container">
@@ -33,9 +34,11 @@
           <a href="#" class="btn btn-outline-dark"><b>Change Booking (예약 변경)</b></a>
         </div>
         <div class="col-md-4">
-          <b>Insert Name(이름 입력)</b><input type="text" name="email" class="form-control" placeholder="insert your Name">
-          <b>Insert Phone Number(휴대번호 입력)</b><input type="text" class="form-control" placeholder="insert your Phone Number"><br></br>
-          <a href="#" class="btn btn-outline-dark"><b>Search Your Booked (예약 찾기)</b></a>
+        <form method="post" name="checking_Booked" action="${pageContext.request.contextPath}/checkbookedPro.do">
+          <input type="radio" name="tripcheck" value="1" checked="checked">편도   <input type="radio" name="tripcheck" value="2">왕복<br><br>
+          <b>Insert email(이메일 입력)</b><input type="text" name="email" class="form-control" placeholder="insert your email" value="${email }"><br></br>
+          <a href="javascript:document.checking_Booked.submit()" class="btn btn-outline-dark"><b>Search Your Booked (예약 찾기)</b></a>
+        </form>
         </div>
       </div>
     </div>
@@ -44,7 +47,8 @@
     <div class="container h-25">
       <div class="border-dark">
         <table class="table">
-          <thead>
+        <c:if test="${tripcheck == 1 }">
+          <thead>  
             <tr>
               <th class="text-center text-secondary"> 예약일자/요일</th>
               <th class="text-center text-secondary">Round/OneWay(왕복/편도)</th>
@@ -65,11 +69,7 @@
             </tr>
             <tr></tr>
           </thead>
-          <tbody>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-          </tbody>
+        </c:if>
         </table>
       </div>
     </div>
@@ -83,7 +83,7 @@
       </div>
     </div>
   </div>
-  </form>
+
   <div id="bt"></div>
 </body>
 
