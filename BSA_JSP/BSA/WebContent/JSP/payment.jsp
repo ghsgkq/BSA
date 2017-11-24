@@ -122,15 +122,21 @@
           <div class="card border border-light">
             <div class="card-body">
             <h6 class="text-muted">버스시간대를 골라주세요</h6>
-            <i class="fa d-inline fa-hashtag fa-lg"></i>
+            <br><br>
       		<c:if test="${start_time_list != null }">
+      		<div class="form-group"><h2><b> ${where_from }  </b></h2></div>
+      		<br>
             <select name="bus_time_pickup" class="form-control-sm px-3 mx-2">
             <c:forEach var="bus_time" items="${start_time_list }">
             <option value="${bus_time }">${bus_time }</option>
             </c:forEach>
             </select>
-            </c:if>  
+            <br><br>
+            </c:if>
+            
             <c:if test="${arrival_time_list != null }">
+            <div class="form-group"><h2><b> ${where_to }  </b></h2></div>
+            <br>
             <select name="bus_time_dropft" class="form-control-sm px-3 mx-2">
             <c:forEach var="bus_time" items="${arrival_time_list }">
             <option value="${bus_time }">${bus_time }</option>
