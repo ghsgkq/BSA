@@ -49,9 +49,9 @@
   </c:if>
   
 </head>
-<body class="bg-light" style="margin-top:85px;">
+<body class="bg-light" style="margin-top:0px;">
 <div id="contents"></div>
-<nav class="navbar navbar-expand-md navbar-light" style="background-color:#819FF7">
+<nav class="navbar navbar-expand-md navbar-light" style="margin-top:100px; background-color:#819FF7">
     <div class="container">
       <a class="navbar-brand" href="#"></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
