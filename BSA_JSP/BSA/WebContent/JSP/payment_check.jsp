@@ -123,7 +123,7 @@
 
         <div class="my-3 col-md-4 bg-warning">
          <c:if test="${dropft != ''}">
-          <img class="d-block ml-1 h-100 img-fluid mx-auto" src="img/map.jpg"> </div>
+          <img class="d-block ml-1 h-100 img-fluid mx-auto" src="${pageContext.request.contextPath}/JSP/img/map.jpg "> </div>
         <div class="text-left col-md-4 border border-dark">
           <div class="row my-5">
             <div class="col-10">

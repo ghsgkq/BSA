@@ -39,20 +39,20 @@
           <h1 class="display-2 m-4">개인정보수정</h1>
           <form method="post" action="${pageContext.request.contextPath}/userpagePro.do">
           <div class="col-md-7 align-self-center">
-            <div class="form-group"> <label>아이디</label>
+            <div class="form-group"> <label>Id</label>
               <input type="text" name="id" class="form-control" placeholder="아이디" value="${id }" readonly="readonly">
             </div>
-            <div class="form-group"> <label>휴대폰번호</label>
+            <div class="form-group"> <label>Password</label>
               <input type="text" name="phone" class="form-control" placeholder="- 포함 입력" value="${phone }"> </div>
-            <div class="form-group"> <label>이메일</label>
+            <div class="form-group"> <label>E-mail</label>
               <input type="email" name="email" class="form-control" placeholder="이메일을 입력해주세요" value="${email }" readonly="readonly"> </div>
-            <div class="form-group"> <label>이름</label>
+            <div class="form-group"> <label>First Name</label>
               <input type="text" name="first_name" class="form-control" placeholder="이름" value="${first_name }"> </div>
-              <div class="form-group"> <label>성</label>
+              <div class="form-group"> <label>Last Name</label>
               <input type="text" name="last_name" class="form-control" placeholder="이름" value="${last_name }"> </div>
           </div>
-          <input type="submit" class="btn btn-outline-primary" value="수정">
-          <input type="reset" class="btn btn-outline-primary" value="취소">
+          <input type="submit" class="btn btn-outline-primary" value="Modify">
+          <input type="reset" class="btn btn-outline-primary" value="Cancel">
           </form>
         </div>
       </div>
