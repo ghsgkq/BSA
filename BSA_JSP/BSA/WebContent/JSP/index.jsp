@@ -49,8 +49,9 @@
   </c:if>
   
 </head>
-<body class="bg-light" style="margin-top:0px;">
-<nav class="navbar navbar-expand-md navbar-light" style="margin-top:100px; background-color:#819FF7">
+<body class="bg-light" style="margin-top:85px;">
+<div id="contents"></div>
+<nav class="navbar navbar-expand-md navbar-light" style="background-color:#819FF7">
     <div class="container">
       <a class="navbar-brand" href="#"></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
@@ -62,7 +63,7 @@
       </div>
     </div>
   </nav>
-  <div id="contents"></div>
+  
   <div class="gradient-overlay px-5" style="background-image: url(&quot;JSP/img/sol2.jpg&quot;); height:800px;">
     <div class="py-5 m-5 text-left container-fluid text-capitalize h-100">
       <div class="row h-100 text-center text-capitalize py-5">
