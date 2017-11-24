@@ -6,6 +6,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
  <link rel="stylesheet" href="${pageContext.request.contextPath}/JSP/style/style_memberbooking.css" type="text/css">
@@ -74,6 +77,15 @@
       white-space: nowrap;
       position: relative;
     }
+    
+    .example .pagination>la>a,
+	.example .pagination>li>span{
+	border: 1px solid pruple;
+	}
+	.pagination>li.active>a{
+		background:purple;
+		color: #fff;
+	}
   </style>
 </head>
 <body>
@@ -169,46 +181,16 @@
   </div>
   <div class="wrap">
   </div>
-  <div class="py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4 px-4">
-          <ul class="pagination">
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Previous"> <span aria-hidden="true">«</span> <span class="sr-only">Previous</span> </a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">2</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">3</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">4</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">5</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">6</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">7</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">8</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Next"> <span aria-hidden="true">»</span> <span class="sr-only">Next</span> </a>
-            </li>
-          </ul>
-        </div>
+  
         
         <!-- 페이지 넘기기 -->
+    <div class="container">
+    <div class="example">
+    	<nav>
+    		<ul class="pagination">
+    			<li class="disabled">
+    					
+    	
         <c:if test="${count > 0}">
 	<c:set var="imsi" value="${count % pageSize == 0 ? 0 : 1 }"/>
 	<c:set var="pageCount" value="${count / pageSize + imsi }"/>
@@ -223,23 +205,23 @@
 	</c:if>
 	
 	<c:if test="${startPage > pageBlock}">
-		<a href="${pageContext.request.contextPath}/memberbooking.do?pageNum=${startPage - pageBlock }">이전</a>
+	
+		<a aria-label="Previous" href="${pageContext.request.contextPath}/memberbooking.do?pageNum=${startPage - pageBlock }"><span aria-hidden="true">이전</span></a>
 	</c:if>
 	
 	<c:forEach var="i" begin="${startPage}" end="${endPage}">
-		<a href="${pageContext.request.contextPath}/memberbooking.do?pageNum=${i}">[${i}]</a>
+		<li class="active"><a href="${pageContext.request.contextPath}/memberbooking.do?pageNum=${i}">[${i}]</a>
 	</c:forEach>
 	
 	<c:if test="${endPage < pageCount}">
-		<a href="${pageContext.request.contextPath}/memberboooking.do?pageNum=${startPage + pageBlock }">다음</a>
+		<a aria-label="Next" href="${pageContext.request.contextPath}/memberboooking.do?pageNum=${startPage + pageBlock }"><span aria-hidden="true">다음</span></a>
 	</c:if>
 </c:if>
-
-
-        <div class="col-md-4"></div>
-      </div>
-    </div>
-  </div>
+</ul>
+</nav>
+</div>
+</div>
+		
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
