@@ -32,10 +32,15 @@ public class BookingProAction implements CommandAction{
 			req.setAttribute("email", mdto.getEmail());
 			
 		}
+		if(req.getParameter("where_trip").equals("편도") && req.getParameter("where_from").equals("Gimhean Airporter(김해공항)")) {
+			req.setAttribute("where_to",req.getParameter("where_from"));
+		}else {
+			req.setAttribute("where_from", req.getParameter("where_from"));
+			req.setAttribute("where_to", req.getParameter("where_to"));
+		}
 		
 		req.setAttribute("where_trip", req.getParameter("where_trip"));
-		req.setAttribute("where_from", req.getParameter("where_from"));
-		req.setAttribute("where_to", req.getParameter("where_to"));
+		
 		req.setAttribute("pickup", req.getParameter("pickup"));
 		req.setAttribute("start_airline_name", req.getParameter("start_airline_name"));
 		req.setAttribute("start_airline_no", req.getParameter("start_airline_no"));
