@@ -5,6 +5,7 @@
 <html>
 
 <head>
+<title>checking_booked</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
@@ -46,31 +47,82 @@
   <div class="py-5">
     <div class="container h-25">
       <div class="border-dark">
-        <table class="table">
-        <c:if test="${tripcheck == 1 }">
+      <c:if test="${tripcheck == 1 }">
+        <table class="table" >
           <thead>  
             <tr>
               <th class="text-center text-secondary"> 예약일자/요일</th>
-              <th class="text-center text-secondary">Round/OneWay(왕복/편도)</th>
-              <th class="text-center text-secondary">Bus Time(탑승시간)</th>
-              <th class="text-center text-secondary">Pickup(탑승장소)</th>
-              <th class="text-center p-4 text-secondary">Dropft(내릴장소)</th>
-              <th class="text-center text-secondary">People(탑승객수)</th>
-              <th class="text-center text-secondary">Payment(금액)</th>
+              <th class="text-center text-secondary">Round/OneWay</th>
+              <th class="text-center text-secondary">Bus Time</th>
+              <th class="text-center text-secondary">Pickup</th>
+              <th class="text-center p-4 text-secondary">Dropft</th>
+              <th class="text-center text-secondary">People</th>
+              <th class="text-center text-secondary">Payment</th>
             </tr>
+             <c:forEach items="${arrbdto }" var="arr">
+             <c:if test="${arr.where_trip == '편도'}">
             <tr>
-              <th class="text-center">#</th>
-              <th class="text-center">First Name</th>
-              <th class="text-center">fd</th>
-              <th class="text-center">fdfd</th>
-              <th class="text-center">왕복일때 시간입력 두개</th>
-              <th class="text-center">fdfd</th>
-              <th class="text-center">Last Name</th>
+              <th class="text-center">${arr.start_date }</th>
+              <th class="text-center">${arr.where_trip }</th>
+              <c:if test="${arr.pickup != null}">
+              <th class="text-center">${arr.bus_time_pickup }</th>
+              <th class="text-center">${arr.pickup }</th>
+              <th class="text-center">${arr.where_from }</th>
+              </c:if>
+              <c:if test="${arr.dropft != null }">
+              <th class="text-center">${arr.bus_time_dropft }</th>
+              <th class="text-center">${arr.where_to }</th>
+              <th class="text-center">${arr.dropft }</th>
+              </c:if>
+              <th class="text-center">${arr.adults+arr.young+arr.child+arr.infatns }</th>
+              <th class="text-center">${arr.money }</th>
             </tr>
+            </c:if>
+            </c:forEach>
+          
+          </thead>
+        </table>
+        </c:if>
+        
+        <c:if test="${tripcheck == 2 }">
+        <table class="table">
+          <thead>  
+            <tr>
+              <th class="text-center text-secondary"> 예약일자/요일</th>
+              <th class="text-center text-secondary"> 도착일자/요일</th>
+              <th class="text-center text-secondary">Round/OneWay</th>
+              <th class="text-center text-secondary">Bus Time</th>
+              <th class="text-center text-secondary">Pickup</th>
+              <th class="text-center text-secondary">where_from</th>
+              <th class="text-center text-secondary">Bus Time</th>
+              <th class="text-center p-4 text-secondary">where_to</th>
+              <th class="text-center p-4 text-secondary">Dropft</th>
+              <th class="text-center text-secondary">People</th>
+              <th class="text-center text-secondary">Payment</th>
+            </tr>
+            
+            <c:forEach items="${arrbdto }" var="arr">
+            <c:if test="${arr.where_trip == '왕복'}">
+            <tr>
+              <th class="text-center">${arr.start_date }</th>
+              <th class="text-center">${arr.arrival_date }</th>
+              <th class="text-center">${arr.where_trip }</th>
+              <th class="text-center">${arr.bus_time_pickup }</th>
+              <th class="text-center">${arr.pickup }</th>
+              <th class="text-center">${arr.where_from }</th>
+              <th class="text-center">${arr.bus_time_dropft }</th>
+              <th class="text-center">${arr.where_to }</th>
+              <th class="text-center">${arr.dropft }</th>
+              <th class="text-center">${arr.adults+arr.young+arr.child+arr.infatns }</th>
+              <th class="text-center">${arr.money }</th>
+            </tr>
+            </c:if>
+            </c:forEach>
+            
             <tr></tr>
           </thead>
-        </c:if>
         </table>
+        </c:if>
       </div>
     </div>
   </div>

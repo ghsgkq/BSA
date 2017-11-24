@@ -78,7 +78,7 @@ public class BookingDao {
 			}
 			
 		}
-		public ArrayList<BookingDto> getBooking(String email) {
+		public ArrayList<BookingDto> getBooking(String email, int tripcheck) {
 			Connection conn = null;
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
@@ -90,36 +90,75 @@ public class BookingDao {
 				rs = pstmt.executeQuery();
 				while(rs.next()) {
 					BookingDto bdto = new BookingDto();
-					bdto.setFirst_name(rs.getString("first_name"));
-					bdto.setLast_name(rs.getString("last_name"));
-					bdto.setPhone(rs.getString("phone"));
-					bdto.setEmail(rs.getString("email"));
-					bdto.setWhere_trip(rs.getString("where_trip"));
-					bdto.setWhere_from(rs.getString("where_from"));
-					bdto.setWhere_to(rs.getString("where_to"));
-					bdto.setPickup(rs.getString("pickup"));
-					bdto.setDropft(rs.getString("dropft"));
-					bdto.setStart_airline_name(rs.getString("start_airline_name"));
-					bdto.setStart_airline_no(rs.getString("start_airline_no"));
-					bdto.setStart_airline_time(rs.getString("start_airline_time"));
-					bdto.setArrival_airline_name(rs.getString("arrival_airline_name"));
-					bdto.setArrival_airline_no(rs.getString("arrival_airline_no"));
-					bdto.setArrival_airline_time(rs.getString("arrival_airline_time"));
-					bdto.setBus_time_pickup(rs.getString("bus_time_pickup"));
-					bdto.setBus_time_dropft(rs.getString("bus_time_dropft"));
-					bdto.setStart_date(rs.getString("start_date"));
-					bdto.setArrival_date(rs.getString("arrival_date"));
-					bdto.setAdults(rs.getString("adults"));
-					bdto.setYoung(rs.getString("young"));
-					bdto.setChild(rs.getString("child"));
-					bdto.setInfatns(rs.getString("infatns"));
-					bdto.setName_on_card(rs.getString("name_on_card"));
-					bdto.setCard_number(rs.getString("card_number"));
-					bdto.setExpiry_year(rs.getString("expiry_year"));
-					bdto.setExpiry_month(rs.getString("Expiry_month"));
-					bdto.setCsv_number(rs.getString("csv_number"));
-					bdto.setComm(rs.getString("comm"));
-					bdto.setMoney(rs.getString("money"));
+					if(tripcheck == 1) {
+						if(rs.getString("where_trip").equals("편도")) {
+							bdto.setFirst_name(rs.getString("first_name"));
+							bdto.setLast_name(rs.getString("last_name"));
+							bdto.setPhone(rs.getString("phone"));
+							bdto.setEmail(rs.getString("email"));
+							bdto.setWhere_trip(rs.getString("where_trip"));
+							bdto.setWhere_from(rs.getString("where_from"));
+							bdto.setWhere_to(rs.getString("where_to"));
+							bdto.setPickup(rs.getString("pickup"));
+							bdto.setDropft(rs.getString("dropft"));
+							bdto.setStart_airline_name(rs.getString("start_airline_name"));
+							bdto.setStart_airline_no(rs.getString("start_airline_no"));
+							bdto.setStart_airline_time(rs.getString("start_airline_time"));
+							bdto.setArrival_airline_name(rs.getString("arrival_airline_name"));
+							bdto.setArrival_airline_no(rs.getString("arrival_airline_no"));
+							bdto.setArrival_airline_time(rs.getString("arrival_airline_time"));
+							bdto.setBus_time_pickup(rs.getString("bus_time_pickup"));
+							bdto.setBus_time_dropft(rs.getString("bus_time_dropft"));
+							bdto.setStart_date(rs.getString("start_date"));
+							bdto.setArrival_date(rs.getString("arrival_date"));
+							bdto.setAdults(rs.getString("adults"));
+							bdto.setYoung(rs.getString("young"));
+							bdto.setChild(rs.getString("child"));
+							bdto.setInfatns(rs.getString("infatns"));
+							bdto.setName_on_card(rs.getString("name_on_card"));
+							bdto.setCard_number(rs.getString("card_number"));
+							bdto.setExpiry_year(rs.getString("expiry_year"));
+							bdto.setExpiry_month(rs.getString("Expiry_month"));
+							bdto.setCsv_number(rs.getString("csv_number"));
+							bdto.setComm(rs.getString("comm"));
+							bdto.setMoney(rs.getString("money"));
+						}
+					}
+					else if(tripcheck == 2) {
+						if(rs.getString("where_trip").equals("왕복")) {
+							bdto.setFirst_name(rs.getString("first_name"));
+							bdto.setLast_name(rs.getString("last_name"));
+							bdto.setPhone(rs.getString("phone"));
+							bdto.setEmail(rs.getString("email"));
+							bdto.setWhere_trip(rs.getString("where_trip"));
+							bdto.setWhere_from(rs.getString("where_from"));
+							bdto.setWhere_to(rs.getString("where_to"));
+							bdto.setPickup(rs.getString("pickup"));
+							bdto.setDropft(rs.getString("dropft"));
+							bdto.setStart_airline_name(rs.getString("start_airline_name"));
+							bdto.setStart_airline_no(rs.getString("start_airline_no"));
+							bdto.setStart_airline_time(rs.getString("start_airline_time"));
+							bdto.setArrival_airline_name(rs.getString("arrival_airline_name"));
+							bdto.setArrival_airline_no(rs.getString("arrival_airline_no"));
+							bdto.setArrival_airline_time(rs.getString("arrival_airline_time"));
+							bdto.setBus_time_pickup(rs.getString("bus_time_pickup"));
+							bdto.setBus_time_dropft(rs.getString("bus_time_dropft"));
+							bdto.setStart_date(rs.getString("start_date"));
+							bdto.setArrival_date(rs.getString("arrival_date"));
+							bdto.setAdults(rs.getString("adults"));
+							bdto.setYoung(rs.getString("young"));
+							bdto.setChild(rs.getString("child"));
+							bdto.setInfatns(rs.getString("infatns"));
+							bdto.setName_on_card(rs.getString("name_on_card"));
+							bdto.setCard_number(rs.getString("card_number"));
+							bdto.setExpiry_year(rs.getString("expiry_year"));
+							bdto.setExpiry_month(rs.getString("Expiry_month"));
+							bdto.setCsv_number(rs.getString("csv_number"));
+							bdto.setComm(rs.getString("comm"));
+							bdto.setMoney(rs.getString("money"));
+						}
+					}
+					
 					arrbdto.add(bdto);
 				}
 			}catch(SQLException e){
