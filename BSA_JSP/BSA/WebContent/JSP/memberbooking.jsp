@@ -107,7 +107,7 @@
           <tr>
             <td>
               <div style="text-align:center">
-                <font size="20">회원 예매 목록(전체 회원 예매 수 :${count} )</font>
+                <font size="20"> 예매 목록(전체 회원 또는 비회원 예매 수 :${count} )</font>
               </div>
             </td>
           </tr>
@@ -124,12 +124,12 @@
     <table id="customers">
       <tbody>
         <tr>
-          <th class="c1" id="first_name">회원님 성</th>
-          <th class="c3" id="last_name">회원님 이름</th>
-          <th class="c2" id="phone_number">회원님 연락처</th>
-          <th class="c3" id="email_address">회원님 이메일</th>
-          <th class="c1">회원 예매 번호</th>
-          <th class="c3">회원 예매 시간</th>
+          <th class="text-center" id="first_name"> 성</th>
+          <th class="text-center" id="last_name"> 이름</th>
+          <th class="text-center" id="phone_number"> 연락처</th>
+          <th class="text-center" id="email_address"> 이메일</th>
+          <th class="text-center"> 예매 번호</th>
+          <th class="text-center"> 예매 시간</th>
         </tr>
         <c:forEach var="article" items="${articleList}">
         	<tr>
@@ -144,7 +144,7 @@
   </c:if>
   <div class="container">
     <div class="row"> &nbsp;
-      <div class="span12"> &nbsp;회원 검색&nbsp;
+      <div class="span12"> &nbsp;검색&nbsp;
         <form method="get" action="/" class="form-inline">
           <input name="loc" class="span5" type="text" placeholder="Search">
           <input type="button" value="Search"> </form>

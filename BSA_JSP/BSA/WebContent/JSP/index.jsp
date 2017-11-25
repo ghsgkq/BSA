@@ -32,7 +32,7 @@
      	
     		minSlides:1,
     		maxSlides:2,
-    		slideWidth:800,
+    		slideWidth:700,
     		speed:35000,
     		ticker:true,
 			tickerHover: true
@@ -73,10 +73,10 @@ a#imD.begin {animation: 0s}
 @keyframes demo-scale
 {
 	from {transform: scale(1);}
-	10% {transform: scale(1);}
-	40% {transform: scale(0.001);}
+	40% {transform: scale(1);}
+	70% {transform: scale(0.001);}
 	70% {transform: scale(1.4);}
-	80% {transform: scale(1);}
+	100% {transform: scale(1);}
 	to {transform: rotate(1);}
 }
      
@@ -140,7 +140,7 @@ a#imD.begin {animation: 0s}
      <a class="btn navbar-btn text-warning btn-light border border-success btn-sm text-center" href="#a" onClick="window.open('https://www.tripadvisor.com/','win','width=600,height=1000,toolbar=0,scrollbars=0,resizable=0')";>Trip Advisor<i class="d-block fa fa-tripadvisor fa-lg text-dark"></i></a>
       <div class="collapse navbar-collapse justify-content-top" id="navbar3SupportedContent">      
         <div id="slider" class="">
-          <a href="#" style="color:black" ;="" class="mx-5"><b class="">"Grate bus Service to the Busan Airporter!"&nbsp;&nbsp;&nbsp;&nbsp;Welcom to Busan Airporter Service!</b></a>
+          <a href="#" style="color:black" class="mx-5"><b class="">"Grate bus Service to the Busan Airporter!"&nbsp;&nbsp;&nbsp;&nbsp;Welcom to Busan Airporter Service!</b></a>
           <a href="#"> </a>
         </div>
        
@@ -154,7 +154,7 @@ a#imD.begin {animation: 0s}
           <div class="carousel slide" data-ride="carousel">
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item">
-                <img class="d-block img-fluid w-100" src="JSP/img/car.jpg" data-holder-rendered="true">
+                <img class="d-block img-fluid rounded-circle w-100" src="JSP/img/car.jpg" data-holder-rendered="true">
                 <div class="carousel-caption">
                   <h3>First slide picture</h3>
                   <p>Reclinig seat Comfort Zone </p>

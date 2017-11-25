@@ -39,7 +39,7 @@
           <input type="radio" name="tripcheck" value="1" checked="checked">편도   <input type="radio" name="tripcheck" value="2">왕복<br><br>
           <b>Insert email(이메일 입력)</b><input type="text" name="email" class="form-control" placeholder="insert your email" value="${email }"><br></br>
           <a href="javascript:document.checking_Booked.submit()" class="btn btn-outline-dark"><b>Search Your Booked (예약 찾기)</b></a>
-        </form>
+        
         </div>
       </div>
     </div>
@@ -51,6 +51,7 @@
         <table class="table" >
           <thead>  
             <tr>
+              <th class="text-center text-secondary">Choice</th>
               <th class="text-center text-secondary"> 예약일자/요일</th>
               <th class="text-center text-secondary">Round/OneWay</th>
               <th class="text-center text-secondary">Bus Time</th>
@@ -62,6 +63,7 @@
              <c:forEach items="${arrbdto }" var="arr">
              <c:if test="${arr.where_trip == '편도'}">
             <tr> 
+            	<th class="text-center"><input type="radio" name="change" value="1"></th>
            	  <c:if test="${arr.pickup != null}">
               <th class="text-center">${arr.start_date }</th>
               </c:if>
@@ -92,7 +94,8 @@
         <c:if test="${tripcheck == 2 }">
         <table class="table">
           <thead>  
-            <tr>
+            <tr> 
+              <th class="text-center text-secondary">Choice</th>
               <th class="text-center text-secondary"> 예약일자/요일</th>
               <th class="text-center text-secondary"> 도착일자/요일</th>
               <th class="text-center text-secondary">Round/OneWay</th>
@@ -109,6 +112,7 @@
             <c:forEach items="${arrbdto }" var="arr">
             <c:if test="${arr.where_trip == '왕복'}">
             <tr>
+              <th class="text-center"><input type="radio" name="change" value="2"></th>
               <th class="text-center">${arr.start_date }</th>
               <th class="text-center">${arr.arrival_date }</th>
               <th class="text-center">${arr.where_trip }</th>
@@ -142,6 +146,7 @@
   </div>
 
   <div id="bt"></div>
+  </form>
 </body>
 
 </html>
