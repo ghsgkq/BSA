@@ -85,14 +85,14 @@ a#imD.begin {animation: 0s}
 </head>
 <body class="bg-light" style="margin-top:0px;">
 <div id="contents"></div>
-<nav class="navbar main-content navbar-expand-md navbar-light" style="margin-top:100px; background-color:#A4A4A4">
+<nav class="navbar main-content navbar-expand-md navbar-light" style="margin-top:100px; background-color:#819FF7">
     <div class="container">
       <a class="navbar-brand" href="#"></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
       <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
         <ul class="navbar-nav"></ul><i class="d-block fa pull-right fa-fw fa-lg text-dark fa-car"></i>
         <p class="text-light m-2">You can now book book private sedans at
-          <a class="ml-3 btn navbar-btn btn-sm ml-auto text-white  border border-light btn-sm" style="background-color:#A4A4A4" href="${pageContext.request.contextPath}/Booking.do"><b>Busan Shuttle Airporter</b></a>&nbsp;</p><i class="d-block fa pull-right fa-fw fa-lg text-dark text-left fa-spinner"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="ml-3 btn navbar-btn btn-sm ml-auto text-white  border border-light btn-sm" style="background-color:#819FF7" href="${pageContext.request.contextPath}/Booking.do"><b>Busan Shuttle Airporter</b></a>&nbsp;</p><i class="d-block fa pull-right fa-fw fa-lg text-dark text-left fa-spinner"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <a  id="imD" onclick="move('imD');" href="${pageContext.request.contextPath}/checkbooked.do" class="btn btn-outline-warning text-dark border-dark"><b>Checking Booked</b></a>
       </div>
     </div>
@@ -107,30 +107,30 @@ a#imD.begin {animation: 0s}
       </div>
     </div>
   </div>
-  <nav class="navbar navbar-expand-md navbar-light" style="background-color:#084B8A">
+  <nav class="navbar navbar-expand-md navbar-light" style="background-color:#5858FA">
     <a class="navbar-brand" href="#"></a>
     
       <ul class="navbar-nav"></ul>
-    <div class="tip text-center w-50">  <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#084B8A" href="#a" name="btnTest1_1" >Power Outlet<i class="d-block fa fa-3x fa-plug text-white"></i>     
+    <div class="tip text-center w-50">  <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#5858FA" href="#a" name="btnTest1_1" >Power Outlet<i class="d-block fa fa-3x fa-plug text-white"></i>     
     <span>차량내부에 전자제품 관련 
   <br>  장비들이 구비되어있습니다.</br></span>  
     
     </a></div>
     
-  <div1 class="tip text-center w-50">    <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#084B8A" href="#a" name="btnTest1_1" >Bottle Water<i class="d-block fa fa-3x text-white fa-bitbucket"></i>  
+  <div1 class="tip text-center w-50">    <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#5858FA" href="#a" name="btnTest1_1" >Bottle Water<i class="d-block fa fa-3x text-white fa-bitbucket"></i>  
    <span>고객들을 위해 항상 차량
    <br>  내부에 음료가 준비되어있습니다.</br></span>   
    </a></div1>
    
-   <div2 class="tip text-center w-50">   <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#084B8A" href="#a" name="btnTest1_1" >Reclining Seat<i class="d-block fa fa-3x text-white fa-wheelchair"></i>   
+   <div2 class="tip text-center w-50">   <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#5858FA" href="#a" name="btnTest1_1" >Reclining Seat<i class="d-block fa fa-3x text-white fa-wheelchair"></i>   
   <span>키 높이에 따라 의자 조절이
   <br>  Auto 방식으로 조절이 가능합니다</br></span>    
   </a></div2>
   
-     <div3 class="tip text-center w-50">  <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#084B8A" href="index.do#route anchor"  >Route Map<i class="d-block fa fa-3x text-white fa-map-marker"></i>
+     <div3 class="tip text-center w-50">  <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#5858FA" href="index.do#route anchor"  >Route Map<i class="d-block fa fa-3x text-white fa-map-marker"></i>
         
      <span> </span> </a></div3>
-     <div4 class="tip text-center w-50">  <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#084B8A" href="index.do#schedule anchor"  >Dayily Schedule<i class="d-block fa fa-3x text-white fa-calendar-check-o"></i>
+     <div4 class="tip text-center w-50">  <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#5858FA" href="index.do#schedule anchor"  >Dayily Schedule<i class="d-block fa fa-3x text-white fa-calendar-check-o"></i>
        
     <span> </span>  </a></div4>
    
