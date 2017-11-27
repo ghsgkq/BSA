@@ -29,7 +29,7 @@ public class MemberBookingAction implements CommandAction{
 		int number = 0;
 		List<BookingDto> articlelist = null;
 		BookingDao dbPro = BookingDao.getInstance();
-		//여기서 좀 해야함
+		
 	
 			return "/JSP/memberBooking.jsp";
 	}
