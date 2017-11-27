@@ -5,8 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
-import oracle.net.aso.b;
+import java.util.List;
 
 public class BookingDao {
 	private static BookingDao instance = null;
@@ -202,6 +201,62 @@ public class BookingDao {
 			return count;
 		}
 		
-	
+		
+		public List<BookingDto> getArticles(int start, int end){
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			List<BookingDto> articleList = null;
+			try {
+				conn = ConnUtil.getConnection();
+				String sql = "select * from "
+						+ "(select rownnum RNUM,FIRST_NAME, LAST_NAME, PHONE, EMAIL,"
+						+ "START_AIRLINE_NAME, START_AIRLINE_NO, START_AIRLINE_TIME, START_AIRLINE_NAME, ARRIIVAL_AIRLINE_NAME, ARRIVAL_AIRLINE_NO, ARRIVAL_AIRLINE_TIME,"
+						+ "NAME_ON_CARD, CARD_NUMBER, EXPIRY_YEAR, EXPIRY_MONTH, CSV_NUMBER,"
+						+ "ADULTS, YOUNG, CHILD, INFATNS from "
+						+ "(select * from BOOKING order by REF desc, STEP asc)) "
+						+ "where RUNM >= ? and RNUM <= ?";
+				pstmt = conn.prepareStatement(sql);
+				System.out.println(sql);
+				pstmt.setInt(1, start);
+				pstmt.setInt(2, end);
+				rs = pstmt.executeQuery();
+				if(rs.next()) {
+					articleList = new ArrayList<BookingDto>(5);
+					do {
+						BookingDto article = new BookingDto();
+						article.setFirst_name(rs.getString("first_name"));
+						article.setLast_name(rs.getString("last_name"));
+						article.setPhone(rs.getString("phone"));
+						article.setEmail(rs.getString("email"));
+						article.setStart_airline_name(rs.getString("start_airline_name"));
+						article.setStart_airline_no(rs.getString("start_airline_no"));
+						article.setStart_airline_time(rs.getString("start_airline_time"));
+						article.setArrival_airline_name(rs.getString("arrival_airline_name"));
+						article.setArrival_airline_no(rs.getString("arrival_airline_no"));
+						article.setArrival_airline_time(rs.getString("arrival_airline_time"));
+						article.setName_on_card(rs.getString("name_on_card"));
+						article.setCard_number(rs.getString("card_number"));
+						article.setExpiry_year(rs.getString("expiry_year"));
+						article.setExpiry_month(rs.getString("expiry_month"));
+						article.setCsv_number(rs.getString("csv_number"));
+						article.setAdults(rs.getString("adults"));
+						article.setYoung(rs.getString("young"));
+						article.setChild(rs.getString("child"));
+						article.setInfatns(rs.getString("infatns"));
+					}while(rs.next());
+				}
+			}catch(Exception e) {
+				e.printStackTrace();
+			}try {
+				if(rs != null)rs.close();
+				if(pstmt != null)pstmt.close();
+				if(conn != null)conn.close();
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+			return articleList;
+		}
+
 	}
 
