@@ -177,6 +177,31 @@ public class BookingDao {
 			return arrbdto;
 		
 		}
+		
+		public int getArticleCount() {
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			int count = 0;
+			try {
+				conn = ConnUtil.getConnection();
+				pstmt = conn.prepareStatement("select count(*) from BOOKING");
+				rs= pstmt.executeQuery();
+				if(rs.next()) {
+					count = rs.getInt(1);
+				}
+			}catch(Exception e) {
+				e.printStackTrace();
+			}try {
+				if(rs != null)rs.close();
+				if(pstmt != null)pstmt.close();
+				if(conn != null)conn.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+			return count;
+		}
+		
 	
 	}
 
