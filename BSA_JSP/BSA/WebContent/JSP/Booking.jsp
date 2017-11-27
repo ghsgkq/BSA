@@ -6,6 +6,7 @@
 
 <head>
 <title>booking</title>
+<link rel="shortcut icon" type="image⁄x-icon" href="${pageContext.request.contextPath}/JSP/img/airporter.png">
  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
   <link rel="stylesheet" href="${pageContext.request.contextPath}/JSP/timepicker/jquery.timepicker.css">
