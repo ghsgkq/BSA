@@ -202,7 +202,35 @@ public class BookingDao {
 		}
 		
 		
-		
+		public List<BookingDto> getArticles(){
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			List<BookingDto> articlelist = null;
+			try {
+				conn = ConnUtil.getConnection();
+						String sql = "select * from BOOKING";
+				pstmt = conn.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+				if(rs.next()) {
+					articlelist = new ArrayList<BookingDto>();
+					do {
+						BookingDto article = new BookingDto();
+						article.setFirst_name(rs.getString("first_name"));
+						article.setLast_name(rs.getString("last_name"));
+					}while(rs.next());
+				}
+			}catch(Exception e) {
+				e.printStackTrace();
+			}try {
+				if(rs != null)rs.close();
+				if(pstmt != null)pstmt.close();
+				if(conn != null)conn.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+			return articlelist;
+		}
 
 	}
 

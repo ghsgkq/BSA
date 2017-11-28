@@ -31,8 +31,7 @@
           <h4>1. Resvervation(예약 내역)</h4>
         </div>
         <div class="col-md-4">
-          <a href="#" class="btn btn-outline-dark"><b>Cancel (예약취소)</b></a><br></br>
-          <a href="#" class="btn btn-outline-dark"><b>Change Booking (예약 변경)</b></a>
+          <a href="#" class="btn btn-outline-dark"><b>Cancel (예약취소)</b></a><br></br>   
         </div>
         <div class="col-md-4">
         <form method="post" name="checking_Booked" action="${pageContext.request.contextPath}/checkbookedPro.do">
