@@ -131,10 +131,14 @@
         </tr>
         <c:forEach var="article" items="${articleList}">
         	<tr>
-        		<td align="center" width="50"></td>
+        		<td align="center" width="50">
         			<c:out value="${number}"/>
         			<c:set var="number" value="${number -1}"/>
+       			</td>
+       			<td>${article.first_name}</td>
+       			<td>${article.last_name}</td>
         	</tr>
+        	
         
         </c:forEach>
        </tbody>
@@ -161,7 +165,7 @@
     			<li class="disabled">
     					
     	
-        <c:if test="${count > 0}">
+    <c:if test="${count > 0}">
 	<c:set var="imsi" value="${count % pageSize == 0 ? 0 : 1 }"/>
 	<c:set var="pageCount" value="${count / pageSize + imsi }"/>
 	<c:set var="pageBlock" value="${3}"/>
