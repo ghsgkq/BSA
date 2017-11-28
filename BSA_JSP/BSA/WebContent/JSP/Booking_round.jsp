@@ -67,7 +67,7 @@ function booking(){
         </div>
     </div>
   </nav>
-  <form method="post" name="writeForm" action="${pageContext.request.contextPath}/BookingPro.do" onsubmit="return BookingSave()">
+  <form method="post" name="writeForm" action="${pageContext.request.contextPath}/BookingPro.do">
   <div class="py-5">
     <div class="container">
       <div class="row">

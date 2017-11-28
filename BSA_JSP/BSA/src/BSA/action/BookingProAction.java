@@ -62,11 +62,119 @@ public class BookingProAction implements CommandAction{
 					+(Integer.parseInt(req.getParameter("young"))*25000)
 					+(Integer.parseInt(req.getParameter("child"))*15000);
 		}
+		
 		else if(req.getParameter("where_trip").equals("편도")) {
-			money = (Integer.parseInt(req.getParameter("adults"))*20000)
-					+(Integer.parseInt(req.getParameter("young"))*15000)
-					+(Integer.parseInt(req.getParameter("child"))*10000);
+			if(req.getParameter("where_from").equals("#")) {
+				req.setAttribute("where_from_check", 1);
+				return "/JSP/Booking.jsp";
+			}
+			
+			else if(req.getParameter("where_from").equals("Busan(부산)")) {
+				if(req.getParameter("pickup").equals("")) {
+					req.setAttribute("pickup_check", 1);
+					return "/JSP/Booking.jsp";
+				}
+				if(req.getParameter("start_airline_name").equals("#") || req.getParameter("start_airline_name").equals("1")) {
+					req.setAttribute("start_airline_name_check", 1);
+					return "/JSP/Booking.jsp";
+				}
+				if(req.getParameter("start_airline_no").equals("")) {
+					req.setAttribute("start_airline_no_check", 1);
+					return "/JSP/Booking.jsp";
+				}
+				else {
+					for(int i=0; i<req.getParameter("start_airline_no").length(); i++) {
+						char start_airline_no = req.getParameter("start_airline_no").charAt(i);
+						if(start_airline_no >= 0x30 && start_airline_no <= 0x39) {
+							
+						}
+						else if(start_airline_no == 0x2D) {
+							
+						}
+						else if(start_airline_no >= 0x41 && start_airline_no <= 0x5A) {
+							
+						}
+						else if(start_airline_no >= 0x61 && start_airline_no <= 0x7A) {
+							
+						}
+						else {
+							req.setAttribute("start_airline_no_check", 2);
+							return "/JSP/Booking.jsp";
+						}
+					}
+				}
+				
+				if(req.getParameter("start_airline_time").equals("")) {
+					req.setAttribute("start_airline_time_check", 1);
+					return "/JSP/Booking.jsp";
+				}
+				if(req.getParameter("start_date").equals("")) {
+					req.setAttribute("start_date", 1);
+					return "/JSP/Booking.jsp";
+				}
+				
+				
+			}
+			else if(req.getParameter("where_from").equals("Gimhean Airporter(김해공항)")) {
+				if(req.getParameter("dropft").equals("")) {
+					req.setAttribute("dropft_check", 1);
+					return "/JSP/Booking.jsp";
+				}
+				if(req.getParameter("arrival_airline_name").equals("#") || req.getParameter("arrival_airline_name").equals("1")) {
+					req.setAttribute("arrival_airline_name_check", 1);
+					return "/JSP/Booking.jsp";
+				}
+				if(req.getParameter("arrival_airline_no").equals("")) {
+					req.setAttribute("arrival_airline_no_check", 1);
+				}
+				else {
+					for(int i=0; i<req.getParameter("arrival_airline_no").length(); i++) {
+						char arrival_airline_no = req.getParameter("arrival_airline_no").charAt(i);
+						if(arrival_airline_no >= 0x30 && arrival_airline_no <= 0x39) {
+							
+						}
+						else if(arrival_airline_no == 0x2D) {
+							
+						}
+						else if(arrival_airline_no >= 0x41 && arrival_airline_no <= 0x5A) {
+							
+						}
+						else if(arrival_airline_no >= 0x61 && arrival_airline_no <= 0x7A) {
+							
+						}
+						else {
+							req.setAttribute("arrival_airline_no_check", 2);
+							return "/JSP/Booking.jsp";
+						}
+					}
+				}
+				if(req.getParameter("arrival_airline_time").equals("")) {
+					req.setAttribute("arrival_airline_time_check", 1);
+					return "/JSP/Booking.jsp";
+				}
+				if(req.getParameter("arrival_date").equals("")) {
+					req.setAttribute("arrival_date_check", 1);
+					return "/JSP/Booking.jsp";
+				}
+				
+			}
+			if(req.getParameter("adults").equals("0") && req.getParameter("young").equals("0") && req.getParameter("child").equals("0") && req.getParameter("infatns").equals("0")) {
+					req.setAttribute("passengers_check", 1);
+					return "/JSP/Booking.jsp";	
+			}
+			else if(Integer.parseInt(req.getParameter("adults")) < 0 || Integer.parseInt(req.getParameter("young")) < 0 || Integer.parseInt(req.getParameter("child")) < 0 || Integer.parseInt(req.getParameter("infatns")) < 0) {
+				req.setAttribute("passengers_check", 1);
+				return "/JSP/Booking.jsp";	
+			}
+			else {
+				money = (Integer.parseInt(req.getParameter("adults"))*20000)
+						+(Integer.parseInt(req.getParameter("young"))*15000)
+						+(Integer.parseInt(req.getParameter("child"))*10000);
+			}
+			
 		}
+		
+		
 		DecimalFormat df = new DecimalFormat("#,###원");
 		req.setAttribute("money", df.format(money));
 		

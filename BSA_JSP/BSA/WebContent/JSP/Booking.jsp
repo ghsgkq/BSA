@@ -6,6 +6,7 @@
 
 <head>
 <title>booking</title>
+<link rel="shortcut icon" type="image⁄x-icon" href="${pageContext.request.contextPath}/JSP/img/airporter.png">
  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
   <link rel="stylesheet" href="${pageContext.request.contextPath}/JSP/timepicker/jquery.timepicker.css">
@@ -40,16 +41,98 @@
     });
   </script>
 
-
-
-
 <script type="text/javascript">	
 function booking(){
 	location.href="${pageContext.request.contextPath}/Bookinground.do";
 	}
 </script>
 
+<!-- 잘못입력시 메시지 (편도) -->
+<!-- 부산(편도) -->
+<c:if test="${where_from_check == 1}">
+<script type="text/javascript">
+alert("목적지를 선택하세요");
+</script>
+</c:if>
 
+<c:if test="${pickup_check == 1 }">
+<script type="text/javascript">
+alert("태울장소를 입력하세요");
+</script>
+</c:if>
+
+<c:if test="${start_airline_name_check == 1 }">
+<script type="text/javascript">
+alert("비행편을 선택하세요");
+</script>
+</c:if>
+
+<c:if test="${start_airline_no_check == 1}">
+<script type="text/javascript">
+alert("비행번호를 입력하세요");
+</script>
+</c:if>
+
+<c:if test="${start_airline_no_check == 2 }">
+<script type="text/javascript">
+alert("비행번호에는 숫자,영대문자 소문자,- 만 들어갈수 있습니다 ");
+</script>
+</c:if>
+
+<c:if test="${start_airline_time_check == 1}">
+<script type="text/javascript">
+alert("비행 출발시간을 입력하세요");
+</script>
+</c:if>
+
+<c:if test="${start_date_check == 1 }">
+<script type="text/javascript">
+alert("출발날짜를 선택하세요");
+</script>
+</c:if>
+
+<!-- 인천(편도) -->
+<c:if test="${dropft_check == 1 }">
+<script type="text/javascript">
+alert("내려줄 장소를 입력하세요");
+</script>
+</c:if>
+
+<c:if test="${arrival_airline_name_check == 1 }">
+<script type="text/javascript">
+alert("비행편을 선택하세요")
+</script>
+</c:if>
+
+<c:if test="${arrival_airline_no_check == 1 }">
+<script type="text/javascript">
+alert("비행번호를 입력하세요");
+</script>
+</c:if>
+
+<c:if test="${arrival_airline_no_check == 2 }">
+<script type="text/javascript">
+alert("비행번호에는 숫자,영대문자 소문자,- 만 들어갈수 있습니다 ");
+</script>
+</c:if>
+
+<c:if test="${arrival_airline_time_check == 1 }">
+<script type="text/javascript">
+alert("비행 도착시간을 입력하세요");
+</script>
+</c:if>
+
+<c:if test="${arrival_date_check == 1 }">
+<script type="text/javascript">
+alert("도착날짜를 선택하세요");
+</script>
+</c:if>
+
+<c:if test="${passengers_check == 1 }">
+<script type="text/javascript">
+alert("승객수를 선택하세요");
+</script>
+</c:if>
 
 </head>
 
@@ -64,7 +147,7 @@ function booking(){
         </div>
     </div>
   </nav>
-  <form method="post" name="writeForm" action="${pageContext.request.contextPath}/BookingPro.do" onsubmit="return BookingSaves()">
+  <form method="post" name="writeForm" action="${pageContext.request.contextPath}/BookingPro.do">
   <div class="py-5">
     <div class="container">
       <div class="row">

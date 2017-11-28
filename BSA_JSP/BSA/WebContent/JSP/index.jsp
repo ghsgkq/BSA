@@ -5,10 +5,18 @@
 <html>
 
 <head>
-	<title>메인화면</title>
+	<title>Busan Shuttle Airporter</title>
+  <link rel="shortcut icon" type="image⁄x-icon" href="${pageContext.request.contextPath}/JSP/img/airporter.png">
+  <meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="Busan Shuttle Airporter" />
+  <meta property="og:description"   content="Your description" />
+  
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/JSP/style/style_index.css" type="text/css">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/JSP/style/tooltip.css" type="text/css">
@@ -81,6 +89,24 @@ a#imD.begin {animation: 0s}
 }
      
      </style>
+
+  <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/us_US/sdk.js#xfbml=1&version=v2.11';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+ 
+  </script>
   
 </head>
 <body class="bg-light" style="margin-top:0px;">
@@ -93,7 +119,19 @@ a#imD.begin {animation: 0s}
         <ul class="navbar-nav"></ul><i class="d-block fa pull-right fa-fw fa-lg text-dark fa-car"></i>
         <p class="text-light m-2">You can now book book private sedans at
           <a class="ml-3 btn navbar-btn btn-sm ml-auto text-white  border border-light btn-sm" style="background-color:#819FF7" href="${pageContext.request.contextPath}/Booking.do"><b>Busan Shuttle Airporter</b></a>&nbsp;</p><i class="d-block fa pull-right fa-fw fa-lg text-dark text-left fa-spinner"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<<<<<<< HEAD
           <a  id="imD" onclick="move('imD');" href="${pageContext.request.contextPath}/checkbooked.do" class="btn btn-outline-warning text-dark border-dark"><b>Checking Booked</b></a><a><i class="d-block fa fa-3x text-dark fa-thumbs-up"></i> </a>
+=======
+          <a  id="imD" onclick="move('imD');" href="${pageContext.request.contextPath}/checkbooked.do" class="btn btn-outline-warning text-dark border-dark"><b>Checking Booked</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <div class="fb-like" data-href="http://blog.naver.com/josh008/221149775358" data-layout="box_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+
+  <div id="fb-root"></div>
+  <div class="fb-like" 
+    data-href="http://www.your-domain.com/your-page.html" 
+    data-layout="standard" 
+    data-action="like" 
+    data-show-faces="true">
+  </div>
+>>>>>>> 3dda4cb383050b1724d42ec4eb9cc5ecd4cacdf8
       </div>
     </div>
   </nav>
