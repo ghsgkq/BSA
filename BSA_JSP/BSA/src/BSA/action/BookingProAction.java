@@ -298,7 +298,7 @@ public class BookingProAction implements CommandAction{
 				start_times += i+":00";
 				start_time_list.add(start_times);
 			}
-			req.setAttribute("start_time_list", start_time_list);
+			req.getSession().setAttribute("start_time_list", start_time_list);
 		}
 		
 		
@@ -321,7 +321,7 @@ public class BookingProAction implements CommandAction{
 				arrival_time_list.add(arrival_times);
 			}
 			
-			req.setAttribute("arrival_time_list", arrival_time_list);
+			req.getSession().setAttribute("arrival_time_list", arrival_time_list);
 		}
 		
 		return "/JSP/payment.jsp";
