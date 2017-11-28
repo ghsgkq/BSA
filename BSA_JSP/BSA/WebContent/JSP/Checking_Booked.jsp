@@ -15,6 +15,15 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   
   <script type="text/javascript">
+  function mySubmit(index) {
+		if(index == 1){
+			document.booking_form.action='${pageContext.request.contextPath}/deletebooking.do'
+		}
+	  
+	}
+  </script>
+  
+  <script type="text/javascript">
     $(document).ready( function() {
     	$("#contents").load("JSP/top.jsp");
     	$("#bt").load("JSP/bottom.jsp");
@@ -31,18 +40,19 @@
           <h4>1. Resvervation(예약 내역)</h4>
         </div>
         <div class="col-md-4">
-          <a href="#" class="btn btn-outline-dark"><b>Cancel (예약취소)</b></a><br></br>   
+          
         </div>
         <div class="col-md-4">
         <form method="post" name="checking_Booked" action="${pageContext.request.contextPath}/checkbookedPro.do">
           <input type="radio" name="tripcheck" value="1" checked="checked">편도   <input type="radio" name="tripcheck" value="2">왕복<br><br>
           <b>Insert email(이메일 입력)</b><input type="text" name="email" class="form-control" placeholder="insert your email" value="${email }"><br></br>
           <a href="javascript:document.checking_Booked.submit()" class="btn btn-outline-dark"><b>Search Your Booked (예약 찾기)</b></a>
-        
+        </form>
         </div>
       </div>
     </div>
   </div>
+  <form method="post" name="booking_form">
   <div class="py-5">
     <div class="container h-25">
       <div class="border-dark">
@@ -62,7 +72,7 @@
              <c:forEach items="${arrbdto }" var="arr">
              <c:if test="${arr.where_trip == '편도'}">
             <tr> 
-            	<th class="text-center"><input type="radio" name="change" value="1"></th>
+            	<th class="text-center"><input type="radio" name="change" value="${arr.email }"></th>
            	  <c:if test="${arr.pickup != null}">
               <th class="text-center">${arr.start_date }</th>
               </c:if>
@@ -111,7 +121,7 @@
             <c:forEach items="${arrbdto }" var="arr">
             <c:if test="${arr.where_trip == '왕복'}">
             <tr>
-              <th class="text-center"><input type="radio" name="change" value="2"></th>
+              <th class="text-center"><input type="radio" name="change" value="${arr.email }"></th>
               <th class="text-center">${arr.start_date }</th>
               <th class="text-center">${arr.arrival_date }</th>
               <th class="text-center">${arr.where_trip }</th>
@@ -138,14 +148,14 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <input type="reset" class="btn btn-outline-dark" value="Refresh"></a>
+          <input type="button" class="btn btn-outline-dark" value="Cancel (예약취소)" onclick=""></a>  
         </div>
       </div>
     </div>
   </div>
-
+</form>
   <div id="bt"></div>
-  </form>
+
 </body>
 
 </html>
