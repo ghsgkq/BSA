@@ -2,6 +2,7 @@ package BSA.action;
 
 
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -17,8 +18,15 @@ public class MemberBookingAction implements CommandAction{
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable{
 		
 		
+		ArrayList<BookingDto> ar = new ArrayList<BookingDto>();
 		
-		return "/JSP/memberbooking.jsp";
+		
+		
+		
+		return "";
+		
+		
 	}
+	
 	
 }
