@@ -27,8 +27,8 @@ public class AdminDao {
 			sql.append("insert into ADMINLOG  "
 					+ "values(?, ?)");
 			pstmt=conn.prepareStatement(sql.toString());
-			pstmt.setString(1, "admin");
-			pstmt.setString(2, "1234");
+			pstmt.setString(1, article.getAdmin_id("admin"));
+			pstmt.setString(2, article.getAdmin_pw("1234"));
 			pstmt.executeQuery();
 		}catch(SQLException e) {
 			e.printStackTrace();
