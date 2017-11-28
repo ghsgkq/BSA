@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -98,6 +101,29 @@
   </style>
 </head>
 <body style="margin-top:80pt;">
+
+
+
+	<table border="3">
+		<tr>
+			<td>first_name</td>
+			<td>last_name</td>
+		</tr>
+	</table>
+	
+	<c:forEach items="${memList}" var="mem">
+		<tr>
+			<td>${mem.first_name}</td>
+			<td>${mem.last_name}</td>
+		</tr>	
+	</c:forEach>
+
+
+
+
+
+
+
 <form method="post" name="checking_Booked" action="${pagecontext.request.contextpath}/checkbooked.do">
 <div id="contents"></div>
   <center>
