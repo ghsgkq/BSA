@@ -93,7 +93,7 @@ a#imD.begin {animation: 0s}
         <ul class="navbar-nav"></ul><i class="d-block fa pull-right fa-fw fa-lg text-dark fa-car"></i>
         <p class="text-light m-2">You can now book book private sedans at
           <a class="ml-3 btn navbar-btn btn-sm ml-auto text-white  border border-light btn-sm" style="background-color:#819FF7" href="${pageContext.request.contextPath}/Booking.do"><b>Busan Shuttle Airporter</b></a>&nbsp;</p><i class="d-block fa pull-right fa-fw fa-lg text-dark text-left fa-spinner"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <a  id="imD" onclick="move('imD');" href="${pageContext.request.contextPath}/checkbooked.do" class="btn btn-outline-warning text-dark border-dark"><b>Checking Booked</b></a>
+          <a  id="imD" onclick="move('imD');" href="${pageContext.request.contextPath}/checkbooked.do" class="btn btn-outline-warning text-dark border-dark"><b>Checking Booked</b></a><a><i class="d-block fa fa-3x text-dark fa-thumbs-up"></i> </a>
       </div>
     </div>
   </nav>
@@ -138,7 +138,7 @@ a#imD.begin {animation: 0s}
   <nav class="navbar-expand-md navbar-dark">
     <div class="container">
      <a class="btn navbar-btn text-warning btn-light border border-success btn-sm text-center" href="#a" onClick="window.open('https://www.tripadvisor.com/','win','width=600,height=1000,toolbar=0,scrollbars=0,resizable=0')";>Trip Advisor<i class="d-block fa fa-tripadvisor fa-lg text-dark"></i></a>
-      <div class="collapse navbar-collapse justify-content-top" id="navbar3SupportedContent">      
+      <div class="collapse navbar-collapse justify-content-top" id="navbar3SupportedContent"> 
         <div id="slider" class="">
           <a href="#" style="color:black" class="mx-5"><b class="">"Grate bus Service to the Busan Airporter!"&nbsp;&nbsp;&nbsp;&nbsp;Welcom to Busan Airporter Service!</b></a>
           <a href="#"> </a>
@@ -154,14 +154,14 @@ a#imD.begin {animation: 0s}
           <div class="carousel slide" data-ride="carousel">
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item">
-                <img class="d-block img-fluid rounded-circle w-100" src="JSP/img/car.jpg" data-holder-rendered="true">
+                <img class="d-block img-fluid rounded-circle w-100" src="JSP/img/car1.jpg" data-holder-rendered="true">
                 <div class="carousel-caption">
                   <h3>First slide picture</h3>
                   <p>Reclinig seat Comfort Zone </p>
                 </div>
               </div>
               <div class="carousel-item active">
-                <img class="d-block img-fluid rounded-circle w-100" src="JSP/img/car1.jpg" data-holder-rendered="true">
+                <img class="d-block img-fluid rounded-circle w-100" src="JSP/img/car2.jpg" data-holder-rendered="true">
                 <div class="carousel-caption">
                   <h3>Second slide picture</h3>
                   <p>Luxry Design for Business men</p>
@@ -236,7 +236,7 @@ a#imD.begin {animation: 0s}
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1 class="mb-4">Airporter</h1>
+          <h1 class="mb-4 text-dark" >Airporter</h1>
         </div>
       </div>
       <div class="row">
@@ -249,11 +249,11 @@ a#imD.begin {animation: 0s}
             </ol>
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item">
-                <img class="d-block img-fluid w-100" src="JSP/img/ben.jpg" data-holder-rendered="true"> </div>
+                <img class="d-block img-fluid w-100" src="JSP/img/sol8.jpg" data-holder-rendered="true"> </div>
               <div class="carousel-item">
                 <img class="d-block img-fluid w-100" src="JSP/img/car2.jpg" data-holder-rendered="true"> </div>
               <div class="carousel-item active">
-                <img class="d-block img-fluid w-100" src="JSP/img/airporter.jpg" data-holder-rendered="true"> </div>
+                <img class="d-block img-fluid w-100" src="JSP/img/sol9.jpg" data-holder-rendered="true"> </div>
             </div>
           </div>
         </div>
