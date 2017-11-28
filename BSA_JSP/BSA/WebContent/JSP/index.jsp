@@ -178,7 +178,7 @@ a#imD.begin {animation: 0s}
      <a class="btn navbar-btn text-warning btn-light border border-success btn-sm text-center" href="#a" onClick="window.open('https://www.tripadvisor.com/','win','width=600,height=1000,toolbar=0,scrollbars=0,resizable=0')";>Trip Advisor<i class="d-block fa fa-tripadvisor fa-lg text-dark"></i></a>
       <div class="collapse navbar-collapse justify-content-top" id="navbar3SupportedContent"> 
         <div id="slider" class="">
-          <a href="#" style="color:black" class="mx-5"><b class="">"Grate bus Service to the Busan Airporter!"&nbsp;&nbsp;&nbsp;&nbsp;Welcom to Busan Airporter Service!</b></a>
+          <a href="#" style="color:black" class="mx-5" href="#a" onClick="window.open('https://www.tripadvisor.co.kr/Hotels-g661419-Gimhae_Gyeongsangnam_do-Hotels.html','win','width=600,height=1000,toolbar=0,scrollbars=0,resizable=0')"><b class="">"Grate bus Service to the Busan Airporter!"&nbsp;&nbsp;&nbsp;&nbsp;Welcom to Busan Airporter Service!</b></a>
           <a href="#"> </a>
         </div>
        
