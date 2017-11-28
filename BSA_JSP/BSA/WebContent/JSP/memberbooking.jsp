@@ -111,10 +111,10 @@
 		</tr>
 	</table>
 	
-	<c:forEach items="${memList}" var="mem">
+	<c:forEach items="${articleList}" var="article">
 		<tr>
-			<td>${mem.first_name}</td>
-			<td>${mem.last_name}</td>
+			<td>${article.first_name}</td>
+			<td>${article.last_name}</td>
 		</tr>	
 	</c:forEach>
 
