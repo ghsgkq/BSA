@@ -114,8 +114,10 @@
 	<c:forEach items="${articleList}" var="article">
 		<tr>
 			<td>${article.first_name}</td>
+		</tr>
+		<tr>
 			<td>${article.last_name}</td>
-		</tr>	
+		</tr>
 	</c:forEach>
 
 
@@ -133,7 +135,7 @@
           <tr>
             <td>
               <div style="text-align:center">
-                <font size="20"> 예매 목록(전체 회원 또는 비회원 예매 수 :${count} )</font>
+                <font size="20"> 예매 목록(예매 수 :${count} )</font>
               </div>
             </td>
           </tr>

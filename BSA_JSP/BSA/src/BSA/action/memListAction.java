@@ -1,6 +1,7 @@
 package BSA.action;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,10 +20,11 @@ public class memListAction implements CommandAction{
 		List<BookingDto> articleList = null;
 		BookingDao dbPro = BookingDao.getInstance();
 		count = dbPro.getArticleCount();
+		articleList = dbPro.getArticles();
+	
 		
 		
-		req.setAttribute("first_name", req.getParameter("first_name"));
-		req.setAttribute("last_name", req.getParameter("last_name"));
+		
 		req.setAttribute("articleList", articleList);
 		
 		return "/JSP/memberbooking.jsp";

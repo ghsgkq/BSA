@@ -209,7 +209,7 @@ public class BookingDao {
 			List<BookingDto> articlelist = null;
 			try {
 				conn = ConnUtil.getConnection();
-						String sql = "select * from BOOKING";
+						String sql = "select FIRST_NAME, LAST_NAME from BOOKING";
 				pstmt = conn.prepareStatement(sql);
 				rs = pstmt.executeQuery();
 				if(rs.next()) {
@@ -218,6 +218,7 @@ public class BookingDao {
 						BookingDto article = new BookingDto();
 						article.setFirst_name(rs.getString("first_name"));
 						article.setLast_name(rs.getString("last_name"));
+						articlelist.add(article);
 					}while(rs.next());
 				}
 			}catch(Exception e) {
