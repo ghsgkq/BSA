@@ -19,79 +19,110 @@
   	$("#contents").load("JSP/top.jsp");
   	$("#bt").load("JSP/bottom.jsp");
   });
-  
-  
-  function formCheck(){
-	  var first_name = document.paymentForm.first_name.value;
-	  var last_name = document.paymentForm.last_name.value;
-	  var phone_number = document.paymentForm.phone_number.value;
-	  var email_address = document.paymentForm.email_address.value;
-	  var comm = document.paymentForm.comm.value;
-	  var name_on_card = document.paymentForm.name_on_card.value;
-	  var card_number = document.paymentForm.card_number.value;
-	  var expiry_year = document.paymentForm.expiry_year.value;
-	  var expiry_month = document.paymentForm.expiry_month.value;
-	  var csv_number = document.paymentForm.csv_number.value;
-	 
-	  
-	  if(first_name=="" || first_name==null){
-		  alert('성을 입력하세요');
-		  document.paymentForm.first_name.focus();
-		  return false;
-	  }
-	  if(last_name=="" || last_name==null){
-		  alert('이름을 입력하세요');
-		  document.paymentForm.last_name.focus();
-		  return false;
-	  }
-	  if(phone_number=="" || phone_number==null){
-		  alert('전화번호를 입력하세요');
-		  document.paymentForm.phone_number.focus();
-		  return false;
-	  }
-	  if(email_address.match(/^([0-9a-zA-Z_-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/)==null){
-		  alert('이메일을 형식을 확인하세요');
-		  document.paymentForm.email_address.value="";
-		  document.paymentForm.email_address.focus();
-		  
-		  return false;
-	  }
-	  if(comm=="" || comm==null){
-		  alert('한 마디 입력 해주시면 감사하겠습니다.');
-		  document.paymentForm.comm.focus();
-		  return false;
-	  }
-	  if(name_on_card=="" || name_on_card==null){
-		  alert('카드에 적힌 이름을 입력하세요');
-		  document.paymentForm.name_on_card.focus();
-		  return false;
-	  }
-	  if(card_number=="" || card_number==null){
-		  alert('카드 번호를 입력하세요');
-		  document.paymentForm.card_number.focus();
-		  return false;
-	  }
-	  if(expiry_year=="" || expiry_year==null){
-		  alert('카드 년도를 입력하세요');
-		  document.paymentForm.expiry_year.focus();
-		  return false;
-	  }
-	  if(expiry_month=="" || expiry_month==null){
-		  alert('카드 달을 입력하세요');
-		  document.paymentForm.expiry_month.focus();
-		  return false;
-	  }
-	  if(csv_number=="" || csv_number==null){
-		  alert('카드 보안 번호를 입력바랍니다.');
-		  document.paymentForm.csv_number.focus();
-		  return false;
-	  }
-	  
-	 
-	  
-  }
-  
+
 </script>
+
+<c:choose>
+
+<c:when test="${first_name_check == 1 }">
+<script type="text/javascript">
+alert("이름을 입력하세요");
+</script>
+</c:when>
+
+<c:when test="${last_name_check == 1 }">
+<script type="text/javascript">
+alert("성을 입력하세요");
+</script>
+</c:when>
+
+<c:when test="${phone_check == 1 }">
+<script type="text/javascript">
+alert("전화번호를 입력하세요")
+</script>
+</c:when>
+
+<c:when test="${phone_check == 2}">
+<script type="text/javascript">
+alert("전화번호 최소길이는 11자,최대길이는 13자이며(-포함) \n 숫자와 -(2번)만 적으실수 있습니다.");
+</script>
+</c:when>
+
+<c:when test="${email_check == 1 }">
+<script type="text/javascript">
+alert("이메일을 입력하세요");
+</script>
+</c:when>
+
+<c:when test="${email_check == 2 }">
+<script type="text/javascript">
+alert("이메일에는 숫자와 영문(대문자,소문자) @(1번)와 .(1번)만 쓰실수 있습니다.")
+</script>
+</c:when>
+
+<c:when test="${comm_check == 1 }">
+<script type="text/javascript">
+alert("의견을 적어주세요");
+</script>
+</c:when>
+
+<c:when test="${name_on_card_check == 1}">
+<script type="text/javascript">
+alert("카드사 이름을 입력하세요");
+</script>
+</c:when>
+
+<c:when test="${card_number_check == 1 }">
+<script type="text/javascript">
+alert("카드번호를 입력하세요");
+</script>
+</c:when>
+
+<c:when test="${card_number_check == 2 }">
+<script type="text/javascript">
+alert("카드번호는 19자리수입니다(-포함) \n 숫자와 -(3)만 적으실수 있습니다.");
+</script>
+</c:when>
+
+<c:when test="${expiry_year_check == 1 }">
+<script type="text/javascript">
+alert("카드유효년도를 선택하세요");
+</script>
+</c:when>
+
+<c:when test="${expiry_month_check == 1 }">
+<script type="text/javascript">
+alert("카드유효달을 선택하세요");
+</script>
+</c:when>
+
+<c:when test="${csv_number_check == 1 }">
+<script type="text/javascript">
+alert("csv를 입력하세요");
+</script>
+</c:when>
+
+<c:when test="${csv_number_check == 2}">
+<script type="text/javascript">
+alert("csv는 3자리수를 입력해야하고 \n 숫자만 입력가능합니다.");
+</script>
+</c:when>
+
+
+<c:when test="${bus_time_pickup_check == 1 }">
+<script type="text/javascript">
+alert("버스 시간(puckup)을 선택하세요")
+</script>
+</c:when>
+
+<c:when test="${bus_time_dropft_check == 1}">
+<script type="text/javascript">
+alert("버스 시간(dropft)을 선택하세요")
+</script>
+</c:when>
+
+</c:choose>
+
 </head>
 <body class="bg-light" style="margin-top:83px;">
 
@@ -115,7 +146,7 @@
       </div>
     </div>
   </nav>
-  <form method="post" name="paymentForm" action="${pageContext.request.contextPath}/payment.do" onsubmit="return formCheck();">
+  <form method="post" name="paymentForm" action="${pageContext.request.contextPath}/payment.do">
   <div class="py-5 h-50 w-100 bg-light">
     <div class="container">
       <div class="row">
@@ -124,7 +155,7 @@
             <div class="card-body">
             <h6 class="text-muted">버스시간대를 골라주세요</h6>
             <br><br>
-      		<c:if test="${start_time_list != null }">
+      		<c:if test="${start_time_list != '' && start_time_list != null }">
       		<div class="form-group"><h2><b> ${where_from }  </b></h2></div>
       		<br>
             <select name="bus_time_pickup" class="form-control-sm px-3 mx-2">
@@ -135,7 +166,7 @@
             <br><br>
             </c:if>
             
-            <c:if test="${arrival_time_list != null }">
+            <c:if test="${arrival_time_list != '' && arrival_time_list != null }">
             <div class="form-group"><h2><b> ${where_to }  </b></h2></div>
             <br>
             <select name="bus_time_dropft" class="form-control-sm px-3 mx-2">
@@ -172,7 +203,7 @@
               <input type="text" class="form-control mr-3 my-1" placeholder="이메일을 입력해주세요." name="email" value="${email }"> </div>
               <label><br>Comment *<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-comment-o"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="요청사항을 적어주세요." name="comm"> </div>
+              <input type="text" class="form-control mr-3 my-1" placeholder="요청사항을 적어주세요." name="comm" value="${comm }"> </div>
           </div>
         </div>
       </div>
@@ -186,9 +217,9 @@
           <div class="card-body w-75">
             <h4 class="text-dark">Please &nbsp;Enter Your Payment Details</h4><label>Name On Credit Card<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-angellist"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="카드에 적힌 이름을 입력해주세요." name="name_on_card"> </div><label><br>Caredit Card Number<br></label>
+              <input type="text" class="form-control mr-3 my-1" placeholder="카드에 적힌 이름을 입력해주세요." name="name_on_card" value="${name_on_card }"> </div><label><br>Caredit Card Number<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-angellist"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="카드 번호를 입력해주세요." name="card_number"> </div><label><br>Expiry Date<br></label>
+              <input type="text" class="form-control mr-3 my-1" placeholder="카드 번호를 입력해주세요." name="card_number" value="${card_number }"> </div><label><br>Expiry Date<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-angellist"></i> <select name="expiry_month" class="form-control-sm px-3 mx-2">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -254,6 +285,8 @@
            <input type="hidden" name="child" value="${child }">
            <input type="hidden" name="infatns" value="${infatns }">
            <input type="hidden" name="money" value="${money }">
+           <input type="hidden" name="arrival_time_list" value="${arrival_time_list }">
+           <input type="hidden" name="start_time_list" value="${start_time_list }">
             <button type="submit" class="btn btn-secondary btn-lg p-4">next</button>
           </div>
             
