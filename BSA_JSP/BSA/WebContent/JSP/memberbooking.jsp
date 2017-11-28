@@ -128,8 +128,6 @@
           <th class="text-center" id="last_name"> 이름</th>
           <th class="text-center" id="phone_number"> 연락처</th>
           <th class="text-center" id="email_address"> 이메일</th>
-          <th class="text-center"> 예매 번호</th>
-          <th class="text-center"> 예매 시간</th>
         </tr>
         <c:forEach var="article" items="${articleList}">
         	<tr>

@@ -213,7 +213,7 @@ public class BookingDao {
 						+ "(select rownum RNUM,FIRST_NAME, LAST_NAME, PHONE, EMAIL,"
 						+ "START_AIRLINE_NAME, START_AIRLINE_NO, START_AIRLINE_TIME, START_AIRLINE_NAME, ARRIIVAL_AIRLINE_NAME, ARRIVAL_AIRLINE_NO, ARRIVAL_AIRLINE_TIME,"
 						+ "NAME_ON_CARD, CARD_NUMBER, EXPIRY_YEAR, EXPIRY_MONTH, CSV_NUMBER,"
-						+ "ADULTS, YOUNG, CHILD, INFATNS from "
+						+ "ADULTS, YOUNG, CHILD, INFATNS REF, STEP, DEPTH from "
 						+ "(select * from BOOKING order by REF desc, STEP asc)) "
 						+ "where RUNM >= ? and RNUM <= ?";
 						//페이징 처리를 하려면 DEPTH STEP REF 열 필요.  //페이징 안하려면 어떻게 해야할지 모르겠음
@@ -245,6 +245,9 @@ public class BookingDao {
 						article.setYoung(rs.getString("young"));
 						article.setChild(rs.getString("child"));
 						article.setInfatns(rs.getString("infatns"));
+						article.setRef(rs.getInt("ref"));
+						article.setStep(rs.getInt("step"));
+						article.setDepth(rs.getInt("depth"));
 					}while(rs.next());
 				}
 			}catch(Exception e) {
