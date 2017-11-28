@@ -119,9 +119,9 @@ a#imD.begin {animation: 0s}
         <ul class="navbar-nav"></ul><i class="d-block fa pull-right fa-fw fa-lg text-dark fa-car"></i>
         <p class="text-light m-2">You can now book book private sedans at
           <a class="ml-3 btn navbar-btn btn-sm ml-auto text-white  border border-light btn-sm" style="background-color:#819FF7" href="${pageContext.request.contextPath}/Booking.do"><b>Busan Shuttle Airporter</b></a>&nbsp;</p><i class="d-block fa pull-right fa-fw fa-lg text-dark text-left fa-spinner"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<<<<<<< HEAD
-          <a  id="imD" onclick="move('imD');" href="${pageContext.request.contextPath}/checkbooked.do" class="btn btn-outline-warning text-dark border-dark"><b>Checking Booked</b></a><a><i class="d-block fa fa-3x text-dark fa-thumbs-up"></i> </a>
-=======
+
+         
+
           <a  id="imD" onclick="move('imD');" href="${pageContext.request.contextPath}/checkbooked.do" class="btn btn-outline-warning text-dark border-dark"><b>Checking Booked</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <div class="fb-like" data-href="http://blog.naver.com/josh008/221149775358" data-layout="box_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
 
   <div id="fb-root"></div>
@@ -131,7 +131,7 @@ a#imD.begin {animation: 0s}
     data-action="like" 
     data-show-faces="true">
   </div>
->>>>>>> 3dda4cb383050b1724d42ec4eb9cc5ecd4cacdf8
+
       </div>
     </div>
   </nav>

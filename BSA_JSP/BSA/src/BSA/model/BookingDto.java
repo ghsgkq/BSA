@@ -31,6 +31,7 @@ public class BookingDto {
 	private String csv_number;
 	private String comm;
 	private String money;
+
 	
 	
 	
@@ -214,6 +215,8 @@ public class BookingDto {
 	public void setInfatns(String infatns) {
 		this.infatns = infatns;
 	}
+	
+	
 	
 	
 }
