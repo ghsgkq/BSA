@@ -206,19 +206,47 @@ public class BookingDao {
 			Connection conn = null;
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
-			List<BookingDto> articlelist = null;
+			List<BookingDto> articleList = null;
 			try {
 				conn = ConnUtil.getConnection();
-						String sql = "select FIRST_NAME, LAST_NAME from BOOKING";
+						String sql = "select * from BOOKING";
 				pstmt = conn.prepareStatement(sql);
 				rs = pstmt.executeQuery();
 				if(rs.next()) {
-					articlelist = new ArrayList<BookingDto>();
+					articleList = new ArrayList<BookingDto>();
 					do {
 						BookingDto article = new BookingDto();
 						article.setFirst_name(rs.getString("first_name"));
 						article.setLast_name(rs.getString("last_name"));
-						articlelist.add(article);
+						article.setPhone(rs.getString("phone"));
+						article.setEmail(rs.getString("email"));
+						article.setWhere_trip(rs.getString("where_trip"));
+						article.setWhere_from(rs.getString("where_from"));
+						article.setWhere_to(rs.getString("where_to"));
+						article.setPickup(rs.getString("pickup"));
+						article.setDropft(rs.getString("dropft"));
+						article.setStart_airline_name(rs.getString("start_airline_name"));
+						article.setStart_airline_no(rs.getString("start_airline_no"));
+						article.setStart_airline_time(rs.getString("start_airline_time"));
+						article.setArrival_airline_name(rs.getString("arrival_airline_name"));
+						article.setArrival_airline_no(rs.getString("arrival_airline_no"));
+						article.setArrival_airline_time(rs.getString("arrival_airline_time"));
+						article.setBus_time_pickup(rs.getString("bus_time_pickup"));
+						article.setBus_time_dropft(rs.getString("bus_time_dropft"));
+						article.setStart_date(rs.getString("start_date"));
+						article.setArrival_date(rs.getString("arrival_date"));
+						article.setAdults(rs.getString("adults"));
+						article.setYoung(rs.getString("young"));
+						article.setChild(rs.getString("child"));
+						article.setInfatns(rs.getString("infatns"));
+						article.setName_on_card(rs.getString("name_on_card"));
+						article.setCard_number(rs.getString("card_number"));
+						article.setExpiry_year(rs.getString("expiry_year"));
+						article.setExpiry_month(rs.getString("expiry_month"));
+						article.setCsv_number(rs.getString("csv_number"));
+						article.setComm(rs.getString("comm"));
+						article.setMoney(rs.getString("money"));
+						articleList.add(article);
 					}while(rs.next());
 				}
 			}catch(Exception e) {
@@ -230,7 +258,7 @@ public class BookingDao {
 			}catch(SQLException e) {
 				e.printStackTrace();
 			}
-			return articlelist;
+			return articleList;
 		}
 
 	}

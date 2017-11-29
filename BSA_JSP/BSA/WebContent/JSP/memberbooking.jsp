@@ -103,7 +103,7 @@
 <body style="margin-top:80pt;">
 
 
-
+<%-- 
 	<table border="3">
 		<tr>
 			<td>first_name</td>
@@ -118,7 +118,7 @@
 		<tr>
 			<td>${article.last_name}</td>
 		</tr>
-	</c:forEach>
+	</c:forEach> --%>
 
 
 
@@ -145,26 +145,60 @@
   </center>
   <c:if test="${count == 0}">
     <div class="wrap">
-      <div class="box">현재 예매하신 회원은 없습니다.</div>
+      <div class="box">현재 예매가 없습니다.</div>
     </div>
   </c:if>
   <c:if test="${count > 0}">
     <table id="customers">
       <tbody>
         <tr>
-          <th class="text-center" id="first_name"> 성</th>
-          <th class="text-center" id="last_name"> 이름</th>
-          <th class="text-center" id="phone_number"> 연락처</th>
-          <th class="text-center" id="email_address"> 이메일</th>
+          <th class="text-center" id="first_name">성함</th>
+          <th class="text-center" id="phone">연락처</th>
+          <th class="text-center" id="email_address">이메일</th>
+          <th class="text-center" id="pickup">픽업</th>
+          <th class="text-center" id="dropft">내릴곳</th>
+          <th class="text-center" id="start_airline_time">공항출발시간</th>
+          <th class="text-center" id="arrival_airline_time">공항도착시간</th>
+          <th class="text-center" id="start_date">출발날짜</th>
+          <th class="text-center" id="arrival_date">도착날짜</th>
+          <th class="text-center" id="bus_time_pickup">버스픽업시간</th>
+          <th class="text-center" id="adults">성인</th>
+          <th class="text-center" id="young">청소년</th>
+          <th class="text-center" id="child">어린이</th>
+          <th class="text-center" id="infatns">유아</th>
+          <th class="text-center" id="name_on_card">카드회사</th>
+          <th class="text-center" id="card_number">카드번호</th>
+          <th class="text-center" id="expiry_year">년도</th>
+          <th class="text-center" id="expiry_month">개월</th>
+          <th class="text-center" id="csv_number">보안번호</th>
+          <th class="text-center" id="comm">커멘트</th>
+          <th class="text-center" id="money">가격</th>
+          
+          
         </tr>
         <c:forEach var="article" items="${articleList}">
         	<tr>
-        		<td align="center" width="50">
-        			<c:out value="${number}"/>
-        			<c:set var="number" value="${number -1}"/>
-       			</td>
-       			<td>${article.first_name}</td>
-       			<td>${article.last_name}</td>
+       			<td>${article.first_name}${article.last_name}</td>
+       			<td>${article.phone}</td>
+       			<td>${article.email}</td>
+       			<td>${article.pickup}</td>
+       			<td>${article.dropft}</td>
+       			<td>${article.start_airline_time}</td>
+       			<td>${article.arrival_airline_time}</td>
+       			<td>${article.start_date}</td>
+       			<td>${article.arrival_date}</td>
+       			<td>${article.bus_time_pickup}</td>
+       			<td>${article.adults}</td>
+       			<td>${article.young}</td>
+       			<td>${article.child}</td>
+       			<td>${article.infatns}</td>
+       			<td>${article.name_on_card}</td>
+       			<td>${article.card_number}</td>
+       			<td>${article.expiry_year}</td>
+       			<td>${article.expiry_month}</td>
+       			<td>${article.csv_number}</td>
+       			<td>${article.comm}</td>
+       			<td>${article.money}</td>
         	</tr>
         	
         
@@ -172,6 +206,7 @@
        </tbody>
     </table>
   </c:if>
+ 
   <div class="container">
     <div class="row"> &nbsp;
       <div class="span12"> &nbsp;검색&nbsp;
@@ -181,12 +216,13 @@
       </div>
     </div>
   </div>
+ 
   <div class="wrap">
   </div>
   
         
         <!-- 페이지 넘기기 -->
-    <div class="container">
+    <%-- <div class="container">
     <div class="example">
     	<nav>
     		<ul class="pagination">
@@ -222,8 +258,56 @@
 </ul>
 </nav>
 </div>
-</div>
-		
+</div> --%>
+<br><br><br><br><br><br>
+<footer>
+	<div class="text-white bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="p-5 col-md-3"> <i class="fa fa-5x mb-5 fa-diamond"></i>
+          <h3 class="mb-4">Pingendo</h3>
+          <ul class="list-unstyled">
+            <a href="#" class="text-white">Home</a>
+            <br>
+            <a href="#" class="text-white">About us</a>
+            <br>
+            <a href="#" class="text-white">Our services</a>
+            <br>
+            <a href="#" class="text-white">Testimonials</a>
+          </ul>
+        </div>
+        <div class="p-5 col-md-4">
+          <h3 class="mb-4">Latest post</h3>
+          <p>"<i>Here you can insert the latest news from your business. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i>" &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+            <br>
+            <br>
+            <br>"<i>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat</i>"</p>
+        </div>
+        <div class="p-5 col-md-5">
+          <h3>Get in touch</h3>
+          <form class="my-4">
+            <fieldset class="form-group"> <label for="exampleInputEmail1">Get monthly updates</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"> </fieldset>
+            <button type="submit" class="btn btn-outline-light">Submit</button>
+          </form>
+          <h3 class="mt-5">Social</h3>
+          <div class="align-self-center col-12 my-4">
+            <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook d-inline fa-lg mr-3 text-white"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fa fa-twitter d-inline mx-3 fa-lg text-white"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram d-inline mx-3 fa-lg text-white"></i></a>
+            <a href="https://plus.google.com" target="_blank"><i class="fa fa-google-plus-official d-inline mx-3 fa-lg text-white"></i></a>
+            <a href="https://pinterest.com" target="_blank"><i class="fa fa-pinterest-p d-inline mx-3 fa-lg text-white"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 mt-3">
+          <p class="text-center">© Copyright 2017 Pingendo - All rights reserved. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </footer>
 </form>
   <div id="bt"></div>
 </body>
