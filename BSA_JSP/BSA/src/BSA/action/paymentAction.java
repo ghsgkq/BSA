@@ -176,24 +176,24 @@ public class paymentAction implements CommandAction{
 				req.setAttribute("card_number", req.getParameter("card_number_1")+"-"+req.getParameter("card_number_2")+"-"+req.getParameter("card_number_3")+"-"+req.getParameter("card_number_4"));
 				req.setAttribute("card", "Discover");
 			}
-			else if(req.getParameter("card_number_1").charAt(0) == 3
-					&& (req.getParameter("card_number_1").charAt(1) == 4
-					|| req.getParameter("card_number_1").charAt(1) == 7)
+			else if(req.getParameter("card_number_1").charAt(0) == '3'
+					&& (req.getParameter("card_number_1").charAt(1) == '4'
+					|| req.getParameter("card_number_1").charAt(1) == '7')
 					&& (req.getParameter("card_number_1").length() + req.getParameter("card_number_2").length() + req.getParameter("card_number_3").length() + req.getParameter("card_number_4").length()) == 15) {
 				req.setAttribute("card_number", req.getParameter("card_number_1")+"-"+req.getParameter("card_number_2")+"-"+req.getParameter("card_number_3")+"-"+req.getParameter("card_number_4"));
 				req.setAttribute("card", "American Express");
 			}
-			else if(((req.getParameter("card_number_1").charAt(0) == 3
-					&& req.getParameter("card_number_1").charAt(1) == 0
-					&& (req.getParameter("card_number_1").charAt(2) == 0
-					|| req.getParameter("card_number_1").charAt(2) == 1
-					|| req.getParameter("card_number_1").charAt(2) == 2
-					|| req.getParameter("card_number_1").charAt(2) == 3
-					|| req.getParameter("card_number_1").charAt(2) == 4
-					|| req.getParameter("card_number_1").charAt(2) == 5))
-					|| (req.getParameter("card_number_1").charAt(0) == 3
-					&& (req.getParameter("card_number_1").charAt(1) == 6
-					|| req.getParameter("char_number_1").charAt(1) == 8)))
+			else if(((req.getParameter("card_number_1").charAt(0) == '3'
+					&& req.getParameter("card_number_1").charAt(1) == '0'
+					&& (req.getParameter("card_number_1").charAt(2) == '0'
+					|| req.getParameter("card_number_1").charAt(2) == '1'
+					|| req.getParameter("card_number_1").charAt(2) == '2'
+					|| req.getParameter("card_number_1").charAt(2) == '3'
+					|| req.getParameter("card_number_1").charAt(2) == '4'
+					|| req.getParameter("card_number_1").charAt(2) == '5'))
+					|| (req.getParameter("card_number_1").charAt(0) == '3'
+					&& (req.getParameter("card_number_1").charAt(1) == '6'
+					|| req.getParameter("card_number_1").charAt(1) == '8')))
 					&& (req.getParameter("card_number_1").length() + req.getParameter("card_number_2").length() + req.getParameter("card_number_3").length() + req.getParameter("card_number_4").length()) == 14) {
 				req.setAttribute("card_number", req.getParameter("card_number_1")+"-"+req.getParameter("card_number_2")+"-"+req.getParameter("card_number_3")+"-"+req.getParameter("card_number_4"));
 				req.setAttribute("card", "Diners Club");
@@ -201,9 +201,8 @@ public class paymentAction implements CommandAction{
 			else if(((req.getParameter("card_number_1").equals("2131")
 					|| req.getParameter("card_number_1").equals("1800"))
 					&& (req.getParameter("card_number_1").length() + req.getParameter("card_number_2").length() + req.getParameter("card_number_3").length() + req.getParameter("card_number_4").length()) == 15 )
-					|| (req.getParameter("card_number_1").charAt(0) == '3'
-					&& (req.getParameter("card_number_1").charAt(1) == '6'
-					|| req.getParameter("card_number_1").charAt(1) == '8')
+					|| (((req.getParameter("card_number_1").charAt(0) == '3') 
+					&& (req.getParameter("card_number_1").charAt(1) == '5'))
 					&& (req.getParameter("card_number_1").length() + req.getParameter("card_number_2").length() + req.getParameter("card_number_3").length() + req.getParameter("card_number_4").length()) == 16)) {
 				req.setAttribute("card_number", req.getParameter("card_number_1")+"-"+req.getParameter("card_number_2")+"-"+req.getParameter("card_number_3")+"-"+req.getParameter("card_number_4"));
 				req.setAttribute("card", "JCB");
