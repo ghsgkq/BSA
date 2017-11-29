@@ -19,7 +19,7 @@
 		if(index == 1){
 			document.booking_form.action='${pageContext.request.contextPath}/deletebooking.do'
 		}
-	  
+	  document.booking_form.submit();
 	}
   </script>
   
@@ -72,7 +72,7 @@
              <c:forEach items="${arrbdto }" var="arr">
              <c:if test="${arr.where_trip == '편도'}">
             <tr> 
-            	<th class="text-center"><input type="radio" name="change" value="${arr.email }"></th>
+            	<th class="text-center"><input type="radio" name="code" value="${arr.code }"></th>
            	  <c:if test="${arr.pickup != null}">
               <th class="text-center">${arr.start_date }</th>
               </c:if>
@@ -121,7 +121,7 @@
             <c:forEach items="${arrbdto }" var="arr">
             <c:if test="${arr.where_trip == '왕복'}">
             <tr>
-              <th class="text-center"><input type="radio" name="change" value="${arr.email }"></th>
+              <th class="text-center"><input type="radio" name="code" value="${arr.code }"></th>
               <th class="text-center">${arr.start_date }</th>
               <th class="text-center">${arr.arrival_date }</th>
               <th class="text-center">${arr.where_trip }</th>
@@ -148,7 +148,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <input type="button" class="btn btn-outline-dark" value="Cancel (예약취소)" onclick=""></a>  
+          <input type="button" class="btn btn-outline-dark" value="Cancel (예약취소)" onclick="mySubmit(1)"> 
         </div>
       </div>
     </div>
