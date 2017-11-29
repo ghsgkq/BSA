@@ -28,8 +28,8 @@ public class BookingDao {
 				conn = ConnUtil.getConnection();
 				sql = "insert into BOOKING (FIRST_NAME, LAST_NAME, PHONE, EMAIL, WHERE_TRIP, WHERE_FROM, WHERE_TO, PICKUP, DROPFT, START_AIRLINE_NAME, "
 						+ "START_AIRLINE_NO, START_AIRLINE_TIME, ARRIVAL_AIRLINE_NAME, ARRIVAL_AIRLINE_NO, ARRIVAL_AIRLINE_TIME, BUS_TIME_PICKUP, BUS_TIME_DROPFT, "
-						+ "START_DATE, ARRIVAL_DATE, ADULTS, YOUNG, CHILD, INFATNS, NAME_ON_CARD, CARD_NUMBER, EXPIRY_YEAR, EXPIRY_MONTH, CSV_NUMBER, COMM, MONEY) "
-						+ "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+						+ "START_DATE, ARRIVAL_DATE, ADULTS, YOUNG, CHILD, INFATNS, NAME_ON_CARD, CARD_NUMBER, EXPIRY_YEAR, EXPIRY_MONTH, CSV_NUMBER, COMM, MONEY, CODE) "
+						+ "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 				pstmt=conn.prepareStatement(sql);
 				pstmt.setString(1, article.getFirst_name());
 				pstmt.setString(2, article.getLast_name());
@@ -61,6 +61,7 @@ public class BookingDao {
 				pstmt.setString(28, article.getCsv_number());
 				pstmt.setString(29, article.getComm());
 				pstmt.setString(30, article.getMoney());
+				pstmt.setString(31, article.getCode());
 				pstmt.executeUpdate();
 				
 			}catch(SQLException e) {
@@ -121,6 +122,7 @@ public class BookingDao {
 							bdto.setCsv_number(rs.getString("csv_number"));
 							bdto.setComm(rs.getString("comm"));
 							bdto.setMoney(rs.getString("money"));
+							bdto.setCode(rs.getString("code"));
 						}
 					}
 					else if(tripcheck == 2) {
@@ -155,6 +157,7 @@ public class BookingDao {
 							bdto.setCsv_number(rs.getString("csv_number"));
 							bdto.setComm(rs.getString("comm"));
 							bdto.setMoney(rs.getString("money"));
+							bdto.setCode(rs.getString("code"));
 						}
 					}
 					
@@ -246,6 +249,7 @@ public class BookingDao {
 						article.setCsv_number(rs.getString("csv_number"));
 						article.setComm(rs.getString("comm"));
 						article.setMoney(rs.getString("money"));
+						article.setCode(rs.getString("code"));
 						articleList.add(article);
 					}while(rs.next());
 				}
@@ -259,6 +263,34 @@ public class BookingDao {
 				e.printStackTrace();
 			}
 			return articleList;
+		}
+		
+		public ArrayList<String> getCode() {
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			ArrayList<String> codes = new ArrayList<String>();
+			try {
+				conn = ConnUtil.getConnection();
+				pstmt = conn.prepareStatement("select code from BOOKING");
+				rs = pstmt.executeQuery();
+				while(rs.next()) {
+					codes.add(rs.getString("code"));
+				}
+				
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}finally {
+				try {
+					if(conn != null)conn.close();
+					if(pstmt != null) pstmt.close();
+					if(rs != null) rs.close();
+				}catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			return codes;
+			
 		}
 
 	}
