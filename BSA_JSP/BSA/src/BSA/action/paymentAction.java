@@ -31,7 +31,6 @@ public class paymentAction implements CommandAction{
 		req.setAttribute("child", req.getParameter("child"));
 		req.setAttribute("infatns", req.getParameter("infatns"));
 		req.setAttribute("name_on_card", req.getParameter("name_on_card"));
-		req.setAttribute("card_number", req.getParameter("card_number"));
 		req.setAttribute("expiry_year", req.getParameter("expiry_year"));
 		req.setAttribute("expiry_month", req.getParameter("expiry_month"));
 		req.setAttribute("csv_number", req.getParameter("csv_number"));
@@ -39,6 +38,10 @@ public class paymentAction implements CommandAction{
 		req.setAttribute("bus_time_pickup", req.getParameter("bus_time_pickup"));
 		req.setAttribute("bus_time_dropft", req.getParameter("bus_time_dropft"));
 		req.setAttribute("money", req.getParameter("money"));
+		req.setAttribute("card_number_1", req.getParameter("card_number_1"));
+		req.setAttribute("card_number_2", req.getParameter("card_number_2"));
+		req.setAttribute("card_number_3", req.getParameter("card_number_3"));
+		req.setAttribute("card_number_4", req.getParameter("card_number_4"));
 		
 		
 		
@@ -139,26 +142,71 @@ public class paymentAction implements CommandAction{
 			return "/JSP/payment.jsp";
 		}
 		
-		if(req.getParameter("card_number").equals("")) {
+		if(req.getParameter("card_number_1").equals("") || req.getParameter("card_number_2").equals("") || req.getParameter("card_number_3").equals("") || req.getParameter("card_number_4").equals("")) {
 			req.setAttribute("card_number_check", 1);
 			return "/JSP/payment.jsp";
 		}
 		else {
-			if(req.getParameter("card_number").length() == 19) {
-				int cumcheck = 0;
-				for(int i=0; i<req.getParameter("card_number").length(); i++) {
-					char card_number = req.getParameter("card_number").charAt(i);
-					if(card_number >= 0x30 && card_number <= 0x39) {
-						
-					}
-					else if(card_number == 0x2D && cumcheck < 3) {
-						++cumcheck;
-					}
-					else {
-						req.setAttribute("card_number_check", 2);
-						return "/JSP/payment.jsp";
-					}
-				}
+			if(req.getParameter("card_number_1").charAt(0) == '9' 
+					&& req.getParameter("card_number_1").charAt(1) == '4' 
+					&& (req.getParameter("card_number_1").length() + req.getParameter("card_number_2").length() + req.getParameter("card_number_3").length() + req.getParameter("card_number_4").length()) == 14) {
+				req.setAttribute("card_number", req.getParameter("card_number_1")+"-"+req.getParameter("card_number_2")+"-"+req.getParameter("card_number_3")+"-"+req.getParameter("card_number_4"));
+				req.setAttribute("card", "BC");
+			}
+			else if(req.getParameter("card_number_1").charAt(0) == '4' 
+					&& (((req.getParameter("card_number_1").length() + req.getParameter("card_number_2").length() + req.getParameter("card_number_3").length() + req.getParameter("card_number_4").length()) == 12 
+					|| (req.getParameter("card_number_1").length() + req.getParameter("card_number_2").length() + req.getParameter("card_number_3").length() + req.getParameter("card_number_4").length()) == 16))) {
+				req.setAttribute("card_number", req.getParameter("card_number_1")+"-"+req.getParameter("card_number_2")+"-"+req.getParameter("card_number_3")+"-"+req.getParameter("card_number_4"));
+				req.setAttribute("card", "Visa");
+			}
+			else if(req.getParameter("card_number_1").charAt(0) == '5' 
+					&& (req.getParameter("card_number_1").charAt(1) == '1' 
+					|| req.getParameter("card_number_1").charAt(1) == '2' 
+					|| req.getParameter("card_number_1").charAt(1) == '3' 
+					|| req.getParameter("card_number_1").charAt(1) == '4' 
+					|| req.getParameter("card_number_1").charAt(1) == '5')
+					&& (req.getParameter("card_number_1").length() + req.getParameter("card_number_2").length() + req.getParameter("card_number_3").length() + req.getParameter("card_number_4").length()) == 16) {
+				req.setAttribute("card_number", req.getParameter("card_number_1")+"-"+req.getParameter("card_number_2")+"-"+req.getParameter("card_number_3")+"-"+req.getParameter("card_number_4"));
+				req.setAttribute("card", "MasterCard");
+			}
+			else if((req.getParameter("card_number_1").equals("6011") 
+					&& (req.getParameter("card_number_1").length() + req.getParameter("card_number_2").length() + req.getParameter("card_number_3").length() + req.getParameter("card_number_4").length()) == 16)
+					|| (req.getParameter("card_number_1").charAt(0) == '5'
+					&& (req.getParameter("card_number_1").length() + req.getParameter("card_number_2").length() + req.getParameter("card_number_3").length() + req.getParameter("card_number_4").length()) == 15 )) {
+				req.setAttribute("card_number", req.getParameter("card_number_1")+"-"+req.getParameter("card_number_2")+"-"+req.getParameter("card_number_3")+"-"+req.getParameter("card_number_4"));
+				req.setAttribute("card", "Discover");
+			}
+			else if(req.getParameter("card_number_1").charAt(0) == 3
+					&& (req.getParameter("card_number_1").charAt(1) == 4
+					|| req.getParameter("card_number_1").charAt(1) == 7)
+					&& (req.getParameter("card_number_1").length() + req.getParameter("card_number_2").length() + req.getParameter("card_number_3").length() + req.getParameter("card_number_4").length()) == 15) {
+				req.setAttribute("card_number", req.getParameter("card_number_1")+"-"+req.getParameter("card_number_2")+"-"+req.getParameter("card_number_3")+"-"+req.getParameter("card_number_4"));
+				req.setAttribute("card", "American Express");
+			}
+			else if(((req.getParameter("card_number_1").charAt(0) == 3
+					&& req.getParameter("card_number_1").charAt(1) == 0
+					&& (req.getParameter("card_number_1").charAt(2) == 0
+					|| req.getParameter("card_number_1").charAt(2) == 1
+					|| req.getParameter("card_number_1").charAt(2) == 2
+					|| req.getParameter("card_number_1").charAt(2) == 3
+					|| req.getParameter("card_number_1").charAt(2) == 4
+					|| req.getParameter("card_number_1").charAt(2) == 5))
+					|| (req.getParameter("card_number_1").charAt(0) == 3
+					&& (req.getParameter("card_number_1").charAt(1) == 6
+					|| req.getParameter("char_number_1").charAt(1) == 8)))
+					&& (req.getParameter("card_number_1").length() + req.getParameter("card_number_2").length() + req.getParameter("card_number_3").length() + req.getParameter("card_number_4").length()) == 14) {
+				req.setAttribute("card_number", req.getParameter("card_number_1")+"-"+req.getParameter("card_number_2")+"-"+req.getParameter("card_number_3")+"-"+req.getParameter("card_number_4"));
+				req.setAttribute("card", "Diners Club");
+			}
+			else if(((req.getParameter("card_number_1").equals("2131")
+					|| req.getParameter("card_number_1").equals("1800"))
+					&& (req.getParameter("card_number_1").length() + req.getParameter("card_number_2").length() + req.getParameter("card_number_3").length() + req.getParameter("card_number_4").length()) == 15 )
+					|| (req.getParameter("card_number_1").charAt(0) == '3'
+					&& (req.getParameter("card_number_1").charAt(1) == '6'
+					|| req.getParameter("card_number_1").charAt(1) == '8')
+					&& (req.getParameter("card_number_1").length() + req.getParameter("card_number_2").length() + req.getParameter("card_number_3").length() + req.getParameter("card_number_4").length()) == 16)) {
+				req.setAttribute("card_number", req.getParameter("card_number_1")+"-"+req.getParameter("card_number_2")+"-"+req.getParameter("card_number_3")+"-"+req.getParameter("card_number_4"));
+				req.setAttribute("card", "JCB");
 			}
 			else {
 				req.setAttribute("card_number_check", 2);

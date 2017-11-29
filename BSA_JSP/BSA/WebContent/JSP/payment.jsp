@@ -22,6 +22,14 @@
 
 </script>
 
+<script type="text/javascript">
+	function onlyNumber(obj){
+		$(obj).keyup(function(){
+			$(this).val($(this).val().replace(/[^0-9]/g,""));
+		});
+	}
+</script>
+
 <c:choose>
 
 <c:when test="${first_name_check == 1 }">
@@ -80,7 +88,7 @@ alert("카드번호를 입력하세요");
 
 <c:when test="${card_number_check == 2 }">
 <script type="text/javascript">
-alert("카드번호는 19자리수입니다(-포함) \n 숫자와 -(3)만 적으실수 있습니다.");
+alert("유효한 카드번호가 아닙니다.");
 </script>
 </c:when>
 
@@ -218,8 +226,12 @@ alert("버스 시간(dropft)을 선택하세요")
             <h4 class="text-dark">Please &nbsp;Enter Your Payment Details</h4><label>Name On Credit Card<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-angellist"></i>
               <input type="text" class="form-control mr-3 my-1" placeholder="카드에 적힌 이름을 입력해주세요." name="name_on_card" value="${name_on_card }"> </div><label><br>Caredit Card Number<br></label>
-            <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-angellist"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="카드 번호를 입력해주세요." name="card_number" value="${card_number }"> </div><label><br>Expiry Date<br></label>
+            <div class="input-group w-75"> <i class="fa d-inline fa-2x fa-angellist"></i>
+              <input type="text" class="form-control mr-3 my-1" placeholder="카드" name="card_number_1" value="${card_number_1 }" maxlength="4" onkeydown="onlyNumber(this)">
+              -<input type="text" class="form-control mr-3 my-1" placeholder="번호를" name="card_number_2" value="${card_number_2 }" maxlength="4" onkeydown="onlyNumber(this)">
+              -<input type="text" class="form-control mr-3 my-1" placeholder="입력" name="card_number_3" value="${card_number_3 }" maxlength="4" onkeydown="onlyNumber(this)">
+              -<input type="text" class="form-control mr-3 my-1" placeholder="하세요." name="card_number_4" value="${card_number_4 }" maxlength="4" onkeydown="onlyNumber(this)"></div>
+              <label><br>Expiry Date<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-angellist"></i> <select name="expiry_month" class="form-control-sm px-3 mx-2">
                 <option value="1">1</option>
                 <option value="2">2</option>
