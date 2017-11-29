@@ -36,6 +36,15 @@
   </head>
 
 <body class="bg-light" style="margin-top:100px;">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark my-3">
+    <div class="container" style="margin-top: 10px;">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
+        <a class="ml-3 btn navbar-btn btn-dark border border-warning" href="${pageContext.request.contextPath}/index.do">Home</a>&nbsp;&nbsp; <a class="navbar-brand" ><b class="text-light" >1.STEP&nbsp;</b><b></b><i class="fa fa-forward fa-lg d-inline text-muted"></i>&nbsp;<b class="text-light">2.STEP&nbsp;</b><i class="fa fa-forward fa-lg d-inline text-muted"></i>&nbsp;<b class="text-danger">3.STEP&nbsp;</b></a><i class="fa fa-lg d-inline text-white fa-globe"></i> 
+        </div>
+    </div>
+  </nav>
   <div id="contents"></div>
   <form action="${pageContext.request.contextPath}/paymentPro.do" method="post">
   <div class="py-5">
