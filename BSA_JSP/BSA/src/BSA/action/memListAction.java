@@ -16,7 +16,6 @@ public class memListAction implements CommandAction{
 		ArrayList<BookingDto> ar = new ArrayList<BookingDto>();
 		
 		int count = 0;
-		
 		List<BookingDto> articleList = null;
 		BookingDao dbPro = BookingDao.getInstance();
 		count = dbPro.getArticleCount();
@@ -24,7 +23,7 @@ public class memListAction implements CommandAction{
 	
 		
 		
-		
+		req.setAttribute("count", new Integer(count));
 		req.setAttribute("articleList", articleList);
 		
 		return "/JSP/memberbooking.jsp";
