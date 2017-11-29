@@ -132,25 +132,26 @@ alert("버스 시간(dropft)을 선택하세요")
 </c:choose>
 
 </head>
-<body class="bg-light" style="margin-top:83px;">
+<body class="bg-light" style="margin-top:70px;">
 
 
 
   <div id="contents"></div>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark my-3">
+    <div class="container" style="margin-top: 40px;">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
+        <a class="ml-3 btn navbar-btn btn-dark border border-warning" href="${pageContext.request.contextPath}/index.do">Home</a>&nbsp;&nbsp; <a class="navbar-brand" ><b class="text-light" >1.STEP&nbsp;</b><b></b><i class="fa fa-forward fa-lg d-inline text-muted"></i>&nbsp;<b class="text-danger">2.STEP&nbsp;</b><i class="fa fa-forward fa-lg d-inline text-muted"></i>&nbsp;<b class="text-light">3.STEP&nbsp;</b></a><i class="fa fa-lg d-inline text-white fa-globe"></i> 
+        </div>
+    </div>
+  </nav>
   <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
     <div class="container">
-      <a class="navbar-brand w-100" href="#"><i class="fa mx-5 px-5 fa-calculator fa-2x"></i><i class="fa d-inline mx-5 px-5 fa-cc-visa fa-2x"></i><i class="fa d-inline w-100 mx-5 px-5 fa-cc-mastercard fa-2x"></i><i class="fa mx-5 px-5 fa-id-card-o fa-2x"></i></a>
-      <button class="navbar-toggler navbar-toggler-right"
-        type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <a class="navbar-brand" href="#"><i class="fa px-5 fa-2x fa-cc-stripe"></i><i class="fa px-5 fa-2x fa-cc-amex"></i><i class="fa px-5 fa-2x fa-cc-discover"></i><i class="fa fa-2x fa-cc-jcb px-5"></i><i class="fa d-inline fa-cc-visa fa-2x px-5"></i><i class="fa d-inline px-5 fa-cc-mastercard fa-2x"></i><i class="fa px-5 fa-2x fa-cc"></i></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
       <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
-        <ul class="navbar-nav" style="opacity: 0.5;">
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa d-inline fa-bookmark-o fa-2x"></i>&nbsp;Map</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa d-inline fa-envelope-o fa-2x"></i>&nbsp;Contacts</a>
-          </li>
-        </ul>
+        <ul class="navbar-nav" style="opacity: 0.5;"></ul>
       </div>
     </div>
   </nav>
