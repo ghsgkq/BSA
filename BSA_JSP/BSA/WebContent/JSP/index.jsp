@@ -55,6 +55,11 @@
   alert("회원탈퇴 되었습니다.");
   </script>
   </c:if>
+  <c:if test="${bookingcheck == 1}">
+  <script type="text/javascript">
+  alert("예약이 되었습니다!. \n 이메일에 코드를 확인하세요");
+  </script>
+  </c:if>
   
    <style type="text/css">
   .main-content {

@@ -209,6 +209,7 @@ public class paymentProAction implements CommandAction {
 		
 		BookingDao bdao = BookingDao.getInstance();
 		bdao.Bookinginsert(bdto);
+		req.setAttribute("bookingcheck", 1);
 		return "/JSP/index.jsp";
 	}
 	
