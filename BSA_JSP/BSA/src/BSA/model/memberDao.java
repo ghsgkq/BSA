@@ -226,4 +226,31 @@ public class memberDao {
 		}
 		return un_check;
 	}
+	public boolean compareEmail(String email) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		boolean check = true;
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement("select email from BSA_MEMBER");
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				if(email.equals(rs.getString("email"))) {
+					check = false;
+				}
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null) pstmt.close();
+				if(rs != null) rs.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return check;
+	}
 }

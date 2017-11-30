@@ -21,12 +21,27 @@
     });
   </script>
 
+<script type="text/javascript">
+  function mySubmit(index) {
+		if(index == 1){
+			document.register_form.action='${pageContext.request.contextPath}/idcheck.do'
+		}
+		if(index == 2){
+			document.register_form.action='${pageContext.request.contextPath}/emailcheck.do'
+		}
+		if(index == 3){
+			document.register_form.action='${pageContext.request.contextPath}/registerPro.do'
+		}
+	  document.register_form.submit();
+	}
+  </script>
+
   <c:if test="${idcheck == 0 }">
   <script type="text/javascript">
   alert("아이디가 존재합니다!!");
   </script>
   </c:if>
-  <c:if test="${idcheck == 1 && !(anser>=1 && anser<=11) }">
+  <c:if test="${idcheck == 1 && !(anser>=1 && anser<=11) && (emailcheck != 1 && emailcheck != 2)}">
   <script type="text/javascript">
   alert("사용가능한 아이디입니다!");
   </script>
@@ -46,6 +61,16 @@
   alert("패스워드는 10~25 공백을 제외한 모든 문자로 구성할 수 있습니다!")
   </script>
   </c:if>
+  <c:if test="${emailcheck == 1 && !(anser>=1 && anser<=11) }">
+  <script type="text/javascript">
+  alert("사용가능한 이메일입니다.");
+  </script>
+  </c:if>
+  <c:if test="${emailcheck == 2 }">
+  <script type="text/javascript">
+  alert("이메일이 존재합니다.")
+  </script>
+  </c:if>
 
   
   
@@ -61,18 +86,15 @@
           <div class="card text-white p-5 bg-dark">
             <div class="card-body">
               <h1 class="mb-4">회원가입</h1>
-       			<c:if test="${idcheck != 1 }">		
-                <form action="${pageContext.request.contextPath}/idcheck.do" method="post">
-                <div class="form-group"> <label>아이디</label>
-                <input type="text" name="id" class="form-control" placeholder="아이디" value="${id}">
-                  <br>
-                  <input type="submit" class="btn btn-secondary" value="중복확인" > </div>
-                </form>
-                </c:if>
-              <form action="${pageContext.request.contextPath}/registerPro.do" method="post">
-              <c:if test="${idcheck == 1 }">
+              <form name="register_form" method="post">
+                <c:if test="${idcheck != 1 }">
                 <div class="form-group"> <label>아이디</label>
                 <input type="text" name="id" class="form-control" placeholder="아이디" value="${id}"></div>
+                <input type="button" class="btn btn-secondary" onclick="return mySubmit(1)" value="id중복확인">
+                </c:if>
+                <c:if test="${idcheck == 1 }">
+                 <div class="form-group"> <label>아이디</label>
+                <input type="text" name="id" class="form-control" placeholder="아이디" value="${id}" readonly="readonly"></div>
                 </c:if>
                 <input type="hidden" name="idcheck" value="${idcheck}">
                 <div class="form-group"> <label>비밀번호</label>
@@ -85,8 +107,17 @@
                  <input type="text" name="last_name" class="form-control" placeholder="성" value="${last_name }"> </div>
                  <div class="form-group"> <label>전화번호</label>
                  <input type="text" name="phone" class="form-control" placeholder="- 포함 작성" value="${phone }"> </div>
+                <c:if test="${emailcheck != 1 }">
                 <div class="form-group"> <label>이메일</label>
-                  <input type="email" name="email" class="form-control" placeholder="이메일" value="${email}"> </div>
+                <input type="email" name="email" class="form-control" placeholder="이메일" value="${email}"> </div>
+                <input type="button" class="btn btn-secondary" onclick="return mySubmit(2)" value="email중복확인">
+                </c:if>
+                <c:if test="${emailcheck == 1 }">
+                <div class="form-group"> <label>이메일</label>
+                <input type="email" name="email" class="form-control" placeholder="이메일" value="${email}" readonly="readonly"> </div>
+                </c:if>
+                <br><br>
+                <input type="hidden" name="emailcheck" value="${emailcheck }">
               <c:if test="${anser != 10 and anser != 11}">
                 <div class="form-group">
                   <input type="radio" name="what" value="true"> 이메일로 본인확인 문자가 가는것을 허락합니까? </div>
@@ -98,7 +129,7 @@
               <input type="hidden" name="what" value="true">
               </div>
               </c:if>
-                <button type="submit" class="btn btn-secondary">회원가입</button>
+                <button type="button" onclick="return mySubmit(3)" class="btn btn-secondary">회원가입</button>
                 &nbsp;&nbsp;<input type="reset" class="btn btn-secondary" value="다시입력">
               </form>
               <br><br>

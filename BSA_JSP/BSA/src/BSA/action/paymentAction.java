@@ -4,6 +4,8 @@ package BSA.action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import BSA.model.memberDao;
+
 public class paymentAction implements CommandAction{
 
 	@Override
@@ -111,6 +113,13 @@ public class paymentAction implements CommandAction{
 			return "/JSP/payment.jsp";
 		}
 		else {
+			if(req.getSession().getAttribute("id") == null) {
+				if(memberDao.getInstance().compareEmail(req.getParameter("email"))) {
+					req.setAttribute("email_check", 3);
+					return "/JSP/payment.jsp";
+				}
+				
+			}
 			int jumcheck = 0;
 			int guncheck = 0;
 			for(int i=0; i<req.getParameter("email").length(); i++) {
