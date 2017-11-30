@@ -28,6 +28,17 @@
 			$(this).val($(this).val().replace(/[^0-9]/g,""));
 		});
 	}
+	function onbutton_event(){
+		var pay=confirm("결제하시겠습니까?")
+		if(pay==true){
+			alert("결제완료! 예약환인페이지로이동")
+			location.href="${pageContext.request.contextPath}/payment.do"
+		}else{
+			alert("취소 되었습니다.")
+			location.href="${pageContext.request.contextPath}/Booking.do"
+			}
+		}
+	
 </script>
 
 <c:choose>
@@ -300,7 +311,7 @@ alert("버스 시간(dropft)을 선택하세요")
            <input type="hidden" name="money" value="${money }">
            <input type="hidden" name="arrival_time_list" value="${arrival_time_list }">
            <input type="hidden" name="start_time_list" value="${start_time_list }">
-            <button type="submit" class="btn btn-secondary btn-lg p-4">next</button>
+            <button type="submit" class="btn btn-secondary btn-lg p-4" onclick="Javascript:onbutton_event();">next</button>
           </div>
             
         </div>
