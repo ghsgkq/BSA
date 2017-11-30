@@ -3,6 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+<%@page import="BSA.model.BookingDto"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="BSA.model.AdminDao" %>
 
 
 
@@ -20,22 +23,19 @@
   
   
   <script type="text/javascript">
-  function delSubmit(index == 1){
-  	if(index == 1){
-  		document.checking_Booked.action='${pageContext.request.contextPath}/adminbookingdelete.do'
+  	function emailDelete(delEmail){
+  		//alert(delID);
+  		location.href="delete.jsp?email="+delEmail;
   	}
-  	document.checking_Booked.submit();
-  }
   </script>
-  
-  
   
   <script type="text/javascript">
     $(document).ready( function() {
     	$("#contents").load("JSP/topa.jsp");
     	
     });
-     
+    
+
   </script>
 <title>회원 예매 화면</title>
 <style type="text/css">
@@ -114,6 +114,26 @@
   </style>
 </head>
 <body style="margin-top:80pt;">
+
+
+<jsp:useBean id="dao" class="BSA.model.AdminDao"/>
+<%
+ArrayList<BookingDto> list = dao.getMemberlist();
+%>
+
+
+<%
+        		for(BookingDto bd : list){
+        	%>
+        		<tr>
+        			<td><%=bd.getEmail() %></td>
+        			<td><%=bd.getAdults() %></td>
+        			<td><input type="button" value="삭제" onclick="emailDelete('<%=bd.getEmail() %>');"></td>
+        		</tr>
+        	<%
+        		}
+        	%>
+
 <form method="post" name="checking_Booked" action="${pagecontext.request.contextpath}/checkbooked.do">
 <div id="contents"></div>
   <center>
@@ -191,7 +211,6 @@
        			<td><input type="button" value="삭제" onClick="delSubmit(1)"></td>
         	</tr>
         	
-        
         </c:forEach>
        </tbody>
     </table>
