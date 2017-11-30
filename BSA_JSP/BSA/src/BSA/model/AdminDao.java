@@ -31,7 +31,7 @@ public class AdminDao {
 			pstmt=conn.prepareStatement(sql.toString());
 			pstmt.setString(1, article.getAdmin_id("admin"));
 			pstmt.setString(2, article.getAdmin_pw("1234"));
-			pstmt.executeQuery();
+			pstmt.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {
