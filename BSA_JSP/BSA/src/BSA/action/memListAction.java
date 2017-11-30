@@ -1,12 +1,12 @@
 package BSA.action;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import BSA.model.AdminDao;
 import BSA.model.BookingDao;
 import BSA.model.BookingDto;
 
@@ -17,7 +17,7 @@ public class memListAction implements CommandAction{
 		
 		int count = 0;
 		List<BookingDto> articleList = null;
-		BookingDao dbPro = BookingDao.getInstance();
+		AdminDao dbPro = AdminDao.getInstance();
 		count = dbPro.getArticleCount();
 		articleList = dbPro.getArticles();
 	

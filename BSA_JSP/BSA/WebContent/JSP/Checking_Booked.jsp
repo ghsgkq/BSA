@@ -16,9 +16,15 @@
   
   <script type="text/javascript">
   function mySubmit(index) {
+	  var index=confirm("예약취소하시겠습니까?")
 		if(index == 1){
+			alert("예약취소되었습니다")
 			document.booking_form.action='${pageContext.request.contextPath}/deletebooking.do'
+		}else{
+			alert("취소 되었습니다.")
+			document.booking_form.action='${pageContext.request.contextPath}/checkbooked.do'
 		}
+		
 	  document.booking_form.submit();
 	}
   </script>
@@ -28,6 +34,15 @@
     	$("#contents").load("JSP/top.jsp");
     	$("#bt").load("JSP/bottom.jsp");
     });
+	function onbutton_event(){
+		var del=confirm("결제하시겠습니까?")
+		if(del==true){
+			alert("결제완료! 예약환인페이지로이동")
+			location.href="${pageContext.request.contextPath}/checkbooked.do"
+		}else{
+			alert("취소 되었습니다.")
+			}
+		}
   </script>
 </head>
 <body style="margin-top:80pt;">
