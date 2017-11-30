@@ -18,11 +18,24 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   
+  
+  <script type="text/javascript">
+  function delSubmit(index == 1){
+  	if(index == 1){
+  		document.checking_Booked.action='${pageContext.request.contextPath}/adminbookingdelete.do'
+  	}
+  	document.checking_Booked.submit();
+  }
+  </script>
+  
+  
+  
   <script type="text/javascript">
     $(document).ready( function() {
     	$("#contents").load("JSP/topa.jsp");
     	
     });
+     
   </script>
 <title>회원 예매 화면</title>
 <style type="text/css">
@@ -101,31 +114,6 @@
   </style>
 </head>
 <body style="margin-top:80pt;">
-
-
-<%-- 
-	<table border="3">
-		<tr>
-			<td>first_name</td>
-			<td>last_name</td>
-		</tr>
-	</table>
-	
-	<c:forEach items="${articleList}" var="article">
-		<tr>
-			<td>${article.first_name}</td>
-		</tr>
-		<tr>
-			<td>${article.last_name}</td>
-		</tr>
-	</c:forEach> --%>
-
-
-
-
-
-
-
 <form method="post" name="checking_Booked" action="${pagecontext.request.contextpath}/checkbooked.do">
 <div id="contents"></div>
   <center>
@@ -173,6 +161,7 @@
           <th class="text-center" id="csv_number">보안번호</th>
           <th class="text-center" id="comm">커멘트</th>
           <th class="text-center" id="money">가격</th>
+          <th class="text-center" id="delete">예매삭제</th>
           
           
         </tr>
@@ -199,6 +188,7 @@
        			<td>${article.csv_number}</td>
        			<td>${article.comm}</td>
        			<td>${article.money}</td>
+       			<td><input type="button" value="삭제" onClick="delSubmit(1)"></td>
         	</tr>
         	
         

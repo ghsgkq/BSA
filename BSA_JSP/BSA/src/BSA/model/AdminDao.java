@@ -130,5 +130,36 @@ public class AdminDao {
 		}
 		return articleList;
 	}
-	
+	public int deleteArticle(String email) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String dbEmail="";
+		int result = -1;
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement("select EMAIL from BOOKING where EMAIL = '?'");
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				dbEmail = rs.getString("email");
+				if(dbEmail.equals(email)) {
+					pstmt.close();
+					pstmt = conn.prepareStatement("delete from BOOKING where EMAIL = '?'");
+					pstmt.executeUpdate();
+					result = 1;
+				}else {
+					result = 0;
+				}
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}try {
+			if(rs!=null)rs.close();
+			if(pstmt!=null)rs.close();
+			if(conn!=null)rs.close();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
 }
