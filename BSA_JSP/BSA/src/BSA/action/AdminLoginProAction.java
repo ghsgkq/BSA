@@ -27,7 +27,7 @@ public class AdminLoginProAction implements CommandAction{
 		
 		if(req.getParameter("admin_id").equals(req.getParameter("admin_id"))&& req.getParameter("admin_pw").equals(req.getParameter("admin_pw"))) {
 			req.getSession().setAttribute("admin_id", session);
-			//관리자 아이디"admin" 비밀번호 "1234" server session에 저장
+			//관리자 아이디" " 비밀번호 " " server session에 저장
 		
 		}
 		else {
@@ -36,6 +36,7 @@ public class AdminLoginProAction implements CommandAction{
 			return "/JSP/AdminLogin.jsp";
 			//아이디 비밀번호 일치 하지 않는 경우 로그인 안됨으로 설정 해놓음
 		}
+		
 		
 		return "/JSP/memberbooking.jsp";
 	}
