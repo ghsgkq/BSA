@@ -36,12 +36,12 @@
 	}
   </script>
 
-  <c:if test="${idcheck == 0 }">
+  <c:if test="${idcheck == 4 }">
   <script type="text/javascript">
   alert("아이디가 존재합니다!!");
   </script>
   </c:if>
-  <c:if test="${idcheck == 1 && !(anser>=1 && anser<=11) && (emailcheck != 1 && emailcheck != 2)}">
+  <c:if test="${idcheck == 1 && !(anser>=1 && anser<=11) && (emailcheck != 1 && emailcheck != 2 && emailcheck != 3)}">
   <script type="text/javascript">
   alert("사용가능한 아이디입니다!");
   </script>
@@ -61,7 +61,7 @@
   alert("패스워드는 10~25 공백을 제외한 모든 문자로 구성할 수 있습니다!")
   </script>
   </c:if>
-  <c:if test="${emailcheck == 1 && !(anser>=1 && anser<=11) }">
+  <c:if test="${emailcheck == 1 && !(anser>=1 && anser<=11) && (idcheck != 4 && idcheck != 2 && idcheck != 3)}">
   <script type="text/javascript">
   alert("사용가능한 이메일입니다.");
   </script>
@@ -71,7 +71,11 @@
   alert("이메일이 존재합니다.")
   </script>
   </c:if>
-
+  <c:if test="${emailcheck == 3 }">
+  <script type="text/javascript">
+  alert("이메일 양식이 잘못되었습니다.");
+  </script>
+  </c:if>
   
   
 </head>
@@ -91,6 +95,7 @@
                 <div class="form-group"> <label>아이디</label>
                 <input type="text" name="id" class="form-control" placeholder="아이디" value="${id}"></div>
                 <input type="button" class="btn btn-secondary" onclick="return mySubmit(1)" value="id중복확인">
+                <br>
                 </c:if>
                 <c:if test="${idcheck == 1 }">
                  <div class="form-group"> <label>아이디</label>
@@ -150,9 +155,6 @@
               </c:if>
               <c:if test="${anser == 6 }">
               비밀번호확인란을 입력하세요!
-              </c:if>
-              <c:if test="${anser == 7 }">
-              이메일을 입력하세요!
               </c:if>
               <c:if test="${anser == 8 }">
               이메일 본인확인란을 체크해주세요!!

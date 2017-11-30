@@ -18,7 +18,7 @@ public class idCheckAction implements CommandAction {
 		if(ids != null) {
 			for(int i=0; i<ids.size(); i++) {
 				if(id.equals(ids.get(i))) {
-					idcheck=0;
+					idcheck=4;
 				}
 			}
 		}
@@ -40,6 +40,13 @@ public class idCheckAction implements CommandAction {
 						req.setAttribute("phone", req.getParameter("phone"));
 						req.setAttribute("password", req.getParameter("password"));
 						req.setAttribute("email", req.getParameter("email"));
+						if(req.getParameter("emailcheck").equals("1")) {
+							req.setAttribute("emailcheck", req.getParameter("emailcheck"));
+						}
+						else {
+							req.setAttribute("emailcheck", 0);
+						}
+						
 						req.setAttribute("idcheck", 2);
 						return "/JSP/register.jsp";
 					}
@@ -53,6 +60,12 @@ public class idCheckAction implements CommandAction {
 				req.setAttribute("phone", req.getParameter("phone"));
 				req.setAttribute("password", req.getParameter("password"));
 				req.setAttribute("email", req.getParameter("email"));
+				if(req.getParameter("emailcheck").equals("1")) {
+					req.setAttribute("emailcheck", req.getParameter("emailcheck"));
+				}
+				else {
+					req.setAttribute("emailcheck", 0);
+				}
 				req.setAttribute("idcheck", 2);
 				return "/JSP/register.jsp";
 			}
@@ -65,6 +78,12 @@ public class idCheckAction implements CommandAction {
 		req.setAttribute("password", req.getParameter("password"));
 		req.setAttribute("email", req.getParameter("email"));
 		req.setAttribute("idcheck", idcheck);
+		if(req.getParameter("emailcheck").equals("1")) {
+			req.setAttribute("emailcheck", req.getParameter("emailcheck"));
+		}
+		else {
+			req.setAttribute("emailcheck", 0);
+		}
 		return "/JSP/register.jsp";
 	}
 	
