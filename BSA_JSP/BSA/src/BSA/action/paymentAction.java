@@ -114,7 +114,7 @@ public class paymentAction implements CommandAction{
 		}
 		else {
 			if(req.getSession().getAttribute("id") == null) {
-				if(memberDao.getInstance().compareEmail(req.getParameter("email"))) {
+				if(!(memberDao.getInstance().compareEmail(req.getParameter("email")))) {
 					req.setAttribute("email_check", 3);
 					return "/JSP/payment.jsp";
 				}
