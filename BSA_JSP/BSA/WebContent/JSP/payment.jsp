@@ -79,6 +79,12 @@ alert("이메일에는 숫자와 영문(대문자,소문자) @(1번)와 .(1번)�
 </script>
 </c:when>
 
+<c:when test="${email_check == 3 }">
+<script type="text/javascript">
+alert("이미 이 이메일로 가입한 계정이있습니다.")
+</script>
+</c:when>
+
 <c:when test="${comm_check == 1 }">
 <script type="text/javascript">
 alert("의견을 적어주세요");
