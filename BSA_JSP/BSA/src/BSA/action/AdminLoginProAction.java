@@ -37,8 +37,7 @@ public class AdminLoginProAction implements CommandAction{
 			//아이디 비밀번호 일치 하지 않는 경우 로그인 안됨으로 설정 해놓음
 		}
 		
-		AdminDao dbPro= AdminDao.getInstance();
-		dbpro.AdminDto()
+		
 		return "/JSP/memberbooking.jsp";
 	}
 
