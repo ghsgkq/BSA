@@ -139,6 +139,7 @@
     <table id="customers">
       <tbody>
         <tr>
+        	<th class="text-center">Reserver</th>
           <th class="text-center" id="first_name">Name</th>
           <th class="text-center" id="phone">Phone_Number</th>
           <th class="text-center" id="email_address">E-mail</th>        
@@ -148,12 +149,13 @@
           <th class="text-center" id="expiry_month">Card_Month</th>
           <th class="text-center" id="csv_number">Csv_Number</th>
           <th class="text-center" id="money">Payment</th>
-          
+          <th class="text-center">Mission</th>
           
           
         </tr>
         <c:forEach var="article" items="${articleList}">
         	<tr>
+        		<td class="text-center"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white">예약완료</a></td>
        			<td class="text-center"><a href="${pageContext.request.contextPath}/content.do?code=${article.code}">${article.first_name}${article.last_name}</a></td>
        			<td class="text-center">${article.phone}</td>
        			<td class="text-center">${article.email}</td>	
@@ -163,6 +165,7 @@
        			<td class="text-center">${article.expiry_month}</td>
        			<td class="text-center">${article.csv_number}</td>
        			<td class="text-center">${article.money}</td>
+       			<td class="text-cneter"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white">미션중</a></td>
        			
         	</tr>
         	

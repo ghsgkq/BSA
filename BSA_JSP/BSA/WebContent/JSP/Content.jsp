@@ -51,7 +51,7 @@
               <tr>
                 <th class="text-secondary text-left">Where_Trip</th>
                 
-                <th class="text-center">${where_trip}</th>
+                <th class="text-center">${article.where_trip}</th>
                 
               </tr>
               <tr>
