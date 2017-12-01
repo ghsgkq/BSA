@@ -160,7 +160,7 @@
           <th class="text-center" id="csv_number">보안번호</th>
           <th class="text-center" id="comm">커멘트</th>
           <th class="text-center" id="money">가격</th>
-          <th class="text-center" id="delete">예매삭제</th>
+          
           
           
         </tr>
@@ -187,7 +187,7 @@
        			<td>${article.csv_number}</td>
        			<td>${article.comm}</td>
        			<td>${article.money}</td>
-       			<td><input type="button" value="삭제" onClick="delSubmit(1)"></td>
+       			
         	</tr>
         	
         </c:forEach>
