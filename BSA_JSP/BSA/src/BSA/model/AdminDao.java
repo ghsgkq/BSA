@@ -72,11 +72,11 @@ public class AdminDao {
 	}
 	
 	
-	public List<BookingDto> getArticles(int start, int end){
+	public ArrayList<BookingDto> getArticles(int start, int end){
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		List<BookingDto> articleList = null;
+		ArrayList<BookingDto> articleList = null;
 		try {
 			conn = ConnUtil.getConnection();
 					String sql = "select * from "

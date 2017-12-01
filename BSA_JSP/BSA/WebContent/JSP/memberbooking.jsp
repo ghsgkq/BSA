@@ -232,15 +232,15 @@
 	
 	<c:if test="${startPage > pageBlock}">
 	
-		<a aria-label="Previous" href="${pageContext.request.contextPath}/adminlogpro.do?pageNum=${startPage - pageBlock }"><span aria-hidden="true">이전</span></a>
+		<a aria-label="Previous" href="${pageContext.request.contextPath}/memberbooking.do?pageNum=${startPage - pageBlock }"><span aria-hidden="true">이전</span></a>
 	</c:if>
 	
 	<c:forEach var="i" begin="${startPage}" end="${endPage}">
-		<li class="active"><a href="${pageContext.request.contextPath}/adminlogpro.do?pageNum=${i}">[${i}]</a>
+		<li class="active"><a href="${pageContext.request.contextPath}/memberbooking.do?pageNum=${i}">[${i}]</a>
 	</c:forEach>
 	
 	<c:if test="${endPage < pageCount}">
-		<a aria-label="Next" href="${pageContext.request.contextPath}/adminlogpro.do?pageNum=${startPage + pageBlock }"><span aria-hidden="true">다음</span></a>
+		<a aria-label="Next" href="${pageContext.request.contextPath}/memberbooking.do?pageNum=${startPage + pageBlock }"><span aria-hidden="true">다음</span></a>
 	</c:if>
 </c:if>
 </ul>
