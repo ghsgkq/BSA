@@ -38,7 +38,7 @@ public class AdminLoginProAction implements CommandAction{
 			if(pageNum == null) {
 				pageNum="1";
 			}
-			int pageSize = 10;
+			int pageSize = 5;
 			int currentPage = Integer.parseInt(pageNum);
 			
 			int startRow = (currentPage - 1) * pageSize + 1;
