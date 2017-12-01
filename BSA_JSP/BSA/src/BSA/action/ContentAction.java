@@ -19,7 +19,7 @@ public class ContentAction implements CommandAction{
 		BookingDto article = dbPro.getArticle(code);
 		
 		req.setAttribute("code", code);
-		req.setAttribute("pageNum", pageNum);
+		req.setAttribute("pageNum", new Integer(pageNum));
 		req.setAttribute("article", article);
 		
 		return "/JSP/content.jsp";
