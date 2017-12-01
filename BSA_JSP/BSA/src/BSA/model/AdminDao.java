@@ -175,7 +175,7 @@ public class AdminDao {
 		return result;
 	}
 	
-	public BookingDto getArticle(String code) {
+	public BookingDto getArticle(int code) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;

@@ -27,7 +27,7 @@ public class AdminLoginProAction implements CommandAction{
 					
 		if(req.getParameter("admin_id").equals(req.getParameter("admin_id"))&& req.getParameter("admin_pw").equals(req.getParameter("admin_pw"))) {
 			req.getSession().setAttribute("admin_id", session);
-			//관리자 아이디" " 비밀번호 " " server session에 저장		
+			//관리자 아이디" " 비밀번호 " "  session으로 전송		
 		}	
 		else {
 			session.invalidate();

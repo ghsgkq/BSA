@@ -13,8 +13,6 @@ public class ContentAction implements CommandAction{
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
 		
 		//해당 글 코드
-		String code = req.getParameter("code");
-
 		
 		int num = Integer.parseInt(req.getParameter("code"));
 		
@@ -23,11 +21,11 @@ public class ContentAction implements CommandAction{
 		AdminDao dbPro = AdminDao.getInstance();
 		
 		//�빐�떦 湲�踰덊샇�뿉 ���븳 �젅肄붾뱶
-		BookingDto article = dbPro.getArticle(code);
+		BookingDto article = dbPro.getArticle(num);
 		
 		//酉곗뿉�꽌 �궗�슜�븷 �냽�꽦
 		
-		req.setAttribute("article", article);
+		req.setAttribute("article", req.getParameter("article"));
 		
 		return "/JSP/Content.jsp";
 		
