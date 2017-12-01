@@ -18,7 +18,6 @@
   function mySubmit(index) {
 	  var index=confirm("예약취소하시겠습니까?")
 		if(index == 1){
-			alert("예약취소되었습니다")
 			document.booking_form.action='${pageContext.request.contextPath}/deletebooking.do'
 		}else{
 			alert("취소 되었습니다.")
@@ -44,6 +43,29 @@
 			}
 		}
   </script>
+  <c:choose>
+  <c:when test="${deletebooking_password == 1 }">
+  <script type="text/javascript">
+  alert("비밀번호를 잘못 입력했습니다.");
+  </script>
+  </c:when>
+  <c:when test="${deletebooking_code == 1 }">
+  <script type="text/javascript">
+  alert("코드를 잘못 입력했습니다");
+  </script>
+  </c:when>
+  <c:when test="${deletebooking == 1 }">
+  <script type="text/javascript">
+  alert("예약취소되었습니다");
+  </script>
+  </c:when>
+  
+  </c:choose>
+ 
+  
+  
+
+  
 </head>
 <body style="margin-top:80pt;">
 
@@ -60,7 +82,14 @@
         <div class="col-md-4">
         <form method="post" name="checking_Booked" action="${pageContext.request.contextPath}/checkbookedPro.do">
           <input type="radio" name="tripcheck" value="1" checked="checked">편도   <input type="radio" name="tripcheck" value="2">왕복<br><br>
-          <b>Insert email(이메일 입력)</b><input type="text" name="email" class="form-control" placeholder="insert your email" value="${email }"><br></br>
+          <c:choose>
+          <c:when test="${id == null }">
+           <b>Insert email(이메일 입력)</b><input type="text" name="email" class="form-control" placeholder="insert your email" value="${email }"><br></br>
+          </c:when>
+          <c:otherwise>
+          <b>Insert email(이메일 입력)</b><input type="text" name="email" class="form-control" placeholder="insert your email" value="${email }" readonly="readonly"><br></br>
+          </c:otherwise>
+          </c:choose>
           <a href="javascript:document.checking_Booked.submit()" class="btn btn-outline-dark"><b>Search Your Booked (예약 찾기)</b></a>
         </form>
         </div>
@@ -83,6 +112,15 @@
               <th class="text-center p-4 text-secondary">Dropft</th>
               <th class="text-center text-secondary">People</th>
               <th class="text-center text-secondary">Payment</th>
+              <c:choose>
+              <c:when test="${id == null }">
+              <th class="text-center text-secondary">코드입력</th>
+              </c:when>
+              <c:otherwise>
+              <th class="text-center text-secondary">비밀번호 입력</th>
+              </c:otherwise>
+              </c:choose>
+              
             </tr>
              <c:forEach items="${arrbdto }" var="arr">
              <c:if test="${arr.where_trip == '편도'}">
@@ -107,9 +145,18 @@
               </c:if>
               <th class="text-center">${arr.adults+arr.young+arr.child+arr.infatns }</th>
               <th class="text-center">${arr.money }</th>
+              <c:choose>
+              <c:when test="${id == null }">
+              <th class="text-center"><input type="password" name="newcode"></th>
+              </c:when>
+              <c:otherwise>
+              <th class="text-center"><input type="password" name="password"></th>
+              </c:otherwise>
+              </c:choose>
             </tr>
             </c:if>
             </c:forEach>
+            
           
           </thead>
         </table>
@@ -131,6 +178,14 @@
               <th class="text-center p-4 text-secondary">Dropft</th>
               <th class="text-center text-secondary">People</th>
               <th class="text-center text-secondary">Payment</th>
+               <c:choose>
+              <c:when test="${id == null }">
+              <th class="text-center text-secondary">코드입력</th>
+              </c:when>
+              <c:otherwise>
+              <th class="text-center text-secondary">비밀번호 입력</th>
+              </c:otherwise>
+              </c:choose>
             </tr>
             
             <c:forEach items="${arrbdto }" var="arr">
@@ -148,6 +203,14 @@
               <th class="text-center">${arr.dropft }</th>
               <th class="text-center">${arr.adults+arr.young+arr.child+arr.infatns }</th>
               <th class="text-center">${arr.money }</th>
+              <c:choose>
+              <c:when test="${id == null }">
+              <th class="text-center"><input type="password" name="newcode"></th>
+              </c:when>
+              <c:otherwise>
+              <th class="text-center"><input type="password" name="password"></th>
+              </c:otherwise>
+              </c:choose>
             </tr>
             </c:if>
             </c:forEach>
@@ -168,6 +231,7 @@
       </div>
     </div>
   </div>
+  <input type="hidden" name="email" value="${email }">
 </form>
   <div id="bt"></div>
 

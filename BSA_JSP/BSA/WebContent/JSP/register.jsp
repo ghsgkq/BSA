@@ -95,7 +95,7 @@
                 <div class="form-group"> <label>아이디</label>
                 <input type="text" name="id" class="form-control" placeholder="아이디" value="${id}"></div>
                 <input type="button" class="btn btn-secondary" onclick="return mySubmit(1)" value="id중복확인">
-                <br>
+                <br><br>
                 </c:if>
                 <c:if test="${idcheck == 1 }">
                  <div class="form-group"> <label>아이디</label>

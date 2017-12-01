@@ -181,7 +181,7 @@ alert("승객수를 선택하세요");
               <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-right fa-lg"></i> <select name="where_from" class="form-control-sm px-3 mx-2">
                	<option value="#">-----select-----</option>
                 <option value="Gimhea Airporter(김해공항)">Gimhea Airporter (김해공항)</option>
-                <option value="Busan (부산)">Busan (부산)</option>
+                <option value="Busan(부산)">Busan (부산)</option>
             
             
               
