@@ -319,6 +319,14 @@ alert("버스 시간(dropft)을 선택하세요")
            <input type="hidden" name="start_time_list" value="${start_time_list }">
             <button type="submit" class="btn btn-secondary btn-lg p-4" onclick="Javascript:onbutton_event();">next</button>
           </div>
+   <nav class="navbar navbar-expand-md bg-dark navbar-dark my-2">
+    <div class="container">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
+        <h4 class="m-0 text-light">Busan Airporter Shuttle</h4><i class="fa fa-fw fa-3x d-inline pull-right bg-dark text-white fa-life-ring"></i> </div>
+    </div>
+  </nav>
             
         </div>
       </div>

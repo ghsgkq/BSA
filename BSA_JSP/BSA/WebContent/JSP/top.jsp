@@ -31,7 +31,7 @@
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-md main-content navbar-light bg-warning" style="margin: auto;"><a class="ml-3 btn navbar-btn btn-sm btn-warning text-dark" href="${pageContext.request.contextPath}/index.do" data-toggle=""><i class="d-block fa fa-life-ring fa-3x fa-fw bg-warning text-dark pull-left"></i><b>Busan Shuttle &nbsp; &nbsp;<br>Airporter &nbsp; &nbsp; &nbsp; &nbsp;</b></a>
+  <nav class="navbar navbar-expand-md main-content navbar-light bg-warning" style="margin: auto;"><a class="ml-3 btn navbar-btn btn-sm btn-warning text-dark" href="${pageContext.request.contextPath}/index.do" data-toggle=""><i class="d-block fa fa-life-ring fa-3x fa-fw bg-warning text-dark pull-left"></i><b>Busan Airporter &nbsp; &nbsp;<br>Shuttle &nbsp; &nbsp; &nbsp; &nbsp;</b></a>
     <div class="container-fluid">
       <a class="navbar-brand bg-warning" href="${pageContext.request.contextPath}/index.do"></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

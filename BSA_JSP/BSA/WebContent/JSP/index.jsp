@@ -5,7 +5,7 @@
 <html>
 
 <head>
-	<title>Busan Shuttle Airporter</title>
+	<title>Busan Airporter Shuttle</title>
   <link rel="shortcut icon" type="image⁄x-icon" href="${pageContext.request.contextPath}/JSP/img/airporter.png">
   <meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
   <meta property="og:type"          content="website" />
@@ -123,7 +123,7 @@ a#imD.begin {animation: 0s}
       <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
         <ul class="navbar-nav"></ul><i class="d-block fa pull-right fa-fw fa-lg text-dark fa-car"></i>
         <p class="text-light m-2">You can now book book private sedans at
-          <a class="ml-3 btn navbar-btn btn-sm ml-auto text-white  border border-light btn-sm" style="background-color:#819FF7" href="${pageContext.request.contextPath}/Booking.do"><b>Busan Shuttle Airporter</b></a>&nbsp;</p><i class="d-block fa pull-right fa-fw fa-lg text-dark text-left fa-spinner"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="ml-3 btn navbar-btn btn-sm ml-auto text-white  border border-light btn-sm" style="background-color:#819FF7" href="${pageContext.request.contextPath}/Booking.do"><b>Busan Airporter Shuttle</b></a>&nbsp;</p><i class="d-block fa pull-right fa-fw fa-lg text-dark text-left fa-spinner"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
          
 
