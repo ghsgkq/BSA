@@ -147,10 +147,10 @@
               <th class="text-center">${arr.money }</th>
               <c:choose>
               <c:when test="${id == null }">
-              <th class="text-center"><input type="text" name="newcode"></th>
+              <th class="text-center"><input type="password" name="newcode"></th>
               </c:when>
               <c:otherwise>
-              <th class="text-center"><input type="text" name="password"></th>
+              <th class="text-center"><input type="password" name="password"></th>
               </c:otherwise>
               </c:choose>
             </tr>
@@ -205,10 +205,10 @@
               <th class="text-center">${arr.money }</th>
               <c:choose>
               <c:when test="${id == null }">
-              <th class="text-center"><input type="text" name="newcode"></th>
+              <th class="text-center"><input type="password" name="newcode"></th>
               </c:when>
               <c:otherwise>
-              <th class="text-center"><input type="text" name="password"></th>
+              <th class="text-center"><input type="password" name="password"></th>
               </c:otherwise>
               </c:choose>
             </tr>
