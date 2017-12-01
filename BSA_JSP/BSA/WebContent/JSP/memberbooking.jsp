@@ -166,7 +166,7 @@
         </tr>
         <c:forEach var="article" items="${articleList}">
         	<tr>
-       			<td>${article.first_name}${article.last_name}</td>
+       			<td><a href="${pageContext.request.contextPath}/content.do?code=${article.code}&pageNum=${currentPage}">${article.first_name}${article.last_name}</a></td>
        			<td>${article.phone}</td>
        			<td>${article.email}</td>
        			<td>${article.pickup}</td>
