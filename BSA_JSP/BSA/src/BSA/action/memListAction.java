@@ -14,20 +14,7 @@ import BSA.model.BookingDto;
 
 public class memListAction implements CommandAction{
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp)throws Throwable{
-//		ArrayList<BookingDto> ar = new ArrayList<BookingDto>();
-//		
-//		int count = 0;
-//		List<BookingDto> articleList = null;
-//		AdminDao dbPro = AdminDao.getInstance();
-//		count = dbPro.getArticleCount();
-//		articleList = dbPro.getArticles();
-//	
-//		
-//		
-//		req.setAttribute("count", new Integer(count));
-//		req.setAttribute("articleList", articleList);
-		
-		
+	
 		String pageNum = req.getParameter("pageNum");
 		if(pageNum == null) {
 			pageNum="1";
