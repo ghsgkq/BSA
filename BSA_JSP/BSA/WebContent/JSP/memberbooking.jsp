@@ -210,7 +210,7 @@
   
         
         <!-- 페이지 넘기기 -->
-    <%-- <div class="container">
+    <div class="container">
     <div class="example">
     	<nav>
     		<ul class="pagination">
@@ -246,7 +246,7 @@
 </ul>
 </nav>
 </div>
-</div> --%>
+</div>
 <br><br><br><br><br><br>
 <footer>
 	<div class="text-white bg-dark">
