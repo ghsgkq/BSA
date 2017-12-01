@@ -180,8 +180,8 @@ alert("승객수를 선택하세요");
               <h6 class="text-muted">From (출발)</h6>
               <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-right fa-lg"></i> <select name="where_from" class="form-control-sm px-3 mx-2">
                	<option value="#">-----select-----</option>
-                <option value="Gimhea Airporter(김해공항)">Gimhea Airporter (김해공항)</option>
-                <option value="Busan(부산)">Busan (부산)</option>
+                <option value="Airporter">Gimhea Airporter (김해공항)</option>
+                <option value="Busan">Busan (부산)</option>
             
             
               
@@ -191,8 +191,8 @@ alert("승객수를 선택하세요");
               <h6 class="text-muted">to (도착)</h6>
               <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-left fa-lg"></i> <select name="where_to" class="form-control-sm px-3 mx-2">
                 <option value="#">-----select-----</option>
-                <option value="Busan(부산)">Busan (부산)</option>
-           		<option value="Gimhean Airporter(김해공항)">Gimhea Airporter (김해공항)</option>
+                <option value="Busan">Busan (부산)</option>
+           		<option value="Airporter">Gimhea Airporter (김해공항)</option>
             
               
               </select> </div>

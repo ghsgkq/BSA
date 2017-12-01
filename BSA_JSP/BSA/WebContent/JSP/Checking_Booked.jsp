@@ -97,24 +97,24 @@
     </div>
   </div>
   <form method="post" name="booking_form">
-  <div class="py-5">
-    <div class="container h-25">
-      <div class="border-dark">
+  <div class="h-0">
+    <div class="container">
+      <div >
       <c:if test="${tripcheck == 1 }">
-        <table class="table" >
+        <table width="300"class="table" >
           <thead>  
             <tr>
               <th class="text-center text-secondary">Choice</th>
-              <th class="text-center text-secondary"> 예약일자/요일</th>
+              <th class="text-center text-secondary">Date</th>
               <th class="text-center text-secondary">Round/OneWay</th>
               <th class="text-center text-secondary">Bus Time</th>
               <th class="text-center text-secondary">Pickup</th>
-              <th class="text-center p-4 text-secondary">Dropft</th>
+              <th class="text-center text-secondary">Dropft</th>
               <th class="text-center text-secondary">People</th>
               <th class="text-center text-secondary">Payment</th>
               <c:choose>
               <c:when test="${id == null }">
-              <th class="text-center text-secondary">코드입력</th>
+              <th class="text-center text-secondary">CodeNo</th>
               </c:when>
               <c:otherwise>
               <th class="text-center text-secondary">비밀번호 입력</th>
@@ -135,6 +135,7 @@
               <th class="text-center">${arr.where_trip }</th>
               <c:if test="${arr.pickup != null}">
               <th class="text-center">${arr.bus_time_pickup }</th>
+              
               <th class="text-center">${arr.pickup }</th>
               <th class="text-center">${arr.where_from }</th>
               </c:if>
@@ -163,21 +164,19 @@
         </c:if>
         
         <c:if test="${tripcheck == 2 }">
-        <table class="table">
+        <table width="300" class="table h-100">
           <thead>  
             <tr> 
-              <th class="text-center text-secondary">Choice</th>
-              <th class="text-center text-secondary"> 예약일자/요일</th>
-              <th class="text-center text-secondary"> 도착일자/요일</th>
-              <th class="text-center text-secondary">Round/OneWay</th>
-              <th class="text-center text-secondary">Bus Time</th>
-              <th class="text-center text-secondary">Pickup</th>
-              <th class="text-center text-secondary">where_from</th>
-              <th class="text-center text-secondary">Bus Time</th>
-              <th class="text-center p-4 text-secondary">where_to</th>
-              <th class="text-center p-4 text-secondary">Dropft</th>
-              <th class="text-center text-secondary">People</th>
-              <th class="text-center text-secondary">Payment</th>
+              <th class="text-center text-secondary px-5 h-50">Choice</th>
+              <th class="text-center text-secondary px-5">Date</th>       
+              <th class="text-center text-secondary px-5">Round/OneWay</th>
+              <th class="text-center text-secondary px-5">BusTime</th>
+              <th class="text-center text-secondary px-5">where_from</th>
+              <th class="text-center text-secondary px-5">Pickup</th>
+              <th class="text-center text-secondary px-5">where_to</th>
+              <th class="text-center text-secondary px-5">Dropft</th>
+              <th class="text-center text-secondary px-5">People</th>
+              <th class="text-center text-secondary px-5">Payment</th>
                <c:choose>
               <c:when test="${id == null }">
               <th class="text-center text-secondary">코드입력</th>
@@ -191,16 +190,28 @@
             <c:forEach items="${arrbdto }" var="arr">
             <c:if test="${arr.where_trip == '왕복'}">
             <tr>
-              <th class="text-center"><input type="radio" name="code" value="${arr.code }"></th>
-              <th class="text-center">${arr.start_date }</th>
-              <th class="text-center">${arr.arrival_date }</th>
+              <th class="text-center"></th>
+              <th class="text-center" >${arr.start_date }</th>    
               <th class="text-center">${arr.where_trip }</th>
               <th class="text-center">${arr.bus_time_pickup }</th>
-              <th class="text-center">${arr.pickup }</th>
               <th class="text-center">${arr.where_from }</th>
+              <th class="text-center">${arr.pickup }</th>
+              <th class="text-center">${arr.where_to }</th>
+              <th class="text-center">${arr.dropft }</th>
+              <th class="text-center">${arr.adults+arr.young+arr.child+arr.infatns }</th>
+             
+              
+            </tr>
+            <tr>
+              <th class="text-center"><input type="radio" name="code" value="${arr.code }"></th>
+              
+              <th class="text-center" >${arr.arrival_date }</th>
+              <th class="text-center">${arr.where_trip }</th>
               <th class="text-center">${arr.bus_time_dropft }</th>
               <th class="text-center">${arr.where_to }</th>
               <th class="text-center">${arr.dropft }</th>
+              <th class="text-center">${arr.where_from }</th>
+              <th class="text-center">${arr.pickup }</th>
               <th class="text-center">${arr.adults+arr.young+arr.child+arr.infatns }</th>
               <th class="text-center">${arr.money }</th>
               <c:choose>
