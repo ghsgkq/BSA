@@ -133,15 +133,16 @@
               <th class="text-center">${arr.arrival_date }</th>
               </c:if>
               <th class="text-center">${arr.where_trip }</th>
+              
               <c:if test="${arr.pickup != null}">
               <th class="text-center">${arr.bus_time_pickup }</th>
-              
               <th class="text-center">${arr.pickup }</th>
               <th class="text-center">${arr.where_from }</th>
               </c:if>
+              
               <c:if test="${arr.dropft != null }">
               <th class="text-center">${arr.bus_time_dropft }</th>
-              <th class="text-center">${arr.where_from }</th>
+              <th class="text-center">${arr.where_to }</th>
               <th class="text-center">${arr.dropft }</th>
               </c:if>
               <th class="text-center">${arr.adults+arr.young+arr.child+arr.infatns }</th>
