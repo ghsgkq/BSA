@@ -3,9 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<%@page import="BSA.model.BookingDto"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="BSA.model.AdminDao" %>
+
 
 
 
@@ -38,6 +36,7 @@
 
 <form>
 <table>
+		
 		<tr>
 			<th>코드</th>
 			<td>${article.code}</td>
@@ -50,6 +49,7 @@
 			<th>카드번호</th>
 			<td>${article.card_number}</td>
 		</tr>
+		
 </table>
   
 </form>

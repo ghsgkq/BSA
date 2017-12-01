@@ -113,7 +113,7 @@
 
 
 
-<form method="post" name="checking_Booked" action="${pagecontext.request.contextpath}/checkbooked.do">
+<form name="checking_Booked">
 <div id="contents"></div>
   <center>
     <div style="border:4px solid; padding:10px;">
@@ -166,7 +166,7 @@
         </tr>
         <c:forEach var="article" items="${articleList}">
         	<tr>
-       			<td><a href="${pageContext.request.contextPath}/content.do?code=${article.code}&pageNum=${currentPage}">${article.first_name}${article.last_name}</a></td>
+       			<td><a href="${pageContext.request.contextPath}/content.do?code=${article.code}">${article.first_name}${article.last_name}</a></td>
        			<td>${article.phone}</td>
        			<td>${article.email}</td>
        			<td>${article.pickup}</td>
