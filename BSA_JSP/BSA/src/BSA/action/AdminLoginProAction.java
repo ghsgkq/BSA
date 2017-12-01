@@ -1,11 +1,15 @@
 package BSA.action;
 
+import java.util.Collections;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import BSA.model.AdminDao;
 import BSA.model.AdminDto;
+import BSA.model.BookingDto;
 
 public class AdminLoginProAction implements CommandAction{
 
@@ -29,6 +33,36 @@ public class AdminLoginProAction implements CommandAction{
 			req.getSession().setAttribute("admin_id", session);
 			//관리자 아이디" " 비밀번호 " " server session에 저장
 		
+			
+			String pageNum = req.getParameter("pageNum");
+			if(pageNum == null) {
+				pageNum="1";
+			}
+			int pageSize = 10;
+			int currentPage = Integer.parseInt(pageNum);
+			
+			int startRow = (currentPage - 1) * pageSize + 1;
+			int endRow = currentPage *pageSize;
+			int count = 0;
+			int number = 0;
+			List<BookingDto> articleList = null;
+			AdminDao dbPro = AdminDao.getInstance();
+			count = dbPro.getArticleCount();
+			if(count > 0) {
+				articleList = dbPro.getArticles(startRow, endRow);
+			}else {
+				articleList = Collections.emptyList();
+			}
+			
+			number = count - (currentPage-1) * pageSize;
+			
+			req.setAttribute("currentPage", new Integer(currentPage));
+			req.setAttribute("startRow", new Integer(startRow));
+			req.setAttribute("endRow", new Integer(endRow));
+			req.setAttribute("count", new Integer(count));
+			req.setAttribute("pageSize", new Integer(pageSize));
+			req.setAttribute("number", new Integer(number));
+			req.setAttribute("articleList", articleList);
 		}
 		else {
 			session.invalidate();

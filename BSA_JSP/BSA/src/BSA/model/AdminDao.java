@@ -91,7 +91,7 @@ public class AdminDao {
 			pstmt.setInt(2, end);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
-				articleList = new ArrayList<BookingDto>(5);
+				articleList = new ArrayList<BookingDto>(10);
 				do {
 					BookingDto article = new BookingDto();
 					article.setFirst_name(rs.getString("first_name"));
