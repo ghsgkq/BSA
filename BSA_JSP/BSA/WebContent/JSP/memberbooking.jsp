@@ -144,8 +144,8 @@
           <th class="text-center" id="email_address">E-mail</th>        
           <th class="text-center" id="name_on_card">Card_On_Name</th>
           <th class="text-center" id="card_number">Card_Number</th>
-          <th class="text-center" id="expiry_year">Year</th>
-          <th class="text-center" id="expiry_month">Month</th>
+          <th class="text-center" id="expiry_year">Card_Year</th>
+          <th class="text-center" id="expiry_month">Card_Month</th>
           <th class="text-center" id="csv_number">Csv_Number</th>
           <th class="text-center" id="money">Payment</th>
           
@@ -154,15 +154,15 @@
         </tr>
         <c:forEach var="article" items="${articleList}">
         	<tr>
-       			<td><a href="${pageContext.request.contextPath}/content.do?code=${article.code}">${article.first_name}${article.last_name}</a></td>
-       			<td>${article.phone}</td>
-       			<td>${article.email}</td>	
-       			<td>${article.name_on_card}</td>
-       			<td>${article.card_number}</td>
-       			<td>${article.expiry_year}</td>
-       			<td>${article.expiry_month}</td>
-       			<td>${article.csv_number}</td>
-       			<td>${article.money}</td>
+       			<td class="text-center"><a href="${pageContext.request.contextPath}/content.do?code=${article.code}">${article.first_name}${article.last_name}</a></td>
+       			<td class="text-center">${article.phone}</td>
+       			<td class="text-center">${article.email}</td>	
+       			<td class="text-center"> ${article.name_on_card}</td>
+       			<td class="text-center">${article.card_number}</td>
+       			<td class="text-center">${article.expiry_year}</td>
+       			<td class="text-center">${article.expiry_month}</td>
+       			<td class="text-center">${article.csv_number}</td>
+       			<td class="text-center">${article.money}</td>
        			
         	</tr>
         	

@@ -33,7 +33,7 @@
 <body>
   <nav class="navbar navbar-expand-md main-content navbar-light bg-warning">
     <div class="container-fluid">
-      <a class="navbar-brand bg-warning" href="${pageContext.request.contextPath}/admin.do"><i class="d-block fa fa-life-ring fa-3x pull-right fa-fw bg-warning text-dark"></i><b>Busan Shuttle &nbsp; &nbsp;<br>Airporter &nbsp; &nbsp; &nbsp; &nbsp;</b> </a>
+      <a class="navbar-brand bg-warning" href="${pageContext.request.contextPath}/admin.do"><i class="d-block fa fa-life-ring fa-3x pull-right fa-fw bg-warning text-dark"></i><b>Busan Airporter &nbsp; &nbsp;<br>Shuttle &nbsp; &nbsp; &nbsp; &nbsp;</b> </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
         aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
