@@ -122,7 +122,7 @@
           <tr>
             <td>
               <div style="text-align:center">
-                <font size="20"> 예매 목록(예매 수 :${count} )</font>
+                <font size="15"> Reservation_List(Count :${count} )</font>
               </div>
             </td>
           </tr>
@@ -139,27 +139,15 @@
     <table id="customers">
       <tbody>
         <tr>
-          <th class="text-center" id="first_name">성함</th>
-          <th class="text-center" id="phone">연락처</th>
-          <th class="text-center" id="email_address">이메일</th>
-          <th class="text-center" id="pickup">픽업</th>
-          <th class="text-center" id="dropft">내릴곳</th>
-          <th class="text-center" id="start_airline_time">공항출발시간</th>
-          <th class="text-center" id="arrival_airline_time">공항도착시간</th>
-          <th class="text-center" id="start_date">출발날짜</th>
-          <th class="text-center" id="arrival_date">도착날짜</th>
-          <th class="text-center" id="bus_time_pickup">버스픽업시간</th>
-          <th class="text-center" id="adults">성인</th>
-          <th class="text-center" id="young">청소년</th>
-          <th class="text-center" id="child">어린이</th>
-          <th class="text-center" id="infatns">유아</th>
-          <th class="text-center" id="name_on_card">카드회사</th>
-          <th class="text-center" id="card_number">카드번호</th>
-          <th class="text-center" id="expiry_year">년도</th>
-          <th class="text-center" id="expiry_month">개월</th>
-          <th class="text-center" id="csv_number">보안번호</th>
-          <th class="text-center" id="comm">커멘트</th>
-          <th class="text-center" id="money">가격</th>
+          <th class="text-center" id="first_name">Name</th>
+          <th class="text-center" id="phone">Phone_Number</th>
+          <th class="text-center" id="email_address">E-mail</th>        
+          <th class="text-center" id="name_on_card">Card_On_Name</th>
+          <th class="text-center" id="card_number">Card_Number</th>
+          <th class="text-center" id="expiry_year">Year</th>
+          <th class="text-center" id="expiry_month">Month</th>
+          <th class="text-center" id="csv_number">Csv_Number</th>
+          <th class="text-center" id="money">Payment</th>
           
           
           
@@ -168,24 +156,12 @@
         	<tr>
        			<td><a href="${pageContext.request.contextPath}/content.do?code=${article.code}">${article.first_name}${article.last_name}</a></td>
        			<td>${article.phone}</td>
-       			<td>${article.email}</td>
-       			<td>${article.pickup}</td>
-       			<td>${article.dropft}</td>
-       			<td>${article.start_airline_time}</td>
-       			<td>${article.arrival_airline_time}</td>
-       			<td>${article.start_date}</td>
-       			<td>${article.arrival_date}</td>
-       			<td>${article.bus_time_pickup}</td>
-       			<td>${article.adults}</td>
-       			<td>${article.young}</td>
-       			<td>${article.child}</td>
-       			<td>${article.infatns}</td>
+       			<td>${article.email}</td>	
        			<td>${article.name_on_card}</td>
        			<td>${article.card_number}</td>
        			<td>${article.expiry_year}</td>
        			<td>${article.expiry_month}</td>
        			<td>${article.csv_number}</td>
-       			<td>${article.comm}</td>
        			<td>${article.money}</td>
        			
         	</tr>
@@ -197,7 +173,7 @@
  
   <div class="container">
     <div class="row"> &nbsp;
-      <div class="span12"> &nbsp;검색&nbsp;
+      <div class="span12"> &nbsp;Search&nbsp;
         <form method="get" action="/" class="form-inline">
           <input name="loc" class="span5" type="text" placeholder="Search">
           <input type="button" value="Search"> </form>
