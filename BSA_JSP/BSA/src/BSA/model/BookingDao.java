@@ -208,6 +208,26 @@ public class BookingDao {
 			
 		}
 		
+		public void removeBooking(String code) {
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement("delete from BOOKING where code=?");
+			pstmt.setString(1, code);
+			pstmt.executeUpdate();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}finally {
+				try {
+					if(conn != null) conn.close();
+					if(pstmt != null) pstmt.close();
+				}catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
 		
 
 	}
