@@ -22,12 +22,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   
   
-  <script type="text/javascript">
-  	function emailDelete(delEmail){
-  		//alert(delID);
-  		location.href="delete.jsp?email="+delEmail;
-  	}
-  </script>
+
   
   <script type="text/javascript">
     $(document).ready( function() {
@@ -116,23 +111,7 @@
 <body style="margin-top:80pt;">
 
 
-<jsp:useBean id="dao" class="BSA.model.AdminDao"/>
-<%
-ArrayList<BookingDto> list = dao.getMemberlist();
-%>
 
-
-<%
-        		for(BookingDto bd : list){
-        	%>
-        		<tr>
-        			<td><%=bd.getEmail() %></td>
-        			<td><%=bd.getAdults() %></td>
-        			<td><input type="button" value="삭제" onclick="emailDelete('<%=bd.getEmail() %>');"></td>
-        		</tr>
-        	<%
-        		}
-        	%>
 
 <form method="post" name="checking_Booked" action="${pagecontext.request.contextpath}/checkbooked.do">
 <div id="contents"></div>

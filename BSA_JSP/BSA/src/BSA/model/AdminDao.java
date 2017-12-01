@@ -72,18 +72,26 @@ public class AdminDao {
 	}
 	
 	
-	public List<BookingDto> getArticles(){
+	public List<BookingDto> getArticles(int start, int end){
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		List<BookingDto> articleList = null;
 		try {
 			conn = ConnUtil.getConnection();
-					String sql = "select * from BOOKING";
+					String sql = "select * from "
+							+ "(select rownum RNUM, FIRST_NAME, LAST_NAME, PHONE, EMAIL, WHERE_TRIP, WHERE_FROM, WHERE_TO,"
+							+ "PICKUP, DROPFT, START_AIRLINE_NAME, START_AIRLINE_NO, START_AIRLINE_TIME, ARRIVAL_AIRLINE_NAME,"
+							+ "ARRIVAL_AIRLINE_NO, ARRIVAL_AIRLINE_TIME, BUS_TIME_PICKUP, BUS_TIME_DROPFT, START_DATE, ARRIVAL_DATE,"
+							+ "ADULTS, YOUNG, CHILD, INFATNS, NAME_ON_CARD, CARD_NUMBER, EXPIRY_YEAR, EXPIRY_MONTH, CSV_NUMBER, COMM, MONEY, CODE, STEP, REF, DEPTH from "
+							+ "(select * from BOOKING order by REF desc, STEP asc)) "
+							+ "where RNUM >= ? and RNUM <= ?";
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
-				articleList = new ArrayList<BookingDto>();
+				articleList = new ArrayList<BookingDto>(5);
 				do {
 					BookingDto article = new BookingDto();
 					article.setFirst_name(rs.getString("first_name"));
@@ -117,6 +125,9 @@ public class AdminDao {
 					article.setComm(rs.getString("comm"));
 					article.setMoney(rs.getString("money"));
 					article.setCode(rs.getString("code"));
+					article.setStep(rs.getInt("step"));
+					article.setRef(rs.getInt("ref"));
+					article.setDepth(rs.getInt("depth"));
 					articleList.add(article);
 				}while(rs.next());
 			}
@@ -164,84 +175,5 @@ public class AdminDao {
 		return result;
 	}
 	
-	public int delMemberlist(String email) {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		int result = 0;
-		try {
-			conn = ConnUtil.getConnection();
-			pstmt = conn.prepareStatement("delete from BOOKING where email=?");
-			rs=pstmt.executeQuery();
-			pstmt.setString(1, email.trim());
-			result = pstmt.executeUpdate();
-		}catch(Exception e) {
-			System.out.println(e+"=>delMemberlist fail");
-		}try {
-			if(rs!=null)rs.close();
-			if(pstmt!=null)pstmt.close();
-			if(conn!=null)conn.close();
-		}catch(SQLException e) {
-			e.printStackTrace();
-		}
-		return result;
-	}
 	
-	public ArrayList<BookingDto> getMemberlist(){
-		ArrayList<BookingDto> list = new ArrayList<BookingDto>();
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		try {
-			conn= ConnUtil.getConnection();
-			pstmt = conn.prepareStatement("select * from BOOKING");
-			rs = pstmt.executeQuery();
-			while(rs.next()) {
-				BookingDto bd = new BookingDto();
-				
-				bd.setFirst_name(rs.getString(1));
-				bd.setLast_name(rs.getString(2));
-				bd.setPhone(rs.getString(3));
-				bd.setEmail(rs.getString(4));
-				bd.setWhere_trip(rs.getString(5));
-				bd.setWhere_from(rs.getString(6));
-				bd.setWhere_to(rs.getString(7));
-				bd.setPickup(rs.getString(8));
-				bd.setDropft(rs.getString(9));
-				bd.setStart_airline_name(rs.getString(10));
-				bd.setStart_airline_no(rs.getString(11));
-				bd.setStart_airline_time(rs.getString(12));
-				bd.setArrival_airline_name(rs.getString(13));
-				bd.setArrival_airline_no(rs.getString(14));
-				bd.setArrival_airline_time(rs.getString(15));
-				bd.setBus_time_pickup(rs.getString(16));
-				bd.setBus_time_dropft(rs.getString(17));
-				bd.setStart_date(rs.getString(18));
-				bd.setArrival_date(rs.getString(19));
-				bd.setAdults(rs.getString(20));
-				bd.setYoung(rs.getString(21));
-				bd.setChild(rs.getString(22));
-				bd.setInfatns(rs.getString(23));
-				bd.setName_on_card(rs.getString(24));
-				bd.setCard_number(rs.getString(25));
-				bd.setExpiry_year(rs.getString(26));
-				bd.setExpiry_month(rs.getString(27));
-				bd.setCsv_number(rs.getString(28));
-				bd.setComm(rs.getString(29));
-				bd.setMoney(rs.getString(30));
-				bd.setCode(rs.getString(31));
-
-				list.add(bd);
-			}
-		}catch(Exception e) {
-			System.out.println(e+"=> getMemberlist fail");
-		}try {
-			if(rs!= null)rs.close();
-			if(pstmt!=null)pstmt.close();
-			if(conn!=null)pstmt.close();
-		}catch(SQLException e) {
-			e.printStackTrace();
-		}
-		return list;
-	}
 }
