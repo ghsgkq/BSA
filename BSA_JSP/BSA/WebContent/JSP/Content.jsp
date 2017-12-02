@@ -55,64 +55,68 @@
                 
               </tr>
               <tr>
-                <th class="text-secondary text-left">Where_form</th>
-                <th class="text-center">여기다가</th>
+                <th class="text-secondary text-left">Where_from</th>
+                <th class="text-center">${article.where_from}</th>
               </tr>
               <tr>
                 <th class="text-secondary text-left">Where_to</th>
-                <th class="text-center">여기다가</th>
+                <th class="text-center">${article.where_to }</th>
               </tr>
               <tr>
                 <th class="text-secondary text-left">Pickup</th>
-                <th class="text-center">여기다가</th>
+                <th class="text-center">${article.pickup }가</th>
               </tr>
               <tr>
                 <th class="text-secondary text-left">Dropft</th>
-                <th class="text-center">여기다가</th>
+                <th class="text-center">${article.dropft}</th>
               </tr>
               <tr>
                 <th class="text-secondary text-left">Start_Airline_name</th>
-                <th class="text-center">여기다가</th>
+                <th class="text-center">${article.start_airline_name}</th>
               </tr>
               <tr>
                 <th class="text-secondary text-left">Start_Airline_no</th>
-                <th class="text-center">여기다가</th>
+                <th class="text-center">${article.start_airline_no}</th>
               </tr>
               <tr>
                 <th class="text-secondary text-left">Start_Airline_time</th>
-                <th class="text-center">여기다가</th>
+                <th class="text-center">${article.start_airline_time}</th>
               </tr>
               <tr>
                 <th class="text-secondary text-left">Arrival_Airline_name</th>
-                <th class="text-center">여기다가</th>
+                <th class="text-center">${article.arrival_airline_name}</th>
               </tr>
               <tr>
                 <th class="text-secondary text-left">Arrival_Airline_no</th>
-                <th class="text-center">여기다가</th>
+                <th class="text-center">${article.arrival_airline_no}</th>
               </tr>
               <tr>
                 <th class="text-secondary text-left">Arrival_Airline_time</th>
-                <th class="text-center">여기다가</th>
+                <th class="text-center">${article.arrival_airline_time}</th>
               </tr>
               <tr>
                 <th class="text-secondary text-left">Bus_time_pickup</th>
-                <th class="text-center">여기다가</th>
+                <th class="text-center">${article.bus_time_pickup}</th>
               </tr>
               <tr>
                 <th class="text-secondary text-left">Bus_time_dropft</th>
-                <th class="text-center">여기다가</th>
+                <th class="text-center">${article.bus_time_dropft}</th>
               </tr>
               <tr>
                 <th class="text-secondary text-left">Start_date</th>
-                <th class="text-center">여기다가</th>
+                <th class="text-center">${article.start_date}</th>
               </tr>
               <tr>
                 <th class="text-secondary text-left">Arrival_date</th>
-                <th class="text-center">여기다가</th>
+                <th class="text-center">${article.arrival_date}</th>
               </tr>
               <tr>
                 <th class="text-secondary text-left">People</th>
-                <th class="text-center">여기다가</th>
+                <th class="text-center">${article.adults+article.young+arr.child+article.infatns }</th>
+              </tr>
+              <tr>
+                <th class="text-secondary text-left">Content</th>
+                <th class="text-center">${article.comm}</th>
               </tr>
               </form>
             </thead>

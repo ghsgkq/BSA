@@ -32,31 +32,7 @@ public class BookingDto {
 	private String comm;
 	private String money;
 	private String code;
-	private int step;
-	private int ref;
-	private int depth;
-
 	
-	
-	
-	public int getStep() {
-		return step;
-	}
-	public void setStep(int step) {
-		this.step = step;
-	}
-	public int getRef() {
-		return ref;
-	}
-	public void setRef(int ref) {
-		this.ref = ref;
-	}
-	public int getDepth() {
-		return depth;
-	}
-	public void setDepth(int depth) {
-		this.depth = depth;
-	}
 	public String getCode() {
 		return code;
 	}

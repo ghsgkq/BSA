@@ -237,18 +237,18 @@ public class AdminDao {
 		return result;
 	}
 	
-	public BookingDto getArticle(String code) {
+	public AdminBookingDto getArticle(String code) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		BookingDto article = null;
+		AdminBookingDto article = null;
 		try {
 			conn = ConnUtil.getConnection();
-			pstmt = conn.prepareStatement("select * from BOOKING where code = ?");
+			pstmt = conn.prepareStatement("select * from BOOKINGA where code = ?");
 			pstmt.setString(1, code);
 			rs= pstmt.executeQuery();
 			if(rs.next()) {
-				article = new BookingDto();
+				article = new AdminBookingDto();
 				article.setFirst_name(rs.getString("first_name"));
 				article.setLast_name(rs.getString("last_name"));
 				article.setPhone(rs.getString("phone"));
@@ -259,7 +259,7 @@ public class AdminDao {
 				article.setPickup(rs.getString("pickup"));
 				article.setDropft(rs.getString("dropft"));
 				article.setStart_airline_name(rs.getString("start_airline_name"));
-				article.setStart_airline_no(rs.getString("starty_airline_no"));
+				article.setStart_airline_no(rs.getString("start_airline_no"));
 				article.setArrival_airline_name(rs.getString("arrival_airline_name"));
 				article.setArrival_airline_no(rs.getString("arrival_airline_no"));
 				article.setArrival_airline_time(rs.getString("arrival_airline_time"));
