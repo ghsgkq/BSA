@@ -13,6 +13,9 @@ import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import BSA.model.AdminBookingDto;
+import BSA.model.AdminDao;
+import BSA.model.AdminDto;
 import BSA.model.BookingDao;
 import BSA.model.BookingDto;
 
@@ -172,6 +175,7 @@ public class paymentProAction implements CommandAction {
 		}
 		
 		BookingDto bdto = new BookingDto();
+		AdminBookingDto ad= new AdminBookingDto();
 		bdto.setFirst_name(req.getParameter("first_name"));
 		bdto.setLast_name(req.getParameter("last_name"));
 		bdto.setPhone(req.getParameter("phone"));
@@ -204,10 +208,48 @@ public class paymentProAction implements CommandAction {
 		bdto.setMoney(req.getParameter("money"));
 		bdto.setCode(code);
 		
+		ad.setFirst_name(req.getParameter("first_name"));
+		ad.setLast_name(req.getParameter("last_name"));
+		ad.setPhone(req.getParameter("phone"));
+		ad.setEmail(req.getParameter("email"));
+		ad.setWhere_trip(req.getParameter("where_trip"));
+		ad.setWhere_from(req.getParameter("where_from"));
+		ad.setWhere_to(req.getParameter("where_to"));
+		ad.setPickup(req.getParameter("pickup"));
+		ad.setDropft(req.getParameter("dropft"));
+		ad.setStart_airline_name(req.getParameter("start_airline_name"));
+		ad.setStart_airline_no(req.getParameter("start_airline_no"));
+		ad.setStart_airline_time(req.getParameter("start_airline_time"));
+		ad.setArrival_airline_name(req.getParameter("arrival_airline_name"));
+		ad.setArrival_airline_no(req.getParameter("arrival_airline_no"));
+		ad.setArrival_airline_time(req.getParameter("arrival_airline_time"));
+		ad.setBus_time_pickup(req.getParameter("bus_time_pickup"));
+		ad.setBus_time_dropft(req.getParameter("bus_time_dropft"));
+		ad.setStart_date(req.getParameter("start_date"));
+		ad.setArrival_date(req.getParameter("arrival_date"));
+		ad.setAdults(req.getParameter("adults"));
+		ad.setYoung(req.getParameter("young"));
+		ad.setChild(req.getParameter("child"));
+		ad.setInfatns(req.getParameter("infatns"));
+		ad.setName_on_card(req.getParameter("name_on_card"));
+		ad.setCard_number(req.getParameter("card_number"));
+		ad.setExpiry_year(req.getParameter("expiry_year"));
+		ad.setExpiry_month(req.getParameter("expiry_month"));
+		ad.setCsv_number(req.getParameter("csv_number"));
+		ad.setComm(req.getParameter("comm"));
+		ad.setMoney(req.getParameter("money"));
+		ad.setCode(code);
+		
+		
+		
+		
 		BookingDao bdao = BookingDao.getInstance();
 		bdao.Bookinginsert(bdto);
+		AdminDao dbpro= AdminDao.getInstance();
+		dbpro.AdminBookinginsert(ad);
 		
 		req.setAttribute("bookingcheck", 1);
+		
 		return "/JSP/index.jsp";
 	}
 	

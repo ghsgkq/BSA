@@ -7,7 +7,9 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import BSA.model.AdminBookingDto;
 import BSA.model.AdminDao;
+import BSA.model.AdminDto;
 import BSA.model.BookingDao;
 import BSA.model.BookingDto;
 
@@ -26,7 +28,7 @@ public class memListAction implements CommandAction{
 		int endRow = currentPage *pageSize;
 		int count = 0;
 		int number = 0;
-		List<BookingDto> articleList = null;
+		List<AdminBookingDto> articleList = null;
 		AdminDao dbPro = AdminDao.getInstance();
 		count = dbPro.getArticleCount();
 		if(count > 0) {

@@ -45,6 +45,68 @@ public class AdminDao {
 			}
 		}
 	}
+
+	public void AdminBookinginsert(AdminBookingDto bdto) {
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			String sql="";
+			try {
+				conn = ConnUtil.getConnection();
+				sql = "insert into BOOKINGA (FIRST_NAME, LAST_NAME, PHONE, EMAIL, WHERE_TRIP, WHERE_FROM, WHERE_TO, PICKUP, DROPFT, START_AIRLINE_NAME, "
+						+ "START_AIRLINE_NO, START_AIRLINE_TIME, ARRIVAL_AIRLINE_NAME, ARRIVAL_AIRLINE_NO, ARRIVAL_AIRLINE_TIME, BUS_TIME_PICKUP, BUS_TIME_DROPFT, "
+						+ "START_DATE, ARRIVAL_DATE, ADULTS, YOUNG, CHILD, INFATNS, NAME_ON_CARD, CARD_NUMBER, EXPIRY_YEAR, EXPIRY_MONTH, CSV_NUMBER, COMM, MONEY, CODE) "
+						+ "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setString(1, bdto.getFirst_name());
+				pstmt.setString(2, bdto.getLast_name());
+				pstmt.setString(3, bdto.getPhone());
+				pstmt.setString(4, bdto.getEmail());
+				pstmt.setString(5, bdto.getWhere_trip());
+				pstmt.setString(6, bdto.getWhere_from());
+				pstmt.setString(7, bdto.getWhere_to());
+				pstmt.setString(8, bdto.getPickup());
+				pstmt.setString(9, bdto.getDropft());
+				pstmt.setString(10, bdto.getStart_airline_name());
+				pstmt.setString(11, bdto.getStart_airline_no());
+				pstmt.setString(12, bdto.getStart_airline_time());
+				pstmt.setString(13, bdto.getArrival_airline_name());
+				pstmt.setString(14, bdto.getArrival_airline_no());
+				pstmt.setString(15, bdto.getArrival_airline_time());
+				pstmt.setString(16, bdto.getBus_time_pickup());
+				pstmt.setString(17, bdto.getBus_time_dropft());
+				pstmt.setString(18, bdto.getStart_date());
+				pstmt.setString(19, bdto.getArrival_date());
+				pstmt.setString(20, bdto.getAdults());
+				pstmt.setString(21, bdto.getYoung());
+				pstmt.setString(22, bdto.getChild());
+				pstmt.setString(23, bdto.getInfatns());
+				pstmt.setString(24, bdto.getName_on_card());
+				pstmt.setString(25, bdto.getCard_number());
+				pstmt.setString(26, bdto.getExpiry_year());
+				pstmt.setString(27, bdto.getExpiry_month());
+				pstmt.setString(28, bdto.getCsv_number());
+				pstmt.setString(29, bdto.getComm());
+				pstmt.setString(30, bdto.getMoney());
+				pstmt.setString(31, bdto.getCode());
+				pstmt.executeUpdate();
+				
+			}catch(SQLException e) {
+				e.printStackTrace();
+				
+			}finally {
+				try {
+					if(rs != null) rs.close();
+					if(pstmt != null)pstmt.close();
+					if(conn != null)conn.close();
+				}catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+		}
+	
+	
 	
 	
 	public int getArticleCount() {
@@ -72,11 +134,11 @@ public class AdminDao {
 	}
 	
 	
-	public ArrayList<BookingDto> getArticles(int start, int end){
+	public ArrayList<AdminBookingDto> getArticles(int start, int end){
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		ArrayList<BookingDto> articleList = null;
+		ArrayList<AdminBookingDto> articleList = null;
 		try {
 			conn = ConnUtil.getConnection();
 					String sql = "select * from "
@@ -91,9 +153,9 @@ public class AdminDao {
 			pstmt.setInt(2, end);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
-				articleList = new ArrayList<BookingDto>(5);
+				articleList = new ArrayList<AdminBookingDto>(5);
 				do {
-					BookingDto article = new BookingDto();
+					AdminBookingDto article = new AdminBookingDto();
 					article.setFirst_name(rs.getString("first_name"));
 					article.setLast_name(rs.getString("last_name"));
 					article.setPhone(rs.getString("phone"));
@@ -229,6 +291,7 @@ public class AdminDao {
 			}
 			return article;
 		}
+	
 	}
 	
 
