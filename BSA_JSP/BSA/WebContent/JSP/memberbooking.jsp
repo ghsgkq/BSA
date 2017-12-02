@@ -107,6 +107,21 @@
 		color: #fff;
 	}
   </style>
+  
+  <script src="//code.jquery.com/jquery.min.js"></script>
+<script>
+$(function() {
+  $('#button1').click( function() {
+    if( $(this).html() == '접기' ) {
+      $(this).html('펼치기');
+    }
+    else {
+      $(this).html('접기');
+    }
+  });
+});
+</script> 
+  
 </head>
 <body style="margin-top:80pt;">
 
@@ -165,7 +180,7 @@
        			<td class="text-center">${article.expiry_month}</td>
        			<td class="text-center">${article.csv_number}</td>
        			<td class="text-center">${article.money}</td>
-       			<td class="text-cneter"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white">미션중</a></td>
+       			<td class="text-cneter"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white" href="#">미션중</a></td>
        			
         	</tr>
         	

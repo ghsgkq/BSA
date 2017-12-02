@@ -239,10 +239,7 @@ public class paymentProAction implements CommandAction {
 		ad.setComm(req.getParameter("comm"));
 		ad.setMoney(req.getParameter("money"));
 		ad.setCode(code);
-		
-		
-		
-		
+
 		BookingDao bdao = BookingDao.getInstance();
 		bdao.Bookinginsert(bdto);
 		AdminDao dbpro= AdminDao.getInstance();
