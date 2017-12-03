@@ -4,7 +4,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,8 +36,7 @@
       <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
         <ul class="navbar-nav"></ul>
         <a class="ml-3 btn navbar-btn btn-light" href="${pageContext.request.contextPath}/memberbooking.do">List</a>
-        <form method="post" name="admindel" action="${pageContext.request.contextPath}/adminbookingdelete.do?pageNum=${pageNum}">
-        <input type="submit" value="Delete"></form>
+        <a class="ml-3 btn navbar-btn btn-light" href="${pageContext.request.contextPath}/adminbookingdelete.do">Delete</a>
       </div>
     </div>
   </nav>
