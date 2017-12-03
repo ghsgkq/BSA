@@ -7,14 +7,17 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="BSA.model.AdminDao" %>
 
-
+<c:if test="${check ==1 }">
+	<meta http-equiv="Refresh" content=
+	"0;url=${pageContext.request.contextPath }/memberbooking.do?pageNum=${pageNum}">
+	</c:if>
 
 <!DOCTYPE html>
 <html>
 <head>
 
 	<title>Admin_List</title>
-  <link rel="shortcut icon" type="image⁄x-icon" href="${pageContext.request.contextPath}/JSP/img/admin.png">
+  <link rel="shortcut icon" type="image⁄x-icon" href="${pageContext.request.contextPath}/JSP/img/adminb.png">
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
@@ -182,7 +185,7 @@ $(function() {
        			<td class="text-center">${article.expiry_month}</td>
        			<td class="text-center">${article.csv_number}</td>
        			<td class="text-center">${article.money}</td>
-       			<td class="text-cneter"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white" href="#">미션중</a></td>
+       			<td class="text-cneter"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white"href="#" id='button1'>미션중</a></td>
        			
         	</tr>
         	

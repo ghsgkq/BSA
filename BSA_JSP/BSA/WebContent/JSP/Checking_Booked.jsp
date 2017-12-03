@@ -28,21 +28,7 @@
 	}
   </script>
   
-  <script type="text/javascript">
-    $(document).ready( function() {
-    	$("#contents").load("JSP/top.jsp");
-    	$("#bt").load("JSP/bottom.jsp");
-    });
-	function onbutton_event(){
-		var del=confirm("결제하시겠습니까?")
-		if(del==true){
-			alert("결제완료! 예약환인페이지로이동")
-			location.href="${pageContext.request.contextPath}/checkbooked.do"
-		}else{
-			alert("취소 되었습니다.")
-			}
-		}
-  </script>
+
   <c:choose>
   <c:when test="${deletebooking_password == 1 }">
   <script type="text/javascript">

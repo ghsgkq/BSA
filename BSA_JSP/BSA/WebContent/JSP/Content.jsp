@@ -2,13 +2,18 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:if test="${check ==1 }">
+	<meta http-equiv="Refresh" content=
+	"0;url=${pageContext.request.contextPath }/memberbooking.do?pageNum=${pageNum}">
+	</c:if>
+
 
 <!DOCTYPE html>
 <html>
 <head>
 
 	<title>Admin_Content</title>
-  <link rel="shortcut icon" type="image⁄x-icon" href="${pageContext.request.contextPath}/JSP/img/admin.png">
+  <link rel="shortcut icon" type="image⁄x-icon" href="${pageContext.request.contextPath}/JSP/img/adminb.png">
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,7 +40,7 @@
       <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
         <ul class="navbar-nav"></ul>
         <a class="ml-3 btn navbar-btn btn-light" href="${pageContext.request.contextPath}/memberbooking.do">List</a>
-        <a class="ml-3 btn navbar-btn btn-light" href="#">Delete</a>
+        <a class="ml-3 btn navbar-btn btn-light" href="${pageContext.request.contextPath}/adminbookingdelete.do">Delete</a>
       </div>
     </div>
   </nav>
@@ -59,19 +64,19 @@
                 
               </tr>
               <tr>
-                <th class="text-secondary text-left">Where_from</th>
+                <th class="text-secondary text-left">Where_from ↔ Where_to</th>
                 <th class="text-center">${article.where_from}</th>
               </tr>
               <tr>
-                <th class="text-secondary text-left">Where_to</th>
+                <th class="text-secondary text-left">Where_to ↔ Where_from</th>
                 <th class="text-center">${article.where_to }</th>
               </tr>
               <tr>
-                <th class="text-secondary text-left">Pickup</th>
+                <th class="text-secondary text-left">Pickup ↔ Dropft</th>
                 <th class="text-center">${article.pickup }가</th>
               </tr>
               <tr>
-                <th class="text-secondary text-left">Dropft</th>
+                <th class="text-secondary text-left">Dropft ↔ Pickup</th>
                 <th class="text-center">${article.dropft}</th>
               </tr>
               <tr>
