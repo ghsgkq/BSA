@@ -6,6 +6,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+	<title>Admin_Content</title>
+  <link rel="shortcut icon" type="image⁄x-icon" href="${pageContext.request.contextPath}/JSP/img/admin.png">
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
@@ -71,15 +75,15 @@
                 <th class="text-center">${article.dropft}</th>
               </tr>
               <tr>
-                <th class="text-secondary text-left">Start_Airline_name</th>
+                <th class="text-secondary text-left">Departure_Airline_name</th>
                 <th class="text-center">${article.start_airline_name}</th>
               </tr>
               <tr>
-                <th class="text-secondary text-left">Start_Airline_no</th>
+                <th class="text-secondary text-left">Departure_Airline_no</th>
                 <th class="text-center">${article.start_airline_no}</th>
               </tr>
               <tr>
-                <th class="text-secondary text-left">Start_Airline_time</th>
+                <th class="text-secondary text-left">Departure_Airline_time</th>
                 <th class="text-center">${article.start_airline_time}</th>
               </tr>
               <tr>

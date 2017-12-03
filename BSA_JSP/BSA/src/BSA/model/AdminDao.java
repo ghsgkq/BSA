@@ -260,6 +260,7 @@ public class AdminDao {
 				article.setDropft(rs.getString("dropft"));
 				article.setStart_airline_name(rs.getString("start_airline_name"));
 				article.setStart_airline_no(rs.getString("start_airline_no"));
+				article.setStart_airline_time(rs.getString("start_airline_time"));
 				article.setArrival_airline_name(rs.getString("arrival_airline_name"));
 				article.setArrival_airline_no(rs.getString("arrival_airline_no"));
 				article.setArrival_airline_time(rs.getString("arrival_airline_time"));
