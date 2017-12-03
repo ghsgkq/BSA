@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 
 
 <!DOCTYPE html>
@@ -36,7 +36,7 @@
       <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
         <ul class="navbar-nav"></ul>
         <a class="ml-3 btn navbar-btn btn-light" href="${pageContext.request.contextPath}/memberbooking.do">List</a>
-        <a class="ml-3 btn navbar-btn btn-light" href="${pageContext.request.contextPath}/adminbookingdelete.do">Delete</a>
+        <input type="button" value="삭 제" onClick="document.location.href='${pageContext.request.contextPath}/adminbookingdelete.do?email=${article.email}&pageNum=${pageNum}'">
       </div>
     </div>
   </nav>

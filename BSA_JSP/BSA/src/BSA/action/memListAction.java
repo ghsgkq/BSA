@@ -21,9 +21,10 @@ public class memListAction implements CommandAction{
 		if(pageNum == null) {
 			pageNum="1";
 		}
-		int pageSize = 10;
+		int pageSize = 5;
+		try {
 		int currentPage = Integer.parseInt(pageNum);
-		
+		System.out.println(currentPage);
 		int startRow = (currentPage - 1) * pageSize + 1;
 		int endRow = currentPage *pageSize;
 		int count = 0;
@@ -46,6 +47,13 @@ public class memListAction implements CommandAction{
 		req.setAttribute("pageSize", new Integer(pageSize));
 		req.setAttribute("number", new Integer(number));
 		req.setAttribute("articleList", articleList);
+		
+		
+	}catch(Exception e) {
+		e.printStackTrace();
+	}
+		
+	
 		
 		return "/JSP/memberbooking.jsp";
 		

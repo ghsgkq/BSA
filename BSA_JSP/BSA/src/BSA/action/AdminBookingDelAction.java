@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import BSA.model.AdminDao;
 import BSA.model.BookingDao;
 
+
 public class AdminBookingDelAction implements CommandAction{
 
 	@Override
@@ -13,20 +14,14 @@ public class AdminBookingDelAction implements CommandAction{
 		
 		
 		req.setCharacterEncoding("UTF-8");
-		String email= req.getParameter("email");
-		String pageNum=req.getParameter("pageNum");
-		
-		
-		
-		AdminDao dbPro= AdminDao.getInstance();
-		int check= dbPro.deleteArticle(email);
-	
-	
-		
-		req.setAttribute("pageNum", pageNum);
-		req.setAttribute("check", new Integer(check));
-		
-		return "/JSP/memberbooking.jsp";
+		try {
+			AdminDao.getInstance().deleteArticle(req.getParameter("email"));
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+
+			return "/memberbooking.do?pageNum="+req.getParameter("pageNum"); //酉� 寃쎈줈
+			
 	}
 		
 	

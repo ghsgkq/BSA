@@ -204,15 +204,16 @@ public class AdminDao {
 		}
 		return articleList;
 	}
-	public int deleteArticle(String email) {
+	public void deleteArticle(String email) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		ResultSet rs= null;
+		
 		
 		int result = 0;
 		try {
 		conn = ConnUtil.getConnection();
-		pstmt= conn.prepareStatement("DELETE from BOOKINGA where email = ?");
+		pstmt = conn.prepareStatement(
+				"delete from BOOKINGA where email = ?");
 		pstmt.setString(1, email);
 		result=pstmt.executeUpdate();
 		pstmt.close();
@@ -220,11 +221,11 @@ public class AdminDao {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			if(rs != null)try {rs.close();}catch (SQLException e) {}
+			
 			if(pstmt != null)try {pstmt.close();} catch(SQLException e) {}
 			if(conn != null)try {conn.close();} catch(SQLException e) {}
 		}
-		return result;
+		return ;
 		
 	}
 	
