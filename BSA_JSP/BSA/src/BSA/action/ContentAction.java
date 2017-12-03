@@ -21,7 +21,7 @@ public class ContentAction implements CommandAction{
 		String pageNum = req.getParameter("pageNum");
 		AdminDao dbPro=AdminDao.getInstance();
 		
-		AdminBookingDto article= dbPro.deleteArticle(code);
+		AdminBookingDto article= dbPro.getArticle(code);
 		req.setAttribute("code", code);
 		req.setAttribute("article", article);
 		return "/JSP/Content.jsp";

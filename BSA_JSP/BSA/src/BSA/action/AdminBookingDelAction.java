@@ -13,16 +13,17 @@ public class AdminBookingDelAction implements CommandAction{
 		
 		
 		req.setCharacterEncoding("UTF-8");
-		String code= req.getParameter("code");
+		String email= req.getParameter("email");
 		String pageNum=req.getParameter("pageNum");
 		
 		
+		
 		AdminDao dbPro= AdminDao.getInstance();
-		int check= dbPro.deleteArticle(code);
-		dbPro.deleteArticle(req.getParameter("code"));
+		int check= dbPro.deleteArticle(email);
+	
 	
 		
-		req.setAttribute("pageNum", new Integer(pageNum));
+		req.setAttribute("pageNum", pageNum);
 		req.setAttribute("check", new Integer(check));
 		
 		return "/JSP/memberbooking.jsp";

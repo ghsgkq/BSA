@@ -2,10 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<c:if test="${check ==1 }">
-	<meta http-equiv="Refresh" content=
-	"0;url=${pageContext.request.contextPath }/memberbooking.do?pageNum=${pageNum}">
-	</c:if>
+
 
 
 <!DOCTYPE html>
@@ -40,7 +37,8 @@
       <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
         <ul class="navbar-nav"></ul>
         <a class="ml-3 btn navbar-btn btn-light" href="${pageContext.request.contextPath}/memberbooking.do">List</a>
-        <a class="ml-3 btn navbar-btn btn-light" href="${pageContext.request.contextPath}/adminbookingdelete.do">Delete</a>
+        <form method="post" name="admindel" action="${pageContext.request.contextPath}/adminbookingdelete.do?pageNum=${pageNum}">
+        <input type="submit" value="Delete"></form>
       </div>
     </div>
   </nav>
