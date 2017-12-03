@@ -260,12 +260,22 @@ public class paymentAction implements CommandAction{
 			return "/JSP/payment.jsp";
 		}
 		
-		if(req.getSession().getAttribute("id") != null || req.getSession().getAttribute("id").equals("")) {
-			id = (String)req.getSession().getAttribute("id");
+		if(req.getSession().getAttribute("id") == null) {
+			
 			
 		}
+		else {
+			id = (String)req.getSession().getAttribute("id");
+		}
 		req.getSession().invalidate();
-		req.getSession().setAttribute("id", id);
+		if(req.getSession().getAttribute("id") == null) {
+			
+			
+		}
+		else {
+			req.getSession().setAttribute("id", id);
+		}
+		
 		
 		return "/JSP/payment_check.jsp";
 	}
