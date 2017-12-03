@@ -204,7 +204,7 @@ public class AdminDao {
 		}
 		return articleList;
 	}
-	public void deleteArticle(String code) {
+	public int deleteArticle(String code) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
@@ -222,6 +222,7 @@ public class AdminDao {
 				e.printStackTrace();
 			}
 		}
+		return 1;
 	}
 	
 	public AdminBookingDto getArticle(String code) {

@@ -7,10 +7,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="BSA.model.AdminDao" %>
 
-<c:if test="${check ==1 }">
-	<meta http-equiv="Refresh" content=
-	"0;url=${pageContext.request.contextPath }/memberbooking.do?pageNum=${pageNum}">
-	</c:if>
+
 
 <!DOCTYPE html>
 <html>

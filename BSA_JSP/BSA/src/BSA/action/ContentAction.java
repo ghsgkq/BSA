@@ -18,9 +18,10 @@ public class ContentAction implements CommandAction{
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
 		
 		String code=req.getParameter("code");
+		String pageNum = req.getParameter("pageNum");
 		AdminDao dbPro=AdminDao.getInstance();
 		
-		AdminBookingDto article= dbPro.getArticle(code);
+		AdminBookingDto article= dbPro.deleteArticle(code);
 		req.setAttribute("code", code);
 		req.setAttribute("article", article);
 		return "/JSP/Content.jsp";
