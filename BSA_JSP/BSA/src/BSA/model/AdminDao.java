@@ -204,19 +204,29 @@ public class AdminDao {
 		}
 		return articleList;
 	}
-	public void deleteArticle(String email) {
+	public int deleteArticle(String code) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		
+		ResultSet rs = null;
 		
 		int result = 0;
+		String dbCode = "";
 		try {
 		conn = ConnUtil.getConnection();
 		pstmt = conn.prepareStatement(
-				"delete from BOOKINGA where email = ?");
-		pstmt.setString(1, email);
-		result=pstmt.executeUpdate();
-		pstmt.close();
+				"select from BOOKING where CODE = ?");
+		pstmt.setString(1, code);
+		rs=pstmt.executeQuery();
+		if(rs.next()) {
+			dbCode = rs.getString("code");
+			pstmt.close();
+			pstmt = conn.prepareStatement("code");
+			pstmt = conn.prepareStatement("delete from BOOKING CODE = ?");
+			pstmt.setString(1, code);
+			pstmt.executeUpdate();
+			result=1;
+		}
+		
 		
 		}catch (Exception e) {
 			e.printStackTrace();
@@ -224,8 +234,9 @@ public class AdminDao {
 			
 			if(pstmt != null)try {pstmt.close();} catch(SQLException e) {}
 			if(conn != null)try {conn.close();} catch(SQLException e) {}
+			if(rs != null)try {rs.close();}catch(SQLException e) {}
 		}
-		return ;
+		return result;
 		
 	}
 	
