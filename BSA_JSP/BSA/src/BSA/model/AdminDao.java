@@ -204,7 +204,7 @@ public class AdminDao {
 		}
 		return articleList;
 	}
-	public int deleteArticle(String code) {
+	public int deleteArticle(String email) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -214,15 +214,15 @@ public class AdminDao {
 		try {
 		conn = ConnUtil.getConnection();
 		pstmt = conn.prepareStatement(
-				"select from BOOKING where CODE = ?");
-		pstmt.setString(1, code);
+				"select from BOOKING where email = ?");
+		pstmt.setString(1, email);
 		rs=pstmt.executeQuery();
 		if(rs.next()) {
 			dbCode = rs.getString("code");
 			pstmt.close();
 			pstmt = conn.prepareStatement("code");
-			pstmt = conn.prepareStatement("delete from BOOKING CODE = ?");
-			pstmt.setString(1, code);
+			pstmt = conn.prepareStatement("delete from BOOKING email = ?");
+			pstmt.setString(1, email);
 			pstmt.executeUpdate();
 			result=1;
 		}
