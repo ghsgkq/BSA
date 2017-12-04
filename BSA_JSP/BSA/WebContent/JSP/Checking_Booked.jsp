@@ -15,6 +15,13 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   
   <script type="text/javascript">
+    $(document).ready( function() {
+    	$("#contents").load("JSP/top.jsp");
+    	$("#bt").load("JSP/bottom.jsp");
+    });
+  </script>
+  
+  <script type="text/javascript">
   function mySubmit(index) {
 	  var index=confirm("예약취소하시겠습니까?")
 		if(index == 1){
