@@ -318,6 +318,7 @@ function test(idMyDiv){
           
           <a href="#" class="btn btn-lg btn-outline-secondary"onclick="test('testdiv'); return false;">  김해 공항 </a> ▶▶ 부산 전지역
              <div id="testdiv" style="display:none">
+             <p></p>
               <a class="dropdown-item text-left">김해공항 출발 07:00 8:00 9:00 10:00 11:00 13:00 14:00 15:00 16:00 17:00 19:00 20:00 21:00 22:00 23:00 </a>
               
               <a class="dropdown-item text-left">부산지역 출발 07:00 8:00 9:00 10:00 11:00 13:00 14:00 15:00 16:00 17:00 19:00 20:00 21:00 22:00 23:00 </a>
@@ -329,6 +330,7 @@ function test(idMyDiv){
             <a href="#" class="btn btn-lg btn-outline-secondary"onclick="test('testdiva'); return false;"> 부산 전지역 </a> ▶▶ 김해공항 
             
              <div id="testdiva" style="display:none">
+             <p></p>
               <a class="dropdown-item text-left">부산지역 출발 07:00 8:00 9:00 10:00 11:00 13:00 14:00 15:00 16:00 17:00 19:00 20:00 21:00 22:00 23:00 </a>
               
               <a class="dropdown-item text-left">김해공항 출발 07:00 8:00 9:00 10:00 11:00 13:00 14:00 15:00 16:00 17:00 19:00 20:00 21:00 22:00 23:00  </a>
