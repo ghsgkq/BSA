@@ -36,7 +36,7 @@
       <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
         <ul class="navbar-nav"></ul>
         <a class="ml-3 btn navbar-btn btn-light" href="${pageContext.request.contextPath}/memberbooking.do">List</a>
-        <input type="button" value="삭 제" onClick="document.location.href='${pageContext.request.contextPath}/adminbookingdelete.do?code=${article.code}&pageNum=${pageNum}'">
+        <input type="button" value="삭 제" onClick="document.location.href='${pageContext.request.contextPath}/adminbookingdelete.do?email=${article.email}&pageNum=${pageNum}'">
       </div>
     </div>
   </nav>
