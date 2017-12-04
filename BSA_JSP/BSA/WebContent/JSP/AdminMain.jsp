@@ -22,9 +22,28 @@
     	$("#bt").load("JSP/bottom.jsp");
     });
   </script>
+ <script type = "text/javascript" >
+function changeHashOnLoad() {
+     window.location.href += "#";
+     setTimeout("changeHashAgain()", "50"); 
+}
+
+function changeHashAgain() {
+  window.location.href += "1";
+}
+
+var storedHash = window.location.hash;
+window.setInterval(function () {
+    if (window.location.hash != storedHash) {
+         window.location.hash = storedHash;
+    }
+}, 50);
+
+
+</script>
 
 </head>
-<body class="bg-light" style="margin-top:0px;">
+<body class="bg-light" style="margin-top:0px;"  onload="changeHashOnLoad(); ">
   <div id="contents"></div>
   <div class="gradient-overlay px-5" style="background-image: url(&quot;JSP/img/sol2.jpg&quot;); height:800px;">
     <div class="py-5 m-5 text-left container-fluid text-capitalize h-100">

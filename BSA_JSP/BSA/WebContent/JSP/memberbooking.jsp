@@ -32,8 +32,27 @@
     	
     });
     
-
   </script>
+  <script type = "text/javascript" >
+function changeHashOnLoad() {
+     window.location.href += "#";
+     setTimeout("changeHashAgain()", "50"); 
+}
+
+function changeHashAgain() {
+  window.location.href += "1";
+}
+
+var storedHash = window.location.hash;
+window.setInterval(function () {
+    if (window.location.hash != storedHash) {
+         window.location.hash = storedHash;
+    }
+}, 50);
+
+
+</script>
+  
 <title>회원 예매 화면</title>
 <style type="text/css">
     .my-box {
@@ -125,8 +144,9 @@ $(function() {
 </script> 
   
 </head>
-<body style="margin-top:80pt;">
+<body style="margin-top:80pt;" onload="changeHashOnLoad(); ">
 <form method= "post" name="Admin_Checked" action="${pageContext.request.contextPath}/admincheck.do">
+<div id="contents"></div>
   <div class="container">
     <div class="row"> &nbsp;
       <div class="span12"> &nbsp;Search&nbsp;
