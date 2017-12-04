@@ -116,7 +116,7 @@ public class AdminDao {
 		int count = 0;
 		try {
 			conn = ConnUtil.getConnection();
-			pstmt = conn.prepareStatement("select count(*) from BOOKING");
+			pstmt = conn.prepareStatement("select count(*) from BOOKINGA");
 			rs= pstmt.executeQuery();
 			if(rs.next()) {
 				count = rs.getInt(1);
@@ -146,7 +146,7 @@ public class AdminDao {
 							+ "PICKUP, DROPFT, START_AIRLINE_NAME, START_AIRLINE_NO, START_AIRLINE_TIME, ARRIVAL_AIRLINE_NAME,"
 							+ "ARRIVAL_AIRLINE_NO, ARRIVAL_AIRLINE_TIME, BUS_TIME_PICKUP, BUS_TIME_DROPFT, START_DATE, ARRIVAL_DATE,"
 							+ "ADULTS, YOUNG, CHILD, INFATNS, NAME_ON_CARD, CARD_NUMBER, EXPIRY_YEAR, EXPIRY_MONTH, CSV_NUMBER, COMM, MONEY, CODE, STEP, REF, DEPTH from "
-							+ "(select * from BOOKING order by REF desc, STEP asc)) "
+							+ "(select * from BOOKINGA order by REF desc, STEP asc)) "
 							+ "where RNUM >= ? and RNUM <= ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, start);
@@ -214,7 +214,7 @@ public class AdminDao {
 		try {
 		conn = ConnUtil.getConnection();
 		pstmt = conn.prepareStatement(
-				"select from BOOKING where email = ?");
+				"select from BOOKINGA where email = ?");
 		pstmt.setString(1, email);
 		rs=pstmt.executeQuery();
 		if(rs.next()) {
