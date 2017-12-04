@@ -208,8 +208,7 @@ public class AdminDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		
-		
+			
 		try {
 		conn = ConnUtil.getConnection();
 		pstmt = conn.prepareStatement("delete from BOOKINGA where code = ? ");
