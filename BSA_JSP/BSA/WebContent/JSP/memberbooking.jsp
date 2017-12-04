@@ -147,7 +147,7 @@ $(function() {
 
 <body style="margin-top:80pt;">
 
-<!--  
+<!-- 
 <form method="post" name="admin_checked" action="${pageContext.request.contextPath}/admincheck.do">
 
 test 이메일 입력 <input type="text" name="email" class="form-control" placeholder="이메일 입력" value="${email}">
@@ -169,8 +169,8 @@ test 이메일 입력 <input type="text" name="email" class="form-control" place
 </tr>
 </c:forEach>
 </table>
+</form>
 -->
-
 <body style="margin-top:80pt;" onload="changeHashOnLoad(); ">
 <form method= "post" name="Admin_Checked" action="${pageContext.request.contextPath}/admincheck.do">
 <div id="contents"></div>
