@@ -30,11 +30,6 @@
   alert("원래 비밀번호가 맞지않습니다.");
   </script>
   </c:if>
-  <c:if test="${check == 1 }">
-  <script type="text/javascript">
-  alert("비밀번호가 변경되었습니다.");
-  </script>
-  </c:if>
   <c:if test="${check == 2 }">
   <script type="text/javascript">
   alert("비밀번호 확인이 맞지않습니다.");
@@ -42,12 +37,12 @@
   </c:if>
   <c:if test="${check == 3 }">
   <script type="text/javascript">
-  alert("새로운 비밀번호를 입력하세요");
+  alert("새로운 비밀번호나 비밀번호확인이 비어있습니다.");
   </script>
   </c:if>
-  <c:if test="${check == 4 }">
+  <c:if test="${check == 4}">
   <script type="text/javascript">
-  alert("새로운 비밀번호 확인을 입력하세요");
+  alert("패스워드는 10~25 공백을 제외한 모든 문자로 구성할 수 있습니다!")
   </script>
   </c:if>
   <c:if test="${check == 5 }">
