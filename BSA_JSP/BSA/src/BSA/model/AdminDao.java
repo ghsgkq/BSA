@@ -247,7 +247,7 @@ public class AdminDao {
 		AdminBookingDto article = null;
 		try {
 			conn = ConnUtil.getConnection();
-			pstmt = conn.prepareStatement("select * from BOOKINGA where code = ?");
+			pstmt = conn.prepareStatement("select * from BOOKINGA where CODE = ?");
 			pstmt.setString(1, code);
 			rs= pstmt.executeQuery();
 			if(rs.next()) {
