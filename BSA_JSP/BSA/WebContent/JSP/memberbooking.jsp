@@ -126,7 +126,15 @@ $(function() {
   
 </head>
 <body style="margin-top:80pt;">
-
+  <div class="container">
+    <div class="row"> &nbsp;
+      <div class="span12"> &nbsp;Search&nbsp;
+        <form method="get" action="/" class="form-inline">
+          <input name="loc" class="span5" type="text" placeholder="Search">
+          <input type="button" value="Search"> </form>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -191,15 +199,7 @@ $(function() {
     </table>
   </c:if>
  
-  <div class="container">
-    <div class="row"> &nbsp;
-      <div class="span12"> &nbsp;Search&nbsp;
-        <form method="get" action="/" class="form-inline">
-          <input name="loc" class="span5" type="text" placeholder="Search">
-          <input type="button" value="Search"> </form>
-      </div>
-    </div>
-  </div>
+
  
   <div class="wrap">
   </div>
