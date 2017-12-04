@@ -126,6 +126,7 @@ $(function() {
   
 </head>
 <body style="margin-top:80pt;">
+<form method= "post" name="checking_Booked" action="${pageContext.request.contextPath }">
   <div class="container">
     <div class="row"> &nbsp;
       <div class="span12"> &nbsp;Search&nbsp;
@@ -135,7 +136,7 @@ $(function() {
       </div>
     </div>
   </div>
-
+</form>
 
 
 <form name="checking_Booked">
