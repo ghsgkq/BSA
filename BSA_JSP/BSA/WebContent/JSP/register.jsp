@@ -22,7 +22,7 @@
   </script>
   <script type="text/javascript">
   window.history.forward(0);
-  function noBack(){window.history.forward();}
+  function noBack(){window.history.forward(0);}
   </script>
 <script type="text/javascript">
   function mySubmit(index) {

@@ -9,11 +9,7 @@ public class changepwProAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
-		resp.setDateHeader("Expires", 0);
-		resp.setHeader("Pragma", "no-cache");
-		if(req.getProtocol().equals("HTTP/1.1")) {
-			resp.setHeader("Cache-Control", "no-cache");
-		}
+
 		memberDao mdao = memberDao.getInstance();
 		int check = 0;
 		if(req.getParameter("new_password").equals(req.getParameter("new_re_password"))) {

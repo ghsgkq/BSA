@@ -23,11 +23,6 @@ public class paymentProAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
-		resp.setDateHeader("Expires", 0);
-		resp.setHeader("Pragma", "no-cache");
-		if(req.getProtocol().equals("HTTP/1.1")) {
-			resp.setHeader("Cache-Control", "no-cache");
-		}
 		req.setCharacterEncoding("UTF-8");
 		Random ran = new Random();
 		String email = "ckdgus5820@naver.com";
@@ -250,9 +245,8 @@ public class paymentProAction implements CommandAction {
 		AdminDao dbpro= AdminDao.getInstance();
 		dbpro.AdminBookinginsert(ad);
 		
-		req.setAttribute("bookingcheck", 1);
 		
-		return "/JSP/index.jsp";
+		return "/JSP/booking_good.jsp";
 	}
 	
 }

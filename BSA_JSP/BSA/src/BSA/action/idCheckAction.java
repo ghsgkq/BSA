@@ -11,11 +11,7 @@ public class idCheckAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
-		resp.setDateHeader("Expires", 0);
-		resp.setHeader("Pragma", "no-cache");
-		if(req.getProtocol().equals("HTTP/1.1")) {
-			resp.setHeader("Cache-Control", "no-cache");
-		}
+
 		String id = req.getParameter("id");
 		ArrayList<String> ids = memberDao.getInstance().memberGetId();
 		int idcheck = 1;

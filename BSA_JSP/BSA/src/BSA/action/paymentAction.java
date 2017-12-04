@@ -10,11 +10,6 @@ public class paymentAction implements CommandAction{
 
 	@Override
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
-		resp.setDateHeader("Expires", 0);
-		resp.setHeader("Pragma", "no-cache");
-		if(req.getProtocol().equals("HTTP/1.1")) {
-			resp.setHeader("Cache-Control", "no-cache");
-		}
 		String id = null;
 		req.setCharacterEncoding("UTF-8");
 		req.setAttribute("first_name", req.getParameter("first_name"));

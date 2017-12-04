@@ -22,8 +22,8 @@
     });
   </script>
   <script type="text/javascript">
-  window.history.forward();
-  function noBack(){window.history.forward();}
+  window.history.forward(0);
+  function noBack(){window.history.forward(0);}
   </script>
   <c:if test="${check == 0 }">
   <script type="text/javascript">

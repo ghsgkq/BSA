@@ -9,12 +9,7 @@ public class emailcheckAction implements CommandAction{
 
 	@Override
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
-		req.setCharacterEncoding("UTF-8");
-		resp.setDateHeader("Expires", 0);
-		resp.setHeader("Pragma", "no-cache");
-		if(req.getProtocol().equals("HTTP/1.1")) {
-			resp.setHeader("Cache-Control", "no-cache");
-		}
+
 		if(!(req.getParameter("email").equals(""))) {
 			char email;
 			int guncheck=0;
