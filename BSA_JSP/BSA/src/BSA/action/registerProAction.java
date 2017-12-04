@@ -143,7 +143,7 @@ public class registerProAction implements CommandAction {
 				mdto.setEmail(req.getParameter("email"));
 				mdao.memberRegister(mdto);
 				req.setAttribute("anser", 12);
-				return "/JSP/login.jsp";
+				return "/JSP/register_good.jsp";
 			}else {
 				req.setAttribute("first_name", first_name);
 				req.setAttribute("last_name", last_name);

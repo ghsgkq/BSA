@@ -9,7 +9,7 @@ public class emailcheckAction implements CommandAction{
 
 	@Override
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
-
+		req.setCharacterEncoding("UTF-8");
 		if(!(req.getParameter("email").equals(""))) {
 			char email;
 			int guncheck=0;
