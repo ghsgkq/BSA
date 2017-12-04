@@ -15,13 +15,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   <!-- test -->
+  <link rel="shortcut icon" type="image⁄x-icon" href="${pageContext.request.contextPath}/JSP/img/airporter.png">
   <script type="text/javascript">
     $(document).ready( function() {
     	$("#contents").load("JSP/top.jsp");
     	$("#bt").load("JSP/bottom.jsp");
     });
   </script>
-
+  <script type="text/javascript">
+  window.history.forward(0);
+  function noBack(){window.history.forward(0);}
+  </script>
 <script type="text/javascript">
   function mySubmit(index) {
 		if(index == 1){
@@ -81,7 +85,7 @@
   
 </head>
 
-<body style="background-color: #EAEAEA;">
+<body style="background-color: #EAEAEA;" onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
   <div id="contents" style="margin-top: 150px;"></div>
   <div class="py-5">
     <div class="container">

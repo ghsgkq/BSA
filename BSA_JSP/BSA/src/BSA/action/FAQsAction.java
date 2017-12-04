@@ -7,6 +7,7 @@ public class FAQsAction implements CommandAction{
 
 	@Override
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
+
 		return "/JSP/FAQs.jsp";
 	}
 	

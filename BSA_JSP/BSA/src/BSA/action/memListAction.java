@@ -16,7 +16,6 @@ import BSA.model.BookingDto;
 
 public class memListAction implements CommandAction{
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp)throws Throwable{
-	
 		String pageNum = req.getParameter("pageNum");
 		if(pageNum == null) {
 			pageNum="1";

@@ -11,8 +11,7 @@ public class deletebookingAction implements CommandAction{
 
 	@Override
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
-		req.setCharacterEncoding("UTF-8");
-		
+
 		if(req.getParameter("password") != null && req.getSession().getAttribute("id") != null) {
 			memberDao mdao = memberDao.getInstance();
 			memberDto mdto = mdao.getmember((String)req.getSession().getAttribute("id"));

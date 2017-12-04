@@ -177,17 +177,17 @@ public class memberDao {
 			}
 		}
 	}
-	public int changepw(String id,String password, String new_password) {
+	public void changepw(String id,String password, String new_password) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		int check = 0;
 		try {
 			conn = ConnUtil.getConnection();
 			pstmt = conn.prepareStatement("update BSA_MEMBER set PASSWORD=? where PASSWORD=? and ID=?");
 			pstmt.setString(1, new_password);
 			pstmt.setString(2, password);
-			check = pstmt.executeUpdate();
+			pstmt.setString(3, id);
+			pstmt.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {
@@ -199,7 +199,7 @@ public class memberDao {
 				e.printStackTrace();
 			}
 		}
-		return check;
+		
 	}
 	
 	public int unregister(String id, String password) {

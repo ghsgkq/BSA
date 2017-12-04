@@ -21,6 +21,10 @@
   });
 
 </script>
+ <script type="text/javascript">
+ window.history.forward(0);
+ function noBack(){window.history.forward(0);}
+</script>
 
 <script type="text/javascript">
 	function onlyNumber(obj){
@@ -149,7 +153,7 @@ alert("버스 시간(dropft)을 선택하세요")
 </c:choose>
 
 </head>
-<body class="bg-light" style="margin-top:70px;">
+<body class="bg-light" style="margin-top:70px;" onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
 
 
 

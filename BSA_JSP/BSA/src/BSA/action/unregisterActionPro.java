@@ -12,8 +12,8 @@ public class unregisterActionPro implements CommandAction{
 		int un_check = 0;
 		un_check = memberDao.getInstance().unregister((String)req.getSession().getAttribute("id"), req.getParameter("password"));
 		if(un_check == 1 && req.getParameter("password").equals(req.getParameter("re_password"))) {
-			req.setAttribute("un_check", un_check);
-			return "/JSP/index.jsp";
+			req.getSession().invalidate();
+			return "/JSP/unregister_good.jsp";
 		}else {
 			req.setAttribute("un_check", un_check);
 			return "/unregister.do";

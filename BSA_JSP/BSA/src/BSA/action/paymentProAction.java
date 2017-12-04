@@ -245,9 +245,8 @@ public class paymentProAction implements CommandAction {
 		AdminDao dbpro= AdminDao.getInstance();
 		dbpro.AdminBookinginsert(ad);
 		
-		req.setAttribute("bookingcheck", 1);
 		
-		return "/JSP/index.jsp";
+		return "/JSP/booking_good.jsp";
 	}
 	
 }

@@ -29,7 +29,10 @@
     	$("#bt").load("JSP/bottom.jsp");
     });
   </script>
-  
+   <script type="text/javascript">
+ 	window.history.forward(0);
+	 function noBack(){window.history.forward(0);}
+	</script>
   	<link rel="stylesheet" href="http://cdn.jsdelivr.net/bxslider/4.2.5/jquery.bxslider.css">
 	<script src="http://cdn.jsdelivr.net/jquery/1.11.3/jquery.min.js"></script>
 	<script src="http://cdn.jsdelivr.net/bxslider/4.2.5/jquery.bxslider.min.js"></script>
@@ -47,19 +50,6 @@
   		});
   		});
 		</script>
-  
-  
-  
-  <c:if test="${un_check == 1 }"> 
-  <script type="text/javascript">
-  alert("회원탈퇴 되었습니다.");
-  </script>
-  </c:if>
-  <c:if test="${bookingcheck == 1}">
-  <script type="text/javascript">
-  alert("예약이 되었습니다!. \n이메일에 코드를 확인하세요");
-  </script>
-  </c:if>
   
    <style type="text/css">
   .main-content {
@@ -122,7 +112,7 @@ function test(idMyDiv){
 </script>
   
 </head>
-<body class="bg-light" style="margin-top:0px;">
+<body class="bg-light" style="margin-top:0px;" onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
 <div id="contents"></div>
 <nav class="navbar main-content navbar-expand-md navbar-light" style="margin-top:100px; background-color:#819FF7">
     <div class="container">

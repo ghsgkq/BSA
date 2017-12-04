@@ -21,14 +21,13 @@
     	$("#left").load("JSP/userpage_left.jsp")
     });
   </script>
+  <script type="text/javascript">
+  window.history.forward(0);
+  function noBack(){window.history.forward(0);}
+  </script>
   <c:if test="${check == 0 }">
   <script type="text/javascript">
   alert("원래 비밀번호가 맞지않습니다.");
-  </script>
-  </c:if>
-  <c:if test="${check == 1 }">
-  <script type="text/javascript">
-  alert("비밀번호가 변경되었습니다.");
   </script>
   </c:if>
   <c:if test="${check == 2 }">
@@ -38,12 +37,12 @@
   </c:if>
   <c:if test="${check == 3 }">
   <script type="text/javascript">
-  alert("새로운 비밀번호를 입력하세요");
+  alert("새로운 비밀번호나 비밀번호확인이 비어있습니다.");
   </script>
   </c:if>
-  <c:if test="${check == 4 }">
+  <c:if test="${check == 4}">
   <script type="text/javascript">
-  alert("새로운 비밀번호 확인을 입력하세요");
+  alert("패스워드는 10~25 공백을 제외한 모든 문자로 구성할 수 있습니다!")
   </script>
   </c:if>
   <c:if test="${check == 5 }">
@@ -53,7 +52,7 @@
   </c:if>
   </head>
 
-<body>
+<body onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
   <div id="contents" style="margin: auto;"></div>
   <div class="py-5">
     <div class="container">

@@ -7,7 +7,7 @@ public class BookingAction implements CommandAction{
 
 	@Override
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
-		
+
 		String where_trip=req.getParameter("where_trip");
 		String where_from =req.getParameter("where_from");
 		String where_to=req.getParameter("where_to");

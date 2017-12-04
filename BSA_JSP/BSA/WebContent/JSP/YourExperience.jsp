@@ -19,9 +19,13 @@
     	$("#bt").load("JSP/bottom.jsp");
     });
   </script>
+  <script type="text/javascript">
+   window.history.forward(0);
+   function noBack(){window.history.forward(0);}
+  </script>
   </head>
 
-<body class="bg-light" style="margin-top:83px;">
+<body class="bg-light" style="margin-top:83px;"  onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
   <div id="contents"></div>
   <div class="py-5 opaque-overlay" style="background-image: url(&quot;JSP/img/sol3.jpg&quot;); height:800px">
     <div class="container-fluid text-capitalize text-left h-100">

@@ -18,6 +18,7 @@ public class emailSendAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
+
 		req.setCharacterEncoding("UTF-8");
 		String first_name=req.getParameter("first_name");
 		String last_name = req.getParameter("last_name");
