@@ -126,27 +126,19 @@ $(function() {
   
 </head>
 <body style="margin-top:80pt;">
-
-
-
-
-<form name="checking_Booked">
-<div id="contents"></div>
-  <center>
-    <div style="border:4px solid; padding:10px;">
-      <table class="null">
-        <tbody>
-          <tr>
-            <td>
-              <div style="text-align:center">
-                <font size="15"> Reservation_List(Count :${count} )</font>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+<form method= "post" name="Admin_Checked" action="${pageContext.request.contextPath}/admincheck.do">
+  <div class="container">
+    <div class="row"> &nbsp;
+      <div class="span12"> &nbsp;Search&nbsp;
+          <input type="text" name="email" class="form-control" placeholder="이메일 입력" value="${email}">
+          <a href="javascript:document.Admin_Checked.submit()" class="btn btn-outline-dark"><b>찾기</b></a>
+      </div>
     </div>
-  </center>
+  </div>
+</form>
+
+
+
   <c:if test="${count == 0}">
     <div class="wrap">
       <div class="box">현재 예매가 없습니다.</div>
@@ -191,15 +183,7 @@ $(function() {
     </table>
   </c:if>
  
-  <div class="container">
-    <div class="row"> &nbsp;
-      <div class="span12"> &nbsp;Search&nbsp;
-        <form method="get" action="/" class="form-inline">
-          <input name="loc" class="span5" type="text" placeholder="Search">
-          <input type="button" value="Search"> </form>
-      </div>
-    </div>
-  </div>
+
  
   <div class="wrap">
   </div>

@@ -281,6 +281,65 @@ public class AdminDao {
 			return article;
 		}
 	
+	public ArrayList<BookingDto> getBooking(String email){
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		ArrayList<BookingDto> bdto = new ArrayList<BookingDto>();
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement("select * from BOOKINGA where eamil = ?");
+			pstmt.setString(1, email);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				BookingDto bdto2 = new BookingDto();
+				bdto2.setFirst_name(rs.getString("first_name"));
+				bdto2.setLast_name(rs.getString("last_name"));
+				bdto2.setPhone(rs.getString("phone"));
+				bdto2.setEmail(rs.getString("email"));
+				bdto2.setWhere_trip(rs.getString("where_trip"));
+				bdto2.setWhere_from(rs.getString("where_from"));
+				bdto2.setWhere_to(rs.getString("where_to"));
+				bdto2.setPickup(rs.getString("pickup"));
+				bdto2.setDropft(rs.getString("dropft"));
+				bdto2.setStart_airline_name(rs.getString("start_airline_name"));
+				bdto2.setStart_airline_no(rs.getString("start_airline_no"));
+				bdto2.setStart_airline_time(rs.getString("start_airline_time"));
+				bdto2.setArrival_airline_name(rs.getString("arrival_airline_name"));
+				bdto2.setArrival_airline_no(rs.getString("arrival_airline_no"));
+				bdto2.setArrival_airline_time(rs.getString("arrival_airline_time"));
+				bdto2.setBus_time_pickup(rs.getString("bus_time_pickup"));
+				bdto2.setBus_time_dropft(rs.getString("bus_time_dropft"));
+				bdto2.setStart_date(rs.getString("start_date"));
+				bdto2.setArrival_date(rs.getString("arrival_date"));
+				bdto2.setAdults(rs.getString("adults"));
+				bdto2.setYoung(rs.getString("young"));
+				bdto2.setChild(rs.getString("child"));
+				bdto2.setInfatns(rs.getString("infatns"));
+				bdto2.setName_on_card(rs.getString("name_on_card"));
+				bdto2.setCard_number(rs.getString("card_number"));
+				bdto2.setExpiry_year(rs.getString("expiry_year"));
+				bdto2.setExpiry_month(rs.getString("Expiry_month"));
+				bdto2.setCsv_number(rs.getString("csv_number"));
+				bdto2.setComm(rs.getString("comm"));
+				bdto2.setMoney(rs.getString("money"));
+				bdto2.setCode(rs.getString("code"));
+				bdto.add(bdto2);
+			}
+		
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null)pstmt.closeOnCompletion();
+				if(rs != null)rs.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}return bdto;
+	}
+	
 	
 	}
 	
