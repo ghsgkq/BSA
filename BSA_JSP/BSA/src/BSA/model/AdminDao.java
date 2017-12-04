@@ -204,7 +204,7 @@ public class AdminDao {
 		}
 		return articleList;
 	}
-	public void deleteArticle(String email) {
+	public void deleteArticle(String code) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -212,9 +212,9 @@ public class AdminDao {
 		
 		try {
 		conn = ConnUtil.getConnection();
-		pstmt = conn.prepareStatement("delete from BOOKINGA email = ?");
-		pstmt.setString(1, email);
-		pstmt.close();
+		pstmt = conn.prepareStatement("delete from BOOKINGA where code = ? ");
+		pstmt.setString(1, code);
+		pstmt.executeQuery();
 		}catch (Exception e) {
 			e.printStackTrace();
 		}finally {

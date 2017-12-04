@@ -15,7 +15,7 @@ public class AdminBookingDelAction implements CommandAction{
 		
 		req.setCharacterEncoding("UTF-8");
 		try {
-			AdminDao.getInstance().deleteArticle(req.getParameter("email"));
+			AdminDao.getInstance().deleteArticle(req.getParameter("code"));
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
