@@ -20,11 +20,6 @@
   	$("#bt").load("JSP/bottom.jsp");
   });
   </script>
-  <c:if test="${anser == 12 }">
-  <script type="text/javascript">
-  alert("회원가입이 완료됬습니다!")
-  </script>
-  </c:if>
   <script type="text/javascript">
   window.history.forward(0);
   function noBack(){window.history.forward(0);}
