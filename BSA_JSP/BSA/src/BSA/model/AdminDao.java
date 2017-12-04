@@ -210,24 +210,11 @@ public class AdminDao {
 		ResultSet rs = null;
 		
 		int result = 0;
-		String dbCode = "";
 		try {
 		conn = ConnUtil.getConnection();
-		pstmt = conn.prepareStatement(
-				"select from BOOKINGA where email = ?");
+		pstmt = conn.prepareStatement("delete from BOOKINGA email = ?");
 		pstmt.setString(1, email);
-		rs=pstmt.executeQuery();
-		if(rs.next()) {
-			dbCode = rs.getString("code");
-			pstmt.close();
-			pstmt = conn.prepareStatement("code");
-			pstmt = conn.prepareStatement("delete from BOOKINGA email = ?");
-			pstmt.setString(1, email);
-			pstmt.executeUpdate();
-			result=1;
-		}
-		
-		
+		result=pstmt.executeUpdate();
 		}catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -237,7 +224,6 @@ public class AdminDao {
 			if(rs != null)try {rs.close();}catch(SQLException e) {}
 		}
 		return result;
-		
 	}
 	
 	public AdminBookingDto getArticle(String code) {
@@ -295,6 +281,7 @@ public class AdminDao {
 			}
 			return article;
 		}
+	
 	
 	}
 	
