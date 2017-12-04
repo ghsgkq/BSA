@@ -10,7 +10,12 @@ public class paymentAction implements CommandAction{
 
 	@Override
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
-		String id = "";
+		resp.setDateHeader("Expires", 0);
+		resp.setHeader("Pragma", "no-cache");
+		if(req.getProtocol().equals("HTTP/1.1")) {
+			resp.setHeader("Cache-Control", "no-cache");
+		}
+		String id = null;
 		req.setCharacterEncoding("UTF-8");
 		req.setAttribute("first_name", req.getParameter("first_name"));
 		req.setAttribute("last_name", req.getParameter("last_name"));
@@ -268,13 +273,8 @@ public class paymentAction implements CommandAction{
 			id = (String)req.getSession().getAttribute("id");
 		}
 		req.getSession().invalidate();
-		if(req.getSession().getAttribute("id") == null) {
-			
-			
-		}
-		else {
-			req.getSession().setAttribute("id", id);
-		}
+		req.getSession().setAttribute("id", id);
+		
 		
 		
 		return "/JSP/payment_check.jsp";

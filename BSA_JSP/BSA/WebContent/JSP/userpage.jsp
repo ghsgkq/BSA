@@ -21,6 +21,10 @@
     	$("#left").load("JSP/userpage_left.jsp");
     });
   </script>
+  <script type="text/javascript">
+  window.history.forward(0);
+  function noBack(){window.history.forward();}
+  </script>
   <c:if test="${check == 1 }">
   <script type="text/javascript">
   alert("수정되었습니다!");
@@ -29,7 +33,7 @@
   
 </head>
 
-<body class="px-2">
+<body class="px-2" onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
 <div id="contents" style="margin: auto;"></div>
  <div class="py-5">
     <div class="container">

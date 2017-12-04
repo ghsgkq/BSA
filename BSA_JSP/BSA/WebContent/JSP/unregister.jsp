@@ -26,9 +26,13 @@
   alert("비밀번호를 잘못 입력했습니다.");
   </script>
   </c:if>
+   <script type="text/javascript">
+   window.history.forward(0);
+   function noBack(){window.history.forward();}
+  </script>
   </head>
 
-<body>
+<body onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
   <div id="contents" style="margin: auto;"></div>
   <div class="py-5">
     <div class="container">

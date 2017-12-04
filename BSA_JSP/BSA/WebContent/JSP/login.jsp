@@ -25,9 +25,12 @@
   alert("회원가입이 완료됬습니다!")
   </script>
   </c:if>
-  
+  <script type="text/javascript">
+  window.history.forward(0);
+  function noBack(){window.history.forward();}
+  </script>
 </head>
-<body style="background-color: #EAEAEA;">
+<body style="background-color: #EAEAEA;" onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
   <div id="contents" style="margin-top: 200px; "></div>
   <div class="py-5">
     <div class="container">

@@ -39,7 +39,12 @@
     	$("#bt").load("JSP/bottom.jsp");
     });
   </script>
-    <script>
+<script type="text/javascript">
+window.history.forward();
+function noBack(){window.history.forward();}
+</script>
+
+<script>
 function div_OnOff(v,id){
  // 라디오 버튼 value 값 조건 비교
  if(v == "왕복"){
@@ -149,7 +154,7 @@ alert("승객수를 선택하세요");
 
 </head>
 
-<body>
+<body onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
   <div id="contents"></div>
   <nav class="navbar navbar-expand-md bg-dark navbar-dark my-3">
     <div class="container" style="margin-top: 60px;">

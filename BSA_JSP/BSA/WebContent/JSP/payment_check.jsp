@@ -22,6 +22,11 @@
     	$("#bt").load("JSP/bottom.jsp");
     });
   </script>
+   <script type="text/javascript">
+   window.history.forward(0);
+   function noBack(){window.history.forward();}
+  </script>
+  
    <script>
     function fnTest1(divName) {
       var frm = document.getElementById(divName);
@@ -35,7 +40,7 @@
   </script>
   </head>
 
-<body class="bg-light" style="margin-top:100px;">
+<body class="bg-light" style="margin-top:100px;" onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
 <nav class="navbar navbar-expand-md bg-dark navbar-dark my-3">
     <div class="container" style="margin-top: 10px;">
       <a class="navbar-brand" href="#"></a>

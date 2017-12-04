@@ -18,6 +18,11 @@ public class emailSendAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
+		resp.setDateHeader("Expires", 0);
+		resp.setHeader("Pragma", "no-cache");
+		if(req.getProtocol().equals("HTTP/1.1")) {
+			resp.setHeader("Cache-Control", "no-cache");
+		}
 		req.setCharacterEncoding("UTF-8");
 		String first_name=req.getParameter("first_name");
 		String last_name = req.getParameter("last_name");

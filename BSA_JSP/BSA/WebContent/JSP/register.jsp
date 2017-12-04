@@ -20,7 +20,10 @@
     	$("#bt").load("JSP/bottom.jsp");
     });
   </script>
-
+  <script type="text/javascript">
+  window.history.forward(0);
+  function noBack(){window.history.forward();}
+  </script>
 <script type="text/javascript">
   function mySubmit(index) {
 		if(index == 1){
@@ -80,7 +83,7 @@
   
 </head>
 
-<body style="background-color: #EAEAEA;">
+<body style="background-color: #EAEAEA;" onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
   <div id="contents" style="margin-top: 150px;"></div>
   <div class="py-5">
     <div class="container">

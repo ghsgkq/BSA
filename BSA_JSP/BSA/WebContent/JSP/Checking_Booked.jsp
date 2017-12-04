@@ -34,6 +34,10 @@
 	  document.booking_form.submit();
 	}
   </script>
+  <script type="text/javascript">
+  window.history.forward();
+  function noBack(){window.history.forward();}
+  </script>
   
 
   <c:choose>
@@ -60,7 +64,7 @@
 
   
 </head>
-<body style="margin-top:80pt;">
+<body style="margin-top:80pt;" onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
 
 <div id="contents"></div>
  <div class="py-5">

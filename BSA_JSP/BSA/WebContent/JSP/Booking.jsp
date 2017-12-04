@@ -47,6 +47,11 @@ function booking(){
 	}
 </script>
 
+<script type="text/javascript">
+ window.history.forward();
+ function noBack(){window.history.forward();}
+</script>
+
 <!-- 잘못입력시 메시지 (편도) -->
 <!-- 부산(편도) -->
 <c:if test="${where_from_check == 1}">
@@ -136,7 +141,7 @@ alert("승객수를 선택하세요");
 
 </head>
 
-<body>
+<body onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
   <div id="contents"></div>
   <nav class="navbar navbar-expand-md bg-dark navbar-dark my-3">
     <div class="container" style="margin-top: 60px;">
