@@ -44,6 +44,47 @@
 		}
 	
 </script>
+<script>
+var tid;
+var cnt = parseInt(300);//초기값(초단위)
+function counter_init() {
+	tid = setInterval("counter_run()", 1000);
+}
+
+function counter_reset() {
+	clearInterval(tid);
+	cnt = parseInt(300);
+	counter_init();
+}
+
+function counter_run() {
+	document.all.counter.innerText = time_format(cnt);
+	cnt--;
+	if(cnt < 0) {
+		clearInterval(tid);
+		alert("Time out");
+		self.location = "${pageContext.request.contextPath}/Booking.do";
+	}
+}
+function time_format(s) {
+	
+	var nMin=0;
+	var nSec=0;
+	if(s>0) {
+		nMin = parseInt(s/60);
+		nSec = s%60;
+
+		if(nMin>60) {
+			
+			nMin = nMin%60;
+		}
+	} 
+	if(nSec<10) nSec = "0"+nSec;
+	if(nMin<10) nMin = "0"+nMin;
+
+	return +nMin+"분"+nSec+"초";
+}
+</script>
 
 <c:choose>
 
@@ -97,7 +138,7 @@ alert("의견을 적어주세요");
 
 <c:when test="${name_on_card_check == 1}">
 <script type="text/javascript">
-alert("카드사 이름을 입력하세요");
+alert("카드에적힌이름을 입력하세요");
 </script>
 </c:when>
 
@@ -183,8 +224,12 @@ alert("버스 시간(dropft)을 선택하세요")
         <div class="col-md-12">
           <div class="card border border-light">
             <div class="card-body">
-            <h6 class="text-muted">버스시간대를 골라주세요</h6>
-            <br><br>
+             <small><br> We're holding these spots just for you. Please complete this page within 05:00 min(s). 
+			After 05:00 min(s), the spots we're holding will be released for others to purchase.</br></small>
+			<h6 class="text-muted"><br>Select Bus Time</br>
+            <center>Time remaining</center></h6>
+            <center><font color='red'><span id="counter"> </span></font> <a class="ml-3 btn navbar-btn btn-light" onclick="counter_reset()">Extension</a></center>
+            <br>
       		<c:if test="${start_time_list != '' && start_time_list != null }">
       		<div class="form-group"><h2><b> ${where_from }  </b></h2></div>
       		<br>
@@ -340,5 +385,7 @@ alert("버스 시간(dropft)을 선택하세요")
     <div id="bt"></div>
    
 </body>
-
+<script>
+counter_init();
+</script>
 </html>
