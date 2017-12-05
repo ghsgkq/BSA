@@ -7,6 +7,13 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="BSA.model.AdminDao" %>
 
+<%String a="미션완료";
+	session.setAttribute("A",a);
+	session.setMaxInactiveInterval(60*30);
+	
+
+
+%>
 
 
 <!DOCTYPE html>
@@ -132,9 +139,10 @@ window.setInterval(function () {
   <script src="//code.jquery.com/jquery.min.js"></script>
 <script>
 $(function() {
-  $('#button1').click( function() {
+	
+  $("a[name=button1]").click( function() {
     if( $(this).html() == '미션완료' ) {
-      $(this).html('미션완료');
+      $(this).html('<%=session.getAttribute("A")%>');
      
     }
     else {
@@ -203,7 +211,7 @@ $(function() {
        			<td class="text-center">${article.expiry_month}</td>
        			<td class="text-center">${article.csv_number}</td>
        			<td class="text-center">${article.money}</td>
-       			<td class="text-cneter"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white"href="#" id='button1'>미션중</a></td>
+       			<td class="text-cneter"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white"href="#" name="button1" >미션중</a></td>
        			
         	</tr>
         	
