@@ -39,22 +39,22 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto fixed-menu">
           <li class="nav-item">
-            <a class="nav-link" href="${pageContext.request.contextPath}/YourExperience.do">
+            <a class="nav-link" href="#">
               <h2><b class="p-3 text-white">Your Experience</b></h2>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link w-100 mx-3" href="${pageContext.request.contextPath}/schedule.do">
+            <a class="nav-link w-100 mx-3" href="#">
               <h2><b class="text-white">Schedule &amp; Rates &nbsp; &nbsp; &nbsp;&nbsp;</b></h2>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="${pageContext.request.contextPath}/FAQs.do">
+            <a class="nav-link" href="#">
               <h2><b class="p-5 text-white">FAQS</b></h2>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="${pageContext.request.contextPath}/Booking.do">
+            <a class="nav-link" href="#">
               <h2><b class="p-4 text-dark">Book Now &nbsp; &nbsp; &nbsp; &nbsp;</b></h2>
             </a>
           </li>

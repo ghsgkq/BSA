@@ -132,7 +132,6 @@ window.setInterval(function () {
   <script src="//code.jquery.com/jquery.min.js"></script>
 <script>
 $(function() {
-	var button1= new Array();
   $('#button1').click( function() {
     if( $(this).html() == '미션완료' ) {
       $(this).html('미션완료');
@@ -140,14 +139,7 @@ $(function() {
     }
     else {
       $(this).html('미션완료');
-      	var ms=confirm("미션완료하시겠습니까?")
-      	if(ms==true){
-      		alert("미션완료!");
-      	}
-      	else{
-      		alert("취소 되었습니다.")
-      		location.href="${pageContext.request.contextPath}/memberbooking.do"
-      	}
+      alert("미션완료하시겠습니까?");
       
     }
   });
@@ -276,47 +268,6 @@ $(function() {
   </div>
 
 </form>
-
-
-<!-- 선 긋기(검색 기능 폼) ====================================== -->
-<!-- <form>
-<table>
-<tr>
-		  <th class="text-center">Reserver</th>
-          <th class="text-center" id="first_name">Name</th>
-          <th class="text-center" id="phone">Phone_Number</th>
-          <th class="text-center" id="email_address">E-mail</th>        
-          <th class="text-center" id="name_on_card">Card_On_Name</th>
-          <th class="text-center" id="card_number">Card_Number</th>
-          <th class="text-center" id="expiry_year">Card_Year</th>
-          <th class="text-center" id="expiry_month">Card_Month</th>
-          <th class="text-center" id="csv_number">Csv_Number</th>
-          <th class="text-center" id="money">Payment</th>
-          <th class="text-center">Mission</th>
-</tr> -->
-
-<%-- <c:forEach items="${bdto}" var="arr">
-	<tr>
-		<!--  <th>${arr.start_date}</th> -->
-				<td class="text-center"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white">예약완료</a></td>
-       			<td class="text-center"><a href="${pageContext.request.contextPath}/content.do?code=${arr.code}">${arr.first_name}${arr.last_name}</a></td>
-       			<td class="text-center">${arr.phone}</td>
-       			<td class="text-center">${arr.email}</td>	
-       			<td class="text-center"> ${arr.name_on_card}</td>
-       			<td class="text-center">${arr.card_number}</td>
-       			<td class="text-center">${arr.expiry_year}</td>
-       			<td class="text-center">${arr.expiry_month}</td>
-       			<td class="text-center">${arr.csv_number}</td>
-       			<td class="text-center">${arr.money}</td>
-       			<td class="text-cneter"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white"href="#" id='button1'>미션중</a></td>
-	</tr>
-	
-</c:forEach>
-
-</table>
- <a class="ml-3 btn navbar-btn btn-light" href="${pageContext.request.contextPath}/memberbooking.do">목록 보기</a>
-<!-- 선 긋기 ====================================== --> --%>
-
 
 </form>
   <div id="bt"></div>
