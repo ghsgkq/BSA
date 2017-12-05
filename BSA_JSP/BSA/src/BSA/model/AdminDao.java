@@ -288,7 +288,7 @@ public class AdminDao {
 		ArrayList<BookingDto> bdto = new ArrayList<BookingDto>();
 		try {
 			conn = ConnUtil.getConnection();
-			pstmt = conn.prepareStatement("select * from BOOKINGA where eamil = ?");
+			pstmt = conn.prepareStatement("select * from BOOKINGA where email = ?");
 			pstmt.setString(1, email);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
@@ -332,7 +332,7 @@ public class AdminDao {
 		}finally {
 			try {
 				if(conn != null) conn.close();
-				if(pstmt != null)pstmt.closeOnCompletion();
+				if(pstmt != null)pstmt.close();
 				if(rs != null)rs.close();
 			}catch(SQLException e) {
 				e.printStackTrace();

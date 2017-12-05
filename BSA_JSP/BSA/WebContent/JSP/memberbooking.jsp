@@ -185,7 +185,19 @@ test 이메일 입력 <input type="text" name="email" class="form-control" place
 
 </form>
 
+<form method="post" name="booking_form">
+<table>
+<tr>
+<th>1</th>
+</tr>
 
+<c:forEach items="${bdto}" var="arr">
+	<tr>
+		<th>${arr.start_date}</th>
+	</tr>
+</c:forEach>
+</table>
+</form>
 
 
 
