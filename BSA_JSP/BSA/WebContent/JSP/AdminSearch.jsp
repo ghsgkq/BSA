@@ -132,28 +132,16 @@ window.setInterval(function () {
   <script src="//code.jquery.com/jquery.min.js"></script>
 <script>
 $(function() {
-	var button1= new Array();
   $('#button1').click( function() {
-    if( $(this).html() == '미션완료' ) {
-      $(this).html('미션완료');
-     
+    if( $(this).html() == '접기' ) {
+      $(this).html('펼치기');
     }
     else {
-      $(this).html('미션완료');
-      	var ms=confirm("미션완료하시겠습니까?")
-      	if(ms==true){
-      		alert("미션완료!");
-      	}
-      	else{
-      		alert("취소 되었습니다.")
-      		location.href="${pageContext.request.contextPath}/memberbooking.do"
-      	}
-      
+      $(this).html('접기');
     }
   });
 });
 </script> 
-
   
 </head>
 
@@ -168,7 +156,7 @@ $(function() {
           <tr>
             <td>
               <div style="text-align:center">
-                <font size="15"> Reservation_List(Count :${count} )</font>
+                <font size="15"> 검색하신 이메일(Email :${email} )</font>
               </div>
             </td>
           </tr>
@@ -176,49 +164,7 @@ $(function() {
       </table>
     </div>
   </center>
-  <c:if test="${count == 0}">
-    <div class="wrap">
-      <div class="box">현재 예매가 없습니다.</div>
-    </div>
-  </c:if>
-  <c:if test="${count > 0}">
-    <table id="customers">
-      <tbody>
-        <tr>
-        	<th class="text-center">Reserver</th>
-          <th class="text-center" id="first_name">Name</th>
-          <th class="text-center" id="phone">Phone_Number</th>
-          <th class="text-center" id="email_address">E-mail</th>        
-          <th class="text-center" id="name_on_card">Card_On_Name</th>
-          <th class="text-center" id="card_number">Card_Number</th>
-          <th class="text-center" id="expiry_year">Card_Year</th>
-          <th class="text-center" id="expiry_month">Card_Month</th>
-          <th class="text-center" id="csv_number">Csv_Number</th>
-          <th class="text-center" id="money">Payment</th>
-          <th class="text-center">Mission</th>
-          
-          
-        </tr>
-        <c:forEach var="article" items="${articleList}">
-        	<tr>
-        		<td class="text-center"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white">예약완료</a></td>
-       			<td class="text-center"><a href="${pageContext.request.contextPath}/content.do?code=${article.code}">${article.first_name}${article.last_name}</a></td>
-       			<td class="text-center">${article.phone}</td>
-       			<td class="text-center">${article.email}</td>	
-       			<td class="text-center"> ${article.name_on_card}</td>
-       			<td class="text-center">${article.card_number}</td>
-       			<td class="text-center">${article.expiry_year}</td>
-       			<td class="text-center">${article.expiry_month}</td>
-       			<td class="text-center">${article.csv_number}</td>
-       			<td class="text-center">${article.money}</td>
-       			<td class="text-cneter"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white"href="#" id='button1'>미션중</a></td>
-       			
-        	</tr>
-        	
-        </c:forEach>
-       </tbody>
-    </table>
-  </c:if>
+  
  
  
   
@@ -264,22 +210,11 @@ $(function() {
 
 
 </form>
-<form method= "post" name="Admin_Checked" action="${pageContext.request.contextPath}/admincheck.do">
-<div id="contents"></div>
-  <div class="container">
-    <div class="row"> &nbsp;
-      <div class="span12"> &nbsp;Search&nbsp;
-          <input type="text" name="email" class="form-control" placeholder="이메일 입력" value="${email}"><a href="javascript:document.Admin_Checked.submit()" class="btn btn-outline-dark"><b>찾기</b></a>
-         
-      </div>
-    </div>
-  </div>
 
-</form>
 
 
 <!-- 선 긋기(검색 기능 폼) ====================================== -->
-<!-- <form>
+<form>
 <table>
 <tr>
 		  <th class="text-center">Reserver</th>
@@ -293,9 +228,9 @@ $(function() {
           <th class="text-center" id="csv_number">Csv_Number</th>
           <th class="text-center" id="money">Payment</th>
           <th class="text-center">Mission</th>
-</tr> -->
+</tr>
 
-<%-- <c:forEach items="${bdto}" var="arr">
+<c:forEach items="${bdto}" var="arr">
 	<tr>
 		<!--  <th>${arr.start_date}</th> -->
 				<td class="text-center"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white">예약완료</a></td>
@@ -315,8 +250,20 @@ $(function() {
 
 </table>
  <a class="ml-3 btn navbar-btn btn-light" href="${pageContext.request.contextPath}/memberbooking.do">목록 보기</a>
-<!-- 선 긋기 ====================================== --> --%>
+<!-- 선 긋기 ====================================== -->
 
+
+</form>
+<form method= "post" name="Admin_Checked" action="${pageContext.request.contextPath}/admincheck.do">
+<div id="contents"></div>
+  <div class="container">
+    <div class="row"> &nbsp;
+      <div class="span12"> &nbsp;Search&nbsp;
+          <input type="text" name="email" class="form-control" placeholder="이메일 입력" value="${email}"><a href="javascript:document.Admin_Checked.submit()" class="btn btn-outline-dark"><b>찾기</b></a>
+         
+      </div>
+    </div>
+  </div>
 
 </form>
   <div id="bt"></div>
