@@ -13,6 +13,6 @@ response.setStatus(HttpServletResponse.SC_OK);
 <title>Insert title here</title>
 </head>
 <body>
-해당 페이지를 요청할 수 없습니다. 대단히 죄송합니다.
+<img src="JSP/img/404.jpg" width="1600" height="800">
 </body>
 </html>
