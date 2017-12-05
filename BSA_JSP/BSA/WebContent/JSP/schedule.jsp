@@ -23,6 +23,15 @@
   window.history.forward(0);
   function noBack(){window.history.forward(0);}
   </script>
+  
+   <script>
+function test(idMyDiv){
+     var objDiv = document.getElementById(idMyDiv);
+     if(objDiv.style.display=="block"){ objDiv.style.display = "none"; }
+      else{ objDiv.style.display = "block"; }
+}
+</script>
+  
   </head>
 
 <body class="bg-light" style="margin-top:100px;" onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
@@ -38,25 +47,27 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6 text-danger">
-          <div class="btn-group">
-            <button class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown"> 김해 공항 </button> 김해공항 ▶▶ 부산 전지역
-            <div class="dropdown-menu">
-              <a class="dropdown-item">김해공항 출발 07:00 8:00 9:00 10:00 11:00 13:00 14:00 15:00 16:00 17:00 19:00 20:00 21:00 22:00 23:00 </a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item">부산지역 출발 07:00 8:00 9:00 10:00 11:00 13:00 14:00 15:00 16:00 17:00 19:00 20:00 21:00 22:00 23:00 </a>
+        <div class="col-md-3">
+          
+          <a href="#" class="btn btn-lg btn-outline-secondary"onclick="test('testdiv'); return false;">  김해 공항 </a> ▶▶ 부산 전지역
+             <div id="testdiv" style="display:none">
+             <p></p>
+              <a class="dropdown-item text-left">김해공항 출발 07:00 8:00 9:00 10:00 11:00 13:00 14:00 15:00 16:00 17:00 19:00 20:00 21:00 22:00 23:00 </a>
+              
+              <a class="dropdown-item text-left">부산지역 출발 07:00 8:00 9:00 10:00 11:00 13:00 14:00 15:00 16:00 17:00 19:00 20:00 21:00 22:00 23:00 </a>
             </div>
-          </div>
+        
         </div>
-        <div class="col-md-6 text-danger">
-          <div class="btn-group">
-            <button class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown"> 부산 전지역 </button> 부산 전지역 ▶▶ 김해공항
-            <div class="dropdown-menu">
-              <a class="dropdown-item">부산지역 출발 07:00 8:00 9:00 10:00 11:00 13:00 14:00 15:00 16:00 17:00 19:00 20:00 21:00 22:00 23:00 </a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item">김해공항 출발 07:00 8:00 9:00 10:00 11:00 13:00 14:00 15:00 16:00 17:00 19:00 20:00 21:00 22:00 23:00</a>
-            </div>
-          </div>
+        <div class="text-danger text-center col-md-3"></div>
+          <div class="col-md-3">       
+            <a href="#" class="btn btn-lg btn-outline-secondary"onclick="test('testdiva'); return false;"> 부산 전지역 </a> ▶▶ 김해공항 
+            
+             <div id="testdiva" style="display:none">
+             <p></p>
+              <a class="dropdown-item text-left">부산지역 출발 07:00 8:00 9:00 10:00 11:00 13:00 14:00 15:00 16:00 17:00 19:00 20:00 21:00 22:00 23:00 </a>
+              
+              <a class="dropdown-item text-left">김해공항 출발 07:00 8:00 9:00 10:00 11:00 13:00 14:00 15:00 16:00 17:00 19:00 20:00 21:00 22:00 23:00  </a>
+           </div>
         </div>
       </div>
     </div>
