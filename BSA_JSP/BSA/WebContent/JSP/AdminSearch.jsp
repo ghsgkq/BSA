@@ -203,7 +203,7 @@ $(function() {
 </c:forEach>
 
 </table>
- <a class="ml-3 btn navbar-btn btn-light" href="${pageContext.request.contextPath}/memberbooking.do">목록 보기</a>
+
 <!-- 선 긋기 ====================================== -->
 
 
@@ -214,7 +214,7 @@ $(function() {
     <div class="row"> &nbsp;
       <div class="span12"> &nbsp;Search&nbsp;
           <input type="text" name="email" class="form-control" placeholder="이메일 입력" value="${email}"><a href="javascript:document.Admin_Checked.submit()" class="btn btn-outline-dark"><b>찾기</b></a>
-         
+         	 <a class="ml-3 btn navbar-btn btn-light" href="${pageContext.request.contextPath}/memberbooking.do">목록 보기</a>
       </div>
     </div>
   </div>
