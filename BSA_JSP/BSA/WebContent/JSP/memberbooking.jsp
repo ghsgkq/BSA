@@ -132,16 +132,28 @@ window.setInterval(function () {
   <script src="//code.jquery.com/jquery.min.js"></script>
 <script>
 $(function() {
+	var button1= new Array();
   $('#button1').click( function() {
-    if( $(this).html() == '접기' ) {
-      $(this).html('펼치기');
+    if( $(this).html() == '미션완료' ) {
+      $(this).html('미션완료');
+     
     }
     else {
-      $(this).html('접기');
+      $(this).html('미션완료');
+      	var ms=confirm("미션완료하시겠습니까?")
+      	if(ms==true){
+      		alert("미션완료!");
+      	}
+      	else{
+      		alert("취소 되었습니다.")
+      		location.href="${pageContext.request.contextPath}/memberbooking.do"
+      	}
+      
     }
   });
 });
 </script> 
+
   
 </head>
 
