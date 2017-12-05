@@ -172,32 +172,7 @@ test 이메일 입력 <input type="text" name="email" class="form-control" place
 </form>
 -->
 <body style="margin-top:80pt;" onload="changeHashOnLoad(); ">
-<form method= "post" name="Admin_Checked" action="${pageContext.request.contextPath}/admincheck.do">
-<div id="contents"></div>
-  <div class="container">
-    <div class="row"> &nbsp;
-      <div class="span12"> &nbsp;Search&nbsp;
-          <input type="text" name="email" class="form-control" placeholder="이메일 입력" value="${email}">
-          <a href="javascript:document.Admin_Checked.submit()" class="btn btn-outline-dark"><b>찾기</b></a>
-      </div>
-    </div>
-  </div>
 
-</form>
-
-<form method="post" name="booking_form">
-<table>
-<tr>
-<th>1</th>
-</tr>
-
-<c:forEach items="${bdto}" var="arr">
-	<tr>
-		<th>${arr.start_date}</th>
-	</tr>
-</c:forEach>
-</table>
-</form>
 
 
 
@@ -262,18 +237,7 @@ test 이메일 입력 <input type="text" name="email" class="form-control" place
     </table>
   </c:if>
  
-  <div class="container">
-    <div class="row"> &nbsp;
-      <div class="span12"> &nbsp;Search&nbsp;
-        <form method="get" action="/" class="form-inline">
-          <input name="loc" class="span5" type="text" placeholder="Search">
-          <input type="button" value="Search"> </form>
-      </div>
-    </div>
-  </div>
  
-  <div class="wrap">
-  </div>
   
         
         <!-- 페이지 넘기기 -->
@@ -315,55 +279,59 @@ test 이메일 입력 <input type="text" name="email" class="form-control" place
 </div>
 </div>
 
-<br><br><br><br><br><br>
-<footer>
-	<div class="text-white bg-dark">
-    <div class="container">
-      <div class="row">
-        <div class="p-5 col-md-3"> <i class="fa fa-5x mb-5 fa-diamond"></i>
-          <h3 class="mb-4">Pingendo</h3>
-          <ul class="list-unstyled">
-            <a href="#" class="text-white">Home</a>
-            <br>
-            <a href="#" class="text-white">About us</a>
-            <br>
-            <a href="#" class="text-white">Our services</a>
-            <br>
-            <a href="#" class="text-white">Testimonials</a>
-          </ul>
-        </div>
-        <div class="p-5 col-md-4">
-          <h3 class="mb-4">Latest post</h3>
-          <p>"<i>Here you can insert the latest news from your business. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i>" &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-            <br>
-            <br>
-            <br>"<i>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat</i>"</p>
-        </div>
-        <div class="p-5 col-md-5">
-          <h3>Get in touch</h3>
-          <form class="my-4">
-            <fieldset class="form-group"> <label for="exampleInputEmail1">Get monthly updates</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"> </fieldset>
-            <button type="submit" class="btn btn-outline-light">Submit</button>
-          </form>
-          <h3 class="mt-5">Social</h3>
-          <div class="align-self-center col-12 my-4">
-            <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook d-inline fa-lg mr-3 text-white"></i></a>
-            <a href="https://twitter.com" target="_blank"><i class="fa fa-twitter d-inline mx-3 fa-lg text-white"></i></a>
-            <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram d-inline mx-3 fa-lg text-white"></i></a>
-            <a href="https://plus.google.com" target="_blank"><i class="fa fa-google-plus-official d-inline mx-3 fa-lg text-white"></i></a>
-            <a href="https://pinterest.com" target="_blank"><i class="fa fa-pinterest-p d-inline mx-3 fa-lg text-white"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12 mt-3">
-          <p class="text-center">© Copyright 2017 Pingendo - All rights reserved. </p>
-        </div>
+
+</form>
+<form method= "post" name="Admin_Checked" action="${pageContext.request.contextPath}/admincheck.do">
+<div id="contents"></div>
+  <div class="container">
+    <div class="row"> &nbsp;
+      <div class="span12"> &nbsp;Search&nbsp;
+          <input type="text" name="email" class="form-control" placeholder="이메일 입력" value="${email}">
+          <a href="javascript:document.Admin_Checked.submit()" class="btn btn-outline-dark"><b>찾기</b></a>
       </div>
     </div>
   </div>
-  </footer>
+
+</form>
+
+
+<!-- 선 긋기(검색 기능 폼) ====================================== -->
+<form method="post" name="booking_form">
+<table>
+<tr>
+		  <th class="text-center">Reserver</th>
+          <th class="text-center" id="first_name">Name</th>
+          <th class="text-center" id="phone">Phone_Number</th>
+          <th class="text-center" id="email_address">E-mail</th>        
+          <th class="text-center" id="name_on_card">Card_On_Name</th>
+          <th class="text-center" id="card_number">Card_Number</th>
+          <th class="text-center" id="expiry_year">Card_Year</th>
+          <th class="text-center" id="expiry_month">Card_Month</th>
+          <th class="text-center" id="csv_number">Csv_Number</th>
+          <th class="text-center" id="money">Payment</th>
+          <th class="text-center">Mission</th>
+</tr>
+
+<c:forEach items="${bdto}" var="arr">
+	<tr>
+		<!--  <th>${arr.start_date}</th> -->
+				<td class="text-center"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white">예약완료</a></td>
+       			<td class="text-center"><a href="${pageContext.request.contextPath}/content.do?code=${arr.code}">${arr.first_name}${arr.last_name}</a></td>
+       			<td class="text-center">${arr.phone}</td>
+       			<td class="text-center">${arr.email}</td>	
+       			<td class="text-center"> ${arr.name_on_card}</td>
+       			<td class="text-center">${arr.card_number}</td>
+       			<td class="text-center">${arr.expiry_year}</td>
+       			<td class="text-center">${arr.expiry_month}</td>
+       			<td class="text-center">${arr.csv_number}</td>
+       			<td class="text-center">${arr.money}</td>
+       			<td class="text-cneter"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white"href="#" id='button1'>미션중</a></td>
+	</tr>
+</c:forEach>
+</table>
+<!-- 선 긋기 ====================================== -->
+
+
 </form>
   <div id="bt"></div>
 </body>
