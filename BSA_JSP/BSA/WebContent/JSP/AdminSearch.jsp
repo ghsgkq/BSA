@@ -147,7 +147,7 @@ $(function() {
 
 
 <body style="margin-top:80pt;" onload="changeHashOnLoad(); ">
-<form name="checking_Booked">
+
 <div id="contents"></div>
   <center>
     <div style="border:4px solid; padding:10px;">
@@ -164,52 +164,6 @@ $(function() {
       </table>
     </div>
   </center>
-  
- 
- 
-  
-        
-        <!-- 페이지 넘기기 -->
-    <div class="container">
-    <div class="example">
-    	<nav>
-    		<ul class="pagination">
-    			<li class="disabled">
-    					
-    	
-    <c:if test="${count > 0}">
-	<c:set var="imsi" value="${count % pageSize == 0 ? 0 : 1 }"/>
-	<c:set var="pageCount" value="${count / pageSize + imsi }"/>
-	<c:set var="pageBlock" value="${3}"/>
-	<fmt:parseNumber var="result" value="${currentPage / pageBlock}" 
-	integerOnly="true"/>
-	<c:set var="startPage" value="${result * pageBlock + 1 }"/>
-	<c:set var="endPage" value="${startPage + pageBlock - 1 }"/>
-	
-	<c:if test="${endPage > pageCount}">
-		<c:set var="endPage" value="${pageCount}"/>
-	</c:if>
-	
-	<c:if test="${startPage > pageBlock}">
-	
-		<a aria-label="Previous" href="${pageContext.request.contextPath}/memberbooking.do?pageNum=${startPage - pageBlock }"><span aria-hidden="true">이전</span></a>
-	</c:if>
-	
-	<c:forEach var="i" begin="${startPage}" end="${endPage}">
-		<li class="active"><a href="${pageContext.request.contextPath}/memberbooking.do?pageNum=${i}">[${i}]</a>
-	</c:forEach>
-	
-	<c:if test="${endPage < pageCount}">
-		<a aria-label="Next" href="${pageContext.request.contextPath}/memberbooking.do?pageNum=${startPage + pageBlock }"><span aria-hidden="true">다음</span></a>
-	</c:if>
-</c:if>
-</ul>
-</nav>
-</div>
-</div>
-
-
-</form>
 
 
 
@@ -217,7 +171,7 @@ $(function() {
 <form>
 <table>
 <tr>
-		  <th class="text-center">Reserver</th>
+		  
           <th class="text-center" id="first_name">Name</th>
           <th class="text-center" id="phone">Phone_Number</th>
           <th class="text-center" id="email_address">E-mail</th>        
@@ -227,13 +181,13 @@ $(function() {
           <th class="text-center" id="expiry_month">Card_Month</th>
           <th class="text-center" id="csv_number">Csv_Number</th>
           <th class="text-center" id="money">Payment</th>
-          <th class="text-center">Mission</th>
+          
 </tr>
 
 <c:forEach items="${bdto}" var="arr">
 	<tr>
 		<!--  <th>${arr.start_date}</th> -->
-				<td class="text-center"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white">예약완료</a></td>
+				
        			<td class="text-center"><a href="${pageContext.request.contextPath}/content.do?code=${arr.code}">${arr.first_name}${arr.last_name}</a></td>
        			<td class="text-center">${arr.phone}</td>
        			<td class="text-center">${arr.email}</td>	
@@ -243,7 +197,7 @@ $(function() {
        			<td class="text-center">${arr.expiry_month}</td>
        			<td class="text-center">${arr.csv_number}</td>
        			<td class="text-center">${arr.money}</td>
-       			<td class="text-cneter"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white"href="#" id='button1'>미션중</a></td>
+       			
 	</tr>
 	
 </c:forEach>
