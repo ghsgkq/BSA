@@ -6,9 +6,6 @@ response.setStatus(HttpServletResponse.SC_OK);
 
 %>
 
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
