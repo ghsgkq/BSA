@@ -16,7 +16,7 @@ public class SearchBookedAction implements CommandAction{
 		bdto = AdminDao.getInstance().getBooking(req.getParameter("email"));
 		req.setAttribute("bdto", bdto);
 		req.setAttribute("email", req.getParameter("email"));
-		return "/JSP/memberbooking.jsp";
+		return "/JSP/AdminSearch.jsp";
 	}
 
 }
