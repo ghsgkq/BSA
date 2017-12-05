@@ -81,7 +81,7 @@ window.setInterval(function () {
     #customers td,
     #customers th {
       font-size: 1em;
-      border: 1px solid #98bf21;
+      border: 1px solid #172A40;
       padding: 3px 7px 2px 7px;
     }
 
@@ -90,7 +90,7 @@ window.setInterval(function () {
       text-align: left;
       padding-top: 5px;
       padding-bottom: 4px;
-      background-color: #A7C942;
+      background-color: #172A40;
       color: #ffffff;
     }
 
@@ -121,11 +121,11 @@ window.setInterval(function () {
     
     .example .pagination>la>a,
 	.example .pagination>li>span{
-	border: 1px solid pruple;
+	border: 1px solid #172A40;
 	}
 	.pagination>li.active>a{
-		background:purple;
-		color: #fff;
+		background:#172A40;
+		color: #ffff;
 	}
   </style>
   
@@ -145,37 +145,8 @@ $(function() {
   
 </head>
 
-<body style="margin-top:80pt;">
 
-<!-- 
-<form method="post" name="admin_checked" action="${pageContext.request.contextPath}/admincheck.do">
-
-test 이메일 입력 <input type="text" name="email" class="form-control" placeholder="이메일 입력" value="${email}">
-<a href="javascript:document.admin_checked">찾기</a>
-</form>
-
-
-<form method="post" name="booking_form">
-
-<table>
-<tr>
-	<td class="1">1</td>
-	<td class="2">2</td>
-</tr>
-<c:forEach items="${bdto}" var="arr">
-<tr>
-	<th>${arr.start_date}</th>
-	<th>${arr.where_trip }</th>
-</tr>
-</c:forEach>
-</table>
-</form>
--->
 <body style="margin-top:80pt;" onload="changeHashOnLoad(); ">
-
-
-
-
 <form name="checking_Booked">
 <div id="contents"></div>
   <center>

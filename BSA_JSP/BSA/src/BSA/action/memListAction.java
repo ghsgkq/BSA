@@ -23,7 +23,6 @@ public class memListAction implements CommandAction{
 		int pageSize = 5;
 		try {
 		int currentPage = Integer.parseInt(pageNum);
-		System.out.println(currentPage);
 		int startRow = (currentPage - 1) * pageSize + 1;
 		int endRow = currentPage *pageSize;
 		int count = 0;
