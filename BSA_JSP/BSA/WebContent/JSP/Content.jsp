@@ -69,7 +69,7 @@
               </tr>
               <tr>
                 <th class="text-secondary text-left">Pickup ↔ Dropft</th>
-                <th class="text-center">${article.pickup }가</th>
+                <th class="text-center">${article.pickup }</th>
               </tr>
               <tr>
                 <th class="text-secondary text-left">Dropft ↔ Pickup</th>

@@ -286,8 +286,8 @@ test 이메일 입력 <input type="text" name="email" class="form-control" place
   <div class="container">
     <div class="row"> &nbsp;
       <div class="span12"> &nbsp;Search&nbsp;
-          <input type="text" name="email" class="form-control" placeholder="이메일 입력" value="${email}">
-          <a href="javascript:document.Admin_Checked.submit()" class="btn btn-outline-dark"><b>찾기</b></a>
+          <input type="text" name="email" class="form-control" placeholder="이메일 입력" value="${email}"><a href="javascript:document.Admin_Checked.submit()" class="btn btn-outline-dark"><b>찾기</b></a>
+         
       </div>
     </div>
   </div>
@@ -296,7 +296,7 @@ test 이메일 입력 <input type="text" name="email" class="form-control" place
 
 
 <!-- 선 긋기(검색 기능 폼) ====================================== -->
-<form method="post" name="booking_form">
+<form>
 <table>
 <tr>
 		  <th class="text-center">Reserver</th>
@@ -327,8 +327,11 @@ test 이메일 입력 <input type="text" name="email" class="form-control" place
        			<td class="text-center">${arr.money}</td>
        			<td class="text-cneter"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white"href="#" id='button1'>미션중</a></td>
 	</tr>
+	
 </c:forEach>
+
 </table>
+ <a class="ml-3 btn navbar-btn btn-light" href="${pageContext.request.contextPath}/memberbooking.do">목록 보기</a>
 <!-- 선 긋기 ====================================== -->
 
 
