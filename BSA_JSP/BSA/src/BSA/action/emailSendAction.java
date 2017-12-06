@@ -29,7 +29,6 @@ public class emailSendAction implements CommandAction {
 		String password=req.getParameter("password");
 		String re_password=req.getParameter("re_password");
 		String code = (String)req.getAttribute("code");
-		int idcheck = (Integer)req.getAttribute("idcheck");
 		
 		Properties p = new Properties(); // 정보를 담을 객체
 		  
@@ -164,7 +163,7 @@ public class emailSendAction implements CommandAction {
 		req.setAttribute("re_password", re_password);
 		req.setAttribute("email", email);
 		req.setAttribute("code", code);
-		req.setAttribute("idcheck", idcheck);
+		req.setAttribute("idcheck", req.getParameter("idcheck"));
 		return "/register.do";
 	}
 	

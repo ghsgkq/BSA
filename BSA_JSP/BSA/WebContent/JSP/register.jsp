@@ -40,49 +40,6 @@
 	  document.register_form.submit();
 	}
   </script>
-
-  <c:if test="${idcheck == 4 }">
-  <script type="text/javascript">
-  alert("아이디가 존재합니다!!");
-  </script>
-  </c:if>
-  <c:if test="${idcheck == 1 && !(anser>=1 && anser<=11) && (emailcheck != 1 && emailcheck != 2 && emailcheck != 3)}">
-  <script type="text/javascript">
-  alert("사용가능한 아이디입니다!");
-  </script>
-  </c:if>
-  <c:if test="${idcheck == 2 }">
-  <script type="text/javascript">
-  alert("아이디는 5~15 영문 소문자,숫자로만 구성할수있습니다!");
-  </script>
-  </c:if>
-  <c:if test="${idcheck == 3 }">
-  <script type="text/javascript">
-  alert("아이디 체크를 하셔야합니다!");
-  </script>
-  </c:if>
-  <c:if test="${passcheck == 1 }">
-  <script type="text/javascript">
-  alert("패스워드는 10~25 공백을 제외한 모든 문자로 구성할 수 있습니다!")
-  </script>
-  </c:if>
-  <c:if test="${emailcheck == 1 && !(anser>=1 && anser<=11) && (idcheck != 4 && idcheck != 2 && idcheck != 3)}">
-  <script type="text/javascript">
-  alert("사용가능한 이메일입니다.");
-  </script>
-  </c:if>
-  <c:if test="${emailcheck == 2 }">
-  <script type="text/javascript">
-  alert("이메일이 존재합니다.")
-  </script>
-  </c:if>
-  <c:if test="${emailcheck == 3 }">
-  <script type="text/javascript">
-  alert("이메일 양식이 잘못되었습니다.");
-  </script>
-  </c:if>
-  
-  
 </head>
 
 <body style="background-color: #EAEAEA;" onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
@@ -143,36 +100,69 @@
                 &nbsp;&nbsp;<input type="reset" class="btn btn-secondary" value="다시입력">
               </form>
               <br><br>
-              <c:if test="${anser == 1 }">
+              <c:choose>
+              <c:when test="${anser == 1 }">
               이름을 입력하세요!
-              </c:if>
-              <c:if test="${anser == 2 }">
+              </c:when>
+              <c:when test="${anser == 2 }">
               성을 입력하세요!
-              </c:if>
-              <c:if test="${anser == 3 }">
+              </c:when>
+              <c:when test="${anser == 3 }">
               전화번호를 입력하세요!
-              </c:if>
-              <c:if test="${anser == 4 }">
+              </c:when>
+              <c:when test="${anser == 4 }">
               아이디 입력하지 않았거나 중복확인을 하지않았습니다!!
-              </c:if>
-              <c:if test="${anser == 5 }">
+              </c:when>
+              <c:when test="${anser == 5 }">
               비밀번호를 입력하세요!
-              </c:if>
-              <c:if test="${anser == 6 }">
+              </c:when>
+              <c:when test="${anser == 6 }">
               비밀번호확인란을 입력하세요!
-              </c:if>
-              <c:if test="${anser == 8 }">
+              </c:when>
+              <c:when test="${anser == 7 }">
+              이메일을 입력하세요.
+              </c:when>
+              <c:when test="${anser == 8 }">
               이메일 본인확인란을 체크해주세요!!
-              </c:if>
-              <c:if test="${anser == 9 }">
+              </c:when>
+              <c:when test="${anser == 9 }">
               비밀번호와 비밀번호확인란이 같지않습니다!.
-              </c:if>
-              <c:if test="${anser == 10}">
+              </c:when>
+              <c:when test="${anser == 10}">
               이메일로 코드 전송했습니다. 확인후 입력해주세요!
-              </c:if>
-              <c:if test="${anser == 11 }">
+              </c:when>
+              <c:when test="${anser == 11 }">
               코드입력이 잘못되었습니다!
-              </c:if>
+              </c:when>
+              <c:when test="${idcheck == 4 }">
+  			  아이디가 존재합니다!!
+  		      </c:when>
+  		      <c:when test="${idcheck == 1 && !(anser>=1 && anser<=11) && (emailcheck != 1 && emailcheck != 2 && emailcheck != 3 && emailcheck != 4)}">
+			  사용가능한 아이디입니다!
+  			  </c:when>
+  			  <c:when test="${idcheck == 2 }">
+ 			  아이디는 5~15 영문 소문자,숫자로만 구성할수있습니다!
+    		  </c:when>
+    		  <c:when test="${idcheck == 3 }">
+			  아이디 체크를 하세요
+			  </c:when>
+			  <c:when test="${passcheck == 1 }">
+			  패스워드는 10~25 공백을 제외한 모든 문자로 구성할 수 있습니다!
+			  </c:when>
+			  <c:when test="${emailcheck == 1 && !(anser>=1 && anser<=11) && (idcheck != 2 && idcheck != 3)}">
+			  사용가능한 이메일입니다.
+			  </c:when>	  
+  			  <c:when test="${emailcheck == 2 }">
+			  이메일이 존재합니다.
+ 			  </c:when>
+ 			  <c:when test="${emailcheck == 3 }">
+			  이메일 양식이 잘못되었습니다.
+  			  </c:when>
+  			  <c:when test="${emailcheck == 4 }">
+			  이메일 체크를 해주세요.
+			  </c:when>
+              </c:choose>
+              
             </div>
           </div>
         </div>

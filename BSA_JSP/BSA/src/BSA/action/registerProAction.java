@@ -20,8 +20,6 @@ public class registerProAction implements CommandAction {
 		String email = req.getParameter("email");
 		String re_password = req.getParameter("re_password");
 		Random ran = new Random();
-		int idcheck=0;
-		int emailcheck =0;
 		// 1: 이름 입력 x  
 		// 2: 성 이름 x
 		// 3: 전화번호 입력 x
@@ -34,40 +32,48 @@ public class registerProAction implements CommandAction {
 		// 10: 이메일코드 보냄
 		// 11: 이메일 코드가 같지가 않음
 		// 12: 이메일 코드까지 완성
-		if(!(req.getParameter("idcheck").equals(""))) {
-			idcheck = Integer.parseInt(req.getParameter("idcheck"));
-		}
-		if(!(req.getParameter("emailcheck").equals(""))) {
-			emailcheck = Integer.parseInt(req.getParameter("emailcheck"));
-		}
-		if(idcheck != 0 || emailcheck != 0) {
-			if(req.getParameter("first_name").equals("") || req.getParameter("last_name").equals("") || req.getParameter("phone").equals("") || req.getParameter("id").equals("") || req.getParameter("password").equals("") || req.getParameter("re_password").equals("") || req.getParameter("email").equals("") || req.getParameter("what").equals("") || !(req.getParameter("password").equals(req.getParameter("re_password")))) {
-				if(req.getParameter("first_name").equals("")) {
-					req.setAttribute("anser", 1);
-				}
-				if(req.getParameter("last_name").equals("")) {
-					req.setAttribute("anser", 2);
-				}
-				if(req.getParameter("phone").equals("")) {
-					req.setAttribute("anser", 3);
-				}
+	
+	
+			if(req.getParameter("first_name").equals("") 
+			|| req.getParameter("last_name").equals("") || req.getParameter("phone").equals("") 
+			|| req.getParameter("id").equals("") || req.getParameter("password").equals("") 
+			|| req.getParameter("re_password").equals("") || req.getParameter("email").equals("") 
+			|| req.getParameter("what") == null || !(req.getParameter("password").equals(req.getParameter("re_password"))) 
+			|| req.getParameter("idcheck") == null || req.getParameter("emailcheck") == null
+			|| Integer.parseInt(req.getParameter("emailcheck")) == 0){
 				if(req.getParameter("id").equals("")) {
 					req.setAttribute("anser", 4);
 				}
-				
+				else if(req.getParameter("idcheck") == null) {
+					req.setAttribute("idcheck", 3);
+				}
 				else if(req.getParameter("password").equals("")) {
 					req.setAttribute("anser", 5);
 				}
-				
 				else if(req.getParameter("re_password").equals("")) {
 					req.setAttribute("anser", 6);
+				}
+				else if(!(req.getParameter("password").equals(req.getParameter("re_password")))){
+					req.setAttribute("anser", 9);
+				}
+				else if(req.getParameter("first_name").equals("")) {
+					req.setAttribute("anser", 1);
+				}
+				else if(req.getParameter("last_name").equals("")) {
+					req.setAttribute("anser", 2);
+				}
+				else if(req.getParameter("phone").equals("")) {
+					req.setAttribute("anser", 3);
 				}
 				
 				else if(req.getParameter("email").equals("")) {
 					req.setAttribute("anser", 7);
 				}
+				else if(req.getParameter("emailcheck") == null || Integer.parseInt(req.getParameter("emailcheck")) == 0) {
+					req.setAttribute("emailcheck", 4);
+				}
 				
-				else if(req.getParameter("what").equals("")) {
+				else if(req.getParameter("what") == null) {
 					req.setAttribute("anser", 8);
 				}
 				
@@ -76,20 +82,20 @@ public class registerProAction implements CommandAction {
 					first_name="";
 				}
 				
-				if(last_name==null) {
+				else if(last_name==null) {
 					last_name="";
 				}
-				if(phone==null) {
+				else if(phone==null) {
 					phone="";
 				}
 				
-				if(id==null) {
+				else if(id==null) {
 					id="";
 				}
-				if(password==null) {
+				else if(password==null) {
 					password="";
 				}
-				if(email==null) {
+				else if(email==null) {
 					email="";
 				}
 				req.setAttribute("first_name", first_name);
@@ -98,37 +104,16 @@ public class registerProAction implements CommandAction {
 				req.setAttribute("id", id);
 				req.setAttribute("password", password);
 				req.setAttribute("email", email);
-				req.setAttribute("idcheck", idcheck);
-				req.setAttribute("emailcheck", emailcheck);
+				if(!(req.getParameter("idcheck") == null)) {
+					req.setAttribute("idcheck", req.getParameter("idcheck"));
+				}
+				if(!(req.getParameter("emailcheck") == null || Integer.parseInt(req.getParameter("emailcheck")) == 0)){
+					req.setAttribute("emailcheck", req.getParameter("emailcheck"));
+				}
+				
 				return "/JSP/register.jsp";
 			}
-		}else {
-			
-			req.setAttribute("first_name", first_name);
-			req.setAttribute("last_name", last_name);
-			req.setAttribute("phone", phone);
-			req.setAttribute("id", id);
-			req.setAttribute("password", password);
-			req.setAttribute("re_password", re_password);
-			req.setAttribute("email", email);
-			req.setAttribute("idcheck", 3);
-			req.setAttribute("emailcheck", emailcheck);
-			return "/JSP/register.jsp";
-		}
 		
-		
-		if(!(req.getParameter("password").equals(req.getParameter("re_password")))) {
-			req.setAttribute("anser", 9);
-			req.setAttribute("first_name", first_name);
-			req.setAttribute("last_name", last_name);
-			req.setAttribute("phone", phone);
-			req.setAttribute("id", id);
-			req.setAttribute("password", password);
-			req.setAttribute("email", email);
-			req.setAttribute("idcheck", idcheck);
-			req.setAttribute("emailcheck", emailcheck);
-			return "/JSP/register.jsp";
-		}
 		
 		if(req.getParameter("anser_code") != null) {
 			if(req.getParameter("anser_code").equals(req.getParameter("code"))) {
@@ -153,8 +138,8 @@ public class registerProAction implements CommandAction {
 				req.setAttribute("re_password", re_password);
 				req.setAttribute("email", email);
 				req.setAttribute("code", req.getParameter("code"));
-				req.setAttribute("idcheck", idcheck);
-				req.setAttribute("emailcheck", emailcheck);
+				req.setAttribute("idcheck", req.getParameter("idcheck"));
+				req.setAttribute("emailcheck", req.getParameter("emailcheck"));
 				req.setAttribute("anser", 11);
 				return "/JSP/register.jsp";
 				
@@ -176,8 +161,8 @@ public class registerProAction implements CommandAction {
 					req.setAttribute("id", id);
 					req.setAttribute("email", email);
 					req.setAttribute("code", req.getParameter("code"));
-					req.setAttribute("idcheck", idcheck);
-					req.setAttribute("emailcheck", emailcheck);
+					req.setAttribute("idcheck", req.getParameter("idcheck"));
+					req.setAttribute("emailcheck", req.getParameter("emailcheck"));
 					req.setAttribute("passcheck", 1);
 					return "/JSP/register.jsp";
 				}
@@ -189,15 +174,15 @@ public class registerProAction implements CommandAction {
 			req.setAttribute("id", id);
 			req.setAttribute("email", email);
 			req.setAttribute("code", req.getParameter("code"));
-			req.setAttribute("idcheck", idcheck);
-			req.setAttribute("emailcheck", emailcheck);
+			req.setAttribute("idcheck", req.getParameter("idcheck"));
+			req.setAttribute("emailcheck", req.getParameter("emailcheck"));
 			req.setAttribute("passcheck", 1);
 			return "/JSP/register.jsp";
 		}
 		
 			req.setAttribute("code", code);
-			req.setAttribute("idcheck", idcheck);
-			req.setAttribute("emailcheck", emailcheck);
+			req.setAttribute("idcheck", req.getParameter("idcheck"));
+			req.setAttribute("emailcheck", req.getParameter("emailcheck"));
 			return "/emailsend.do";
 		
 		
