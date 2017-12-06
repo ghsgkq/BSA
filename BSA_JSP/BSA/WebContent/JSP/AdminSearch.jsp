@@ -66,8 +66,14 @@ window.setInterval(function () {
       border-collapse: collapse;
     }
 
-    th,
+    th{
+    	color: #ffffff;
+    	background: #172A40;
+    	border: 1px solid #172A40;
+    	padding: 10px;
+    }
     td {
+      font-weight:600;
       border: 1px solid #444444;
       padding: 10px;
     }
@@ -172,15 +178,15 @@ $(function() {
 <table>
 <tr>
 		  
-          <th class="text-center" id="first_name">Name</th>
-          <th class="text-center" id="phone">Phone_Number</th>
-          <th class="text-center" id="email_address">E-mail</th>        
-          <th class="text-center" id="name_on_card">Card_On_Name</th>
-          <th class="text-center" id="card_number">Card_Number</th>
-          <th class="text-center" id="expiry_year">Card_Year</th>
-          <th class="text-center" id="expiry_month">Card_Month</th>
-          <th class="text-center" id="csv_number">Csv_Number</th>
-          <th class="text-center" id="money">Payment</th>
+          <th class="text-center" >Name</th>
+          <th class="text-center" >Phone_Number</th>
+          <th class="text-center" >E-mail</th>        
+          <th class="text-center" >Card_On_Name</th>
+          <th class="text-center" >Card_Number</th>
+          <th class="text-center" >Card_Year</th>
+          <th class="text-center" >Card_Month</th>
+          <th class="text-center" >Csv_Number</th>
+          <th class="text-center" >Payment</th>
           
 </tr>
 

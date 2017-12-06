@@ -268,7 +268,7 @@ $(function() {
 <div id="contents"></div>
   <div class="container">
     <div class="row"> &nbsp;
-      <div class="span12"> &nbsp;Search&nbsp;
+      <div class="span12"> &nbsp;Search(Email Only)&nbsp;
           <input type="text" name="email" class="form-control" placeholder="이메일 입력" value="${email}"><a href="javascript:document.Admin_Checked.submit()" class="btn btn-outline-dark"><b>찾기</b></a>
          
       </div>
