@@ -55,8 +55,13 @@ public class AdminDao {
 				conn = ConnUtil.getConnection();
 				sql = "insert into BOOKINGA (FIRST_NAME, LAST_NAME, PHONE, EMAIL, WHERE_TRIP, WHERE_FROM, WHERE_TO, PICKUP, DROPFT, START_AIRLINE_NAME, "
 						+ "START_AIRLINE_NO, START_AIRLINE_TIME, ARRIVAL_AIRLINE_NAME, ARRIVAL_AIRLINE_NO, ARRIVAL_AIRLINE_TIME, BUS_TIME_PICKUP, BUS_TIME_DROPFT, "
+<<<<<<< HEAD
 						+ "START_DATE, ARRIVAL_DATE, ADULTS, YOUNG, CHILD, INFATNS, NAME_ON_CARD, CARD_NUMBER, EXPIRY_YEAR, EXPIRY_MONTH, CSV_NUMBER, COMM, MONEY, CODE, MISSION) "
 						+ "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+=======
+						+ "START_DATE, ARRIVAL_DATE, ADULTS, YOUNG, CHILD, INFATNS, NAME_ON_CARD, CARD_NUMBER, EXPIRY_YEAR, EXPIRY_MONTH, CSV_NUMBER, COMM, MONEY, CODE, REGDATE, RESERVATION) "
+						+ "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+>>>>>>> c5563320ca158babceba9558ca37f2a9f273f8cf
 				pstmt=conn.prepareStatement(sql);
 				pstmt.setString(1, bdto.getFirst_name());
 				pstmt.setString(2, bdto.getLast_name());
@@ -89,7 +94,12 @@ public class AdminDao {
 				pstmt.setString(29, bdto.getComm());
 				pstmt.setString(30, bdto.getMoney());
 				pstmt.setString(31, bdto.getCode());
+<<<<<<< HEAD
 				pstmt.setString(32, bdto.getMission("미션중"));
+=======
+				pstmt.setTimestamp(32, bdto.getRegdate());
+				pstmt.setString(33, "예약완료");
+>>>>>>> c5563320ca158babceba9558ca37f2a9f273f8cf
 				pstmt.executeUpdate();
 				
 			}catch(SQLException e) {
@@ -172,7 +182,11 @@ public class AdminDao {
 							+ "(select rownum RNUM, FIRST_NAME, LAST_NAME, PHONE, EMAIL, WHERE_TRIP, WHERE_FROM, WHERE_TO,"
 							+ "PICKUP, DROPFT, START_AIRLINE_NAME, START_AIRLINE_NO, START_AIRLINE_TIME, ARRIVAL_AIRLINE_NAME,"
 							+ "ARRIVAL_AIRLINE_NO, ARRIVAL_AIRLINE_TIME, BUS_TIME_PICKUP, BUS_TIME_DROPFT, START_DATE, ARRIVAL_DATE,"
+<<<<<<< HEAD
 							+ "ADULTS, YOUNG, CHILD, INFATNS, NAME_ON_CARD, CARD_NUMBER, EXPIRY_YEAR, EXPIRY_MONTH, CSV_NUMBER, COMM, MONEY, CODE, STEP, REF, DEPTH, MISSION from "
+=======
+							+ "ADULTS, YOUNG, CHILD, INFATNS, NAME_ON_CARD, CARD_NUMBER, EXPIRY_YEAR, EXPIRY_MONTH, CSV_NUMBER, COMM, MONEY, CODE, STEP, REF, DEPTH, REGDATE, RESERVATION from "
+>>>>>>> c5563320ca158babceba9558ca37f2a9f273f8cf
 							+ "(select * from BOOKINGA order by REF desc, STEP asc)) "
 							+ "where RNUM >= ? and RNUM <= ?";
 			pstmt = conn.prepareStatement(sql);
@@ -217,7 +231,12 @@ public class AdminDao {
 					article.setStep(rs.getInt("step"));
 					article.setRef(rs.getInt("ref"));
 					article.setDepth(rs.getInt("depth"));
+<<<<<<< HEAD
 					article.setMission(rs.getString("mission"));
+=======
+					article.setRegdate(rs.getTimestamp("regdate"));
+					article.setReservation(rs.getString("reservation"));
+>>>>>>> c5563320ca158babceba9558ca37f2a9f273f8cf
 					articleList.add(article);
 				}while(rs.next());
 			}
@@ -296,6 +315,7 @@ public class AdminDao {
 				article.setComm(rs.getString("comm"));
 				article.setMoney("money");
 				article.setCode(rs.getString("code"));
+				article.setRegdate(rs.getTimestamp("regdate"));
 			}
 			}catch(Exception e) {
 				e.printStackTrace();

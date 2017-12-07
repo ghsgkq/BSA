@@ -216,6 +216,11 @@ public class BookingDao {
 			pstmt = conn.prepareStatement("delete from BOOKING where code=?");
 			pstmt.setString(1, code);
 			pstmt.executeUpdate();
+			pstmt = null;
+			pstmt = conn.prepareStatement("update BOOKINGA set RESERVATION=? where code=?");
+			pstmt.setString(1, "예약취소");
+			pstmt.setString(2, code);
+			pstmt.executeUpdate();
 			}catch(SQLException e) {
 				e.printStackTrace();
 			}finally {

@@ -196,12 +196,13 @@ $(function() {
           <th class="text-center" id="csv_number">Csv_Number</th>
           <th class="text-center" id="money">Payment</th>
           <th class="text-center">Mission</th>
+          <th class="text-center">Date</th>
           
           
         </tr>
         <c:forEach var="article" items="${articleList}">
         	<tr>
-        		<td class="text-center"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white">예약완료</a></td>
+        		<td class="text-center"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white">${article.reservation}</a></td>
        			<td class="text-center"><a href="${pageContext.request.contextPath}/content.do?code=${article.code}">${article.first_name}${article.last_name}</a></td>
        			<td class="text-center">${article.phone}</td>
        			<td class="text-center">${article.email}</td>	
@@ -211,7 +212,12 @@ $(function() {
        			<td class="text-center">${article.expiry_month}</td>
        			<td class="text-center">${article.csv_number}</td>
        			<td class="text-center">${article.money}</td>
+<<<<<<< HEAD
        			<td class="text-cneter"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white"href="${pageContext.request.contextPath}/mission.do?code=${article.code}" >${article.mission}</a></td>
+=======
+       			<td class="text-cneter"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white"href="#" name="button1" >미션중</a></td>
+       			<td class="text-center">${article.regdate}</td>
+>>>>>>> c5563320ca158babceba9558ca37f2a9f273f8cf
        			
         	</tr>
         	

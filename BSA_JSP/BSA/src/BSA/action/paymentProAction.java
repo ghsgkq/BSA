@@ -3,6 +3,8 @@ package BSA.action;
 import java.util.Properties;
 import java.util.Random;
 
+import java.sql.Timestamp;
+
 import javax.mail.Address;
 import javax.mail.Authenticator;
 import javax.mail.Message;
@@ -238,7 +240,11 @@ public class paymentProAction implements CommandAction {
 		ad.setCsv_number(req.getParameter("csv_number"));
 		ad.setComm(req.getParameter("comm"));
 		ad.setMoney(req.getParameter("money"));
+<<<<<<< HEAD
 		ad.setMission(req.getParameter("mission"));
+=======
+		ad.setRegdate(new Timestamp(System.currentTimeMillis()));
+>>>>>>> c5563320ca158babceba9558ca37f2a9f273f8cf
 		ad.setCode(code);
 
 		BookingDao bdao = BookingDao.getInstance();
