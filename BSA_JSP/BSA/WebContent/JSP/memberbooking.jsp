@@ -212,12 +212,12 @@ $(function() {
        			<td class="text-center">${article.expiry_month}</td>
        			<td class="text-center">${article.csv_number}</td>
        			<td class="text-center">${article.money}</td>
-<<<<<<< HEAD
+
        			<td class="text-cneter"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white"href="${pageContext.request.contextPath}/mission.do?code=${article.code}" >${article.mission}</a></td>
-=======
-       			<td class="text-cneter"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white"href="#" name="button1" >미션중</a></td>
+
+       			
        			<td class="text-center">${article.regdate}</td>
->>>>>>> c5563320ca158babceba9558ca37f2a9f273f8cf
+
        			
         	</tr>
         	
