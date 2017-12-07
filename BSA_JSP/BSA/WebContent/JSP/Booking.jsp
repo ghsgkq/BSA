@@ -139,6 +139,40 @@ alert("승객수를 선택하세요");
 </script>
 </c:if>
 
+<style type="text/css">
+        .loading {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: -4px;
+            left: 0;
+            z-index: 99999;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+        .loading p {
+            position: relative;
+            top: 50%;
+            margin: -75px auto 0 auto;
+            width: 200px;
+            height: 50px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            background: #fff;
+            box-sizing: border-box;
+            padding: 0 30px;
+            text-align: center;
+            font-size: 16px;
+            color: #555;
+        }
+        .loading p strong {
+            display: block;
+            padding-top: 15px;
+            font-style: italic;
+        }
+    </style>
+
 </head>
 
 <body onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
@@ -176,7 +210,7 @@ alert("승객수를 선택하세요");
               <div class="input-group w-100"> <i class="fa d-inline fa-angle-double-right fa-lg"></i> 
               <select id="select" name="where_from" class="form-control-sm px-3 mx-2">
             	<option id="1" value="#">-----select-----</option>
-                <option id="2" value="Gimhean Airporter(김해공항)">Gimhea Airporter (김해공항)</option>
+                <option id="2" value="Gimhean Airporter(김해공항)" >Gimhea Airporter (김해공항)</option>
                 <option id="3" value="Busan(부산)">Busan (부산)</option>
 			</select> </div>
 
@@ -372,6 +406,31 @@ alert("승객수를 선택하세요");
 	});
                     
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ 
+<script type="text/javascript">
+$(document).ready(function() {
+    console.log('로딩 활성화');
+    $('.loading').show();
+});
+ 
+$(window).on('load', function() {
+    console.log('로딩 비활성화');
+    $('.loading').hide();
+});
+</script>
+<div id="wrap">
+    <section>
+       
+        <iframe src="${pageContext.request.contextPath}/Booking.do" width="100%" height="600px"></iframe>
+    </section>
+    <!--loading-->
+    <section class="loading">
+        <p>
+            <strong>Loading..</strong>
+        </p>
+    </section>
+</div>
 </body>
 
 </html>
