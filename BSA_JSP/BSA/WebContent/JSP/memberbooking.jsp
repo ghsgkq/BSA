@@ -202,7 +202,7 @@ $(function() {
         </tr>
         <c:forEach var="article" items="${articleList}">
         	<tr>
-        		<td class="text-center"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white">예약완료</a></td>
+        		<td class="text-center"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white">${article.reservation}</a></td>
        			<td class="text-center"><a href="${pageContext.request.contextPath}/content.do?code=${article.code}">${article.first_name}${article.last_name}</a></td>
        			<td class="text-center">${article.phone}</td>
        			<td class="text-center">${article.email}</td>	

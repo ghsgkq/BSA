@@ -55,7 +55,7 @@ public class AdminDao {
 				conn = ConnUtil.getConnection();
 				sql = "insert into BOOKINGA (FIRST_NAME, LAST_NAME, PHONE, EMAIL, WHERE_TRIP, WHERE_FROM, WHERE_TO, PICKUP, DROPFT, START_AIRLINE_NAME, "
 						+ "START_AIRLINE_NO, START_AIRLINE_TIME, ARRIVAL_AIRLINE_NAME, ARRIVAL_AIRLINE_NO, ARRIVAL_AIRLINE_TIME, BUS_TIME_PICKUP, BUS_TIME_DROPFT, "
-						+ "START_DATE, ARRIVAL_DATE, ADULTS, YOUNG, CHILD, INFATNS, NAME_ON_CARD, CARD_NUMBER, EXPIRY_YEAR, EXPIRY_MONTH, CSV_NUMBER, COMM, MONEY, CODE, REGDATE) "
+						+ "START_DATE, ARRIVAL_DATE, ADULTS, YOUNG, CHILD, INFATNS, NAME_ON_CARD, CARD_NUMBER, EXPIRY_YEAR, EXPIRY_MONTH, CSV_NUMBER, COMM, MONEY, CODE, REGDATE,RESERVATION) "
 						+ "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 				pstmt=conn.prepareStatement(sql);
 				pstmt.setString(1, bdto.getFirst_name());
@@ -90,6 +90,7 @@ public class AdminDao {
 				pstmt.setString(30, bdto.getMoney());
 				pstmt.setString(31, bdto.getCode());
 				pstmt.setTimestamp(32, bdto.getRegdate());
+				pstmt.setString(33, "예약완료");
 				pstmt.executeUpdate();
 				
 			}catch(SQLException e) {
@@ -146,7 +147,7 @@ public class AdminDao {
 							+ "(select rownum RNUM, FIRST_NAME, LAST_NAME, PHONE, EMAIL, WHERE_TRIP, WHERE_FROM, WHERE_TO,"
 							+ "PICKUP, DROPFT, START_AIRLINE_NAME, START_AIRLINE_NO, START_AIRLINE_TIME, ARRIVAL_AIRLINE_NAME,"
 							+ "ARRIVAL_AIRLINE_NO, ARRIVAL_AIRLINE_TIME, BUS_TIME_PICKUP, BUS_TIME_DROPFT, START_DATE, ARRIVAL_DATE,"
-							+ "ADULTS, YOUNG, CHILD, INFATNS, NAME_ON_CARD, CARD_NUMBER, EXPIRY_YEAR, EXPIRY_MONTH, CSV_NUMBER, COMM, MONEY, CODE, STEP, REF, DEPTH, REGDATE from "
+							+ "ADULTS, YOUNG, CHILD, INFATNS, NAME_ON_CARD, CARD_NUMBER, EXPIRY_YEAR, EXPIRY_MONTH, CSV_NUMBER, COMM, MONEY, CODE, STEP, REF, DEPTH, REGDATE, RESERVATION from "
 							+ "(select * from BOOKINGA order by REF desc, STEP asc)) "
 							+ "where RNUM >= ? and RNUM <= ?";
 			pstmt = conn.prepareStatement(sql);
@@ -192,6 +193,7 @@ public class AdminDao {
 					article.setRef(rs.getInt("ref"));
 					article.setDepth(rs.getInt("depth"));
 					article.setRegdate(rs.getTimestamp("regdate"));
+					article.setReservation(rs.getString("reservation"));
 					articleList.add(article);
 				}while(rs.next());
 			}

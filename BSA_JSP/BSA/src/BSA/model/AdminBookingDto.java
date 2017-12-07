@@ -38,12 +38,20 @@ public class AdminBookingDto {
 	private int ref;
 	private int depth;
 	private Timestamp regdate;
+	private String reservation;
 	
+
 	public Timestamp getRegdate() {
 		return regdate;
 	}
 	public void setRegdate(Timestamp regdate) {
 		this.regdate = regdate;
+	}
+	public String getReservation() {
+		return reservation;
+	}
+	public void setReservation(String reservation) {
+		this.reservation = reservation;
 	}
 	public String getFirst_name() {
 		return first_name;
