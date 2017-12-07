@@ -169,7 +169,7 @@ function test(idMyDiv){
   <br>  Auto 방식으로 조절이 가능합니다</br></span>    
   </a></div2>
   
-     <div3 class="tip text-center w-50">  <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#5858FA" href="index.do#route anchor"  >Route Map<i class="d-block fa fa-3x text-white fa-map-marker"></i>
+     <div3 class="tip text-center w-50">  <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#5858FA" href="#" onClick="window.open('https://map.naver.com/','win','width=600,height=1000,toolbar=0,scrollbars=0,resizable=0')"; >Route Map<i class="d-block fa fa-3x text-white fa-map-marker"></i>
         
      <span> </span> </a></div3>
      <div4 class="tip text-center w-50">  <a class="ml-3 btn navbar-btn  w-50 text-white" style="background-color:#5858FA" href="index.do#schedule anchor"  >Dayily Schedule<i class="d-block fa fa-3x text-white fa-calendar-check-o"></i>
