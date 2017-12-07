@@ -196,6 +196,7 @@ $(function() {
           <th class="text-center" id="csv_number">Csv_Number</th>
           <th class="text-center" id="money">Payment</th>
           <th class="text-center">Mission</th>
+          <th class="text-center">Date</th>
           
           
         </tr>
@@ -212,6 +213,7 @@ $(function() {
        			<td class="text-center">${article.csv_number}</td>
        			<td class="text-center">${article.money}</td>
        			<td class="text-cneter"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white"href="#" name="button1" >미션중</a></td>
+       			<td class="text-center">${article.regdate}</td>
        			
         	</tr>
         	
