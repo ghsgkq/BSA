@@ -35,7 +35,7 @@
         <div class="col-md-6 align-self-center">
           <div class="card text-white p-5 bg-dark">
             <div class="card-body">
-              <h1 class="mb-4">로그인</h1>
+              <h1 class="mb-4">Login</h1>
               <form action="${pageContext.request.contextPath}/loginPro.do" name="memberForm" method="post" >
                 <div class="form-group"> <label>id address</label>
                   <input type="text" name="id" class="form-control" placeholder="아이디 입력"> </div>

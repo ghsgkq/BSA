@@ -168,7 +168,7 @@ $(function() {
           <tr>
             <td>
               <div style="text-align:center">
-                <font size="15"> Reservation_List(Count :${count} )</font>
+                <font size="15"> Reservation_List(User :${count} )</font>
               </div>
             </td>
           </tr>

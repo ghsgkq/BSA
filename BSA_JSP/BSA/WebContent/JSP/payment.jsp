@@ -329,9 +329,9 @@ alert("버스 시간(dropft)을 선택하세요")
             		<option value="2027">2027</option>
             		
             
-              </select> </div><label><br>CSV number<br></label>
+              </select> </div><label><br>CVC number<br></label>
             <div class="input-group w-100"> <i class="fa d-inline fa-2x fa-angellist"></i>
-              <input type="text" class="form-control mr-3 my-1" placeholder="CSV 번호를 입력해주세요." name="csv_number"> </div>
+              <input type="text" class="form-control mr-3 my-1" placeholder="CVC 번호를 입력해주세요." name="csv_number"> </div>
               <br><br>
               <div class="form-group"><h2><b> 결제금액  </b></h2></div>
               <br><br>

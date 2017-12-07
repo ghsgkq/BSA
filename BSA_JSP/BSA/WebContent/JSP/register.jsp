@@ -51,53 +51,53 @@
         <div class="col-md-6 align-self-center">
           <div class="card text-white p-5 bg-dark">
             <div class="card-body">
-              <h1 class="mb-4">회원가입</h1>
+              <h1 class="mb-4">Create Account</h1>
               <form name="register_form" method="post">
                 <c:if test="${idcheck != 1 }">
-                <div class="form-group"> <label>아이디</label>
+                <div class="form-group"> <label>ID</label>
                 <input type="text" name="id" class="form-control" placeholder="아이디" value="${id}"></div>
-                <input type="button" class="btn btn-secondary" onclick="return mySubmit(1)" value="id중복확인">
+                <input type="button" class="btn btn-secondary" onclick="return mySubmit(1)" value="id check">
                 <br><br>
                 </c:if>
                 <c:if test="${idcheck == 1 }">
-                 <div class="form-group"> <label>아이디</label>
+                 <div class="form-group"> <label>ID</label>
                 <input type="text" name="id" class="form-control" placeholder="아이디" value="${id}" readonly="readonly"></div>
                 </c:if>
                 <input type="hidden" name="idcheck" value="${idcheck}">
-                <div class="form-group"> <label>비밀번호</label>
+                <div class="form-group"> <label>Password</label>
                   <input type="password" name="password" class="form-control" placeholder="비밀번호" value="${password }"> </div>
-                <div class="form-group"> <label>비밀번호 확인</label>
+                <div class="form-group"> <label>Re-Password</label>
                   <input type="password" name="re_password" class="form-control" placeholder="비밀번호 확인" value="${re_password }"> </div>
-               <div class="form-group"> <label>이름</label>
+               <div class="form-group"> <label>FirstName</label>
                  <input type="text" name="first_name" class="form-control" placeholder="이름" value="${first_name }"> </div>
-                 <div class="form-group"> <label>성</label>
+                 <div class="form-group"> <label>LastName</label>
                  <input type="text" name="last_name" class="form-control" placeholder="성" value="${last_name }"> </div>
-                 <div class="form-group"> <label>전화번호</label>
+                 <div class="form-group"> <label>PhoneNumber</label>
                  <input type="text" name="phone" class="form-control" placeholder="- 포함 작성" value="${phone }"> </div>
                 <c:if test="${emailcheck != 1 }">
-                <div class="form-group"> <label>이메일</label>
+                <div class="form-group"> <label>E-mail</label>
                 <input type="email" name="email" class="form-control" placeholder="이메일" value="${email}"> </div>
-                <input type="button" class="btn btn-secondary" onclick="return mySubmit(2)" value="email중복확인">
+                <input type="button" class="btn btn-secondary" onclick="return mySubmit(2)" value="email check">
                 </c:if>
                 <c:if test="${emailcheck == 1 }">
-                <div class="form-group"> <label>이메일</label>
+                <div class="form-group"> <label>E-mail</label>
                 <input type="email" name="email" class="form-control" placeholder="이메일" value="${email}" readonly="readonly"> </div>
                 </c:if>
                 <br><br>
                 <input type="hidden" name="emailcheck" value="${emailcheck }">
               <c:if test="${anser != 10 and anser != 11}">
                 <div class="form-group">
-                  <input type="radio" name="what" value="true"> 이메일로 본인확인 문자가 가는것을 허락합니까? </div>
+                  <input type="radio" name="what" value="true">Do you want code to go to your email? </div>
               </c:if>
               <c:if test="${anser == 10 or anser == 11}">
-              <div class="form-group"> <label>코드입력</label>
+              <div class="form-group"> <label>Code</label>
               <input type="text" name="anser_code" class="form-control" placeholder="코드입력"> 
               <input type="hidden" name="code" value="${code}">
               <input type="hidden" name="what" value="true">
               </div>
               </c:if>
-                <button type="button" onclick="return mySubmit(3)" class="btn btn-secondary">회원가입</button>
-                &nbsp;&nbsp;<input type="reset" class="btn btn-secondary" value="다시입력">
+                <button type="button" onclick="return mySubmit(3)" class="btn btn-secondary">Create your account</button>
+                &nbsp;&nbsp;<input type="reset" class="btn btn-secondary" value="Reset">
               </form>
               <br><br>
               <c:choose>

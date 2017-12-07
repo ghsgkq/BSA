@@ -162,7 +162,7 @@ $(function() {
           <tr>
             <td>
               <div style="text-align:center">
-                <font size="15"> 검색하신 이메일(Email :${email} )</font>
+                <font size="15"> User(Email :${email} )</font>
               </div>
             </td>
           </tr>
@@ -219,8 +219,8 @@ $(function() {
   <div class="container">
     <div class="row"> &nbsp;
       <div class="span12"> &nbsp;Search(Only Email)&nbsp;
-          <input type="text" name="email" class="form-control" placeholder="이메일 입력" value="${email}"><a href="javascript:document.Admin_Checked.submit()" class="btn btn-outline-dark"><b>찾기</b></a>
-         	 <a class="ml-3 btn navbar-btn btn-light" href="${pageContext.request.contextPath}/memberbooking.do">목록 보기</a>
+          <input type="text" name="email" class="form-control" placeholder="이메일 입력" value="${email}"><a href="javascript:document.Admin_Checked.submit()" class="btn btn-outline-dark"><b>Search</b></a>
+         	 <a class="ml-3 btn navbar-btn btn-light" href="${pageContext.request.contextPath}/memberbooking.do">List</a>
       </div>
     </div>
   </div>
