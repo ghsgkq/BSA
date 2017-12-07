@@ -32,6 +32,7 @@ public class AdminBookingDto {
 	private String comm;
 	private String money;
 	private String code;
+	private String mission;
 	private int step;
 	private int ref;
 	private int depth;
@@ -239,6 +240,17 @@ public class AdminBookingDto {
 	public void setDepth(int depth) {
 		this.depth = depth;
 	}
+	public String getMission() {
+		return mission;
+	}
+	public void setMission(String mission) {
+		this.mission = mission;
+	}
+	public String getMission(String mission) {
+		// TODO Auto-generated method stub
+		return mission;
+	}
+	
 	
 	
 }

@@ -159,7 +159,7 @@ $(function() {
 
 
 <body style="margin-top:80pt;" onload="changeHashOnLoad(); ">
-<form name="checking_Booked">
+
 <div id="contents"></div>
   <center>
     <div style="border:4px solid; padding:10px;">
@@ -211,7 +211,7 @@ $(function() {
        			<td class="text-center">${article.expiry_month}</td>
        			<td class="text-center">${article.csv_number}</td>
        			<td class="text-center">${article.money}</td>
-       			<td class="text-cneter"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white"href="#" name="button1" >미션중</a></td>
+       			<td class="text-cneter"><a class="ml-3 btn navbar-btn btn-sm btn-dark text-white"href="${pageContext.request.contextPath}/mission.do?code=${article.code}" >${article.mission}</a></td>
        			
         	</tr>
         	

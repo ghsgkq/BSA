@@ -17,6 +17,7 @@ public class ContentAction implements CommandAction{
 	@Override
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
 		
+		
 		String code=req.getParameter("code");
 		String pageNum = req.getParameter("pageNum");
 		AdminDao dbPro=AdminDao.getInstance();

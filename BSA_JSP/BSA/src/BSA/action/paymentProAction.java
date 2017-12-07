@@ -238,6 +238,7 @@ public class paymentProAction implements CommandAction {
 		ad.setCsv_number(req.getParameter("csv_number"));
 		ad.setComm(req.getParameter("comm"));
 		ad.setMoney(req.getParameter("money"));
+		ad.setMission(req.getParameter("mission"));
 		ad.setCode(code);
 
 		BookingDao bdao = BookingDao.getInstance();

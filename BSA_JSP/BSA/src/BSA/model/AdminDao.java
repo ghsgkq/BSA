@@ -55,8 +55,8 @@ public class AdminDao {
 				conn = ConnUtil.getConnection();
 				sql = "insert into BOOKINGA (FIRST_NAME, LAST_NAME, PHONE, EMAIL, WHERE_TRIP, WHERE_FROM, WHERE_TO, PICKUP, DROPFT, START_AIRLINE_NAME, "
 						+ "START_AIRLINE_NO, START_AIRLINE_TIME, ARRIVAL_AIRLINE_NAME, ARRIVAL_AIRLINE_NO, ARRIVAL_AIRLINE_TIME, BUS_TIME_PICKUP, BUS_TIME_DROPFT, "
-						+ "START_DATE, ARRIVAL_DATE, ADULTS, YOUNG, CHILD, INFATNS, NAME_ON_CARD, CARD_NUMBER, EXPIRY_YEAR, EXPIRY_MONTH, CSV_NUMBER, COMM, MONEY, CODE) "
-						+ "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+						+ "START_DATE, ARRIVAL_DATE, ADULTS, YOUNG, CHILD, INFATNS, NAME_ON_CARD, CARD_NUMBER, EXPIRY_YEAR, EXPIRY_MONTH, CSV_NUMBER, COMM, MONEY, CODE, MISSION) "
+						+ "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 				pstmt=conn.prepareStatement(sql);
 				pstmt.setString(1, bdto.getFirst_name());
 				pstmt.setString(2, bdto.getLast_name());
@@ -89,6 +89,7 @@ public class AdminDao {
 				pstmt.setString(29, bdto.getComm());
 				pstmt.setString(30, bdto.getMoney());
 				pstmt.setString(31, bdto.getCode());
+				pstmt.setString(32, bdto.getMission("미션중"));
 				pstmt.executeUpdate();
 				
 			}catch(SQLException e) {
@@ -105,6 +106,32 @@ public class AdminDao {
 			}
 			
 		}
+	
+	public void change_mission(String mission, String code) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement("update BOOKINGA set mission=? where code=?");
+			System.out.println(code);
+			pstmt.setString(1, mission);
+			pstmt.setString(2, code);			
+			int n=pstmt.executeUpdate();
+			System.out.println(n+"개행 수정");
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null) pstmt.close();
+				if(rs != null) rs.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
 	
 	
 	
@@ -145,7 +172,7 @@ public class AdminDao {
 							+ "(select rownum RNUM, FIRST_NAME, LAST_NAME, PHONE, EMAIL, WHERE_TRIP, WHERE_FROM, WHERE_TO,"
 							+ "PICKUP, DROPFT, START_AIRLINE_NAME, START_AIRLINE_NO, START_AIRLINE_TIME, ARRIVAL_AIRLINE_NAME,"
 							+ "ARRIVAL_AIRLINE_NO, ARRIVAL_AIRLINE_TIME, BUS_TIME_PICKUP, BUS_TIME_DROPFT, START_DATE, ARRIVAL_DATE,"
-							+ "ADULTS, YOUNG, CHILD, INFATNS, NAME_ON_CARD, CARD_NUMBER, EXPIRY_YEAR, EXPIRY_MONTH, CSV_NUMBER, COMM, MONEY, CODE, STEP, REF, DEPTH from "
+							+ "ADULTS, YOUNG, CHILD, INFATNS, NAME_ON_CARD, CARD_NUMBER, EXPIRY_YEAR, EXPIRY_MONTH, CSV_NUMBER, COMM, MONEY, CODE, STEP, REF, DEPTH, MISSION from "
 							+ "(select * from BOOKINGA order by REF desc, STEP asc)) "
 							+ "where RNUM >= ? and RNUM <= ?";
 			pstmt = conn.prepareStatement(sql);
@@ -190,6 +217,7 @@ public class AdminDao {
 					article.setStep(rs.getInt("step"));
 					article.setRef(rs.getInt("ref"));
 					article.setDepth(rs.getInt("depth"));
+					article.setMission(rs.getString("mission"));
 					articleList.add(article);
 				}while(rs.next());
 			}
@@ -338,6 +366,10 @@ public class AdminDao {
 				e.printStackTrace();
 			}
 		}return bdto;
+	}
+	public static AdminDao getInstance(AdminBookingDto art) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	
