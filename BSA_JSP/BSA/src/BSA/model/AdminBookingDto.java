@@ -35,6 +35,14 @@ public class AdminBookingDto {
 	private int step;
 	private int ref;
 	private int depth;
+	private String reservation;
+	
+	public String getReservation() {
+		return reservation;
+	}
+	public void setReservation(String reservation) {
+		this.reservation = reservation;
+	}
 	public String getFirst_name() {
 		return first_name;
 	}
