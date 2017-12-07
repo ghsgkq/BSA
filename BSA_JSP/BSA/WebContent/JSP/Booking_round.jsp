@@ -59,52 +59,7 @@ function booking(){
 	location.href="${pageContext.request.contextPath}/Booking.do";
 	}
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
- 
-<script type="text/javascript">
-$(document).ready(function() {
-    console.log('로딩 활성화');
-    $('.loading').show();
-});
- 
-$(window).on('load', function() {
-    console.log('로딩 비활성화');
-    $('.loading').hide();
-});
-</script>
-<style type="text/css">
-        .loading {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: -4px;
-            left: 0;
-            z-index: 99999;
-            background: rgba(0, 0, 0, 0.5);
-            display: none;
-        }
-        .loading p {
-            position: relative;
-            top: 50%;
-            margin: -75px auto 0 auto;
-            width: 200px;
-            height: 50px;
-            -webkit-border-radius: 10px;
-            -moz-border-radius: 10px;
-            border-radius: 10px;
-            background: #fff;
-            box-sizing: border-box;
-            padding: 0 30px;
-            text-align: center;
-            font-size: 16px;
-            color: #555;
-        }
-        .loading p strong {
-            display: block;
-            padding-top: 15px;
-            font-style: italic;
-        }
-    </style>
+
 
 <!-- 잘못입력시 메시지 (왕복) -->
 <c:if test="${where_from_check == 1}">
@@ -438,18 +393,7 @@ alert("승객수를 선택하세요");
   </div>
   </form>
   <div id="bt"></div>
-  <div id="wrap">
-    <section>
-        
-        <iframe src="${pageContext.request.contextPath}/Booking.do" width="100%" height="600px"></iframe>
-    </section>
-    <!--loading-->
-    <section class="loading">
-        <p>
-            <strong>Loading..</strong>
-        </p>
-    </section>
-</div>
+  
 </body>
 
 </html>
