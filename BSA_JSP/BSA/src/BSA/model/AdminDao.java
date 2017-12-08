@@ -92,7 +92,7 @@ public class AdminDao {
 				pstmt.setString(31, bdto.getCode());
 				pstmt.setTimestamp(32, bdto.getRegdate());
 				pstmt.setString(33, "예약완료");
-				pstmt.setString(34, bdto.getMission("미션중"));
+				pstmt.setString(34, "미션중");
 
 				pstmt.executeUpdate();
 				
