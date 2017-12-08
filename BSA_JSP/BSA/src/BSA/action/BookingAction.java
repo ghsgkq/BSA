@@ -7,7 +7,16 @@ public class BookingAction implements CommandAction{
 
 	@Override
 	public String requestPro(HttpServletRequest req, HttpServletResponse resp) throws Throwable {
-
+		String id = null;
+		if(req.getSession().getAttribute("id") == null) {
+			
+		}
+		else {
+			id = (String)req.getSession().getAttribute("id");
+		}
+		req.getSession().invalidate();
+		req.getSession().setAttribute("id", id);	
+		
 		String where_trip=req.getParameter("where_trip");
 		String where_from =req.getParameter("where_from");
 		String where_to=req.getParameter("where_to");
